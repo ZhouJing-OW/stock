@@ -1,0 +1,25 @@
+# GitHub Pages: 仅托管静态页面和数据
+# 以下内容不上传
+
+# 桌面端工具
+bridge/
+ahk/
+tasks/
+
+# 不需要的模板副本
+templates/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 临时文件
+*.tmp
+*.log
+
+# 配置文件 (含本地路径)
+bridge/config.yaml
+
+# IDE
+.vscode/
+.idea/

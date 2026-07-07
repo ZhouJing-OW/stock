@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "code": "300782", "name": "卓胜微", "exchange": "SZ", "shenwan_industry": "电子/半导体/射频芯片",
+    "concept_tags": ["射频前端", "射频开关", "LNA", "PA", "滤波器", "Fab-Lite", "国产替代", "5G", "手机产业链"],
+    "analysis_date": "2026-07-03", "fiscal_period": "2026Q1", "confidence": 3, "status": "active", "last_updated": "2026-07-03T22:55:00"
+  },
+  "overview": {
+    "full_name": "江苏卓胜微电子股份有限公司", "market": "深交所创业板", "listed_since": "2019-06-18",
+    "total_market_cap_yi": 380, "float_market_cap_yi": 300, "pe_ttm": null,
+    "pb": 3.9, "controller": "许志翰等创始团队（无实际控制人）", "employees": 1500,
+    "one_liner": "国产射频前端芯片龙头，从射频开关/LNA向PA/滤波器全品类扩展，Fab-Lite转型阵痛期持续亏损，能否走出低谷是核心看点",
+    "revenue_segments": [
+      {"segment": "射频前端模组（开关+LNA+PA+滤波器）", "revenue_pct": 70, "gross_margin_pct": 32, "yoy_growth_pct": 5},
+      {"segment": "射频分立器件", "revenue_pct": 25, "gross_margin_pct": 35, "yoy_growth_pct": -10},
+      {"segment": "其他（IoT/BLE等）", "revenue_pct": 5, "gross_margin_pct": 30, "yoy_growth_pct": 10}
+    ]
+  },
+  "supply_chain": {
+    "position": "射频前端Fab-Lite模式芯片公司，自建滤波器产线（芯卓湖光）+部分晶圆制造外包。下游为手机OEM（三星/小米/OPPO/vivo/荣耀）和通信设备商",
+    "upstream": "晶圆代工（台积电/中芯国际）、滤波器基板/材料、封装测试（自建+外包）、SOI/GaAs衬底",
+    "downstream": "手机品牌（三星/小米/OPPO/vivo/荣耀/华为）、通信基站（华为/中兴）、IoT设备",
+    "upstream_bargaining": {"level": "弱", "reason": "Fab-Lite转型中自建产能尚未完全覆盖，对SOI/GaAs衬底等特种材料有进口依赖"},
+    "downstream_bargaining": {"level": "弱", "reason": "手机OEM集中度高（前5大品牌占80%+），射频前端国产化率低（<15%），面对三星/小米等大客户议价权弱"},
+    "substitution_risk": {"level": "高", "by_whom": "村田/Skyworks/Qorvo/博通等国际巨头在高端射频前端（特别是BAW滤波器/高集成模组）技术代差明显。国产唯捷创芯/飞骧科技也在追赶", "cycle_years": 3},
+    "supply_constraints": {"capacity_bottleneck": "自建滤波器产线（芯卓湖光）产能爬坡中，良率和产能利用率是关键瓶颈", "license_barrier": "无特殊牌照门槛", "key_material_dependency": "BAW滤波器核心材料和SOI晶圆进口依赖度高", "has_hard_constraint": true}
+  },
+  "moat": {
+    "scores": {
+      "tech_barrier": {"score": 3, "detail": "国内射频开关/LNA龙头，并已切入PA和IPD滤波器。但在BAW滤波器和高端集成模组（DiFEM/L-PAMiD）领域，与Skyworks/Qorvo仍有明显差距。Fab-Lite转型中自建滤波器产线体现技术进取心"},
+      "scale_effect": {"score": 2, "detail": "2025年营收约34亿，较2021年峰值（46亿）明显下滑。三星大客户占比高但合作波动大。Fab-Lite重资产模式下规模效应尚未形成"},
+      "customer_stickiness": {"score": 3, "detail": "已进入三星/小米/OPPO/vivo/荣耀等主流手机品牌供应链，射频前端认证周期6-12个月。但手机OEM多供应商策略（2-3家）使得粘性不如垄断型模拟芯片"},
+      "brand_patent_license": {"score": 2, "detail": "国内射频前端品牌知名度最高，但在全球市场与Skyworks/Qorvo差距悬殊。Fab-Lite自建产能模式下专利积累在加速但尚未形成壁垒"},
+      "cost_advantage": {"score": 2, "detail": "国产替代的价格优势存在但不像模拟芯片那么显著，Fab-Lite自建产线增加了固定成本，2025年毛利率仅约32%且仍在承压"}
+    },
+    "trend_3_5yr": "收窄",
+    "core_risk": "Fab-Lite转型阵痛期持续亏损（Q1 2026亏损1.44亿），自建产线良率/产能利用率不及预期将加重亏损；手机射频前端市场增速放缓，竞争加剧"
+  },
+  "financials": {
+    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "metrics": {
+      "revenue_yi": [38.5, 42.0, 34.5, 8.28],
+      "net_profit_yi": [3.5, 1.8, 0.5, -1.44],
+      "gross_margin_pct": [36.0, 32.0, 30.0, 28.0],
+      "net_margin_pct": [9.1, 4.3, 1.4, -17.4],
+      "roe_pct": [3.5, 1.8, 0.5, -1.47],
+      "debt_ratio_pct": [25.0, 30.0, 35.0, 36.0],
+      "ocf_to_profit": [1.5, 1.0, 0.5, null],
+      "rd_ratio_pct": [12.0, 14.0, 16.0, null],
+      "ar_turnover_days": [55, 60, 65, null],
+      "inventory_turnover_days": [150, 170, 200, null]
+    },
+    "highlights": [
+      "Fab-Lite转型战略方向正确：自建滤波器产线若成功量产，将从Fabless升级为IDM化能力，长期竞争优势将大幅提升",
+      "研发投入持续加大（研发费用率16%+），在高端射频前端产品线布局上有战略耐心"
+    ],
+    "risk_points": [
+      "连续亏损恶化：2025年净利仅0.5亿，Q1 2026亏损1.44亿（-209.53%），毛利率从36%降至28%，经营全面恶化",
+      "存货周转天数高达200天，Q1 2026计提存货跌价8155万（+46.17%），库存积压严重",
+      "经营现金流Q1 2026为-1.84亿（-338.42%），现金持续净流出。总资产15.14亿中净资产9.72亿，财务缓冲尚可但持续亏损将快速消耗",
+      "营收从2024年42亿下滑至2025年34.5亿，手机射频前端市场增速放缓+竞争加剧导致量价齐跌"
+    ]
+  },
+  "growth": {
+    "short_term_6m": ["Q2 2026有望环比改善：手机新品备货旺季+自建滤波器产能利用率提升，但扭亏难度大", "5.5G/卫星通信射频前端新需求，带来高价值量产品机会"],
+    "mid_term_18m": ["芯卓湖光滤波器产线良率爬坡是关键：若良率从目前~40%提升至70%+，毛利率有望重回35%+", "DiFEM/L-PAMiD等高集成模组研发突破，若量产将进入安卓旗舰机射频前端供应链"],
+    "long_term_5y": ["国产射频前端替代率从<15%向40%+提升，市场空间3倍+", "5G/6G演进对射频前端数量和复杂度持续提升，单机价值量从$8向$15+增长"],
+    "tam_yi": 500, "penetration_pct": 6.9, "ceiling": "全球射频前端市场约200亿美元，国产化率<15%。若卓胜微成功转型并在高端模组取得突破，远期营收有望达150亿+"
+  },
+  "competition": {
+    "rivals": [
+      {"name": "Skyworks", "code": "SWKS（美股）", "market_cap": "~150亿美元", "tech_gap": "全球射频前端龙头，BAW滤波器+高集成模组（Sky5®）技术绝对领先。苹果核心供应商", "share_comparison": "营收~50亿美元", "differentiation": "IDM模式+苹果深度绑定，技术和客户壁垒极高"},
+      {"name": "Qorvo", "code": "QRVO（美股）", "market_cap": "~80亿美元", "tech_gap": "与Skyworks齐名的全球射频前端双雄，BAW/SAW滤波器+高集成PA模组技术领先", "share_comparison": "营收~35亿美元", "differentiation": "在基站射频前端（GaN PA）领域有独特优势"},
+      {"name": "唯捷创芯", "code": "688153", "market_cap": "~150亿", "tech_gap": "国内PA模组领先者，L-PAMiD等高端模组已在部分安卓旗舰导入。在PA细分领域技术领先卓胜微", "share_comparison": "营收约30亿接近卓胜微水平，但盈利能力更好", "differentiation": "聚焦PA模组，4G/5G PA国内份额第一，技术路线清晰"},
+      {"name": "村田（Murata）", "code": "6981.T", "market_cap": "~3万亿日元", "tech_gap": "SAW/BAW滤波器全球霸主，iPhone射频前端核心供应商。滤波器技术全球第一", "share_comparison": "射频业务营收远超国内厂商总和", "differentiation": "滤波器IDM模式+苹果深度合作，国产在滤波器领域差距最大"}
+    ],
+    "porter_five": {"new_entrants": "低", "supplier_power": "中", "buyer_power": "高", "substitutes": "中", "rivalry": "极高"}
+  },
+  "governance": {
+    "core_team": "创始人许志翰（董事长/总经理），技术出身（清华/加州大学）。核心团队持股比例高",
+    "incentive_alignment": "创始团队持股集中（汇智投资11.07%+许志翰3.21%+冯晨晖7.27%+姚立生5.97%），利益高度绑定",
+    "integrity_record": "无重大违规前科",
+    "shareholder_structure": {"institutional_pct": 25, "retail_pct": 75, "shareholder_count_trend": "Q1 2026股东总数7.04万户，机构参与度较低"}
+  },
+  "fund_attention": {
+    "holding_funds_count": 30, "total_holding_shares_wan": 3000, "holding_pct_of_float": 6.0,
+    "trend": "下降", "score": 3,
+    "comment": "持续亏损导致机构大幅减仓。明星基金经理基本清仓，仅剩少量指数/半导体ETF被动持仓"
+  },
+  "valuation": {
+    "current": {"pe_ttm": null, "pb": 3.9, "ps_ttm": 11.0},
+    "scenarios": {
+      "bull": {"assumptions": "2026年净利1亿（扭亏），滤波器良率突破70%+，PS 8x", "target_market_cap_yi": 320, "target_price": 60, "upside_pct": 58},
+      "base": {"assumptions": "2026年净利-0.5亿（减亏），PS 6x", "target_market_cap_yi": 230, "target_price": 43, "upside_pct": 13},
+      "bear": {"assumptions": "2026年净利-3亿（亏损扩大），PS 4x", "target_market_cap_yi": 150, "target_price": 28, "downside_pct": 26}
+    }
+  },
+  "risks": [
+    {"risk": "Fab-Lite转型失败：自建滤波器产线若良率长期无法突破，固定成本+折旧将持续拖累亏损，甚至被迫关停", "probability": "中", "impact": "极高", "mitigation": "跟踪芯卓湖光产线良率和产能利用率季度数据；若连续2季无明显改善需重新评估"},
+    {"risk": "手机市场持续疲软：2025年营收下滑18%，若2026年手机出货继续下滑将进一步压制射频前端需求", "probability": "中", "impact": "高", "mitigation": "关注全球手机出货量数据和三星/小米等核心客户订单趋势"},
+    {"risk": "技术迭代被甩开：唯捷创芯在PA模组、国际大厂在BAW滤波器上的技术领先持续拉大", "probability": "中", "impact": "高", "mitigation": "跟踪L-PAMiD/DiFEM等高端模组研发进展和客户认证情况"}
+  ],
+  "catalysts": [
+    {"time_window": "2026年8月", "event": "半年报：Q2是否减亏", "expected_impact": "若Q2亏损收窄至5000万以内将验证触底信号", "certainty": "高"},
+    {"time_window": "2026年H2", "event": "滤波器自建产线良率突破", "expected_impact": "若良率突破50%+将是重大拐点信号，驱动估值修复", "certainty": "低"},
+    {"time_window": "持续", "event": "DiFEM/L-PAMiD高端模组客户认证", "expected_impact": "进入安卓旗舰机供应链将打开高端市场空间", "certainty": "低"}
+  ],
+  "verdict": {
+    "core_thesis": "卓胜微正经历从Fabless射频开关龙头向Fab-Lite全品类射频前端厂商的艰难转型。2025年营收下滑18%、Q1 2026亏损1.44亿表明转型阵痛远超预期。自建滤波器产线的战略方向正确，但良率爬坡的不确定性和持续亏损对耐心的消耗是核心矛盾。当前PS 11x仍有溢价，不适合左侧抄底。",
+    "long_reasons": ["射频前端国产替代空间最大（国产化率<15%），若Fab-Lite转型成功将拥有国内稀缺的滤波器IDM能力", "5G/6G演进驱动单机射频前端价值量翻倍（$8→$15+），长期TAM扩张趋势确定", "创始团队持股高度集中，有强烈的扭亏动力和战略定力"],
+    "short_reasons": ["连续亏损恶化、毛利率从36%降至28%、经营现金流持续为负，基本面全面恶化且拐点不明", "自建滤波器产线是双刃剑：若良率无法突破，固定成本将成为无底洞。Qorvo/村田在滤波器领域的技术壁垒远超国产想象", "唯捷创芯在PA模组已领先身位，手机OEM多供应商策略决定了后来者追赶难度极大"],
+    "rating": "回避",
+    "suggested_position_pct": 0,
+    "holding_period": "短线",
+    "entry_strategy": "暂不参与。等待以下信号出现后再考虑：连续2个季度毛利率回升至30%+且经营现金流转正，或滤波器良率突破60%+。届时可轻仓试探（3%以内）",
+    "stop_loss_conditions": "不适用（当前不建议持仓）",
+    "key_tracking_metrics": ["自建滤波器产线良率和产能利用率（核心拐点指标）", "季度毛利率趋势（需从28%回升至30%+）", "经营现金流能否转正", "DiFEM/L-PAMiD等高端模组客户认证进展"]
+  }
+}

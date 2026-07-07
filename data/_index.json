@@ -1,0 +1,2153 @@
+{
+  "updated": "2026-07-07T23:03:28.022741",
+  "total": 113,
+  "stocks": [
+    {
+      "code": "000338",
+      "name": "潍柴动力",
+      "exchange": "SZ",
+      "industry": "汽车/汽车零部件/底盘与发动机系统",
+      "tags": [
+        "重卡发动机",
+        "AIDC电源",
+        "大缸径柴发",
+        "SOFC",
+        "智慧物流"
+      ],
+      "rating": "看好",
+      "pe": 26.4,
+      "marketCap": 2841,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "000636",
+      "name": "风华高科",
+      "exchange": "SZ",
+      "industry": "电子/元件/被动元件",
+      "tags": [
+        "MLCC",
+        "片式电阻",
+        "电感",
+        "AI算力",
+        "汽车电子"
+      ],
+      "rating": "谨慎",
+      "pe": 237.0,
+      "marketCap": 729,
+      "confidence": 4,
+      "position": 0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "000725",
+      "name": "京东方A",
+      "exchange": "SZ",
+      "industry": "电子/光学光电子/面板",
+      "tags": [
+        "LCD面板",
+        "OLED",
+        "柔性AMOLED",
+        "MLED",
+        "物联网"
+      ],
+      "rating": "看好",
+      "pe": 40.8,
+      "marketCap": 2486,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "000962",
+      "name": "东方钽业",
+      "exchange": "SZ",
+      "industry": "有色金属/小金属/其他小金属",
+      "tags": [
+        "钽铌金属",
+        "半导体靶材",
+        "钽电容",
+        "AI算力",
+        "超导材料"
+      ],
+      "rating": "中性",
+      "pe": 99.3,
+      "marketCap": 256,
+      "confidence": 4,
+      "position": 4.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002049",
+      "name": "紫光国微",
+      "exchange": "SZ",
+      "industry": "电子/半导体/集成电路设计",
+      "tags": [
+        "特种集成电路",
+        "FPGA",
+        "智能安全芯片",
+        "汽车电子",
+        "商业航天"
+      ],
+      "rating": "看好",
+      "pe": 44.0,
+      "marketCap": 713,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002050",
+      "name": "三花智控",
+      "exchange": "SZ",
+      "industry": "家用电器/家电零部件Ⅱ",
+      "tags": [
+        "制冷阀件",
+        "汽车热管理",
+        "新能源车",
+        "机器人执行器",
+        "液冷数据中心"
+      ],
+      "rating": "中性看好",
+      "pe": 46.25,
+      "marketCap": 1890.24,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002126",
+      "name": "银轮股份",
+      "exchange": "SZ",
+      "industry": "汽车/汽车零部件/热管理",
+      "tags": [
+        "汽车热管理",
+        "数据中心液冷",
+        "人形机器人",
+        "新能源车",
+        "储能温控"
+      ],
+      "rating": "中性看好",
+      "pe": 43.9,
+      "marketCap": 440,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002138",
+      "name": "顺络电子",
+      "exchange": "SZ",
+      "industry": "电子/元件/被动元件",
+      "tags": [
+        "片式电感龙头",
+        "AI算力",
+        "汽车电子",
+        "TLVR电感",
+        "钽电容"
+      ],
+      "rating": "中性",
+      "pe": 62.2,
+      "marketCap": 601,
+      "confidence": 4,
+      "position": 8,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002156",
+      "name": "通富微电",
+      "exchange": "SZ",
+      "industry": "电子/半导体/集成电路封测",
+      "tags": [
+        "先进封装",
+        "Chiplet",
+        "AMD产业链",
+        "AI算力",
+        "CPO光电合封"
+      ],
+      "rating": "中性",
+      "pe": 68.0,
+      "marketCap": 983.4,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002167",
+      "name": "东方锆业",
+      "exchange": "SZ",
+      "industry": "有色金属/小金属/其他小金属",
+      "tags": [
+        "锆制品",
+        "固态电池",
+        "新能源材料",
+        "氧化锆陶瓷",
+        "稀土永磁"
+      ],
+      "rating": "谨慎",
+      "pe": 190.4,
+      "marketCap": 100.5,
+      "confidence": 3,
+      "position": 3.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002185",
+      "name": "华天科技",
+      "exchange": "SZ",
+      "industry": "电子/半导体/集成电路封测",
+      "tags": [
+        "先进封装",
+        "Chiplet",
+        "封测",
+        "2.5D/3D封装",
+        "Fan-Out"
+      ],
+      "rating": "中性",
+      "pe": 89.0,
+      "marketCap": 633,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002281",
+      "name": "光迅科技",
+      "exchange": "SZ",
+      "industry": "通信/通信设备/光器件光模块",
+      "tags": [
+        "光模块",
+        "AI算力",
+        "光芯片",
+        "CPO",
+        "800G/1.6T"
+      ],
+      "rating": "中性看好",
+      "pe": 161.2,
+      "marketCap": 1711,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002353",
+      "name": "杰瑞股份",
+      "exchange": "SZ",
+      "industry": "机械设备/专用设备/能源及重型设备",
+      "tags": [
+        "油气装备",
+        "电驱压裂",
+        "燃气轮机",
+        "AI数据中心",
+        "天然气全产业链"
+      ],
+      "rating": "看好",
+      "pe": 62.7,
+      "marketCap": 1681,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002371",
+      "name": "北方华创",
+      "exchange": "SZ",
+      "industry": "电子/半导体/半导体设备",
+      "tags": [
+        "半导体设备",
+        "刻蚀设备",
+        "薄膜沉积",
+        "国产替代",
+        "AI算力"
+      ],
+      "rating": "看好",
+      "pe": 89.68,
+      "marketCap": 4836,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002384",
+      "name": "东山精密",
+      "exchange": "SZ",
+      "industry": "电子/元件/印制电路板",
+      "tags": [
+        "PCB",
+        "FPC",
+        "光模块",
+        "光芯片",
+        "AI算力"
+      ],
+      "rating": "看好",
+      "pe": 360.7,
+      "marketCap": 5000,
+      "confidence": 4,
+      "position": 8,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002407",
+      "name": "多氟多",
+      "exchange": "SZ",
+      "industry": "基础化工/化学制品/氟化工",
+      "tags": [
+        "六氟磷酸锂",
+        "锂电池电解液",
+        "氟化工",
+        "新能源电池",
+        "大圆柱电池"
+      ],
+      "rating": "中性看好",
+      "pe": 95.4,
+      "marketCap": 500,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-04"
+    },
+    {
+      "code": "002422",
+      "name": "科伦药业",
+      "exchange": "SZ",
+      "industry": "医药生物/化学制药/化学制剂",
+      "tags": [
+        "大输液龙头",
+        "ADC创新药",
+        "抗生素中间体",
+        "合成生物学",
+        "仿制药集采"
+      ],
+      "rating": "中性看好",
+      "pe": 38.5,
+      "marketCap": 605,
+      "confidence": 4,
+      "position": 5,
+      "analysis_date": "2026-07-04"
+    },
+    {
+      "code": "002428",
+      "name": "云南锗业",
+      "exchange": "SZ",
+      "industry": "有色金属/小金属/其他小金属",
+      "tags": [
+        "锗金属",
+        "磷化铟",
+        "化合物半导体",
+        "光模块上游",
+        "太空光伏"
+      ],
+      "rating": "强烈回避",
+      "pe": 3225,
+      "marketCap": 650,
+      "confidence": 4,
+      "position": 0.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002436",
+      "name": "兴森科技",
+      "exchange": "SZ",
+      "industry": "电子/元件/印制电路板",
+      "tags": [
+        "PCB样板",
+        "IC封装基板",
+        "FC-BGA",
+        "ABF载板",
+        "半导体测试板"
+      ],
+      "rating": "中性",
+      "pe": 48.2,
+      "marketCap": 65,
+      "confidence": 3,
+      "position": 3.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002452",
+      "name": "长高电新",
+      "exchange": "SZ",
+      "industry": "电力设备/电网设备/输变电设备",
+      "tags": [
+        "特高压",
+        "智能电网",
+        "配网改造",
+        "GIS组合电器",
+        "隔离开关龙头"
+      ],
+      "rating": "中性看好",
+      "pe": 23.1,
+      "marketCap": 85,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-07"
+    },
+    {
+      "code": "002463",
+      "name": "沪电股份",
+      "exchange": "SZ",
+      "industry": "电子/元件/印制电路板",
+      "tags": [
+        "PCB",
+        "AI服务器",
+        "高速网络交换机",
+        "智能汽车",
+        "HLC高层板"
+      ],
+      "rating": "看好",
+      "pe": 66.2,
+      "marketCap": 2759,
+      "confidence": 5,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002821",
+      "name": "凯莱英",
+      "exchange": "SZ",
+      "industry": "医药生物/医疗服务/医疗研发外包",
+      "tags": [
+        "CDMO",
+        "CRO",
+        "创新药",
+        "多肽药物",
+        "GLP-1"
+      ],
+      "rating": "中性看好",
+      "pe": 49.5,
+      "marketCap": 550,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002837",
+      "name": "英维克",
+      "exchange": "SZ",
+      "industry": "机械设备/通用设备/制冷空调设备",
+      "tags": [
+        "AI液冷",
+        "数据中心温控",
+        "储能温控",
+        "英伟达产业链",
+        "算力基建"
+      ],
+      "rating": "中性",
+      "pe": 184.7,
+      "marketCap": 892,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002851",
+      "name": "麦格米特",
+      "exchange": "SZ",
+      "industry": "电力设备/其他电源设备Ⅱ",
+      "tags": [
+        "AI服务器电源",
+        "英伟达产业链",
+        "HVDC",
+        "新能源车电控",
+        "工业自动化"
+      ],
+      "rating": "谨慎",
+      "pe": 637.0,
+      "marketCap": 930,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002916",
+      "name": "深南电路",
+      "exchange": "SZ",
+      "industry": "电子/元件/印制电路板",
+      "tags": [
+        "PCB",
+        "IC封装基板",
+        "AI算力",
+        "mSAP",
+        "ABF载板"
+      ],
+      "rating": "看好",
+      "pe": 58.9,
+      "marketCap": 2739,
+      "confidence": 4,
+      "position": 12.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002938",
+      "name": "鹏鼎控股",
+      "exchange": "SZ",
+      "industry": "电子/元件/印制电路板",
+      "tags": [
+        "PCB",
+        "FPC",
+        "苹果产业链",
+        "AI算力",
+        "AI眼镜"
+      ],
+      "rating": "中性看好",
+      "pe": 65.0,
+      "marketCap": 2500,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "002979",
+      "name": "雷赛智能",
+      "exchange": "SZ",
+      "industry": "机械设备/自动化设备/运动控制",
+      "tags": [
+        "运动控制",
+        "伺服系统",
+        "步进系统",
+        "人形机器人",
+        "工业自动化"
+      ],
+      "rating": "看好",
+      "pe": 78.1,
+      "marketCap": 175.8,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "003021",
+      "name": "兆威机电",
+      "exchange": "SZ",
+      "industry": "电力设备/电机Ⅱ",
+      "tags": [
+        "微型传动",
+        "灵巧手",
+        "人形机器人",
+        "汽车电子",
+        "精密制造"
+      ],
+      "rating": "中性看好",
+      "pe": 95.3,
+      "marketCap": 255,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300015",
+      "name": "爱尔眼科",
+      "exchange": "SZ",
+      "industry": "医药生物/医疗服务/医院",
+      "tags": [
+        "眼科医疗",
+        "连锁医疗",
+        "消费医疗",
+        "屈光手术",
+        "视光服务"
+      ],
+      "rating": "中性看好",
+      "pe": 23.2,
+      "marketCap": 783,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300054",
+      "name": "鼎龙股份",
+      "exchange": "SZ",
+      "industry": "电子/电子化学品Ⅱ",
+      "tags": [
+        "CMP抛光垫",
+        "CMP抛光液",
+        "晶圆光刻胶",
+        "OLED显示材料",
+        "先进封装"
+      ],
+      "rating": "中性",
+      "pe": 125.8,
+      "marketCap": 906,
+      "confidence": 4,
+      "position": 8,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300100",
+      "name": "双林股份",
+      "exchange": "SZ",
+      "industry": "汽车/汽车零部件/车身附件及饰件",
+      "tags": [
+        "人形机器人",
+        "行星滚柱丝杠",
+        "智能底盘",
+        "汽车零部件",
+        "新能源电驱"
+      ],
+      "rating": "中性看好",
+      "pe": 40.83,
+      "marketCap": 174.9,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300223",
+      "name": "北京君正",
+      "exchange": "SZ",
+      "industry": "电子/半导体/数字芯片设计",
+      "tags": [
+        "存储芯片",
+        "计算芯片",
+        "RISC-V",
+        "SRAM",
+        "DRAM"
+      ],
+      "rating": "中性",
+      "pe": 128,
+      "marketCap": 480,
+      "confidence": 4,
+      "position": 3.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300285",
+      "name": "国瓷材料",
+      "exchange": "SZ",
+      "industry": "电子/电子化学品Ⅱ",
+      "tags": [
+        "MLCC粉体",
+        "陶瓷材料平台",
+        "固态电池",
+        "牙科材料",
+        "低轨卫星"
+      ],
+      "rating": "回避",
+      "pe": 154.8,
+      "marketCap": 944,
+      "confidence": 4,
+      "position": 3.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300308",
+      "name": "中际旭创",
+      "exchange": "SZ",
+      "industry": "通信/通信设备/光通信",
+      "tags": [
+        "光模块",
+        "800G光模块",
+        "1.6T光模块",
+        "AI算力",
+        "CPO"
+      ],
+      "rating": "看好",
+      "pe": 65.2,
+      "marketCap": 9989,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300346",
+      "name": "南大光电",
+      "exchange": "SZ",
+      "industry": "电子/电子化学品Ⅱ",
+      "tags": [
+        "光刻胶",
+        "电子特气",
+        "MO源",
+        "前驱体材料",
+        "ArF光刻胶"
+      ],
+      "rating": "中性看好",
+      "pe": 77.27,
+      "marketCap": 383,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300373",
+      "name": "扬杰科技",
+      "exchange": "SZ",
+      "industry": "电子/半导体/分立器件",
+      "tags": [
+        "功率半导体",
+        "SiC碳化硅",
+        "IGBT",
+        "MOSFET",
+        "汽车电子"
+      ],
+      "rating": "看好",
+      "pe": 44.4,
+      "marketCap": 559,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300394",
+      "name": "天孚通信",
+      "exchange": "SZ",
+      "industry": "通信/通信设备/光器件",
+      "tags": [
+        "光器件",
+        "AI算力",
+        "CPO",
+        "800G/1.6T光引擎",
+        "FAU光纤阵列"
+      ],
+      "rating": "中性看好",
+      "pe": 143.4,
+      "marketCap": 2891,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300395",
+      "name": "菲利华",
+      "exchange": "SZ",
+      "industry": "国防军工/航空装备Ⅱ/航空装备Ⅲ",
+      "tags": [
+        "石英玻璃",
+        "半导体材料",
+        "军工航天",
+        "AI算力",
+        "光通讯"
+      ],
+      "rating": "看好",
+      "pe": 136.0,
+      "marketCap": 640,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300408",
+      "name": "三环集团",
+      "exchange": "SZ",
+      "industry": "电子/元件/被动元件",
+      "tags": [
+        "MLCC",
+        "电子陶瓷",
+        "光通信",
+        "SOFC",
+        "AI算力"
+      ],
+      "rating": "中性",
+      "pe": 90,
+      "marketCap": 2600,
+      "confidence": 5,
+      "position": 5,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300476",
+      "name": "胜宏科技",
+      "exchange": "SZ",
+      "industry": "电子/元件/印制电路板",
+      "tags": [
+        "AI算力PCB",
+        "HDI",
+        "高多层板",
+        "NVIDIA产业链",
+        "ASIC"
+      ],
+      "rating": "看好",
+      "pe": 72.8,
+      "marketCap": 3405,
+      "confidence": 4,
+      "position": 12.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300499",
+      "name": "高澜股份",
+      "exchange": "SZ",
+      "industry": "机械设备/专用设备",
+      "tags": [
+        "液冷服务器",
+        "特高压",
+        "AI算力",
+        "浸没式液冷",
+        "英伟达概念"
+      ],
+      "rating": "中性",
+      "pe": 387,
+      "marketCap": 118.1,
+      "confidence": 3,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "exchange": "SZ",
+      "industry": "通信/通信设备/光模块",
+      "tags": [
+        "光模块",
+        "AI算力",
+        "800G/1.6T",
+        "LPO",
+        "CPO"
+      ],
+      "rating": "看好",
+      "pe": 66.2,
+      "marketCap": 6970,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300604",
+      "name": "长川科技",
+      "exchange": "SZ",
+      "industry": "电子/半导体/半导体设备",
+      "tags": [
+        "半导体测试设备",
+        "SoC测试机",
+        "存储测试机",
+        "HBM",
+        "国产替代"
+      ],
+      "rating": "谨慎",
+      "pe": 104,
+      "marketCap": 1920,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300661",
+      "name": "圣邦股份",
+      "exchange": "SZ",
+      "industry": "电子/半导体/模拟芯片设计",
+      "tags": [
+        "模拟芯片",
+        "信号链",
+        "电源管理",
+        "Fabless",
+        "国产替代"
+      ],
+      "rating": "中性看好",
+      "pe": 119,
+      "marketCap": 650,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300666",
+      "name": "江丰电子",
+      "exchange": "SZ",
+      "industry": "电子/半导体/半导体材料",
+      "tags": [
+        "半导体靶材",
+        "溅射靶材",
+        "半导体零部件",
+        "国产替代",
+        "AI算力"
+      ],
+      "rating": "看好",
+      "pe": 74.0,
+      "marketCap": 370,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300726",
+      "name": "宏达电子",
+      "exchange": "SZ",
+      "industry": "国防军工/军工电子Ⅱ",
+      "tags": [
+        "军工电子",
+        "钽电容龙头",
+        "MLCC",
+        "国产替代",
+        "AI算力"
+      ],
+      "rating": "中性",
+      "pe": 86.8,
+      "marketCap": 348.0,
+      "confidence": 4,
+      "position": 8,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300759",
+      "name": "康龙化成",
+      "exchange": "SZ",
+      "industry": "医药生物/医疗服务/医疗研发外包",
+      "tags": [
+        "CXO",
+        "CRO",
+        "CDMO",
+        "创新药研发外包",
+        "GLP-1减肥药"
+      ],
+      "rating": "看好",
+      "pe": 27.0,
+      "marketCap": 514,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300782",
+      "name": "卓胜微",
+      "exchange": "SZ",
+      "industry": "电子/半导体/射频芯片",
+      "tags": [
+        "射频前端",
+        "射频开关",
+        "LNA",
+        "PA",
+        "滤波器"
+      ],
+      "rating": "回避",
+      "pe": null,
+      "marketCap": 380,
+      "confidence": 3,
+      "position": 0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "300990",
+      "name": "同飞股份",
+      "exchange": "SZ",
+      "industry": "机械设备/通用设备/制冷空调设备",
+      "tags": [
+        "液冷温控",
+        "储能温控",
+        "数据中心液冷",
+        "AI算力",
+        "工业温控"
+      ],
+      "rating": "看好",
+      "pe": 55.5,
+      "marketCap": 140.43,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "301018",
+      "name": "申菱环境",
+      "exchange": "SZ",
+      "industry": "机械设备/通用设备/制冷空调设备",
+      "tags": [
+        "液冷温控",
+        "数据中心",
+        "AI算力",
+        "华为产业链",
+        "核电空调"
+      ],
+      "rating": "中性看好",
+      "pe": 185,
+      "marketCap": 402,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "301200",
+      "name": "大族数控",
+      "exchange": "SZ",
+      "industry": "机械设备/专用设备/其他专用设备",
+      "tags": [
+        "PCB设备",
+        "AI算力",
+        "激光钻孔",
+        "机械钻孔",
+        "HDI"
+      ],
+      "rating": "谨慎",
+      "pe": 217,
+      "marketCap": 1790,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "301217",
+      "name": "铜冠铜箔",
+      "exchange": "SZ",
+      "industry": "电力设备/电池/锂电池",
+      "tags": [
+        "铜箔",
+        "HVLP铜箔",
+        "AI算力",
+        "PCB上游",
+        "锂电池"
+      ],
+      "rating": "回避",
+      "pe": 450,
+      "marketCap": 898,
+      "confidence": 4,
+      "position": 3.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "301308",
+      "name": "江波龙",
+      "exchange": "SZ",
+      "industry": "电子/半导体/集成电路",
+      "tags": [
+        "存储模组",
+        "企业级SSD",
+        "端侧AI存储",
+        "Lexar品牌",
+        "自研主控"
+      ],
+      "rating": "看好",
+      "pe": 13.0,
+      "marketCap": 2100,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "301377",
+      "name": "鼎泰高科",
+      "exchange": "SZ",
+      "industry": "机械设备/通用设备/金属制品",
+      "tags": [
+        "PCB钻针",
+        "AI算力",
+        "工业母机",
+        "机器人",
+        "涂层刀具"
+      ],
+      "rating": "强烈回避",
+      "pe": 367,
+      "marketCap": 2282,
+      "confidence": 4,
+      "position": 0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "301536",
+      "name": "星宸科技",
+      "exchange": "SZ",
+      "industry": "电子/半导体/数字芯片设计",
+      "tags": [
+        "AI SoC",
+        "视觉AI",
+        "安防芯片",
+        "机器人芯片",
+        "AI眼镜"
+      ],
+      "rating": "谨慎",
+      "pe": 93,
+      "marketCap": 491,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-07"
+    },
+    {
+      "code": "301580",
+      "name": "爱迪特",
+      "exchange": "SZ",
+      "industry": "医药生物/医疗器械/医疗耗材",
+      "tags": [
+        "口腔修复材料",
+        "氧化锆瓷块",
+        "数字化口腔",
+        "种植牙",
+        "医疗器械"
+      ],
+      "rating": "看好",
+      "pe": 33.0,
+      "marketCap": 65,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "600111",
+      "name": "北方稀土",
+      "exchange": "SH",
+      "industry": "有色金属/小金属/稀土",
+      "tags": [
+        "稀土",
+        "轻稀土龙头",
+        "白云鄂博",
+        "新能源上游",
+        "战略资源"
+      ],
+      "rating": "看好",
+      "pe": 64.2,
+      "marketCap": 1757,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "600160",
+      "name": "巨化股份",
+      "exchange": "SH",
+      "industry": "基础化工/化学制品/氟化工",
+      "tags": [
+        "氟化工",
+        "制冷剂配额",
+        "HFCs",
+        "PVDF",
+        "液冷"
+      ],
+      "rating": "看好",
+      "pe": 30.25,
+      "marketCap": 1144,
+      "confidence": 5,
+      "position": 15.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "600183",
+      "name": "生益科技",
+      "exchange": "SH",
+      "industry": "电子/元件/印制电路板",
+      "tags": [
+        "覆铜板",
+        "CCL",
+        "AI算力",
+        "PCB上游",
+        "高速材料"
+      ],
+      "rating": "看好",
+      "pe": 81.5,
+      "marketCap": 3200,
+      "confidence": 5,
+      "position": 15.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "600196",
+      "name": "复星医药",
+      "exchange": "SH",
+      "industry": "医药生物/化学制药/化学制剂",
+      "tags": [
+        "创新药",
+        "PD-1",
+        "ADC",
+        "CAR-T",
+        "生物类似药"
+      ],
+      "rating": "中性看好",
+      "pe": 17.7,
+      "marketCap": 614,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "600276",
+      "name": "恒瑞医药",
+      "exchange": "SH",
+      "industry": "医药生物/化学制药/化学制剂",
+      "tags": [
+        "创新药",
+        "抗癌药",
+        "ADC",
+        "GLP-1减肥药",
+        "PD-1"
+      ],
+      "rating": "看好",
+      "pe": 44.0,
+      "marketCap": 3614,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "600487",
+      "name": "亨通光电",
+      "exchange": "SH",
+      "industry": "通信/通信设备/通信线缆及配套",
+      "tags": [
+        "光纤光缆",
+        "AI算力",
+        "海洋能源",
+        "智能电网",
+        "空芯光纤"
+      ],
+      "rating": "看好",
+      "pe": 67.0,
+      "marketCap": 2200,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "600563",
+      "name": "法拉电子",
+      "exchange": "SH",
+      "industry": "电子/元件/被动元件",
+      "tags": [
+        "薄膜电容器",
+        "新能源车",
+        "光伏储能",
+        "特高压柔直",
+        "AI数据中心"
+      ],
+      "rating": "看好",
+      "pe": 29.5,
+      "marketCap": 353,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "600584",
+      "name": "长电科技",
+      "exchange": "SH",
+      "industry": "电子/半导体/集成电路封测",
+      "tags": [
+        "先进封装",
+        "Chiplet",
+        "XDFOI",
+        "CPO",
+        "2.5D/3D封装"
+      ],
+      "rating": "看好",
+      "pe": 49.0,
+      "marketCap": 767,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "601126",
+      "name": "四方股份",
+      "exchange": "SH",
+      "industry": "电力设备/电网设备/电网自动化设备",
+      "tags": [
+        "二次设备龙头",
+        "特高压",
+        "SST固态变压器",
+        "AIDC供电",
+        "储能"
+      ],
+      "rating": "中性看好",
+      "pe": 63.3,
+      "marketCap": 543,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "601208",
+      "name": "东材科技",
+      "exchange": "SH",
+      "industry": "基础化工/塑料",
+      "tags": [
+        "高速电子树脂",
+        "碳氢树脂",
+        "光学膜",
+        "MLCC离型膜",
+        "AI PCB上游"
+      ],
+      "rating": "中性",
+      "pe": 175,
+      "marketCap": 620,
+      "confidence": 4,
+      "position": 2.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "601689",
+      "name": "拓普集团",
+      "exchange": "SH",
+      "industry": "汽车/汽车零部件",
+      "tags": [
+        "汽车零部件",
+        "Tier0.5",
+        "特斯拉产业链",
+        "机器人执行器",
+        "液冷"
+      ],
+      "rating": "中性看好",
+      "pe": 36,
+      "marketCap": 1000,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "601727",
+      "name": "上海电气",
+      "exchange": "SH",
+      "industry": "电力设备/其他电源设备Ⅱ/综合电力设备商",
+      "tags": [
+        "能源装备",
+        "燃气轮机",
+        "核电",
+        "风电",
+        "储能"
+      ],
+      "rating": "谨慎",
+      "pe": 83.86,
+      "marketCap": 1082,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "601869",
+      "name": "长飞光纤",
+      "exchange": "SH",
+      "industry": "通信/通信设备/光纤光缆",
+      "tags": [
+        "光纤光缆",
+        "AI算力",
+        "空芯光纤",
+        "光互联组件",
+        "预制棒龙头"
+      ],
+      "rating": "中性看好",
+      "pe": 340,
+      "marketCap": 3933,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "601958",
+      "name": "金钼股份",
+      "exchange": "SH",
+      "industry": "有色金属/工业金属/钼",
+      "tags": [
+        "钼资源",
+        "稀缺金属",
+        "钢铁上游",
+        "航母钢",
+        "高端制造"
+      ],
+      "rating": "谨慎",
+      "pe": 24.3,
+      "marketCap": 823,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603186",
+      "name": "华正新材",
+      "exchange": "SH",
+      "industry": "电子/元件/印制电路板",
+      "tags": [
+        "覆铜板CCL",
+        "AI算力",
+        "高频高速材料",
+        "半导体封装材料",
+        "CBF积层膜"
+      ],
+      "rating": "回避",
+      "pe": 110.9,
+      "marketCap": 307,
+      "confidence": 4,
+      "position": 0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603256",
+      "name": "宏和科技",
+      "exchange": "SH",
+      "industry": "基础化工/玻纤/玻纤制造",
+      "tags": [
+        "电子玻璃纤维布",
+        "电子布",
+        "AI算力",
+        "PCB上游",
+        "CCL上游"
+      ],
+      "rating": "强烈回避",
+      "pe": 600,
+      "marketCap": 1880,
+      "confidence": 4,
+      "position": 0.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603259",
+      "name": "药明康德",
+      "exchange": "SH",
+      "industry": "医药生物/医疗服务/医疗研发外包",
+      "tags": [
+        "CXO",
+        "CRDMO",
+        "小分子CDMO",
+        "多肽",
+        "GLP-1"
+      ],
+      "rating": "中性看好",
+      "pe": 14.9,
+      "marketCap": 2860,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603308",
+      "name": "应流股份",
+      "exchange": "SH",
+      "industry": "机械设备/通用设备/金属制品",
+      "tags": [
+        "两机(航发+燃机)",
+        "高温合金精密铸造",
+        "核电铸件",
+        "AI数据中心",
+        "低空经济"
+      ],
+      "rating": "看好",
+      "pe": 118.3,
+      "marketCap": 413,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603501",
+      "name": "韦尔股份",
+      "exchange": "SH",
+      "industry": "电子/半导体/数字芯片设计",
+      "tags": [
+        "CIS图像传感器",
+        "豪威科技",
+        "半导体设计",
+        "汽车电子",
+        "安防监控"
+      ],
+      "rating": "看好",
+      "pe": 55,
+      "marketCap": 2200,
+      "confidence": 4,
+      "position": 7.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603662",
+      "name": "柯力传感",
+      "exchange": "SH",
+      "industry": "机械设备/通用设备/仪器仪表",
+      "tags": [
+        "应变式传感器",
+        "称重传感器",
+        "六维力传感器",
+        "机器人传感器",
+        "人形机器人"
+      ],
+      "rating": "中性看好",
+      "pe": 57.2,
+      "marketCap": 195,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603667",
+      "name": "五洲新春",
+      "exchange": "SH",
+      "industry": "机械设备/通用设备/金属制品",
+      "tags": [
+        "人形机器人",
+        "行星滚柱丝杠",
+        "轴承",
+        "新能源汽车零部件",
+        "汽车热管理"
+      ],
+      "rating": "谨慎",
+      "pe": 310.0,
+      "marketCap": 260,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603728",
+      "name": "鸣志电器",
+      "exchange": "SH",
+      "industry": "电力设备/电机Ⅱ",
+      "tags": [
+        "步进电机",
+        "空心杯电机",
+        "人形机器人",
+        "灵巧手",
+        "伺服系统"
+      ],
+      "rating": "中性看好",
+      "pe": 393,
+      "marketCap": 266,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603773",
+      "name": "沃格光电",
+      "exchange": "SH",
+      "industry": "电子/光学光电子",
+      "tags": [
+        "玻璃基板",
+        "TGV玻璃通孔",
+        "MiniLED",
+        "MicroLED",
+        "先进封装"
+      ],
+      "rating": "回避",
+      "pe": null,
+      "marketCap": 360,
+      "confidence": 3,
+      "position": 0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603893",
+      "name": "瑞芯微",
+      "exchange": "SH",
+      "industry": "电子/半导体/数字芯片设计",
+      "tags": [
+        "AIoT SoC",
+        "端侧AI",
+        "协处理器",
+        "智能座舱",
+        "机器人"
+      ],
+      "rating": "看好",
+      "pe": 65.3,
+      "marketCap": 758,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603986",
+      "name": "兆易创新",
+      "exchange": "SH",
+      "industry": "电子/半导体/数字芯片设计",
+      "tags": [
+        "NOR Flash",
+        "MCU",
+        "利基型DRAM",
+        "存储芯片",
+        "AI端侧"
+      ],
+      "rating": "看好",
+      "pe": 85,
+      "marketCap": 2500,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "605358",
+      "name": "立昂微",
+      "exchange": "SH",
+      "industry": "电子/半导体/集成电路",
+      "tags": [
+        "半导体硅片",
+        "12英寸大硅片",
+        "功率器件",
+        "化合物半导体",
+        "重掺硅片"
+      ],
+      "rating": "中性",
+      "pe": null,
+      "marketCap": 500,
+      "confidence": 4,
+      "position": 4.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "605376",
+      "name": "博迁新材",
+      "exchange": "SH",
+      "industry": "有色金属/能源金属",
+      "tags": [
+        "MLCC镍粉",
+        "纳米金属粉体",
+        "AI算力",
+        "光伏铜代银",
+        "专精特新"
+      ],
+      "rating": "看好",
+      "pe": 276.0,
+      "marketCap": 600,
+      "confidence": 5,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688008",
+      "name": "澜起科技",
+      "exchange": "SH",
+      "industry": "电子/半导体/数字芯片设计",
+      "tags": [
+        "内存接口芯片",
+        "DDR5",
+        "PCIe Retimer",
+        "CXL互连",
+        "AI算力"
+      ],
+      "rating": "谨慎",
+      "pe": 141.5,
+      "marketCap": 3618,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688012",
+      "name": "中微公司",
+      "exchange": "SH",
+      "industry": "电子/半导体/半导体设备",
+      "tags": [
+        "刻蚀设备",
+        "薄膜沉积",
+        "MOCVD",
+        "半导体设备国产替代",
+        "先进封装"
+      ],
+      "rating": "看好",
+      "pe": 122.5,
+      "marketCap": 2586,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688017",
+      "name": "绿的谐波",
+      "exchange": "SH",
+      "industry": "机械设备/自动化设备/机器人",
+      "tags": [
+        "谐波减速器",
+        "人形机器人",
+        "特斯拉Optimus",
+        "精密传动",
+        "国产替代"
+      ],
+      "rating": "谨慎",
+      "pe": 516.1,
+      "marketCap": 640,
+      "confidence": 4,
+      "position": 3,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688018",
+      "name": "乐鑫科技",
+      "exchange": "SH",
+      "industry": "电子/半导体/数字芯片设计",
+      "tags": [
+        "AIoT",
+        "WiFi-MCU",
+        "RISC-V",
+        "端侧AI",
+        "智能家居"
+      ],
+      "rating": "看好",
+      "pe": 42.6,
+      "marketCap": 212,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-04"
+    },
+    {
+      "code": "688019",
+      "name": "安集科技",
+      "exchange": "SH",
+      "industry": "电子/半导体/半导体材料",
+      "tags": [
+        "CMP抛光液",
+        "湿电子化学品",
+        "电镀液",
+        "半导体材料",
+        "国产替代"
+      ],
+      "rating": "看好",
+      "pe": 38,
+      "marketCap": 300,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688041",
+      "name": "海光信息",
+      "exchange": "SH",
+      "industry": "电子/半导体/数字芯片设计",
+      "tags": [
+        "CPU",
+        "DCU",
+        "AI算力",
+        "信创",
+        "x86兼容"
+      ],
+      "rating": "中性看好",
+      "pe": 199,
+      "marketCap": 5311,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688072",
+      "name": "拓荆科技",
+      "exchange": "SH",
+      "industry": "电子/半导体/半导体设备",
+      "tags": [
+        "半导体设备",
+        "薄膜沉积",
+        "CVD",
+        "ALD",
+        "PECVD"
+      ],
+      "rating": "谨慎",
+      "pe": 143.0,
+      "marketCap": 2352,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688082",
+      "name": "盛美上海",
+      "exchange": "SH",
+      "industry": "电子/半导体/半导体设备",
+      "tags": [
+        "半导体设备",
+        "清洗设备",
+        "国产替代",
+        "电镀设备",
+        "先进封装"
+      ],
+      "rating": "谨慎",
+      "pe": 154.0,
+      "marketCap": 1930,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688106",
+      "name": "金宏气体",
+      "exchange": "SH",
+      "industry": "电子/电子化学品/电子大宗气体",
+      "tags": [
+        "电子大宗气体",
+        "特种气体",
+        "现场制气",
+        "氦气",
+        "半导体材料"
+      ],
+      "rating": "中性看好",
+      "pe": 96.9,
+      "marketCap": 128,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688126",
+      "name": "沪硅产业",
+      "exchange": "SH",
+      "industry": "电子/半导体/半导体材料",
+      "tags": [
+        "半导体硅片",
+        "300mm大硅片",
+        "12英寸硅片",
+        "SOI硅片",
+        "国产替代"
+      ],
+      "rating": "谨慎",
+      "pe": null,
+      "marketCap": 919,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688146",
+      "name": "中船特气",
+      "exchange": "SH",
+      "industry": "电子/半导体/半导体材料",
+      "tags": [
+        "电子特气",
+        "六氟化钨",
+        "三氟化氮",
+        "半导体材料",
+        "中船系"
+      ],
+      "rating": "中性",
+      "pe": 119.4,
+      "marketCap": 413,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688160",
+      "name": "步科股份",
+      "exchange": "SH",
+      "industry": "机械设备/自动化设备/工控设备",
+      "tags": [
+        "人形机器人",
+        "无框力矩电机",
+        "伺服系统",
+        "工业自动化",
+        "协作机器人"
+      ],
+      "rating": "谨慎",
+      "pe": 167,
+      "marketCap": 124.4,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688234",
+      "name": "天岳先进",
+      "exchange": "SH",
+      "industry": "电子/半导体/半导体材料",
+      "tags": [
+        "碳化硅衬底",
+        "第三代半导体",
+        "SiC",
+        "8英寸衬底",
+        "12英寸衬底"
+      ],
+      "rating": "中性",
+      "pe": null,
+      "marketCap": 710,
+      "confidence": 4,
+      "position": 6.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688235",
+      "name": "百济神州",
+      "exchange": "SH",
+      "industry": "医药生物/化学制药/创新药",
+      "tags": [
+        "创新药",
+        "BTK抑制剂",
+        "PD-1单抗",
+        "BCL2抑制剂",
+        "ADC"
+      ],
+      "rating": "看好",
+      "pe": 108,
+      "marketCap": 3420,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688249",
+      "name": "晶合集成",
+      "exchange": "SH",
+      "industry": "电子/半导体/集成电路制造",
+      "tags": [
+        "晶圆代工",
+        "DDIC",
+        "CIS",
+        "PMIC",
+        "OLED驱动"
+      ],
+      "rating": "谨慎",
+      "pe": 198,
+      "marketCap": 1227,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688266",
+      "name": "泽璟制药",
+      "exchange": "SH",
+      "industry": "医药生物/化学制药",
+      "tags": [
+        "创新药",
+        "肿瘤免疫",
+        "双抗/三抗",
+        "小分子靶向药",
+        "重组蛋白药物"
+      ],
+      "rating": "中性看好",
+      "pe": 62.9,
+      "marketCap": 320,
+      "confidence": 4,
+      "position": 5,
+      "analysis_date": "2026-07-04"
+    },
+    {
+      "code": "688268",
+      "name": "华特气体",
+      "exchange": "SH",
+      "industry": "电子/电子化学品Ⅱ/电子特气",
+      "tags": [
+        "电子特气",
+        "半导体材料",
+        "光刻气",
+        "氦气",
+        "国产替代"
+      ],
+      "rating": "谨慎",
+      "pe": 219,
+      "marketCap": 296,
+      "confidence": 4,
+      "position": 3.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688300",
+      "name": "联瑞新材",
+      "exchange": "SH",
+      "industry": "基础化工/非金属材料Ⅱ/非金属材料Ⅲ",
+      "tags": [
+        "硅微粉",
+        "球形二氧化硅",
+        "先进封装",
+        "HBM",
+        "覆铜板CCL"
+      ],
+      "rating": "谨慎",
+      "pe": 168,
+      "marketCap": 505,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688322",
+      "name": "奥比中光",
+      "exchange": "SH",
+      "industry": "电子/光学光电子/3D视觉感知",
+      "tags": [
+        "3D视觉",
+        "机器人视觉",
+        "具身智能",
+        "人形机器人",
+        "AI端侧硬件"
+      ],
+      "rating": "谨慎",
+      "pe": 456,
+      "marketCap": 615,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688331",
+      "name": "荣昌生物",
+      "exchange": "SH",
+      "industry": "医药生物/化学制药/生物制品",
+      "tags": [
+        "ADC",
+        "自免",
+        "泰它西普",
+        "维迪西妥单抗",
+        "PD-1/VEGF双抗"
+      ],
+      "rating": "中性",
+      "pe": 120,
+      "marketCap": 850,
+      "confidence": 4,
+      "position": 4.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688347",
+      "name": "华虹公司",
+      "exchange": "SSE",
+      "industry": "电子/半导体/集成电路制造",
+      "tags": [
+        "晶圆代工",
+        "特色工艺",
+        "功率半导体",
+        "MCU",
+        "嵌入式存储"
+      ],
+      "rating": "谨慎",
+      "pe": 1014,
+      "marketCap": 3824,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688428",
+      "name": "诺诚健华",
+      "exchange": "SH",
+      "industry": "医药生物/化学制药/化学制剂",
+      "tags": [
+        "创新药",
+        "BTK抑制剂",
+        "BCL-2抑制剂",
+        "TYK2抑制剂",
+        "自身免疫疾病"
+      ],
+      "rating": "中性",
+      "pe": 80.2,
+      "marketCap": 515,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688498",
+      "name": "源杰科技",
+      "exchange": "SH",
+      "industry": "电子/半导体/光芯片",
+      "tags": [
+        "光芯片",
+        "DFB激光器",
+        "EML芯片",
+        "CW大功率光源",
+        "硅光"
+      ],
+      "rating": "谨慎",
+      "pe": 637.7,
+      "marketCap": 1218,
+      "confidence": 4,
+      "position": 3.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688506",
+      "name": "百利天恒",
+      "exchange": "SH",
+      "industry": "医药生物/化学制药",
+      "tags": [
+        "创新药",
+        "ADC",
+        "双抗ADC",
+        "BMS合作",
+        "EGFR×HER3"
+      ],
+      "rating": "中性",
+      "pe": null,
+      "marketCap": 1404,
+      "confidence": 4,
+      "position": 5,
+      "analysis_date": "2026-07-04"
+    },
+    {
+      "code": "688519",
+      "name": "南亚新材",
+      "exchange": "SH",
+      "industry": "电子/元件/印制电路板",
+      "tags": [
+        "覆铜板CCL",
+        "高速CCL",
+        "AI算力PCB上游",
+        "IC载板",
+        "国产替代"
+      ],
+      "rating": "中性",
+      "pe": 50,
+      "marketCap": 120,
+      "confidence": 4,
+      "position": 3.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688535",
+      "name": "华海诚科",
+      "exchange": "SH",
+      "industry": "电子/半导体/半导体材料",
+      "tags": [
+        "环氧塑封料",
+        "先进封装",
+        "半导体材料",
+        "国产替代",
+        "HBM"
+      ],
+      "rating": "中性",
+      "pe": 150.61,
+      "marketCap": 153.07,
+      "confidence": 4,
+      "position": 5,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688578",
+      "name": "艾力斯",
+      "exchange": "SH",
+      "industry": "医药生物/化学制药/化学制剂",
+      "tags": [
+        "创新药",
+        "EGFR-TKI",
+        "非小细胞肺癌",
+        "KRAS G12C",
+        "肺癌靶向治疗"
+      ],
+      "rating": "中性看好",
+      "pe": 25.9,
+      "marketCap": 566,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688676",
+      "name": "金盘科技",
+      "exchange": "SH",
+      "industry": "电力设备/电网设备",
+      "tags": [
+        "干式变压器",
+        "AI数据中心(AIDC)",
+        "固态变压器(SST)",
+        "海外电网",
+        "储能"
+      ],
+      "rating": "看好",
+      "pe": 56.0,
+      "marketCap": 369,
+      "confidence": 4,
+      "position": 10.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688766",
+      "name": "普冉股份",
+      "exchange": "SH",
+      "industry": "电子/半导体/集成电路设计",
+      "tags": [
+        "NOR Flash",
+        "EEPROM",
+        "存储芯片",
+        "MCU",
+        "SLC NAND"
+      ],
+      "rating": "中性看好",
+      "pe": 269,
+      "marketCap": 595,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "688981",
+      "name": "中芯国际",
+      "exchange": "SH",
+      "industry": "电子/半导体/集成电路制造",
+      "tags": [
+        "晶圆代工",
+        "半导体制造",
+        "国产替代",
+        "先进制程",
+        "成熟制程"
+      ],
+      "rating": "中性",
+      "pe": 198.4,
+      "marketCap": 10000,
+      "confidence": 4,
+      "position": 5,
+      "analysis_date": "2026-07-03"
+    }
+  ]
+}

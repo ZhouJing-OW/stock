@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投研数据库索引</title>
+<style>
+  :root {
+    --bg: #fafaf9; --card-bg: #ffffff; --text: #1c1917;
+    --text-secondary: #78716c; --text-muted: #a8a29e; --border: #e7e5e4;
+    --accent: #2563eb; --green: #16a34a; --amber: #d97706; --red: #dc2626;
+    --slate: #64748b; --slate-bg: #f8fafc;
+    --radius: 10px; --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .container { max-width:1800px; margin:0 auto; padding:40px 48px 80px; }
+
+  .page-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; padding-bottom:16px; border-bottom:2px solid var(--border); flex-wrap:wrap; gap:12px; }
+  .page-header h1 { font-size:26px; font-weight:700; letter-spacing:-0.5px; }
+  .page-header .stats { font-size:14px; color:var(--text-muted); }
+  .page-header .stats strong { color:var(--accent); font-size:18px; }
+
+  .filter-bar { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:20px; padding:8px 0; }
+  .filter-btn { padding:5px 14px; border-radius:100px; border:1px solid var(--border); background:var(--card-bg); cursor:pointer; font-size:13px; font-weight:500; color:var(--text-secondary); transition:all 0.15s; white-space:nowrap; }
+  .filter-btn:hover { border-color:var(--accent); color:var(--accent); }
+  .filter-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .filter-btn .count { font-size:11px; opacity:0.7; margin-left:2px; }
+
+  .industry-group { margin-bottom:28px; }
+  .industry-title { font-size:15px; font-weight:700; color:var(--text-secondary); padding:8px 0; margin-bottom:10px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+  .industry-title .count { font-size:12px; font-weight:500; color:var(--text-muted); background:var(--slate-bg); padding:2px 10px; border-radius:100px; }
+  .stock-list { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:10px; }
+  .stock-card { display:flex; flex-direction:column; gap:8px; padding:16px 18px; background:var(--card-bg); border:1px solid var(--border); border-radius:8px; box-shadow:var(--shadow); cursor:pointer; transition:border-color 0.15s,box-shadow 0.15s; text-decoration:none; color:inherit; }
+  .stock-card:hover { border-color:var(--accent); box-shadow:0 2px 8px rgba(37,99,235,0.1); }
+  .stock-card.stale { background:#f8f8f7; border-color:#e7e5e4; }
+  .stock-card.stale:hover { border-color:var(--amber); }
+  .stock-card .code { font-family:"JetBrains Mono","SF Mono","Cascadia Code",monospace; font-size:11px; color:var(--text-muted); }
+  .stock-card .name { font-size:15px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .stock-card .tags { display:flex; gap:4px; flex-wrap:wrap; overflow:hidden; }
+  .stock-card .tags span { font-size:10px; padding:1px 6px; border-radius:100px; background:var(--slate-bg); color:var(--slate); border:1px solid var(--border); white-space:nowrap; }
+  .stock-card .row { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+
+  .rating { display:inline-block; padding:3px 12px; border-radius:100px; font-size:12px; font-weight:600; flex-shrink:0; min-width:64px; text-align:center; }
+  .rating.strong-buy { background:#dcfce7; color:#15803d; }
+  .rating.buy { background:#dcfce7; color:#16a34a; }
+  .rating.mild-buy { background:#f0fdf4; color:#65a30d; }
+  .rating.neutral { background:var(--slate-bg); color:var(--slate); }
+  .rating.cautious { background:#fff7ed; color:#c2410c; }
+  .rating.avoid { background:#fee2e2; color:#b91c1c; }
+  .rating.strong-avoid { background:#fee2e2; color:#dc2626; }
+  .stars { font-size:13px; color:var(--amber); white-space:nowrap; }
+
+  .state-msg { text-align:center; padding:60px 20px; color:var(--text-muted); grid-column:1/-1; }
+  .loader { width:32px; height:32px; border:3px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin 0.8s linear infinite; margin:0 auto 16px; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+
+  .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:1000; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.2s; }
+  .modal-overlay.active { opacity:1; pointer-events:auto; }
+  .modal { background:var(--card-bg); border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,0.2); width:min(900px,95vw); max-height:80vh; display:flex; flex-direction:column; }
+  .modal-header { padding:16px 24px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+  .modal-header h2 { font-size:16px; font-weight:700; }
+  .modal-close { width:32px; height:32px; border-radius:8px; border:1px solid var(--border); background:none; cursor:pointer; font-size:18px; color:var(--text-muted); display:flex; align-items:center; justify-content:center; }
+  .modal-close:hover { background:var(--slate-bg); }
+  .modal-body { padding:16px 24px 24px; overflow-y:auto; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:8px; }
+
+  @media (max-width:800px) { .container { padding:24px 16px 60px; } .stock-list { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="container" id="app">
+  <div class="state-msg"><div class="loader"></div><h2>加载数据库中...</h2></div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header"><h2 id="modalTitle"></h2><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const RO = { '强烈看好':0,'看好':1,'中性看好':2,'中性':3,'谨慎':4,'回避':5,'强烈回避':6 };
+const RC = { '强烈看好':'strong-buy','看好':'buy','中性看好':'mild-buy','中性':'neutral','谨慎':'cautious','回避':'avoid','强烈回避':'strong-avoid' };
+let allStocks = [];
+let _filter = null;
+let _freshOnly = false;
+
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+async function main() {
+  let stocks = [];
+  try {
+    const ctrl = new AbortController(); setTimeout(() => ctrl.abort(), 5000);
+    const r = await fetch('data/_index.json?t='+Date.now(), {signal:ctrl.signal});
+    if (r.ok) { const m = await r.json(); stocks = m.stocks || []; }
+  } catch(e) {}
+
+  if (!stocks.length) {
+    document.getElementById('app').innerHTML = '<div class="state-msg"><h2>数据库为空</h2><p>还没有完成任何基本面分析。</p></div>';
+    return;
+  }
+  allStocks = stocks;
+  render();
+}
+
+function render() {
+  const currentFilter = _filter;
+  let displayStocks = currentFilter !== null ? allStocks.filter(s => (RO[s.rating]??7) <= currentFilter) : allStocks;
+  if (_freshOnly) {
+    displayStocks = displayStocks.filter(s => s.analysis_date && (Date.now()-new Date(s.analysis_date).getTime())/86400000 <= 90);
+  }
+
+  // Group
+  const pg = {};
+  for (const s of displayStocks) {
+    const parts = (s.industry||'其他').split('/');
+    const p = parts[0]||'其他', sec = parts[1]||'其他';
+    if (!pg[p]) pg[p] = { all:[], sec:{} };
+    pg[p].all.push(s);
+    if (!pg[p].sec[sec]) pg[p].sec[sec] = [];
+    pg[p].sec[sec].push(s);
+  }
+
+  const dgs = [];
+  for (const [p, data] of Object.entries(pg)) {
+    if (data.all.length > 20) {
+      const items = [];
+      for (const [sec, ss] of Object.entries(data.sec)) {
+        ss.sort((a,b) => (RO[a.rating]??7)-(RO[b.rating]??7) || (b.position||0)-(a.position||0));
+        items.push({ title: p+' · '+sec, stocks: ss });
+      }
+      items.sort((a,b) => { for (const t of [0,1,2]) { const d = b.stocks.filter(s=>(RO[s.rating]??7)===t).length - a.stocks.filter(s=>(RO[s.rating]??7)===t).length; if (d) return d; } return a.stocks.length-b.stocks.length; });
+      dgs.push({ items, all: data.all });
+    } else {
+      data.all.sort((a,b) => (RO[a.rating]??7)-(RO[b.rating]??7) || (b.position||0)-(a.position||0));
+      dgs.push({ items: [{ title: p, stocks: data.all }], all: data.all });
+    }
+  }
+  dgs.sort((a,b) => { for (const t of [0,1,2]) { const d = b.all.filter(s=>(RO[s.rating]??7)===t).length - a.all.filter(s=>(RO[s.rating]??7)===t).length; if (d) return d; } return a.all.length-b.all.length; });
+
+  let h = '';
+  const labels = ['全部','强烈看好','看好','中性看好','中性','谨慎','回避','强烈回避'];
+  const values = [null,0,1,2,3,4,5,6];
+
+  // Filter bar - all tiers from selected and above get highlighted
+  h += '<div class="filter-bar">';
+  for (let i = 0; i < labels.length; i++) {
+    const v = values[i], cnt = v===null ? allStocks.length : allStocks.filter(s => (RO[s.rating]??7) <= v).length;
+    const active = (v !== null && currentFilter !== null && v <= currentFilter) || (currentFilter === v);
+    h += '<button class="filter-btn'+(active?' active':'')+'" onclick="_filter='+(v===null?'null':v)+';render()">'+labels[i]+'<span class="count">'+cnt+'</span></button>';
+  }
+  h += '</div>';
+
+  // Header with fresh-only button on right
+  const bought = displayStocks.filter(s => ['强烈看好','看好'].includes(s.rating)).length;
+  const freshCnt = allStocks.filter(s => s.analysis_date && (Date.now()-new Date(s.analysis_date).getTime())/86400000 <= 90).length;
+  h += '<div class="page-header"><div><h1>基本面分析数据库</h1><div class="stats">共 <strong>'+displayStocks.length+'</strong> 只标的 · '+bought+' 只看好 · '+new Date().toLocaleDateString('zh-CN')+'</div></div>';
+  h += '<button class="filter-btn'+(_freshOnly?' active':'')+'" onclick="_freshOnly=!_freshOnly;render()">仅有效<span class="count">'+freshCnt+'</span></button>';
+  h += '</div>';
+
+  // Groups
+  for (const dg of dgs) {
+    for (const item of dg.items) {
+      h += '<div class="industry-group"><div class="industry-title">'+esc(item.title)+'<span class="count">'+item.stocks.length+'只</span></div><div class="stock-list">';
+      for (const s of item.stocks) {
+        const cls = RC[s.rating]||'neutral';
+        let daysOld = 999;
+        if (s.analysis_date) daysOld = Math.floor((Date.now() - new Date(s.analysis_date).getTime()) / 86400000);
+        const stale = daysOld > 90 ? ' stale' : '';
+        const peStr = s.pe ? 'PE '+s.pe : '', capStr = s.marketCap ? s.marketCap+'亿' : '';
+        const stars = '★'.repeat(s.confidence||0)+'☆'.repeat(5-(s.confidence||0));
+        const posStr = s.position ? s.position+'%' : '';
+        const tagsHtml = (s.tags||[]).map(t => '<span onclick="event.preventDefault();event.stopPropagation();showModal(\''+esc(t)+'\')" style="cursor:pointer" title="点击查看同概念个股">'+esc(t)+'</span>').join('');
+        h += '<a class="stock-card'+stale+'" href="viewer.html?code='+s.code+'" target="_blank">';
+        h += '<div class="row"><span class="name">'+esc(s.name)+' <span onclick="event.preventDefault();event.stopPropagation();showModal(null,\''+esc(s.industry||'')+'\')" style="font-weight:400;font-size:12px;color:var(--text-muted);cursor:pointer" title="点击查看同三级分类个股">'+(s.industry||'')+'</span></span><span class="rating '+cls+'">'+s.rating+'</span></div>';
+        h += '<span class="code">'+s.code+' · '+(s.exchange||'')+'</span>';
+        h += '<span class="tags">'+tagsHtml+'</span>';
+        h += '<div class="row" style="font-size:12px;color:var(--text-secondary)">';
+        h += '<span>市值 <b style="color:var(--text);font-family:JetBrains Mono,monospace">'+(capStr||'—')+'</b></span>';
+        h += '<span><b style="color:var(--text);font-family:JetBrains Mono,monospace">'+(peStr||'—')+'</b></span>';
+        h += '<span class="stars">'+stars+'</span>';
+        if (posStr) h += '<span>仓位 <b style="color:var(--text)">'+posStr+'</b></span>';
+        h += '</div></a>';
+      }
+      h += '</div></div>';
+    }
+  }
+
+  document.getElementById('app').innerHTML = h;
+}
+
+function showModal(tag, industry) {
+  let filtered;
+  let title;
+  if (industry) {
+    filtered = allStocks.filter(s => s.industry === industry);
+    title = esc(industry);
+  } else {
+    filtered = allStocks.filter(s => (s.tags||[]).includes(tag));
+    title = '"'+esc(tag)+'"';
+  }
+  if (!filtered.length) return;
+  filtered.sort((a,b) => (RO[a.rating]??7)-(RO[b.rating]??7) || (b.position||0)-(a.position||0));
+  document.getElementById('modalTitle').textContent = title+' · '+filtered.length+' 只';
+  let h = '';
+  for (const s of filtered) {
+    const cls = RC[s.rating]||'neutral';
+    let daysOld = 999;
+    if (s.analysis_date) daysOld = Math.floor((Date.now()-new Date(s.analysis_date).getTime())/86400000);
+    const stale = daysOld > 90 ? ' stale' : '';
+    const peStr = s.pe ? 'PE '+s.pe : '', capStr = s.marketCap ? s.marketCap+'亿' : '';
+    const stars = '★'.repeat(s.confidence||0)+'☆'.repeat(5-(s.confidence||0));
+    const posStr = s.position ? s.position+'%' : '';
+    h += '<a class="stock-card'+stale+'" href="viewer.html?code='+s.code+'" target="_blank">';
+    h += '<div class="row"><span class="name">'+esc(s.name)+'</span><span class="rating '+cls+'">'+s.rating+'</span></div>';
+    h += '<span class="code">'+s.code+' · '+(s.exchange||'')+'</span>';
+    h += '<div class="row" style="font-size:12px;color:var(--text-secondary)">';
+    if (capStr) h += '<span>市值 <b>'+capStr+'</b></span>';
+    if (peStr) h += '<span><b>'+peStr+'</b></span>';
+    h += '<span class="stars">'+stars+'</span>';
+    if (posStr) h += '<span>仓位 <b>'+posStr+'</b></span>';
+    h += '</div></a>';
+  }
+  document.getElementById('modalBody').innerHTML = h;
+  document.getElementById('modalOverlay').classList.add('active');
+}
+
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modalOverlay')) return;
+  document.getElementById('modalOverlay').classList.remove('active');
+}
+document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+
+main();
+</script>
+</body>
+</html>

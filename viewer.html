@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基本面分析</title>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --card-bg: #ffffff;
+    --text: #1c1917;
+    --text-secondary: #78716c;
+    --text-muted: #a8a29e;
+    --border: #e7e5e4;
+    --accent: #2563eb;
+    --accent-light: #eff6ff;
+    --green: #16a34a;
+    --green-bg: #f0fdf4;
+    --amber: #d97706;
+    --amber-bg: #fffbeb;
+    --red: #dc2626;
+    --red-bg: #fef2f2;
+    --slate: #64748b;
+    --slate-bg: #f8fafc;
+    --radius: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 32px 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  @media (max-width: 1100px) {
+    .container {
+      grid-template-columns: 1fr;
+      max-width: 860px;
+      padding: 32px 24px 80px;
+    }
+  }
+
+  /* ===== Header ===== */
+  .header {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    grid-column: 1 / -1;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .header-identity h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+
+  .header-identity .code {
+    font-size: 15px;
+    color: var(--text-secondary);
+    font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  }
+
+  .header-identity .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .header-identity .tags span {
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 100px;
+    background: var(--slate-bg);
+    color: var(--slate);
+    border: 1px solid var(--border);
+  }
+
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .rating-badge.strong-buy { background: #dcfce7; color: #15803d; }
+  .rating-badge.buy       { background: #dcfce7; color: #16a34a; }
+  .rating-badge.mild-buy  { background: #f0fdf4; color: #65a30d; }
+  .rating-badge.neutral   { background: var(--slate-bg); color: var(--slate); }
+  .rating-badge.cautious  { background: #fff7ed; color: #c2410c; }
+  .rating-badge.avoid     { background: #fee2e2; color: #b91c1c; }
+  .rating-badge.strong-avoid { background: #fee2e2; color: #dc2626; }
+
+  /* TDX Jump Button */
+  .tdx-btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 6px; border: 1px solid var(--border);
+    background: var(--card-bg); cursor: pointer; font-size: 12px; font-weight: 500;
+    color: var(--text-secondary); transition: all 0.15s; vertical-align: middle;
+  }
+  .tdx-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+  .tdx-btn.copied { border-color: var(--green); color: var(--green); background: var(--green-bg); }
+
+  .header-metrics {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+  }
+
+  @media (max-width: 900px) {
+    .header-metrics { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .header-metrics { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .header-metric {
+    text-align: center;
+    padding: 12px 8px;
+    background: var(--bg);
+    border-radius: 8px;
+  }
+
+  .header-metric .value {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  }
+
+  .header-metric .label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* ===== Section ===== */
+  .section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    break-inside: avoid;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  /* ===== Tables ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 12px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  .trend-up   { color: var(--green); }
+  .trend-down { color: var(--red); }
+  .trend-flat { color: var(--slate); }
+
+  /* ===== Info Rows ===== */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+  }
+
+  @media (max-width: 600px) {
+    .info-grid { grid-template-columns: 1fr; }
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .info-item .info-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .info-item .info-value {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* ===== Score Bars ===== */
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+  }
+
+  .score-row + .score-row { border-top: 1px solid var(--border); }
+
+  .score-label {
+    width: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .score-bar-wrap {
+    flex: 1;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .score-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease;
+  }
+
+  .score-bar.low    { background: var(--red); }
+  .score-bar.mid    { background: var(--amber); }
+  .score-bar.high   { background: var(--green); }
+
+  .score-num {
+    width: 28px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .score-detail {
+    font-size: 12px;
+    color: var(--text-secondary);
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ===== Level Badges ===== */
+  .level {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 4px;
+  }
+
+  .level-hi { background: var(--red-bg); color: var(--red); }
+  .level-md { background: var(--amber-bg); color: var(--amber); }
+  .level-lo { background: var(--green-bg); color: var(--green); }
+
+  /* ===== Fund Attention ===== */
+  .fund-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 700px) {
+    .fund-metrics { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .fund-metric {
+    text-align: center;
+    padding: 16px 12px;
+    background: var(--bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .fund-metric .fm-value {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  }
+
+  .fund-metric .fm-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .fund-trend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .fund-trend.rising  { background: var(--green-bg); color: var(--green); }
+  .fund-trend.stable  { background: var(--slate-bg); color: var(--slate); }
+  .fund-trend.falling { background: var(--red-bg); color: var(--red); }
+
+  /* ===== Risk & Catalyst Cards ===== */
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .card-item .card-meta {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+
+  .card-item .card-body {
+    flex: 1;
+    font-size: 14px;
+  }
+
+  /* ===== Verdict ===== */
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .verdict-grid { grid-template-columns: 1fr; }
+  }
+
+  .verdict-pro {
+    background: var(--green-bg);
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 18px;
+  }
+
+  .verdict-con {
+    background: var(--red-bg);
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 18px;
+  }
+
+  .verdict-pro h4 { color: var(--green); margin-bottom: 8px; font-size: 14px; }
+  .verdict-con h4 { color: var(--red); margin-bottom: 8px; font-size: 14px; }
+
+  .verdict-pro li, .verdict-con li {
+    font-size: 13px;
+    margin-bottom: 6px;
+    list-style-position: inside;
+  }
+
+  .verdict-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+  }
+
+  .verdict-action {
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .verdict-action .va-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .verdict-action .va-value {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* ===== Loading/Error ===== */
+  .state-msg {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+    grid-column: 1 / -1;
+  }
+
+  .state-msg h2 { margin-bottom: 8px; }
+  .state-msg .loader { 
+    width: 32px; height: 32px; 
+    border: 3px solid var(--border); 
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ===== Print ===== */
+  @media print {
+    body { background: white; }
+    .section, .header { box-shadow: none; break-inside: avoid; }
+  }
+
+  /* ===== Utility ===== */
+  .muted { color: var(--text-muted); }
+  .mono { font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace; }
+  .mt-2 { margin-top: 8px; }
+  .mt-3 { margin-top: 12px; }
+  .mt-4 { margin-top: 16px; }
+  .mb-2 { margin-bottom: 8px; }
+  .mb-3 { margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<div class="container" id="app">
+  <div class="state-msg">
+    <div class="loader"></div>
+    <h2>加载基本面数据...</h2>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// 基本面分析统一查看器 v2.0
+// 用法: viewer.html?code=002384
+// 数据: data/{code}.json (同源 HTTP 服务)
+// ============================================================
+
+const LEVEL_MAP = {
+  '强': 'hi', '高': 'hi',
+  '中': 'md',
+  '弱': 'lo', '低': 'lo', '无': 'lo'
+};
+
+const RATING_CLASS = {
+  '强烈看好': 'strong-buy',
+  '看好': 'buy',
+  '中性看好': 'mild-buy',
+  '中性': 'neutral',
+  '谨慎': 'cautious',
+  '回避': 'avoid',
+  '强烈回避': 'strong-avoid'
+};
+
+const TREND_ICON = { 'up': '▲', 'down': '▼', 'flat': '─' };
+
+function parseTrend(t) {
+  if (!t) return '';
+  const s = String(t).toLowerCase();
+  if (s.includes('增长') || s.includes('改善') || s.includes('上升') || s.includes('up')) return 'up';
+  if (s.includes('下降') || s.includes('恶化') || s.includes('下滑') || s.includes('down')) return 'down';
+  return 'flat';
+}
+
+function fmtNum(n, unit = '') {
+  if (n === null || n === undefined || n === '') return '—';
+  if (typeof n === 'string') return n;
+  return n.toLocaleString('zh-CN') + unit;
+}
+
+function fmtPct(n) {
+  if (n === null || n === undefined || n === '') return '—';
+  return n + '%';
+}
+
+function fmtYi(n) {
+  if (n === null || n === undefined || n === '') return '—';
+  if (n >= 10000) return (n / 10000).toFixed(2) + ' 万亿';
+  return n.toFixed(0) + ' 亿';
+}
+
+function fmtLevel(lvl) {
+  const cls = LEVEL_MAP[lvl] || 'md';
+  return `<span class="level level-${cls}">${lvl || '—'}</span>`;
+}
+
+function scoreBarClass(s) {
+  if (s >= 4) return 'high';
+  if (s >= 2) return 'mid';
+  return 'low';
+}
+
+function confidenceStars(n) {
+  if (!n || n === 0) return '☆☆☆☆☆';
+  return '★'.repeat(n) + '☆'.repeat(5 - n);
+}
+
+// ---- 主渲染 ----
+async function main() {
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+
+  if (!code) {
+    renderError('请指定股票代码', '用法: viewer.html?code=002384');
+    return;
+  }
+
+  try {
+    const resp = await fetch(`data/${code}.json?t=${Date.now()}`);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const d = await resp.json();
+    document.title = d.meta.name + ' (' + d.meta.code + ')';
+    render(d);
+  } catch (e) {
+    renderError(
+      `无法加载 ${code} 的分析数据`,
+      '文件可能不存在，或 HTTP 服务未启动。<br>请确认 <code>data/' + code + '.json</code> 已生成。'
+    );
+  }
+}
+
+function renderError(title, detail) {
+  document.getElementById('app').innerHTML = `
+    <div class="state-msg">
+      <h2>${title}</h2>
+      <p>${detail}</p>
+    </div>`;
+}
+
+function render(d) {
+  const m = d.meta || {};
+  const ratingCls = RATING_CLASS[d.verdict?.rating] || 'neutral';
+
+  let html = '';
+
+  // ==================== HEADER ====================
+  html += `<div class="header">
+    <div class="header-top">
+      <div class="header-identity">
+        <h1>${esc(m.name || '—')} <button class="tdx-btn" onclick="jumpToTDX('${m.code}')" title="在通达信中打开">通达信打开</button></h1>
+        <div class="code">${m.code} · ${m.exchange} · ${m.shenwan_industry || ''}</div>
+        <div class="tags">${(m.concept_tags || []).map(t => `<span>${esc(t)}</span>`).join('')}</div>
+      </div>
+      <div class="rating-badge ${ratingCls}">${d.verdict?.rating || '未评级'}</div>
+    </div>
+    <div class="header-metrics">
+      ${metricCell('总市值', fmtYi(m.market_cap || d.overview?.total_market_cap_yi))}
+      ${metricCell('PE-TTM', fmtNum(m.pe_ttm || d.overview?.pe_ttm))}
+      ${metricCell('PB', fmtNum(m.pb || d.overview?.pb))}
+      ${metricCell('置信度', confidenceStars(m.confidence))}
+      ${metricCell('分析日期', m.analysis_date || '—')}
+      ${metricCell('财报期', m.fiscal_period || '—')}
+    </div>
+  </div>`;
+
+  // ==================== 1. 公司速览 ====================
+  const ov = d.overview || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">1</div><span class="section-title">公司速览</span></div>
+    <div class="info-grid mb-3">
+      ${infoRow('全称', ov.full_name)}
+      ${infoRow('上市板块', ov.market)}
+      ${infoRow('实控人', ov.controller)}
+      ${infoRow('员工人数', fmtNum(ov.employees, ' 人'))}
+      ${infoRow('一句话概括', ov.one_liner)}
+    </div>`;
+
+  if (ov.revenue_segments?.length) {
+    html += `<table>
+      <thead><tr><th>业务板块</th><th>营收占比</th><th>毛利率</th><th>同比增速</th></tr></thead>
+      <tbody>${ov.revenue_segments.map(s => `
+        <tr>
+          <td><strong>${esc(s.segment)}</strong></td>
+          <td>${fmtPct(s.revenue_pct)}</td>
+          <td>${fmtPct(s.gross_margin_pct)}</td>
+          <td>${fmtPct(s.yoy_growth_pct)}</td>
+        </tr>`).join('')}</tbody>
+    </table>`;
+  }
+  html += `</div>`;
+
+  // ==================== 2. 产业链定位 ====================
+  const sc = d.supply_chain || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">2</div><span class="section-title">产业链定位</span></div>
+    <div class="info-grid mb-3">
+      ${infoRow('公司位置', sc.position)}
+      ${infoRow('上游', sc.upstream)}
+      ${infoRow('下游', sc.downstream)}
+      ${infoRow('对上游议价力', fmtLevel(sc.upstream_bargaining?.level) + (sc.upstream_bargaining?.reason ? ` <span class="muted">${esc(sc.upstream_bargaining.reason)}</span>` : ''))}
+      ${infoRow('对下游议价力', fmtLevel(sc.downstream_bargaining?.level) + (sc.downstream_bargaining?.reason ? ` <span class="muted">${esc(sc.downstream_bargaining.reason)}</span>` : ''))}
+      ${infoRow('替代风险', fmtLevel(sc.substitution_risk?.level) + (sc.substitution_risk?.by_whom ? ` <span class="muted">— ${esc(sc.substitution_risk.by_whom)}</span>` : ''))}
+    </div>`;
+
+  const scDetail = sc.supply_constraints;
+  if (scDetail?.has_hard_constraint || scDetail?.capacity_bottleneck || scDetail?.license_barrier || scDetail?.key_material_dependency) {
+    html += `<div class="card-list">
+      ${scDetail.capacity_bottleneck ? `<div class="card-item"><div class="card-body"><strong>产能瓶颈：</strong>${esc(scDetail.capacity_bottleneck)}</div></div>` : ''}
+      ${scDetail.license_barrier ? `<div class="card-item"><div class="card-body"><strong>牌照/资质门槛：</strong>${esc(scDetail.license_barrier)}</div></div>` : ''}
+      ${scDetail.key_material_dependency ? `<div class="card-item"><div class="card-body"><strong>关键原材料依赖：</strong>${esc(scDetail.key_material_dependency)}</div></div>` : ''}
+    </div>`;
+  }
+  html += `</div>`;
+
+  // ==================== 3. 护城河深度 ====================
+  const mt = d.moat || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">3</div><span class="section-title">护城河深度</span></div>`;
+
+  const moatDims = [
+    ['tech_barrier', '技术壁垒'],
+    ['scale_effect', '规模效应'],
+    ['customer_stickiness', '客户粘性'],
+    ['brand_patent_license', '品牌/专利'],
+    ['cost_advantage', '成本优势']
+  ];
+
+  for (const [key, label] of moatDims) {
+    const s = mt.scores?.[key] || {};
+    const score = s.score || 0;
+    html += `<div class="score-row">
+      <div class="score-label">${label}</div>
+      <div class="score-bar-wrap"><div class="score-bar ${scoreBarClass(score)}" style="width:${score*20}%"></div></div>
+      <div class="score-num">${score}</div>
+      <div class="score-detail">${esc(s.detail || '')}</div>
+    </div>`;
+  }
+
+  html += `<div class="mt-3 info-grid">
+    ${infoRow('3-5年趋势', mt.trend_3_5yr || '—')}
+    ${infoRow('核心风险', mt.core_risk || '—')}
+  </div></div>`;
+
+  // ==================== 4. 财务体检 ====================
+  const fin = d.financials || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">4</div><span class="section-title">财务体检</span></div>`;
+
+  const periods = fin.periods || ['T-2', 'T-1', 'T-0'];
+  const metrics = fin.metrics || {};
+
+  const metricRows = [
+    ['revenue_yi', '营业收入（亿）'],
+    ['net_profit_yi', '归母净利润（亿）'],
+    ['gross_margin_pct', '毛利率 (%)'],
+    ['net_margin_pct', '净利率 (%)'],
+    ['roe_pct', 'ROE (%)'],
+    ['debt_ratio_pct', '资产负债率 (%)'],
+    ['ocf_to_profit', '经营现金流/净利润'],
+    ['rd_ratio_pct', '研发费用率 (%)'],
+    ['ar_turnover_days', '应收周转天数'],
+    ['inventory_turnover_days', '存货周转天数']
+  ];
+
+  html += `<table>
+    <thead><tr><th>指标</th>${periods.map(p => `<th>${p}</th>`).join('')}<th>趋势</th></tr></thead>
+    <tbody>`;
+  
+  for (const [key, label] of metricRows) {
+    const vals = metrics[key] || [];
+    html += `<tr><td>${label}</td>`;
+    for (const v of vals) {
+      html += `<td>${fmtNum(v)}</td>`;
+    }
+    // Trend: compare last two ANNUAL values (ignore quarterly to avoid distortion)
+    const annualIndices = [];
+    (periods || []).forEach((p, i) => {
+      if (/^\d{4}$/.test(p)) annualIndices.push(i);
+    });
+    // If only quarters available, fallback to comparing last two values
+    let compareIndices = annualIndices.length >= 2
+      ? [annualIndices[annualIndices.length - 2], annualIndices[annualIndices.length - 1]]
+      : (vals.filter(v => v !== null && v !== undefined).length >= 2 ? null : []);
+
+    let trend = '';
+    if (compareIndices && compareIndices.length === 2) {
+      const prev = vals[compareIndices[0]], curr = vals[compareIndices[1]];
+      if (prev != null && curr != null) {
+        if (curr > prev) trend = '<span class="trend-up">▲ 改善</span>';
+        else if (curr < prev) trend = '<span class="trend-down">▼ 恶化</span>';
+        else trend = '<span class="trend-flat">─ 持平</span>';
+      }
+    } else if (compareIndices === null) {
+      // No annual data but have quarterly: compare last two filled
+      const nonNull = vals.filter(v => v !== null && v !== undefined);
+      if (nonNull.length >= 2) {
+        const first = nonNull[nonNull.length - 2], last = nonNull[nonNull.length - 1];
+        if (last > first) trend = '<span class="trend-up">▲ 环比</span>';
+        else if (last < first) trend = '<span class="trend-down">▼ 环比</span>';
+        else trend = '<span class="trend-flat">─ 持平</span>';
+      }
+    }
+    html += `<td>${trend}</td></tr>`;
+  }
+  html += `</tbody></table>`;
+
+  if (fin.highlights?.length) {
+    html += `<div class="mt-3"><strong>亮点：</strong>${fin.highlights.map(h => esc(h)).join('；')}</div>`;
+  }
+  if (fin.risk_points?.length) {
+    html += `<div class="mt-2"><strong>风险点：</strong>${fin.risk_points.map(r => esc(r)).join('；')}</div>`;
+  }
+  html += `</div>`;
+
+  // ==================== 5. 成长驱动力 ====================
+  const gr = d.growth || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">5</div><span class="section-title">成长驱动力</span></div>`;
+
+  ['short_term_6m', 'mid_term_18m', 'long_term_5y'].forEach((key, i) => {
+    const titles = ['短期催化剂 (0-6月)', '中期引擎 (6-18月)', '长期叙事 (2-5年)'];
+    const items = gr[key] || [];
+    if (items.length) {
+      html += `<div class="mb-3"><strong>${titles[i]}</strong><ul>${items.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`;
+    }
+  });
+
+  html += `<div class="info-grid mt-3">
+    ${infoRow('可寻址市场 (TAM)', fmtYi(gr.tam_yi))}
+    ${infoRow('当前渗透率', fmtPct(gr.penetration_pct))}
+    ${infoRow('增长天花板', esc(gr.ceiling))}
+  </div></div>`;
+
+  // ==================== 6. 竞争格局 ====================
+  const comp = d.competition || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">6</div><span class="section-title">竞争格局</span></div>`;
+
+  if (comp.rivals?.length) {
+    html += `<table>
+      <thead><tr><th>对手</th><th>市值</th><th>技术差距</th><th>份额对比</th><th>差异化</th></tr></thead>
+      <tbody>${comp.rivals.map(r => `
+        <tr>
+          <td><strong>${esc(r.name)}</strong>${r.code ? ' <span class="muted mono">'+esc(r.code)+'</span>' : ''}</td>
+          <td>${esc(r.market_cap || '—')}</td>
+          <td>${esc(r.tech_gap || '—')}</td>
+          <td>${esc(r.share_comparison || '—')}</td>
+          <td>${esc(r.differentiation || '—')}</td>
+        </tr>`).join('')}</tbody>
+    </table>`;
+  }
+
+  const pf = comp.porter_five || {};
+  html += `<div class="mt-3"><strong>波特五力速评</strong></div>
+    <div class="info-grid mt-2">
+      ${infoRow('新进入者威胁', fmtLevel(pf.new_entrants))}
+      ${infoRow('供应商议价力', fmtLevel(pf.supplier_power))}
+      ${infoRow('买方议价力', fmtLevel(pf.buyer_power))}
+      ${infoRow('替代品威胁', fmtLevel(pf.substitutes))}
+      ${infoRow('现有竞争者强度', fmtLevel(pf.rivalry))}
+    </div></div>`;
+
+  // ==================== 7. 管理层与治理 ====================
+  const gv = d.governance || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">7</div><span class="section-title">管理层与治理</span></div>
+    <div class="info-grid">
+      ${infoRow('核心团队', gv.core_team)}
+      ${infoRow('激励与利益绑定', gv.incentive_alignment)}
+      ${infoRow('治理结构', gv.board_structure)}
+      ${infoRow('历史诚信记录', gv.integrity_record)}
+      ${infoRow('机构持股比例', fmtPct(gv.shareholder_structure?.institutional_pct))}
+      ${infoRow('股东户数趋势', gv.shareholder_structure?.shareholder_count_trend || '—')}
+    </div></div>`;
+
+  // ==================== 8. 基金关注度 ====================
+  const fa = d.fund_attention || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">8</div><span class="section-title">基金关注度</span></div>
+    <div class="fund-metrics">
+      ${fundMetric('持有基金数', fmtNum(fa.holding_funds_count, ' 家'))}
+      ${fundMetric('基金持股总量', fmtNum(fa.total_holding_shares_wan, ' 万股'))}
+      ${fundMetric('持股占流通股', fmtPct(fa.holding_pct_of_float))}
+      ${fundMetric('新进基金', fmtNum(fa.new_entries, ' 家'))}
+      ${fundMetric('退出基金', fmtNum(fa.exits, ' 家'))}
+      ${fundMetric('重仓排名', fa.heavy_position_rank ? '第 ' + fa.heavy_position_rank + ' 位' : '—')}
+      ${fundMetric('近期调研', fmtNum(fa.recent_research_visits, ' 次'))}
+      ${fundMetric('关注度评分', fa.score ? fa.score + ' / 10' : '—')}
+    </div>`;
+
+  if (fa.star_manager_holdings?.length) {
+    html += `<div class="mt-3"><strong>明星基金经理持仓：</strong>${fa.star_manager_holdings.map(m => esc(m)).join('、')}</div>`;
+  }
+
+  if (fa.qoq_change) {
+    html += `<div class="mt-2"><strong>环比变动：</strong>${esc(fa.qoq_change)}</div>`;
+  }
+
+  const trendKey = (fa.trend || '稳定');
+  const trendCls = trendKey.includes('上升') || trendKey.includes('增') ? 'rising' :
+                   trendKey.includes('下降') || trendKey.includes('减') ? 'falling' : 'stable';
+  html += `<div class="fund-trend ${trendCls}">
+    <strong>趋势判断：</strong>${esc(fa.trend)}${fa.comment ? ' — ' + esc(fa.comment) : ''}
+  </div></div>`;
+
+  // ==================== 9. 估值锚点 ====================
+  const val = d.valuation || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">9</div><span class="section-title">估值锚点</span></div>`;
+
+  const cur = val.current || {};
+  html += `<table>
+    <thead><tr><th>指标</th><th>当前值</th><th>历史分位数</th><th>行业中位数</th></tr></thead>
+    <tbody>
+      <tr><td>PE-TTM</td><td>${fmtNum(cur.pe_ttm)}</td><td>${fmtPct(cur.pe_percentile)}</td><td>${fmtNum(cur.pe_industry_median)}</td></tr>
+      <tr><td>PB</td><td>${fmtNum(cur.pb)}</td><td>${fmtPct(cur.pb_percentile)}</td><td>${fmtNum(cur.pb_industry_median)}</td></tr>
+      <tr><td>PS-TTM</td><td>${fmtNum(cur.ps_ttm)}</td><td>—</td><td>${fmtNum(cur.ps_industry_median)}</td></tr>
+      <tr><td>EV/EBITDA</td><td>${fmtNum(cur.ev_ebitda)}</td><td>—</td><td>${fmtNum(cur.ev_ebitda_industry_median)}</td></tr>
+    </tbody>
+  </table>`;
+
+  html += `<div class="mt-3"><strong>情景推演</strong></div>
+  <table>
+    <thead><tr><th>情景</th><th>假设</th><th>目标市值</th><th>目标价</th><th>空间</th></tr></thead>
+    <tbody>`;
+  
+  const scenarios = [
+    ['bull', '乐观', 'up'],
+    ['base', '基准', 'flat'],
+    ['bear', '悲观', 'down']
+  ];
+  for (const [key, label, dir] of scenarios) {
+    const sc = val.scenarios?.[key] || {};
+    const space = dir === 'up' ? `+${fmtPct(sc.upside_pct)}` :
+                  dir === 'down' ? `−${fmtPct(sc.downside_pct)}` : '—';
+    const spaceCls = dir === 'up' ? 'trend-up' : dir === 'down' ? 'trend-down' : '';
+    html += `<tr>
+      <td><strong>${label}</strong></td>
+      <td>${esc(sc.assumptions || '—')}</td>
+      <td class="mono">${fmtYi(sc.target_market_cap_yi)}</td>
+      <td class="mono">${fmtNum(sc.target_price)}</td>
+      <td class="${spaceCls}"><strong>${space}</strong></td>
+    </tr>`;
+  }
+  html += `</tbody></table></div>`;
+
+  // ==================== 10. 风险矩阵 ====================
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">10</div><span class="section-title">风险矩阵</span></div>
+    <div class="card-list">${(d.risks || []).map(r => `
+      <div class="card-item">
+        <div class="card-meta">
+          ${fmtLevel(r.probability)}
+          ${fmtLevel(r.impact)}
+        </div>
+        <div class="card-body">
+          <strong>${esc(r.risk)}</strong>
+          ${r.mitigation ? `<div class="muted mt-2">应对：${esc(r.mitigation)}</div>` : ''}
+        </div>
+      </div>`).join('')}
+    </div></div>`;
+
+  // ==================== 11. 催化剂日历 ====================
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">11</div><span class="section-title">催化剂日历</span></div>
+    <table>
+      <thead><tr><th>时间窗口</th><th>事件</th><th>预期影响</th><th>确定性</th></tr></thead>
+      <tbody>${(d.catalysts || []).map(c => `
+        <tr>
+          <td class="mono">${esc(c.time_window || '—')}</td>
+          <td>${esc(c.event)}</td>
+          <td>${esc(c.expected_impact || '—')}</td>
+          <td>${fmtLevel(c.certainty)}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table></div>`;
+
+  // ==================== 12. 综合研判 ====================
+  const vd = d.verdict || {};
+  html += `<div class="section">
+    <div class="section-header"><div class="section-num">12</div><span class="section-title">综合研判</span></div>
+    <p class="mb-3"><strong>核心逻辑：</strong>${esc(vd.core_thesis || '—')}</p>
+    
+    <div class="verdict-grid">
+      <div class="verdict-pro">
+        <h4>✅ 做多逻辑</h4>
+        <ol>${(vd.long_reasons || []).map(r => `<li>${esc(r)}</li>`).join('')}</ol>
+      </div>
+      <div class="verdict-con">
+        <h4>❌ 做空/回避逻辑</h4>
+        <ol>${(vd.short_reasons || []).map(r => `<li>${esc(r)}</li>`).join('')}</ol>
+      </div>
+    </div>
+
+    <div class="verdict-actions">
+      ${vaCell('评级', vd.rating || '—')}
+      ${vaCell('建议仓位', vd.suggested_position_pct ? vd.suggested_position_pct + '%' : '—')}
+      ${vaCell('持有周期', vd.holding_period || '—')}
+      ${vaCell('建仓策略', vd.entry_strategy || '—')}
+      ${vaCell('止损条件', vd.stop_loss_conditions || '—')}
+    </div>
+
+    ${vd.key_tracking_metrics?.length ? `
+    <div class="mt-4">
+      <strong>关键跟踪指标：</strong>${vd.key_tracking_metrics.map(m => esc(m)).join('、')}
+    </div>` : ''}
+  </div>`;
+
+  // Footer
+  html += `<div style="text-align:center; padding:24px; color:var(--text-muted); font-size:12px; grid-column: 1 / -1;">
+    Hanako 基本面分析系统 · stock-research v2.0 · ${m.analysis_date || ''}
+  </div>`;
+
+  document.getElementById('app').innerHTML = html;
+}
+
+// ---- Helpers ----
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function metricCell(label, value) {
+  return `<div class="header-metric"><div class="value">${value}</div><div class="label">${label}</div></div>`;
+}
+
+function infoRow(label, value) {
+  return `<div class="info-item"><span class="info-label">${label}</span><span class="info-value">${value || '—'}</span></div>`;
+}
+
+function fundMetric(label, value) {
+  return `<div class="fund-metric"><div class="fm-value">${value}</div><div class="fm-label">${label}</div></div>`;
+}
+
+function vaCell(label, value) {
+  return `<div class="verdict-action"><div class="va-label">${label}</div><div class="va-value">${value}</div></div>`;
+}
+
+// Boot
+main();
+
+async function jumpToTDX(code) {
+  const marker = 'TDX_JUMP:' + code;
+  try {
+    await navigator.clipboard.writeText(marker);
+    const btn = document.querySelector('.tdx-btn');
+    if (btn) { btn.textContent = '已复制 ✓'; btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '通达信打开'; btn.classList.remove('copied'); }, 2000); }
+  } catch(e) {
+    alert('请手动复制代码: ' + code);
+  }
+}
+</script>
+</body>
+</html>

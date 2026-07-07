@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "code": "300661", "name": "圣邦股份", "exchange": "SZ", "shenwan_industry": "电子/半导体/模拟芯片设计",
+    "concept_tags": ["模拟芯片", "信号链", "电源管理", "Fabless", "国产替代", "车规芯片", "AI算力电源", "消费电子"],
+    "analysis_date": "2026-07-03", "fiscal_period": "2026Q1", "confidence": 4, "status": "active", "last_updated": "2026-07-03T22:55:00"
+  },
+  "overview": {
+    "full_name": "圣邦微电子（北京）股份有限公司", "market": "深交所创业板", "listed_since": "2017-06-06",
+    "total_market_cap_yi": 650, "float_market_cap_yi": 500, "pe_ttm": 119, "pb": 11.9,
+    "controller": "创始团队（无实际控制人）", "employees": 1200,
+    "one_liner": "国内模拟芯片龙头，38大类6800+款产品覆盖信号链+电源管理全矩阵，国产模拟芯片替代的核心受益标的",
+    "revenue_segments": [
+      {"segment": "信号链（运放/ADC/DAC/接口）", "revenue_pct": 45, "gross_margin_pct": 55, "yoy_growth_pct": 15},
+      {"segment": "电源管理（LDO/DC-DC/PMU/驱动）", "revenue_pct": 50, "gross_margin_pct": 48, "yoy_growth_pct": 18},
+      {"segment": "传感器（温度/磁）", "revenue_pct": 5, "gross_margin_pct": 45, "yoy_growth_pct": 20}
+    ]
+  },
+  "supply_chain": {
+    "position": "Fabless模拟芯片设计公司，上游晶圆代工以台积电为主（合作20年+），封测外包长电/通富/华天。下游客户覆盖消费电子/工业/汽车/通信等广泛领域",
+    "upstream": "晶圆代工（台积电为主/中芯国际/东部高科）、封装测试（长电科技/通富微电/华天科技/嘉盛）",
+    "downstream": "消费电子（华为/小米/OPPO/vivo）、工业能源（汇川/阳光电源）、汽车电子（比亚迪/博世）、AI服务器电源（浪潮/新华三）",
+    "upstream_bargaining": {"level": "中", "reason": "与台积电20年+合作关系稳固，但Fabless模式天然对头部代工厂议价能力有限。近年拓展中芯国际/东部高科分散风险"},
+    "downstream_bargaining": {"level": "中", "reason": "模拟芯片品类分散（6800+款），单品价值量低（几美分到几美元），客户分散度高降低了对单一客户的依赖"},
+    "substitution_risk": {"level": "中", "by_whom": "德州仪器/ADI/英飞凌等国际巨头在高端模拟芯片领域技术领先不可替代。但在中低端通用模拟芯片领域，国产替代空间巨大", "cycle_years": 5},
+    "supply_constraints": {"capacity_bottleneck": "台积电成熟制程产能充裕，短期无产能瓶颈。自建江阴测试基地已投产，增强测试环节自主可控", "license_barrier": "无特殊牌照门槛。车规级认证（AEC-Q100）在推进中", "key_material_dependency": "成熟制程晶圆供应充足，关键原材料依赖度较低", "has_hard_constraint": false}
+  },
+  "moat": {
+    "scores": {
+      "tech_barrier": {"score": 3, "detail": "38大类6800+款产品，品类广度国内第一，但以中低端通用模拟芯片为主。高端精密运放/高速ADC等与国际巨头（TI/ADI）差距5-10年。研发人员占比72.75%体现技术驱动基因"},
+      "scale_effect": {"score": 3, "detail": "2025年营收38.98亿，国内模拟芯片营收最大之一。但相比TI（130亿美元）和ADI（100亿美元）差距悬殊。6800+款产品的长尾效应意味着单品类规模优势有限"},
+      "customer_stickiness": {"score": 4, "detail": "模拟芯片一旦设计入客户电路板（Design-in），替换成本极高，客户粘性强。经销商网络覆盖广，下游客户分散（无单一客户占比>5%），收入稳定性好"},
+      "brand_patent_license": {"score": 3, "detail": "「圣邦微」品牌在国内模拟芯片领域知名度最高。年新申请专利141项，IP积累持续增长。但品牌溢价远不如TI/ADI"},
+      "cost_advantage": {"score": 3, "detail": "国产替代的性价比优势（较TI/ADI价格低30-50%），但2025年毛利率50.94%显著低于TI（65%+），说明成本优势未充分转化为超额利润"}
+    },
+    "trend_3_5yr": "拓宽",
+    "core_risk": "高端模拟芯片技术突破缓慢，长期困于中低端市场；Fabless模式供应链集中风险；消费电子占比高(~50%)，受终端需求周期波动影响大"
+  },
+  "financials": {
+    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "metrics": {
+      "revenue_yi": [26.5, 33.5, 38.98, 10.98],
+      "net_profit_yi": [3.8, 5.0, 5.47, 1.24],
+      "gross_margin_pct": [52.0, 51.5, 50.94, 51.6],
+      "net_margin_pct": [14.3, 14.9, 13.71, 11.3],
+      "roe_pct": [7.5, 9.5, 10.3, 2.31],
+      "debt_ratio_pct": [20.0, 22.0, 24.0, 24.0],
+      "ocf_to_profit": [1.3, 1.2, 1.1, 0.39],
+      "rd_ratio_pct": [16.0, 16.5, 17.0, null],
+      "ar_turnover_days": [50, 52, 55, null],
+      "inventory_turnover_days": [120, 125, 130, null]
+    },
+    "highlights": [
+      "2026Q1营收10.98亿创季度新高（+39.08%），AI算力电源+消费电子复苏双轮驱动，增速显著加速",
+      "毛利率稳定在51%左右，产品结构稳定，未出现大幅下滑。模拟芯片Design-in后的价格稳定性好",
+      "研发投入占比17%，研发人员占72.75%，技术驱动型组织能力突出"
+    ],
+    "risk_points": [
+      "净利率从14.3%（2023）→13.71%（2025）→11.3%（Q1 2026）持续下行，营业成本增速（+32%）快于营收（+39%），规模效应未充分释放",
+      "存货周转天数130天偏高，Q1 2026资产减值损失6620万（+98.82%）因存货增加计提跌价。模拟芯片长尾品类的库存管理挑战大",
+      "ROE仅10.3%偏低，PE 119x意味着市场给的估值远超净资产回报能力"
+    ]
+  },
+  "growth": {
+    "short_term_6m": ["Q2 2026营收有望突破12亿，AI服务器电源管理IC+消费电子旺季双驱动", "车规级模拟芯片认证加速，产品线持续扩充（已有多款车规产品通过认证）"],
+    "mid_term_18m": ["国产替代加速：TI/ADI在中国模拟芯片市场约40%份额，国产化率不足20%，替代空间2-3倍", "AI算力+机器人+新能源三大赛道对模拟芯片用量爆发，圣邦产品矩阵可直接受益"],
+    "long_term_5y": ["中国模拟芯片市场超2000亿，国产化率目标50%+，圣邦作为龙头有望获得200-300亿营收空间", "产品品类从6800款向10000+款扩展，长尾优势持续加深护城河"],
+    "tam_yi": 2000, "penetration_pct": 1.9, "ceiling": "中国模拟芯片市场超2000亿人民币，圣邦当前份额不足2%，成长空间极大但高端突破是关键"
+  },
+  "competition": {
+    "rivals": [
+      {"name": "德州仪器（TI）", "code": "TXN（美股）", "market_cap": "~1500亿美元", "tech_gap": "全球模拟芯片绝对霸主（~20%份额），80000+款产品，12英寸晶圆厂成本优势极强", "share_comparison": "营收130亿美元约圣邦的25倍", "differentiation": "IDM模式成本+技术双重碾压，但地缘政治给国产替代窗口"},
+      {"name": "ADI", "code": "ADI（美股）", "market_cap": "~1000亿美元", "tech_gap": "全球第二，高端模拟芯片（精密运放/高速ADC/DAC）全球领先，工业/汽车占比高", "share_comparison": "营收~100亿美元", "differentiation": "高端模拟芯片技术壁垒极高，国产短期难以追赶"},
+      {"name": "思瑞浦", "code": "688536", "market_cap": "~200亿", "tech_gap": "国内信号链模拟芯片领先者，在运放/ADC等细分有差异化优势但品类不如圣邦广", "share_comparison": "营收约15亿，体量约为圣邦38%", "differentiation": "聚焦信号链高端产品，毛利率(~55%)略高于圣邦"},
+      {"name": "纳芯微", "code": "688052", "market_cap": "~300亿", "tech_gap": "传感器信号调理+隔离+驱动芯片领先，车规级产品占比高（~40%）", "share_comparison": "营收约20亿", "differentiation": "车规级+工业传感器领域差异化定位，与圣邦消费电子侧重不同"}
+    ],
+    "porter_five": {"new_entrants": "中", "supplier_power": "中", "buyer_power": "中", "substitutes": "低", "rivalry": "高"}
+  },
+  "governance": {
+    "core_team": "创始团队技术背景，管理层稳定。无实际控制人，决策机制灵活",
+    "incentive_alignment": "研发人员占比72.75%，技术团队激励充分。股权激励覆盖范围广",
+    "integrity_record": "无重大违规前科",
+    "shareholder_structure": {"institutional_pct": 30, "retail_pct": 70, "shareholder_count_trend": "机构参与度中等"}
+  },
+  "fund_attention": {
+    "holding_funds_count": 150, "total_holding_shares_wan": 5000, "holding_pct_of_float": 10.0,
+    "star_manager_holdings": ["多家半导体主题ETF和主动基金重仓"],
+    "trend": "稳定", "score": 6,
+    "comment": "作为国内模拟芯片龙头，被多数半导体主题基金覆盖，但主动管理型基金参与度一般"
+  },
+  "valuation": {
+    "current": {"pe_ttm": 119, "pe_percentile": 88, "pe_industry_median": 80, "pb": 11.9, "ps_ttm": 16.7},
+    "scenarios": {
+      "bull": {"assumptions": "2026年净利8亿（+46%），AI+国产替代加速，给予100x PE", "target_market_cap_yi": 800, "target_price": 129, "upside_pct": 23},
+      "base": {"assumptions": "2026年净利6.5亿（+19%），稳健增长，给予80x PE", "target_market_cap_yi": 520, "target_price": 84, "upside_pct": -20},
+      "bear": {"assumptions": "2026年净利5亿（-9%），消费电子需求回落+竞争加剧，给予50x PE", "target_market_cap_yi": 250, "target_price": 40, "downside_pct": 62}
+    }
+  },
+  "risks": [
+    {"risk": "高端模拟芯片突破缓慢，长期困于中低端市场面临价格竞争", "probability": "中", "impact": "高", "mitigation": "跟踪高端新品（高速ADC/精密运放）量产进度"},
+    {"risk": "净利率持续下行（14.3%→11.3%），规模不经济问题突出", "probability": "中", "impact": "中", "mitigation": "关注季度净利率能否企稳回升"},
+    {"risk": "存货高企（130天周转）+跌价风险，Q1 2026已计提6620万减值", "probability": "中", "impact": "中", "mitigation": "跟踪存货周转天数和跌价计提金额的季度变化"}
+  ],
+  "catalysts": [
+    {"time_window": "2026年8月", "event": "半年报：若Q2营收超12亿+毛利率企稳", "expected_impact": "验证Q1高增速可持续性", "certainty": "高"},
+    {"time_window": "持续", "event": "国产模拟芯片替代政策加速", "expected_impact": "TI/ADI份额向国产转移，圣邦直接受益", "certainty": "高"},
+    {"time_window": "2026年H2", "event": "AI服务器电源管理IC放量", "expected_impact": "AI算力对电源管理IC需求爆发，圣邦有望切入供应链", "certainty": "中"}
+  ],
+  "verdict": {
+    "core_thesis": "圣邦股份是国内模拟芯片品类最全的龙头，6800+款产品+50%+毛利率构筑了国产模拟芯片难以复制的广度壁垒。Design-in模式下的客户粘性和长尾收入稳定性是其被低估的护城河。但PE 119x和净利率持续下行的矛盾不容忽视：市场在赌「国产替代大爆发」，而现实是高端突破缓慢、净利率反而在走低。",
+    "long_reasons": ["国产模拟芯片替代空间最大（中国2000亿市场、国产化率不足20%），圣邦作为品类最全的龙头受益最确定", "模拟芯片Design-in后客户粘性极高，6800+款产品构建的广度和长尾收入稳定性是难以复制的壁垒", "AI+新能源+汽车三大赛道对模拟芯片需求量爆发式增长，圣邦产品矩阵可直接受益"],
+    "short_reasons": ["PE 119x对应ROE仅10.3%，估值远超资产回报能力。净利率从14.3%持续下行至11.3%，规模不经济的隐忧在加深", "高端模拟芯片突破缓慢，与TI/ADI技术代差5-10年，长期困于中低端面临价格竞争和毛利率下行双重压力", "存货130天周转+跌价计提（Q1减值6620万），模拟芯片长尾品类的库存管理是持续的经营拖累"],
+    "rating": "中性看好",
+    "suggested_position_pct": 5.0, "holding_period": "中线",
+    "entry_strategy": "PE回落至80x以下（对应股价约70元）分批建仓。若净利率回升至14%+或高端ADC产品量产突破可右侧加仓",
+    "stop_loss_conditions": "跌破50元止损；或出现毛利率跌破48%/大客户流失等基本面恶化信号",
+    "key_tracking_metrics": ["季度净利率趋势（核心：需企稳回升）", "新品类数量增长（从6800款向10000款迈进验证成长性）", "车规/工控等高毛利产品收入占比", "存货周转天数变化（需降至100天以下）"]
+  }
+}

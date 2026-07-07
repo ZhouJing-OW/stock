@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "code": "002916",
+    "name": "深南电路",
+    "exchange": "SZ",
+    "shenwan_industry": "电子/元件/印制电路板",
+    "concept_tags": ["PCB", "IC封装基板", "AI算力", "mSAP", "ABF载板", "汽车电子", "5G通信", "先进封装", "央企改革"],
+    "analysis_date": "2026-07-03",
+    "fiscal_period": "2026Q1",
+    "confidence": 4,
+    "status": "active",
+    "last_updated": "2026-07-03T15:30:00"
+  },
+  "overview": {
+    "full_name": "深南电路股份有限公司",
+    "market": "深交所主板",
+    "listed_since": "2010-04-10",
+    "total_market_cap_yi": 2739,
+    "float_market_cap_yi": 2674,
+    "pe_ttm": 58.9,
+    "pb": 16.3,
+    "controller": "深天科技控股(深圳)有限公司 (62.61%) — 央企中国电子信息产业集团(CEC)旗下",
+    "employees": 18000,
+    "one_liner": "中国PCB行业龙头+内资最大封装基板供应商，AI算力基建核心受益标的，mSAP+ABF载板双轮驱动",
+    "revenue_segments": [
+      {"segment": "印制电路板(PCB)", "revenue_pct": 60.7, "gross_margin_pct": 35.53, "yoy_growth_pct": 36.84},
+      {"segment": "封装基板(IC Substrate)", "revenue_pct": 25.3, "gross_margin_pct": 22.0, "yoy_growth_pct": 25.0},
+      {"segment": "电子装联(EMS)", "revenue_pct": 13.9, "gross_margin_pct": 15.0, "yoy_growth_pct": 15.0}
+    ]
+  },
+  "supply_chain": {
+    "position": "PCB制造+封装基板制造，处于电子产业链中游。上游是CCL覆铜板/铜箔/树脂/玻纤布等原材料和设备供应商，下游是通信设备商(华为/中兴)、云服务商(AWS/阿里/字节)、芯片设计/封装厂(海思/寒武纪/长电科技)、汽车Tier1",
+    "upstream": "CCL覆铜板(生益科技/建滔积层板)、铜箔(诺德股份/嘉元科技)、高速电子树脂(东材科技/圣泉集团)、ABF膜(味之素-日系垄断)、精密设备(大族激光/日本牧野)",
+    "downstream": "AI服务器/交换机(浪潮/新华三/超微)、光模块(中际旭创/新易盛)、通信基站(华为/中兴/爱立信)、存储芯片(长江存储/长鑫存储)、汽车电子(比亚迪/博世)",
+    "upstream_bargaining": {"level": "中", "reason": "CCL集中度高(建滔+生益占主导)，2026年CCL持续涨价，但深南作为PCB大厂有一定议价能力，涨价可向下游传导(最新投关确认传导顺畅)"},
+    "downstream_bargaining": {"level": "强", "reason": "AI算力PCB供不应求，mSAP光模块PCB产能稀缺，客户出现提前6-12个月锁定产能的抢单行为。高多层板产能利用率维持高位，公司可以从非AI领域挤出产能承接算力订单"},
+    "substitution_risk": {"level": "低", "by_whom": "国内竞争对手(沪电股份/鹏鼎控股/兴森科技)在中低端PCB可替代部分产能；mSAP和ABF载板因工艺壁垒极高，短期内替代风险低", "cycle_years": 5},
+    "supply_constraints": {
+      "capacity_bottleneck": "mSAP产线产能严重不足(无锡新工厂2027年才量产)；ABF载板广州工厂爬坡中，高端24层+仍在研发阶段；高速CCL(特别是ABF膜)受日系供应商(味之素)产能限制",
+      "license_barrier": "无特殊牌照门槛，但FC-BGA封装基板认证周期长(1-2年)、客户导入壁垒极高",
+      "key_material_dependency": "ABF膜全球仅味之素+积水化学等少数日系厂商供应，存在供应链武器化风险；M8级CCL对日系树脂体系依赖度较高",
+      "has_hard_constraint": true
+    }
+  },
+  "moat": {
+    "scores": {
+      "tech_barrier": {"score": 5, "detail": "国内唯一同时具备高多层PCB(64层+)+mSAP精细线路+FC-BGA ABF载板三大高端工艺能力的厂商。mSAP 1.6T光模块PCB行业份额领先，ABF载板为国内稀缺供应商"},
+      "scale_effect": {"score": 4, "detail": "全球PCB第8-9位(2025年Prismark)，内资最大封装基板供应商。南通/深圳/无锡/广州四地布局，2025年营收236亿，PCB业务体量虽不及鹏鼎但高端占比显著更高"},
+      "customer_stickiness": {"score": 5, "detail": "mSAP客户提前6-12个月锁定产能，PCB客户认证周期长(12-18个月)且变更成本高。核心客户华为(通信+算力)、头部云厂商深度绑定，ABF载板已导入国内头部芯片客户"},
+      "brand_patent_license": {"score": 3, "detail": "CPCA理事长单位，国家标准制定参与者。FC-BGA 22层及以下量产、24层+研发推进中。专利储备丰富但非绝对壁垒——工艺know-how比专利数量更重要"},
+      "cost_advantage": {"score": 3, "detail": "规模效应带来一定的原材料采购议价能力，但CCL等原材料占比高(40-50%)，成本结构决定了无法像IC设计公司那样高毛利。2025年毛利率28.32%显著低于沪电股份(~35%)，说明成本优势不是核心护城河"}
+    },
+    "trend_3_5yr": "拓宽",
+    "core_risk": "mSAP新进入者(兴森科技/鹏鼎控股)产能释放可能导致供给格局恶化；ABF载板良率爬坡不及预期；日系ABF膜断供风险"
+  },
+  "financials": {
+    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "metrics": {
+      "revenue_yi": [135.3, 179.07, 236.47, 65.96],
+      "net_profit_yi": [14.0, 18.78, 32.76, 8.50],
+      "gross_margin_pct": [23.2, 24.83, 28.32, 29.17],
+      "net_margin_pct": [10.3, 10.49, 13.86, 12.91],
+      "roe_pct": [11.5, 13.58, 20.79, 4.83],
+      "debt_ratio_pct": [41.0, 42.12, 43.82, 47.24],
+      "ocf_to_profit": [1.5, 1.59, 1.17, 0.29],
+      "rd_ratio_pct": [5.5, 5.3, 5.0, null],
+      "ar_turnover_days": [75, 78, 72, null],
+      "inventory_turnover_days": [68, 82, 91, null]
+    },
+    "highlights": [
+      "2025年净利增速74.47%远超营收增速32.05%，经营杠杆效应显著——固定成本摊薄+产品结构向高毛利AI产品升级",
+      "毛利率连续6个季度环比提升(2024Q1 24.74% → 2026Q1 29.17%)，AI产品占比提高是核心驱动力",
+      "ROE从2024年13.58%跃升至2025年20.79%，资本回报效率大幅改善，2026Q1年化约19.3%",
+      "合同负债(Q1 2026)同比翻倍(3.54亿 vs 1.73亿)，预收货款激增验证订单饱满度"
+    ],
+    "risk_points": [
+      "经营现金流Q1 2026仅2.47亿(同比-59.62%)，主因应收账款增加+存货攀升，现金转化效率恶化需要密切跟踪",
+      "资产负债率从42%升至47.24%，叠加48.8亿增发预案，资本开支高峰期财务压力上升",
+      "存货周转天数从68天(2023)升至91天(2025)，需关注是否存在库存积压或产品结构变化导致的周转放缓"
+    ]
+  },
+  "growth": {
+    "short_term_6m": [
+      "Q2 2026业绩预计环比高增：PCB产能利用率维持高位+mSAP订单持续放量，招商证券预测Q2环比高增",
+      "800G/1.6T光模块PCB：1.6T占比加速提升(2026年约10%)，单板价值量较800G提升3-4倍，mSAP产线供不应求",
+      "CCL涨价传导：5月底建滔再次涨价(PP片+20%，CCL+10%)，深南确认可顺畅向下游传导，短期毛利率影响可控",
+      "广州FC-BGA 24层+产品打样推进，若能通过客户验证将打开新成长空间"
+    ],
+    "mid_term_18m": [
+      "无锡AI算力PCB项目(总投资45.4亿)：2027上半年量产，目标产能匹配AI服务器/交换机高端PCB需求，打开100亿+增量营收空间",
+      "ABF载板放量：已在国内头部客户实现小批量出货，若顺利导入海外大客户将实现质的飞跃。海外ABF产能紧张(揖斐电/新光电气满产)，国产替代窗口明确",
+      "1.6T光模块渗透率加速：2027年有望成为主流(占比>50%)，对应mSAP PCB层数从10-12层升级至14-18层，需M8级CCL，单板ASP大幅提升",
+      "BT载板扩产：受益存储/处理器芯片需求双轮驱动，产能利用率维持高位，2026年内继续扩产"
+    ],
+    "long_term_5y": [
+      "全球PCB 2025-2030 CAGR 7.7%，18层+高多层板CAGR 21.7%、封装基板CAGR 10.9%——公司在增长最快的两个细分赛道均居国内第一梯队",
+      "ABF载板国产替代大逻辑：国内AI芯片(寒武纪/海思/昆仑芯)自主可控需求迫切，ABF载板目前95%+由日韩台厂商供应，深南是国内唯一具备FC-BGA量产能力的内资厂商",
+      "Chiplet/先进封装趋势：芯片向异构集成演进，IC载板价值量持续提升，深南作为稀缺的IC载板+高端PCB双料龙头将长期受益",
+      "央企背景+国产替代政策加持：十五五规划明确算力基础设施为新质生产力核心，深南作为CEC旗下核心PCB资产有望获得政策资源倾斜"
+    ],
+    "tam_yi": 8800,
+    "penetration_pct": 2.7,
+    "ceiling": "全球PCB市场2030年预计1233亿美元(约8800亿人民币)，深南当前全球份额约2.7%，成长空间充裕。高端细分(18层+板、封装基板)市场份额更高但竞争也更激烈"
+  },
+  "competition": {
+    "rivals": [
+      {"name": "沪电股份", "code": "002463", "market_cap": "~1879亿", "tech_gap": "企业通信/数通PCB龙头，毛利率(~35%)和净利率(~20%)均高于深南，AI服务器PCB份额领先。但无封装基板业务", "share_comparison": "PCB收入体量略低于深南但增速更快(近5年CAGR 26.4% vs 14.1%)", "differentiation": "专注企业通信+数通高端PCB，毛利率高，民企机制灵活。不涉足IC载板"},
+      {"name": "鹏鼎控股", "code": "002938", "market_cap": "~1800亿", "tech_gap": "全球最大PCB厂商(2025年Prismark第1)，苹果核心供应商。消费电子PCB为主，AI服务器PCB布局较晚", "share_comparison": "PCB收入规模最大但毛利率偏低(~20%)，消费电子周期性较强", "differentiation": "规模第一，消费电子赛道，SLP类载板技术领先"},
+      {"name": "东山精密", "code": "002384", "market_cap": "~1200亿", "tech_gap": "FPC+传统PCB为主，汽车电子+消费电子。mSAP和IC载板布局有限", "share_comparison": "PCB收入~108亿(2024H1)，毛利率低于深南", "differentiation": "FPC柔性板龙头，汽车+消费双轮驱动，海外营收占比高(>60%)"},
+      {"name": "兴森科技", "code": "002436", "market_cap": "~400亿", "tech_gap": "IC载板新进入者，FC-BGA产线建设中。传统PCB规模较小", "share_comparison": "IC载板产能投放后可能对深南形成竞争压力", "differentiation": "PCB样板+IC载板，mSAP新进入者，产能正在爬坡"}
+    ],
+    "porter_five": {"new_entrants": "中", "supplier_power": "中", "buyer_power": "低", "substitutes": "低", "rivalry": "高"}
+  },
+  "governance": {
+    "core_team": "董事长杨之诚(中国电子背景)，总经理周进群(技术出身)。管理层稳定，核心团队在PCB行业深耕20年以上",
+    "incentive_alignment": "2026年Q1实施限制性股票激励计划(库存股16.55亿)，考核条件：2027-2028年扣非净利润每年增长13%。激励强度中等，增速目标相对保守",
+    "board_structure": "央企控股(CEC)，董事会成员兼具产业+国资背景，治理结构规范",
+    "integrity_record": "无财务造假/违规/减持套现重大前科。央企背景降低了治理风险但也导致激励机制不如民企灵活",
+    "shareholder_structure": {"institutional_pct": 74.89, "retail_pct": 25.11, "shareholder_count_trend": "Q1 2026基金家数从1098骤降至116家(基金季报披露节奏因素为主)，但社保/险资增持，筹码向长线资金集中"}
+  },
+  "fund_attention": {
+    "holding_funds_count": 116,
+    "total_holding_shares_wan": 3624.74,
+    "holding_pct_of_float": 5.45,
+    "qoq_change": "较2025Q4大幅减少(基金持股从9418万股降至3625万股，减幅61.5%)，主要因大量基金季报调仓+部分止盈卖出",
+    "new_entries": 44,
+    "exits": 482,
+    "heavy_position_rank": 85,
+    "star_manager_holdings": ["永赢科技智选混合(587万股，持仓TOP1基金)", "摩根士丹利数字经济混合(224万股，增持16万股)", "富国新兴产业股票(188万股)"],
+    "recent_research_visits": 12,
+    "trend": "上升",
+    "score": 7,
+    "comment": "短期基金家数因季报披露周期出现数字下降(Q4年报全量 vs Q1仅部分披露)，实际持仓变化需等半年报验证。社保(3只组合，775万股)+养老金(280万股，新进)逆势增持说明长线资金认可度提升。明星基金经理(永赢/摩根士丹利)仍在加仓。近期12次机构调研频率维持高位。"
+  },
+  "valuation": {
+    "current": {"pe_ttm": 58.9, "pe_percentile": 78, "pe_industry_median": 32.0, "pb": 16.3, "pb_percentile": 92, "pb_industry_median": 4.5, "ps_ttm": 11.6, "ps_industry_median": 3.8, "ev_ebitda": 42.0, "ev_ebitda_industry_median": 25.0},
+    "scenarios": {
+      "bull": {"assumptions": "2026年净利55亿(超一致预期10%)，mSAP产能持续紧缺涨价+ABF导入海外大客户放量，给予45x PE", "target_market_cap_yi": 2475, "target_price": 363.3, "upside_pct": 15.0},
+      "base": {"assumptions": "2026年净利50亿(市场一致预期)，AI PCB稳健增长+ABF载板小批量贡献，给予40x PE", "target_market_cap_yi": 2000, "target_price": 293.7, "upside_pct": -7.0},
+      "bear": {"assumptions": "2026年净利42亿(低于预期16%)，mSAP新进入者产能释放+CCL涨价侵蚀毛利率，给予30x PE", "target_market_cap_yi": 1260, "target_price": 184.9, "downside_pct": 41.5}
+    }
+  },
+  "risks": [
+    {"risk": "mSAP供给格局恶化：兴森科技/鹏鼎控股/景旺电子等纷纷布局mSAP产能，2027年后供给增加可能压缩超额利润", "probability": "中", "impact": "高", "mitigation": "紧密跟踪行业mSAP产能投放节奏和产品报价变化；深南的先发优势和客户锁定效应可提供1-2年缓冲"},
+    {"risk": "ABF载板良率不及预期：FC-BGA 24层+产品技术难度极大，广州工厂良率爬坡进度存在不确定性", "probability": "中", "impact": "高", "mitigation": "跟踪每季投关记录中ABF进展描述；关注是否获得国内主要AI芯片客户认证"},
+    {"risk": "日系ABF膜断供：味之素+积水化学垄断ABF膜供应，地缘政治若升级可能导致断供风险", "probability": "低", "impact": "极高", "mitigation": "关注国产ABF膜替代进展(生益科技/华正新材在研)；深南可增加战略备货"},
+    {"risk": "CCL持续涨价侵蚀毛利率：2026年CCL已多次涨价，若AI需求超预期可能导致原材料进一步紧缺", "probability": "中", "impact": "中", "mitigation": "深南已确认可通过价格传导机制向下游转移大部分成本压力，但存在时滞"},
+    {"risk": "大股东深天科技持股62.61%高度集中，增发后将稀释但央企大股东减持意愿低", "probability": "低", "impact": "中", "mitigation": "央企属性决定了不会随意减持；关注48.8亿增发方案的价格确定和对EPS的摊薄"},
+    {"risk": "经营现金流恶化：Q1 2026经营现金流仅2.47亿(同比-59.62%)，应收账款和存货双升，现金转化效率下降", "probability": "中", "impact": "中", "mitigation": "Q2-Q4通常为回款旺季，需观察半年报现金流是否改善；若全年OCF/净利润<0.8则需警惕"}
+  ],
+  "catalysts": [
+    {"time_window": "2026年7-8月", "event": "2026半年报披露", "expected_impact": "Q2单季净利预计12-14亿(环比+40-65%)，若超预期将催化估值切换", "certainty": "高"},
+    {"time_window": "2026年Q3-Q4", "event": "ABF载板海外大客户认证进展", "expected_impact": "若导入海外GPU/CPU大客户将是重大催化剂，打开海外市场空间", "certainty": "中"},
+    {"time_window": "2026年下半年", "event": "48.8亿增发方案推进", "expected_impact": "定价和发行对象确定影响短期股价；长期利好产能扩张", "certainty": "高"},
+    {"time_window": "2027年上半年", "event": "无锡AI算力PCB项目一期量产", "expected_impact": "新增产能缓解mSAP供不应求状态，贡献增量营收", "certainty": "中"},
+    {"time_window": "持续", "event": "1.6T光模块渗透率加速+3.2T预研", "expected_impact": "每代光模块升级对应mSAP PCB层数和ASP大幅提升，深南作为mSAP份额领先者将持续受益", "certainty": "高"}
+  ],
+  "verdict": {
+    "core_thesis": "深南电路是A股稀缺的「高端PCB+IC载板」双料龙头，mSAP光模块PCB供不应求+ABF载板国产替代两大成长逻辑清晰。当前PE 59x在AI算力标的中处于中等水平，2026年50亿+利润预期对应forward PE ~37x。核心风险在于mSAP竞争格局恶化和经营现金流质量下行。",
+    "long_reasons": [
+      "mSAP光模块PCB结构性供不应求至少持续到2027年(客户锁定6-12月产能)，单板ASP随1.6T升级持续提升，利润弹性大",
+      "ABF载板是国内唯一具备FC-BGA量产能力的内资厂商，国产AI芯片自主可控需求迫切，从0到1突破的期权价值极高",
+      "央企背景+AI算力基建国家战略高度契合，48.8亿增发和无锡新项目落地将打开第二增长曲线"
+    ],
+    "short_reasons": [
+      "当前PE 59x(TTM)显著高于沪电股份(49x)和PCB行业中位数(32x)，高估值已price in较多乐观预期；若半年报不及预期将面临戴维斯双杀",
+      "Q1 2026经营现金流仅2.47亿(同比-59.62%)，利润增长的质量存疑。应收账款+存货+预付工程款三重攀升，现金转化效率恶化",
+      "mSAP竞争格局可能在2027年后恶化，兴森/鹏鼎/景旺等产能集中释放将压缩超额利润空间"
+    ],
+    "rating": "看好",
+    "suggested_position_pct": 12.0,
+    "holding_period": "中线",
+    "entry_strategy": "建议在PE回落至50x以下(对应股价约320元)分批建仓，或等待半年报验证OCF改善后右侧加仓。若ABF海外大客户导入成功，可提升至15-18%仓位",
+    "stop_loss_conditions": "跌破250元(对应2026E PE 34x，约25%下行)止损；或出现ABF良率重大倒退/大客户流失等基本面恶化信号",
+    "key_tracking_metrics": ["季度经营现金流/净利润比率(关键：需回升至0.8以上)", "mSAP产能利用率和产品报价趋势", "FC-BGA ABF载板24层+产品客户验证进展", "CCL价格传导顺畅度和毛利率趋势", "基金持仓变化(当前仅116家基金，关注半年报后的真实持仓)"]
+  }
+}

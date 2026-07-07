@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "code": "300223",
+    "name": "北京君正",
+    "exchange": "SZ",
+    "shenwan_industry": "电子/半导体/数字芯片设计",
+    "concept_tags": ["存储芯片", "计算芯片", "RISC-V", "SRAM", "DRAM", "车载芯片", "AIoT", "模拟芯片"],
+    "analysis_date": "2026-07-03",
+    "fiscal_period": "2026Q1",
+    "confidence": 4,
+    "status": "active",
+    "last_updated": "2026-07-03T22:55:00"
+  },
+  "overview": {
+    "full_name": "北京君正集成电路股份有限公司",
+    "market": "深交所创业板",
+    "listed_since": "2011-05-31",
+    "total_market_cap_yi": 480,
+    "float_market_cap_yi": 400,
+    "pe_ttm": 128,
+    "pb": 3.8,
+    "controller": "刘强（8.39%）等创始团队，无实际控制人",
+    "employees": 1500,
+    "one_liner": "国产嵌入式CPU+存储芯片双轮驱动，自主XBurst CPU核+RISC-V架构布局，存储芯片受益行业景气周期强劲复苏",
+    "revenue_segments": [
+      {"segment": "存储芯片（SRAM/DRAM/Flash）", "revenue_pct": 61.4, "gross_margin_pct": 31.9, "yoy_growth_pct": 18},
+      {"segment": "计算芯片（SoC/MPU/AIoT）", "revenue_pct": 27.3, "gross_margin_pct": 30.9, "yoy_growth_pct": 5},
+      {"segment": "模拟与互联芯片", "revenue_pct": 10.7, "gross_margin_pct": 51.0, "yoy_growth_pct": 11}
+    ]
+  },
+  "supply_chain": {
+    "position": "Fabless芯片设计公司，处于半导体产业链上游。设计存储/计算/模拟芯片后交由台积电/中芯国际等代工，封测外包。下游为汽车电子/工业/IoT设备制造商",
+    "upstream": "晶圆代工（台积电/中芯国际/华虹）、封装测试（长电科技/通富微电/华天科技）",
+    "downstream": "汽车电子（比亚迪/博世/大陆）、工业控制（汇川技术/台达）、IoT设备（小米/华为/海康威视）、消费电子",
+    "upstream_bargaining": {"level": "弱", "reason": "Fabless模式依赖外部代工，对台积电等头部代工厂议价能力有限"},
+    "downstream_bargaining": {"level": "中", "reason": "存储芯片标准化程度高竞争激烈，但车规级存储芯片认证壁垒高，在汽车电子领域有一定议价权"},
+    "substitution_risk": {"level": "中", "by_whom": "兆易创新（NOR Flash+MCU）、紫光国芯（DRAM）、国际大厂（美光/三星/Cypress）在存储领域直接竞争", "cycle_years": 3},
+    "supply_constraints": {"capacity_bottleneck": "无自建产能，严重依赖代工厂产能分配。2025年半导体景气上行期代工产能紧张时交付能力受限", "license_barrier": "车规级认证（AEC-Q100）周期1-2年，已通过部分认证", "key_material_dependency": "先进制程晶圆供应依赖台积电，地缘政治存在风险", "has_hard_constraint": false}
+  },
+  "moat": {
+    "scores": {
+      "tech_barrier": {"score": 3, "detail": "自主XBurst CPU核和RISC-V架构是国内稀缺的自主CPU技术。存储芯片（SRAM）在汽车电子领域有独特技术积累。但整体产品以成熟制程为主，技术水平在国际上处于中游"},
+      "scale_effect": {"score": 2, "detail": "2025年营收47.41亿，在国产芯片设计公司中体量偏小（相比韦尔股份/兆易创新300亿+）。存储芯片单品价值量低，规模效应有限"},
+      "customer_stickiness": {"score": 3, "detail": "车规级存储芯片认证周期长（1-2年），一旦进入汽车供应链替换成本高。但在消费/IoT领域客户粘性较弱"},
+      "brand_patent_license": {"score": 3, "detail": "「北京君正」品牌在嵌入式CPU领域有一定知名度，RISC-V生态布局较早。但品牌影响力局限在工控/车载等利基市场，消费端认知度低"},
+      "cost_advantage": {"score": 3, "detail": "国产替代背景下的性价比优势明显（相比美光/Cypress价格低30-50%），但毛利率仅34%且波动大，成本优势未充分转化为盈利能力"}
+    },
+    "trend_3_5yr": "维持",
+    "core_risk": "存储芯片强周期性：2026Q1业绩爆发受益于存储涨价周期，若周期反转将面临量价齐跌；Fabless模式供应链受制于人；AIoT/MCU赛道竞争加剧"
+  },
+  "financials": {
+    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "metrics": {
+      "revenue_yi": [45.3, 42.1, 47.41, 15.60],
+      "net_profit_yi": [5.4, 3.66, 3.76, 3.19],
+      "gross_margin_pct": [33.5, 32.0, 34.09, 43.5],
+      "net_margin_pct": [11.9, 8.7, 7.92, 20.5],
+      "roe_pct": [4.5, 3.0, 3.07, 2.54],
+      "debt_ratio_pct": [8.0, 8.0, 7.99, 8.0],
+      "ocf_to_profit": [1.2, 1.5, 1.3, 0.68],
+      "rd_ratio_pct": [12.0, 13.0, 13.5, null],
+      "ar_turnover_days": [40, 45, 43, null],
+      "inventory_turnover_days": [90, 95, 85, null]
+    },
+    "highlights": [
+      "2026Q1业绩爆发：营收15.60亿（+47.12%），净利3.19亿（+331.61%），存储芯片53.63%增速+计算芯片49.09%双轮驱动",
+      "毛利率大幅跃升：Q1 2026毛利率约43.5%（存储芯片38.89%+计算芯片51.90%），受益存储涨价+高毛利产品占比提升",
+      "资产负债率仅7.99%，几乎零有息负债，财务极度稳健。13.8亿现金储备充足"
+    ],
+    "risk_points": [
+      "ROE仅3.07%（2025年）极低，资产运营效率差。PE 128x对应的是周期顶部的乐观利润，一旦周期回落估值将剧烈收缩",
+      "2024年营收同比下滑7%，周期性明显。存储芯片营收占比61%+，业绩受存储价格波动影响极大",
+      "2025年扣非净利3.09亿同比-0.93%，扣非口径利润几无增长。Q1爆发可能更多是周期因素而非结构性改善"
+    ]
+  },
+  "growth": {
+    "short_term_6m": ["Q2 2026存储芯片涨价趋势延续，叠加Q1高基数，Q2有望维持营收14-16亿、净利2.5-3亿", "车规级SRAM/DRAM认证导入加速，受益汽车智能化对存储芯片用量提升", "RISC-V架构AIoT芯片放量，合肥君正Q1营收10.18亿净利1.05亿"],
+    "mid_term_18m": ["存储芯片景气周期2026年整体乐观，但需警惕2027年产能集中释放后的价格回落", "模拟与互联芯片（CAN/LIN/接口）受益汽车电子化，毛利率51%有望成为利润新增长极", "3D DRAM研发推进，若突破将进入高端存储市场"],
+    "long_term_5y": ["RISC-V生态崛起：AIoT时代RISC-V开源架构有望挑战ARM，北京君正是国内RISC-V最早布局者之一", "汽车电子存储芯片需求5年CAGR 20%+，单车存储用量从目前~32GB向128GB+演进"],
+    "tam_yi": 2000,
+    "penetration_pct": 2.4,
+    "ceiling": "全球存储芯片市场约1600亿美元，北京君正在利基型存储（SRAM/车规DRAM）细分市场有差异化定位，但天花板远低于主流DRAM/NAND市场"
+  },
+  "competition": {
+    "rivals": [
+      {"name": "兆易创新", "code": "603986", "market_cap": "~1200亿", "tech_gap": "国内NOR Flash龙头+MCU第一，营收约80亿远超北京君正。存储+MCU双轮驱动产品线更完整", "share_comparison": "营收体量约君正1.7倍，NOR Flash市占率全球前三", "differentiation": "NOR Flash全球领先+GD32 MCU生态成熟，DRAM布局通过长鑫存储合作"},
+      {"name": "紫光国微", "code": "002049", "market_cap": "~1500亿", "tech_gap": "特种IC+FPGA+存储器，技术壁垒更高。存储芯片以特种DRAM为主与君正形成差异化", "share_comparison": "营收约80亿，聚焦高壁垒特种市场，毛利率60%+远超君正", "differentiation": "特种芯片+安全芯片双壁垒，与君正消费/汽车定位不同"},
+      {"name": "美光科技", "code": "MU（美股）", "market_cap": "~1000亿美元", "tech_gap": "全球存储三巨头之一，技术代差5-10年。但车规级利基型存储市场美光也在逐步退出部分低毛利产品", "share_comparison": "完全不在同一量级，君正仅在车规SRAM等极小细分市场有替代机会", "differentiation": "技术绝对领先但正退出部分利基市场，给国产替代留出空间"}
+    ],
+    "porter_five": {"new_entrants": "中", "supplier_power": "高", "buyer_power": "高", "substitutes": "中", "rivalry": "高"}
+  },
+  "governance": {
+    "core_team": "创始人刘强（董事长/总经理），技术背景深厚（中科院计算所）。核心团队稳定",
+    "incentive_alignment": "创始团队持股比例较高（刘强8.39%+李杰3.71%+冼永辉2.06%），利益绑定好",
+    "board_structure": "无实际控制人，创始团队+产业资本（屹唐盛芯6%+武岳峰5.97%）共同治理",
+    "integrity_record": "无重大违规前科",
+    "shareholder_structure": {"institutional_pct": 20, "retail_pct": 80, "shareholder_count_trend": "Q1 2026股东总数10.6万户，永赢先锋半导体智选1000万股（2.07%）为第一大机构持仓"}
+  },
+  "fund_attention": {
+    "holding_funds_count": 25,
+    "total_holding_shares_wan": 2500,
+    "holding_pct_of_float": 5.2,
+    "star_manager_holdings": ["永赢先锋半导体智选混合（1000万股，第一大基金持仓）"],
+    "recent_research_visits": 5,
+    "trend": "稳定",
+    "score": 4,
+    "comment": "机构关注度偏低，仅永赢半导体智选重仓。Q1业绩爆发后有望吸引更多机构关注"
+  },
+  "valuation": {
+    "current": {"pe_ttm": 128, "pe_percentile": 90, "pe_industry_median": 80, "pb": 3.8, "ps_ttm": 10.1},
+    "scenarios": {
+      "bull": {"assumptions": "2026年净利8亿（存储涨价+Q1高增速延续），给予80x PE", "target_market_cap_yi": 640, "target_price": 133, "upside_pct": 33},
+      "base": {"assumptions": "2026年净利5.5亿（周期高位利润），给予70x PE", "target_market_cap_yi": 385, "target_price": 80, "upside_pct": -20},
+      "bear": {"assumptions": "2026年净利3亿（存储价格回落），给予50x PE", "target_market_cap_yi": 150, "target_price": 31, "downside_pct": 69}
+    }
+  },
+  "risks": [
+    {"risk": "存储芯片强周期反转：2026年涨价周期推高业绩，若2027年产能释放导致价格回落将量价齐跌", "probability": "高", "impact": "高", "mitigation": "跟踪存储芯片现货价格和龙头企业资本开支计划"},
+    {"risk": "ROE极低：3%的ROE意味着每投入100元只赚3元，资本配置效率差", "probability": "中", "impact": "中", "mitigation": "关注净利率改善能否持续（Q1 20.5%净利率若可维持则ROE将跃升）"},
+    {"risk": "Fabless供应链风险：台积电产能紧张或地缘政治断供将直接冲击交付", "probability": "中", "impact": "中", "mitigation": "公司资产负债率极低（8%），可通过预付款策略保障产能"}
+  ],
+  "catalysts": [
+    {"time_window": "2026年8月", "event": "半年报：Q2延续高增速", "expected_impact": "若H1净利超5亿将超市场预期，驱动估值上修", "certainty": "高"},
+    {"time_window": "2026年H2", "event": "存储芯片价格走势确认", "expected_impact": "若Q3-Q4价格继续上涨，全年净利有望冲击8亿+", "certainty": "中"},
+    {"time_window": "持续", "event": "RISC-V生态加速+AIoT应用落地", "expected_impact": "AIoT芯片用量爆发将带动计算芯片业务加速", "certainty": "中"}
+  ],
+  "verdict": {
+    "core_thesis": "北京君正是国产嵌入式CPU+利基型存储的双料标的，2026Q1业绩爆发受益于存储涨价周期+AIIoT需求回暖。但存储芯片强周期性决定了业绩波动极大（2024年营收下滑7%，2026Q1暴涨47%），PE 128x隐含了周期高位利润的过度乐观定价。ROE仅3%的资产回报率意味着长期持有价值有限，更适合作为存储周期上行阶段的交易性标的。",
+    "long_reasons": ["存储芯片景气周期2026年整体向上，Q1营收+47%/净利+332%确认强势反转，若涨价延续全年净利有望冲击8亿", "自主CPU核+RISC-V是国内稀缺技术资产，在国产替代和AIoT时代有长期战略价值", "资产负债率仅8%财务极度安全，可充分受益行业景气上行而无需担心财务风险"],
+    "short_reasons": ["PE 128x处于历史高位，一旦存储价格见顶回落将面临戴维斯双杀（2024年营收下滑7%即为前车之鉴）", "ROE仅3%意味着资产几乎不创造超额回报，扣非净利2025年同比-0.93%说明主业增长质量差", "营收不足50亿体量偏小，在半导体设计公司中缺乏规模效应和议价能力"],
+    "rating": "中性",
+    "suggested_position_pct": 3.0,
+    "holding_period": "波段",
+    "entry_strategy": "仅在存储芯片价格上行趋势确认后参与，PE回落至60x以下（对应股价约50元）可轻仓试探。严格按周期品操作，不做长期持有",
+    "stop_loss_conditions": "跌破40元或存储芯片现货价格出现连续2月环比下跌时止损",
+    "key_tracking_metrics": ["存储芯片现货价格（DRAM/SRAM）月度走势", "季度毛利率变化（判断周期位置）", "车规级存储芯片新客户导入数量"]
+  }
+}
