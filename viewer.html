@@ -49,23 +49,31 @@
   @media (max-width: 1100px) {
     .container {
       grid-template-columns: 1fr;
-      max-width: 600px;
-      padding: 20px 16px 60px;
+      max-width: 430px;
+      padding: 16px 12px 48px;
     }
     .header-metrics { grid-template-columns: repeat(3, 1fr); }
+    .info-grid { grid-template-columns: 1fr 1fr; }
+    /* Tables: scroll if too wide */
+    .section { overflow-x: auto; }
+    table { min-width: 360px; }
   }
 
   @media (max-width: 600px) {
-    .container { padding: 12px 8px 40px; }
-    .header { padding: 20px 16px; }
-    .section { padding: 18px 14px; }
-    .header-metrics { grid-template-columns: repeat(2, 1fr); }
+    .container { padding: 12px 8px 40px; max-width: 100%; }
+    .header { padding: 18px 14px; }
+    .section { padding: 16px 12px; }
+    .header-metrics { grid-template-columns: repeat(2, 1fr); font-size: 12px; }
+    .header-metric .value { font-size: 16px; }
     .info-grid { grid-template-columns: 1fr; }
     .verdict-grid { grid-template-columns: 1fr; }
     .fund-metrics { grid-template-columns: repeat(2, 1fr); }
     .header-top { flex-direction: column; }
-    table { font-size: 12px; }
-    th, td { padding: 6px 8px; }
+    table { font-size: 12px; min-width: 340px; }
+    th, td { padding: 5px 6px; }
+    .section-num { width: 24px; height: 24px; font-size: 12px; }
+    .section-title { font-size: 15px; }
+    .header-identity h1 { font-size: 22px; }
   }
 
   /* ===== Header ===== */
