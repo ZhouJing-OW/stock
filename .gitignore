@@ -9,6 +9,10 @@ tasks/
 # 不需要的模板副本
 templates/
 
+# 本地文件
+SKILL.md
+同步到GitHub.bat
+
 # Python 缓存
 __pycache__/
 *.pyc
