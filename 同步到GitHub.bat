@@ -26,7 +26,7 @@ git commit -m "%msg%"
 echo.
 
 echo [3/3] Pushing to GitHub...
-git push
+git push -u origin main
 echo.
 echo ========================================
 echo  Sync complete!
