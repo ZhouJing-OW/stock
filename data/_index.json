@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-07T23:51:34.524382",
-  "total": 113,
+  "updated": "2026-07-09T00:33:12.437871",
+  "total": 114,
   "stocks": [
     {
       "code": "000338",
@@ -1426,6 +1426,25 @@
       "confidence": 4,
       "position": 7.0,
       "analysis_date": "2026-07-03"
+    },
+    {
+      "code": "603650",
+      "name": "彤程新材",
+      "exchange": "SH",
+      "industry": "基础化工/橡胶",
+      "tags": [
+        "光刻胶",
+        "半导体材料",
+        "KrF光刻胶",
+        "ArF光刻胶",
+        "显示面板光刻胶"
+      ],
+      "rating": "中性看好",
+      "pe": 72.3,
+      "marketCap": 418,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-09"
     },
     {
       "code": "603662",
