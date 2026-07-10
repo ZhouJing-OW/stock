@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-10T12:35:03.282683",
-  "total": 114,
+  "updated": "2026-07-10T23:23:52.468564",
+  "total": 116,
   "stocks": [
     {
       "code": "000338",
@@ -321,6 +321,26 @@
       "position": 8.0,
       "analysis_date": "2026-07-04",
       "pinyin": "DFD"
+    },
+    {
+      "code": "002409",
+      "name": "雅克科技",
+      "exchange": "SZ",
+      "industry": "电子/半导体材料",
+      "tags": [
+        "半导体前驱体",
+        "HBM",
+        "光刻胶",
+        "电子特气",
+        "LNG保温板材"
+      ],
+      "rating": "中性看好",
+      "pe": 59.3,
+      "marketCap": 641,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-10",
+      "pinyin": "YKKJ"
     },
     {
       "code": "002422",
@@ -1621,6 +1641,26 @@
       "position": 10.0,
       "analysis_date": "2026-07-03",
       "pinyin": "RXW"
+    },
+    {
+      "code": "603938",
+      "name": "三孚股份",
+      "exchange": "SH",
+      "industry": "基础化工/化学原料",
+      "tags": [
+        "三氯氢硅",
+        "高纯四氯化硅",
+        "电子级特气",
+        "光纤预制棒",
+        "硅烷偶联剂"
+      ],
+      "rating": "回避",
+      "pe": 131.6,
+      "marketCap": 204,
+      "confidence": 3,
+      "position": 0.0,
+      "analysis_date": "2026-07-10",
+      "pinyin": "SFGF"
     },
     {
       "code": "603986",
