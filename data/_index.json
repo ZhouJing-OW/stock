@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T00:33:12.437871",
+  "updated": "2026-07-10T12:35:03.282683",
   "total": 114,
   "stocks": [
     {
@@ -19,7 +19,8 @@
       "marketCap": 2841,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "WCDL"
     },
     {
       "code": "000636",
@@ -38,7 +39,8 @@
       "marketCap": 729,
       "confidence": 4,
       "position": 0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "FHGK"
     },
     {
       "code": "000725",
@@ -57,7 +59,8 @@
       "marketCap": 2486,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "JDFa"
     },
     {
       "code": "000962",
@@ -76,7 +79,8 @@
       "marketCap": 256,
       "confidence": 4,
       "position": 4.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "DFTY"
     },
     {
       "code": "002049",
@@ -95,7 +99,8 @@
       "marketCap": 713,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZGGW"
     },
     {
       "code": "002050",
@@ -114,7 +119,8 @@
       "marketCap": 1890.24,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SHZK"
     },
     {
       "code": "002126",
@@ -133,7 +139,8 @@
       "marketCap": 440,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "YLGF"
     },
     {
       "code": "002138",
@@ -152,7 +159,8 @@
       "marketCap": 601,
       "confidence": 4,
       "position": 8,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SLDZ"
     },
     {
       "code": "002156",
@@ -171,7 +179,8 @@
       "marketCap": 983.4,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "TFWD"
     },
     {
       "code": "002167",
@@ -190,7 +199,8 @@
       "marketCap": 100.5,
       "confidence": 3,
       "position": 3.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "DFGY"
     },
     {
       "code": "002185",
@@ -209,7 +219,8 @@
       "marketCap": 633,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HTKJ"
     },
     {
       "code": "002281",
@@ -228,7 +239,8 @@
       "marketCap": 1711,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "GXKJ"
     },
     {
       "code": "002353",
@@ -247,7 +259,8 @@
       "marketCap": 1681,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "JRGF"
     },
     {
       "code": "002371",
@@ -266,7 +279,8 @@
       "marketCap": 4836,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "BFHC"
     },
     {
       "code": "002384",
@@ -285,7 +299,8 @@
       "marketCap": 5000,
       "confidence": 4,
       "position": 8,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "DSJM"
     },
     {
       "code": "002407",
@@ -304,7 +319,8 @@
       "marketCap": 500,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-04"
+      "analysis_date": "2026-07-04",
+      "pinyin": "DFD"
     },
     {
       "code": "002422",
@@ -323,7 +339,8 @@
       "marketCap": 605,
       "confidence": 4,
       "position": 5,
-      "analysis_date": "2026-07-04"
+      "analysis_date": "2026-07-04",
+      "pinyin": "KLYY"
     },
     {
       "code": "002428",
@@ -342,7 +359,8 @@
       "marketCap": 650,
       "confidence": 4,
       "position": 0.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "YNZY"
     },
     {
       "code": "002436",
@@ -361,7 +379,8 @@
       "marketCap": 65,
       "confidence": 3,
       "position": 3.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "XSKJ"
     },
     {
       "code": "002452",
@@ -380,7 +399,8 @@
       "marketCap": 85,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-07"
+      "analysis_date": "2026-07-07",
+      "pinyin": "ZGDX"
     },
     {
       "code": "002463",
@@ -399,7 +419,8 @@
       "marketCap": 2759,
       "confidence": 5,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HDGF"
     },
     {
       "code": "002821",
@@ -418,7 +439,8 @@
       "marketCap": 550,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "KLY"
     },
     {
       "code": "002837",
@@ -437,7 +459,8 @@
       "marketCap": 892,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "YWK"
     },
     {
       "code": "002851",
@@ -456,7 +479,8 @@
       "marketCap": 930,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "MGMT"
     },
     {
       "code": "002916",
@@ -475,7 +499,8 @@
       "marketCap": 2739,
       "confidence": 4,
       "position": 12.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SNDL"
     },
     {
       "code": "002938",
@@ -494,7 +519,8 @@
       "marketCap": 2500,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "PDKG"
     },
     {
       "code": "002979",
@@ -513,7 +539,8 @@
       "marketCap": 175.8,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "LSZN"
     },
     {
       "code": "003021",
@@ -532,7 +559,8 @@
       "marketCap": 255,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZWJD"
     },
     {
       "code": "300015",
@@ -551,7 +579,8 @@
       "marketCap": 783,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "AEYK"
     },
     {
       "code": "300054",
@@ -570,7 +599,8 @@
       "marketCap": 906,
       "confidence": 4,
       "position": 8,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "DLGF"
     },
     {
       "code": "300100",
@@ -589,7 +619,8 @@
       "marketCap": 174.9,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SLGF"
     },
     {
       "code": "300223",
@@ -608,7 +639,8 @@
       "marketCap": 480,
       "confidence": 4,
       "position": 3.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "BJJZ"
     },
     {
       "code": "300285",
@@ -627,7 +659,8 @@
       "marketCap": 944,
       "confidence": 4,
       "position": 3.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "GCCL"
     },
     {
       "code": "300308",
@@ -646,7 +679,8 @@
       "marketCap": 9989,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZJXC"
     },
     {
       "code": "300346",
@@ -665,7 +699,8 @@
       "marketCap": 383,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "NDGD"
     },
     {
       "code": "300373",
@@ -684,7 +719,8 @@
       "marketCap": 559,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "YJKJ"
     },
     {
       "code": "300394",
@@ -703,7 +739,8 @@
       "marketCap": 2891,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "TFTX"
     },
     {
       "code": "300395",
@@ -722,7 +759,8 @@
       "marketCap": 640,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "FLH"
     },
     {
       "code": "300408",
@@ -741,7 +779,8 @@
       "marketCap": 2600,
       "confidence": 5,
       "position": 5,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SHJT"
     },
     {
       "code": "300476",
@@ -760,7 +799,8 @@
       "marketCap": 3405,
       "confidence": 4,
       "position": 12.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SHKJ"
     },
     {
       "code": "300499",
@@ -779,7 +819,8 @@
       "marketCap": 118.1,
       "confidence": 3,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "GLGF"
     },
     {
       "code": "300502",
@@ -798,7 +839,8 @@
       "marketCap": 6970,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "XYS"
     },
     {
       "code": "300604",
@@ -817,7 +859,8 @@
       "marketCap": 1920,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZCKJ"
     },
     {
       "code": "300661",
@@ -836,7 +879,8 @@
       "marketCap": 650,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SBGF"
     },
     {
       "code": "300666",
@@ -855,7 +899,8 @@
       "marketCap": 370,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "JFDZ"
     },
     {
       "code": "300726",
@@ -874,7 +919,8 @@
       "marketCap": 348.0,
       "confidence": 4,
       "position": 8,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HDDZ"
     },
     {
       "code": "300759",
@@ -893,7 +939,8 @@
       "marketCap": 514,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "KLHC"
     },
     {
       "code": "300782",
@@ -912,7 +959,8 @@
       "marketCap": 380,
       "confidence": 3,
       "position": 0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZSW"
     },
     {
       "code": "300990",
@@ -931,7 +979,8 @@
       "marketCap": 140.43,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "TFGF"
     },
     {
       "code": "301018",
@@ -950,7 +999,8 @@
       "marketCap": 402,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SLHJ"
     },
     {
       "code": "301200",
@@ -969,7 +1019,8 @@
       "marketCap": 1790,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "DZSK"
     },
     {
       "code": "301217",
@@ -988,7 +1039,8 @@
       "marketCap": 898,
       "confidence": 4,
       "position": 3.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "TGTB"
     },
     {
       "code": "301308",
@@ -1007,7 +1059,8 @@
       "marketCap": 2100,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "JBL"
     },
     {
       "code": "301377",
@@ -1026,7 +1079,8 @@
       "marketCap": 2282,
       "confidence": 4,
       "position": 0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "DTGK"
     },
     {
       "code": "301536",
@@ -1045,7 +1099,8 @@
       "marketCap": 491,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-07"
+      "analysis_date": "2026-07-07",
+      "pinyin": "XCKJ"
     },
     {
       "code": "301580",
@@ -1064,7 +1119,8 @@
       "marketCap": 65,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ADT"
     },
     {
       "code": "600111",
@@ -1083,7 +1139,8 @@
       "marketCap": 1757,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "BFXT"
     },
     {
       "code": "600160",
@@ -1102,7 +1159,8 @@
       "marketCap": 1144,
       "confidence": 5,
       "position": 15.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "JHGF"
     },
     {
       "code": "600183",
@@ -1121,7 +1179,8 @@
       "marketCap": 3200,
       "confidence": 5,
       "position": 15.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SYKJ"
     },
     {
       "code": "600196",
@@ -1140,7 +1199,8 @@
       "marketCap": 614,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "FXYY"
     },
     {
       "code": "600276",
@@ -1159,7 +1219,8 @@
       "marketCap": 3614,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HRYY"
     },
     {
       "code": "600487",
@@ -1178,7 +1239,8 @@
       "marketCap": 2200,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HTGD"
     },
     {
       "code": "600563",
@@ -1197,7 +1259,8 @@
       "marketCap": 353,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "FLDZ"
     },
     {
       "code": "600584",
@@ -1216,7 +1279,8 @@
       "marketCap": 767,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZDKJ"
     },
     {
       "code": "601126",
@@ -1235,7 +1299,8 @@
       "marketCap": 543,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SFGF"
     },
     {
       "code": "601208",
@@ -1254,7 +1319,8 @@
       "marketCap": 620,
       "confidence": 4,
       "position": 2.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "DCKJ"
     },
     {
       "code": "601689",
@@ -1273,7 +1339,8 @@
       "marketCap": 1000,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "TPJT"
     },
     {
       "code": "601727",
@@ -1292,7 +1359,8 @@
       "marketCap": 1082,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SHDQ"
     },
     {
       "code": "601869",
@@ -1311,7 +1379,8 @@
       "marketCap": 3933,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZFGX"
     },
     {
       "code": "601958",
@@ -1330,7 +1399,8 @@
       "marketCap": 823,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "JMGF"
     },
     {
       "code": "603186",
@@ -1349,7 +1419,8 @@
       "marketCap": 307,
       "confidence": 4,
       "position": 0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HZXC"
     },
     {
       "code": "603256",
@@ -1368,7 +1439,8 @@
       "marketCap": 1880,
       "confidence": 4,
       "position": 0.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HHKJ"
     },
     {
       "code": "603259",
@@ -1387,7 +1459,8 @@
       "marketCap": 2860,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "YMKD"
     },
     {
       "code": "603308",
@@ -1406,7 +1479,8 @@
       "marketCap": 413,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "YLGF"
     },
     {
       "code": "603501",
@@ -1425,7 +1499,8 @@
       "marketCap": 2200,
       "confidence": 4,
       "position": 7.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "WEGF"
     },
     {
       "code": "603650",
@@ -1444,7 +1519,8 @@
       "marketCap": 418,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-09"
+      "analysis_date": "2026-07-09",
+      "pinyin": "TCXC"
     },
     {
       "code": "603662",
@@ -1463,7 +1539,8 @@
       "marketCap": 195,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "KLCG"
     },
     {
       "code": "603667",
@@ -1482,7 +1559,8 @@
       "marketCap": 260,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "WZXC"
     },
     {
       "code": "603728",
@@ -1501,7 +1579,8 @@
       "marketCap": 266,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "MZDQ"
     },
     {
       "code": "603773",
@@ -1520,7 +1599,8 @@
       "marketCap": 360,
       "confidence": 3,
       "position": 0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "WGGD"
     },
     {
       "code": "603893",
@@ -1539,7 +1619,8 @@
       "marketCap": 758,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "RXW"
     },
     {
       "code": "603986",
@@ -1558,7 +1639,8 @@
       "marketCap": 2500,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZYCX"
     },
     {
       "code": "605358",
@@ -1577,7 +1659,8 @@
       "marketCap": 500,
       "confidence": 4,
       "position": 4.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "LAW"
     },
     {
       "code": "605376",
@@ -1596,7 +1679,8 @@
       "marketCap": 600,
       "confidence": 5,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "BQXC"
     },
     {
       "code": "688008",
@@ -1615,7 +1699,8 @@
       "marketCap": 3618,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "LQKJ"
     },
     {
       "code": "688012",
@@ -1634,7 +1719,8 @@
       "marketCap": 2586,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZWGS"
     },
     {
       "code": "688017",
@@ -1653,7 +1739,8 @@
       "marketCap": 640,
       "confidence": 4,
       "position": 3,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "LDXB"
     },
     {
       "code": "688018",
@@ -1672,7 +1759,8 @@
       "marketCap": 212,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-04"
+      "analysis_date": "2026-07-04",
+      "pinyin": "LXKJ"
     },
     {
       "code": "688019",
@@ -1691,7 +1779,8 @@
       "marketCap": 300,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "AJKJ"
     },
     {
       "code": "688041",
@@ -1710,7 +1799,8 @@
       "marketCap": 5311,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HGXX"
     },
     {
       "code": "688072",
@@ -1729,7 +1819,8 @@
       "marketCap": 2352,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "TJKJ"
     },
     {
       "code": "688082",
@@ -1748,7 +1839,8 @@
       "marketCap": 1930,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "SMSH"
     },
     {
       "code": "688106",
@@ -1767,7 +1859,8 @@
       "marketCap": 128,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "JHQT"
     },
     {
       "code": "688126",
@@ -1786,7 +1879,8 @@
       "marketCap": 919,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HGCY"
     },
     {
       "code": "688146",
@@ -1805,7 +1899,8 @@
       "marketCap": 413,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZCTQ"
     },
     {
       "code": "688160",
@@ -1824,7 +1919,8 @@
       "marketCap": 124.4,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "BKGF"
     },
     {
       "code": "688234",
@@ -1843,7 +1939,8 @@
       "marketCap": 710,
       "confidence": 4,
       "position": 6.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "TYXJ"
     },
     {
       "code": "688235",
@@ -1862,7 +1959,8 @@
       "marketCap": 3420,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "BJSZ"
     },
     {
       "code": "688249",
@@ -1881,7 +1979,8 @@
       "marketCap": 1227,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "JHJC"
     },
     {
       "code": "688266",
@@ -1900,7 +1999,8 @@
       "marketCap": 320,
       "confidence": 4,
       "position": 5,
-      "analysis_date": "2026-07-04"
+      "analysis_date": "2026-07-04",
+      "pinyin": "ZJZY"
     },
     {
       "code": "688268",
@@ -1919,7 +2019,8 @@
       "marketCap": 296,
       "confidence": 4,
       "position": 3.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HTQT"
     },
     {
       "code": "688300",
@@ -1938,7 +2039,8 @@
       "marketCap": 505,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "LRXC"
     },
     {
       "code": "688322",
@@ -1957,7 +2059,8 @@
       "marketCap": 615,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ABZG"
     },
     {
       "code": "688331",
@@ -1976,7 +2079,8 @@
       "marketCap": 850,
       "confidence": 4,
       "position": 4.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "RCSW"
     },
     {
       "code": "688347",
@@ -1995,7 +2099,8 @@
       "marketCap": 3824,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HHGS"
     },
     {
       "code": "688428",
@@ -2014,7 +2119,8 @@
       "marketCap": 515,
       "confidence": 4,
       "position": 5.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "NCJH"
     },
     {
       "code": "688498",
@@ -2033,7 +2139,8 @@
       "marketCap": 1218,
       "confidence": 4,
       "position": 3.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "YJKJ"
     },
     {
       "code": "688506",
@@ -2052,7 +2159,8 @@
       "marketCap": 1404,
       "confidence": 4,
       "position": 5,
-      "analysis_date": "2026-07-04"
+      "analysis_date": "2026-07-04",
+      "pinyin": "BLTH"
     },
     {
       "code": "688519",
@@ -2071,7 +2179,8 @@
       "marketCap": 120,
       "confidence": 4,
       "position": 3.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "NYXC"
     },
     {
       "code": "688535",
@@ -2090,7 +2199,8 @@
       "marketCap": 153.07,
       "confidence": 4,
       "position": 5,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "HHCK"
     },
     {
       "code": "688578",
@@ -2109,7 +2219,8 @@
       "marketCap": 566,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ALS"
     },
     {
       "code": "688676",
@@ -2128,7 +2239,8 @@
       "marketCap": 369,
       "confidence": 4,
       "position": 10.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "JPKJ"
     },
     {
       "code": "688766",
@@ -2147,7 +2259,8 @@
       "marketCap": 595,
       "confidence": 4,
       "position": 8.0,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "PRGF"
     },
     {
       "code": "688981",
@@ -2166,7 +2279,8 @@
       "marketCap": 10000,
       "confidence": 4,
       "position": 5,
-      "analysis_date": "2026-07-03"
+      "analysis_date": "2026-07-03",
+      "pinyin": "ZXGJ"
     }
   ]
 }
