@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "code": "601138",
+    "name": "工业富联",
+    "exchange": "SH",
+    "shenwan_industry": "电子/消费电子/品牌消费电子",
+    "concept_tags": ["AI服务器", "云计算", "高速交换机", "液冷", "富士康", "英伟达产业链", "算力基建", "CPO"],
+    "analysis_date": "2026-07-14",
+    "fiscal_period": "2026Q1",
+    "confidence": 4,
+    "status": "active",
+    "last_updated": "2026-07-14T08:30:00"
+  },
+  "overview": {
+    "full_name": "富士康工业互联网股份有限公司",
+    "market": "上交所主板",
+    "listed_since": "2018-06-08",
+    "total_market_cap_yi": 13100,
+    "float_market_cap_yi": 3700,
+    "pe_ttm": 37.3,
+    "pb": 7.9,
+    "controller": "鸿海精密(富士康)通过多层架构控股65%+，郭台铭为最终控制人",
+    "employees": 252000,
+    "one_liner": "全球最大AI服务器ODM厂商，英伟达GPU服务器核心供应商，2025年云计算收入6027亿(+89%)，AI服务器出货量翻3倍，坐拥AI算力基建最强确定性",
+    "revenue_segments": [
+      {"segment": "云计算(AI服务器+存储)", "revenue_pct": 66.8, "gross_margin_pct": 5.7, "yoy_growth_pct": 88.7},
+      {"segment": "通信及移动网络设备", "revenue_pct": 33.0, "gross_margin_pct": 9.3, "yoy_growth_pct": 3.5},
+      {"segment": "工业互联网", "revenue_pct": 0.2, "gross_margin_pct": 40.0, "yoy_growth_pct": 5.0}
+    ]
+  },
+  "supply_chain": {
+    "position": "AI服务器ODM/OEM制造，处于算力产业链中游核心环节。上游是GPU(英伟达)/ASIC(博通/世芯)/CPU(英特尔/AMD)、存储芯片(三星/SK海力士/美光)、PCB/连接器；下游是全球头部云服务商(AWS/微软Azure/谷歌Cloud/Meta)和企业客户",
+    "upstream": "英伟达GPU(H100/H200/B200/Rubin)、AMD MI300X、博通ASIC、英特尔/AMD CPU、三星/SK海力士HBM存储、PCB(鹏鼎/深南)、连接器(立讯精密)、液冷组件(双鸿/高力)",
+    "downstream": "北美四大CSP(微软Azure/AWS/谷歌Cloud/Meta)、Oracle、CoreWeave等二线云厂商、中国云厂商(阿里云/字节)、企业级客户",
+    "upstream_bargaining": {"level": "弱", "reason": "GPU由英伟达绝对垄断，工业富联作为ODM厂商对上游议价权极弱。2025年部分云服务商订单由buy&sell转为consign模式(客户直采GPU)，进一步削弱了对GPU的采购话语权"},
+    "downstream_bargaining": {"level": "中", "reason": "客户高度集中(北美四大CSP占云计算收入大头)，但工业富联凭借规模(全球最大AI服务器产能)和交付能力形成一定议价权。AI服务器供不应求环境下，产能即话语权"},
+    "substitution_risk": {"level": "低", "by_whom": "广达/纬创/英业达(台系ODM同行)、超微电脑(SMCI)、浪潮信息/AWS自研。但工业富联产能规模远超同行，短期难以替代", "cycle_years": 3},
+    "supply_constraints": {
+      "capacity_bottleneck": "GPU供应是最大瓶颈(英伟达产能限制)，非工业富联自身产能问题。公司全球多地工厂(深圳/天津/越南/墨西哥/美国)产能充裕，能快速扩线",
+      "license_barrier": "美国对华AI芯片出口管制影响部分中国客户订单，但公司全球化布局(墨西哥/越南/美国工厂)可部分规避",
+      "key_material_dependency": "英伟达GPU供应高度集中，任何GPU供应链中断都将直接影响公司AI服务器出货",
+      "has_hard_constraint": true
+    }
+  },
+  "moat": {
+    "scores": {
+      "tech_barrier": {"score": 4, "detail": "全球唯一具备从GPU基板到整机柜全栈制造能力的ODM。液冷方案(浸没式+冷板)行业领先，NVL72/GB300等高端机柜独家或主供份额。CPO全光交换机样机已出货，前瞻技术布局领先"},
+      "scale_effect": {"score": 5, "detail": "营收9029亿=同行广达+纬创+英业达之和。25.2万员工、全球多地工厂，规模优势碾压。单机柜制造成本和交付周期无人能敌。AI服务器出货量全球第一"},
+      "customer_stickiness": {"score": 4, "detail": "北美四大CSP深度绑定(微软/Meta/AWS/谷歌)，合作历史超20年。AI服务器设计复杂度和定制化程度极高，切换ODM成本大、周期长(6-12个月)。但consign模式降低了部分绑定深度"},
+      "brand_patent_license": {"score": 3, "detail": "富士康体系品牌信誉，液冷/高速互联领域专利储备丰富。但作为ODM代工厂，品牌价值弱于自有品牌(如SMCI超微)。2025年研发投入仅111亿(研发费率1.2%)，投入强度偏低"},
+      "cost_advantage": {"score": 4, "detail": "全球最大产能带来最强规模效应，人工+采购+制造综合成本低于台系同行。毛利率虽仅7%，但净利率3.9%在ODM中处于高水平(广达/纬创净利率仅2-3%)。consign模式降低周转资金需求进一步提升效率"}
+    },
+    "trend_3_5yr": "拓宽",
+    "core_risk": "AI算力需求若放缓，巨额产能将面临利用率不足风险；美国政府若扩大对华出口管制范围，可能影响GPU供应；consign模式普及将压缩ODM利润空间"
+  },
+  "financials": {
+    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "metrics": {
+      "revenue_yi": [4763, 6091, 9029, 2511],
+      "net_profit_yi": [210, 232, 353, 106],
+      "gross_margin_pct": [8.1, 7.3, 7.0, 7.4],
+      "net_margin_pct": [4.4, 3.8, 3.9, 4.2],
+      "roe_pct": [15.6, 15.2, 21.2, 7.5],
+      "debt_ratio_pct": [52.0, 50.5, 51.8, 52.3],
+      "ocf_to_profit": [1.5, 1.8, 1.0, null],
+      "rd_ratio_pct": [2.0, 1.7, 1.2, null],
+      "ar_turnover_days": [52, 57, 45, null],
+      "inventory_turnover_days": [38, 51, 61, null]
+    },
+    "highlights": [
+      "2025年营收增速48.2%，利润增速52%，Q1 2026利润同比翻倍(+102.5%)，AI服务器量价齐升驱动业绩爆表",
+      "净利率从2024年3.8%提升至2026Q1的4.2%，产品结构向高端AI机柜倾斜带来的利润率改善正在兑现",
+      "云计算收入2025年6027亿(+88.7%)已超越通信业务成为绝对主力，AI服务器收入同比超过3倍增长",
+      "2025年分红总额195亿(派息率55%)，上市以来累计分红631亿，股东回报意识极强"
+    ],
+    "risk_points": [
+      "毛利率仅7%且处于下行通道(2023年8.1%→2025年7.0%)，低毛利模式意味着利润对成本波动极为敏感",
+      "存货从852亿增至1509亿(+77%)，存货周转天数从38天升至61天，需关注是否存在AI服务器备货过度风险",
+      "研发费用率仅1.2%，作为AI服务器龙头科技含量存疑——本质上仍是高端代工厂，护城河在于规模和效率而非技术"
+    ]
+  },
+  "growth": {
+    "short_term_6m": [
+      "Q2 2026业绩有望持续高增：GB300/Rubin平台出货爬坡+AI服务器需求旺盛+800G/1.6T交换机放量，信达证券预测全年净利665亿(+88%)",
+      "CPO全光交换机样机开始出货：技术领先行业，若2026年下半年量产将打开新增长曲线",
+      "consign模式深化：部分大客户GPU直采转consign，虽降低营收(不确认GPU收入)但提升周转效率、降低资金占用"
+    ],
+    "mid_term_18m": [
+      "Rubin平台(NVIDIA下一代GPU)2026-2027年放量：单机柜价值量较GB300提升40-60%，公司作为主供将直接受益ASP提升",
+      "液冷渗透率从20%→50%+：AI芯片功耗持续攀升(B200 1000W→Rubin 1500W+)，液冷成为标配，公司液冷方案领先有望提升毛利率",
+      "ASIC服务器增速超GPU：博通/世芯/联发科等ASIC方案放量，公司同时覆盖GPU+ASIC双路线，客户覆盖面拓宽"
+    ],
+    "long_term_5y": [
+      "全球AI服务器2025-2030 CAGR 28%(TrendForce)，出货量从180万台增至600万+台，工业富联全球份额超40%将持续受益",
+      "AI推理需求爆发：大模型从训练转向推理，Token消耗指数级增长驱动推理服务器需求，市场空间从千亿迈向万亿",
+      "机器人/具身智能新场景：富士康体系在自动化/机器人领域积累深厚，工业富联有望切入制造端+产品端双受益"
+    ],
+    "tam_yi": 25000,
+    "penetration_pct": 36,
+    "ceiling": "全球AI服务器市场2025年约2500亿美元(1.8万亿人民币)，工业富联份额~36%。若2030年市场达6000亿美元，维持35%+份额对应营收2万亿+人民币"
+  },
+  "competition": {
+    "rivals": [
+      {"name": "广达电脑", "code": "2382.TW", "market_cap": "~4000亿台币", "tech_gap": "台系ODM老二，Google/Meta主力供应商。AI服务器份额约15-20%。技术能力相当但产能规模远小于工业富联", "share_comparison": "AI服务器收入约2000-3000亿台币(~450-680亿人民币)，不及工业富联1/3", "differentiation": "Google TPU独家ODM，ASIC路线有差异化优势。但GPU服务器规模不及工业富联"},
+      {"name": "纬创/纬颖", "code": "3231.TW/6669.TW", "market_cap": "~3000亿台币", "tech_gap": "台系ODM老三，AWS/Meta供应商。AI服务器份额约10%", "share_comparison": "AI服务器收入约1500亿台币(~340亿人民币)", "differentiation": "AWS自研芯片Trainium/Inferentia主要ODM，ASIC路线差异化"},
+      {"name": "超微电脑", "code": "SMCI", "market_cap": "~800亿美元", "tech_gap": "美系AI服务器品牌厂商，液冷技术行业标杆。自有品牌溢价高于ODM，毛利率14-18%远超工业富联", "share_comparison": "营收约300亿美元(~2150亿人民币)，增速比工业富联更快但规模仍小", "differentiation": "品牌溢价+液冷技术领先+美国本土交付优势。但产能规模和全球化布局不如工业富联"},
+      {"name": "浪潮信息", "code": "000977", "market_cap": "~800亿", "tech_gap": "国内AI服务器龙头，百度/阿里/字节主力供应商。受美国芯片出口管制影响较大", "share_comparison": "营收约1200亿(~工业富联的13%)", "differentiation": "国内市场为主，受出口管制制约严重。与工业富联在不同市场错位竞争"}
+    ],
+    "porter_five": {"new_entrants": "低", "supplier_power": "高", "buyer_power": "中", "substitutes": "低", "rivalry": "高"}
+  },
+  "governance": {
+    "core_team": "董事长郑弘孟(富士康20年+老兵)，核心管理层稳定。全球化管理经验丰富，供应链掌控力行业顶级",
+    "incentive_alignment": "鸿海精密绝对控股(65%+)，管理层与股东利益高度一致。2025年分红195亿(派息率55%)，股东回报意识在A股科技公司中属顶级",
+    "board_structure": "台资控股(鸿海精密)，治理受台湾上市公司监管+大陆A股双重约束，规范化程度较高。独董比例满足A股要求",
+    "integrity_record": "无财务造假/重大违规前科。富士康体系全球运营30年+信誉积累。2025年MSCI ESG评级调升至AA级",
+    "shareholder_structure": {"institutional_pct": 86.81, "retail_pct": 13.19, "shareholder_count_trend": "大股东鸿海系持股65%+超稳定，主动基金Q1 2026减持(1560→340家，持股从3.52%→1.22%)但被动ETF持续增持"}
+  },
+  "fund_attention": {
+    "holding_funds_count": 340,
+    "total_holding_shares_wan": 24117,
+    "holding_pct_of_float": 1.22,
+    "qoq_change": "较2025Q4大幅减少(基金从1560家降至340家，持股从69957万股降至24117万股，减幅65.5%)。季报披露周期因素+部分止盈卖出",
+    "new_entries": 28,
+    "exits": 1248,
+    "heavy_position_rank": 15,
+    "star_manager_holdings": ["国泰中证通信设备ETF(2875万股，增仓)", "中航机遇领航混合(1787万股，新进)", "中欧信息科技混合(1067万股，增仓)"],
+    "recent_research_visits": 25,
+    "trend": "上升",
+    "score": 8,
+    "comment": "基金家数因季报周期大幅减少，但被动ETF和明星基金经理逆势增持。作为A股AI算力市值龙头和沪深300核心成分股，天然吸引被动资金。2026年业绩翻倍预期下，半年报后基金持仓有望大幅回升。近期25次机构调研频率极高。"
+  },
+  "valuation": {
+    "current": {"pe_ttm": 37.3, "pe_percentile": 55, "pe_industry_median": 32, "pb": 7.9, "pb_percentile": 75, "pb_industry_median": 4.5, "ps_ttm": 1.45, "ps_industry_median": 2.5, "ev_ebitda": 22.0, "ev_ebitda_industry_median": 20.0},
+    "scenarios": {
+      "bull": {"assumptions": "2026年净利680亿(+93%，超一致预期)，Rubin平台ASP大幅提升+液冷渗透率超预期+CPO交换机放量，给予25x PE", "target_market_cap_yi": 17000, "target_price": 85.6, "upside_pct": 30},
+      "base": {"assumptions": "2026年净利600亿(+70%，市场一致预期)，AI服务器稳健增长+800G交换机持续高增，给予20x PE", "target_market_cap_yi": 12000, "target_price": 60.4, "upside_pct": -8},
+      "bear": {"assumptions": "2026年净利450亿(+27%，低于预期)，GPU供应受限+大客户订单延迟+consign模式压缩营收，给予15x PE", "target_market_cap_yi": 6750, "target_price": 34.0, "downside_pct": 48}
+    }
+  },
+  "risks": [
+    {"risk": "AI算力需求周期性放缓：CSP资本开支若因经济衰退或AI投资回报不及预期而削减，将直接冲击公司订单", "probability": "低", "impact": "极高", "mitigation": "跟踪北美四大CSP每季资本开支指引和AI服务器出货量行业数据"},
+    {"risk": "美国对华芯片出口管制升级：若美国进一步限制英伟达GPU对华出口，将影响公司中国区AI服务器业务", "probability": "中", "impact": "高", "mitigation": "公司全球化产能布局(墨西哥/越南/美国)可部分规避；关注出口管制政策动态"},
+    {"risk": "consign模式推广压缩营收和利润：客户直采GPU转consign后，公司不再确认GPU收入(占AI服务器成本60-70%)，营收增速可能放缓", "probability": "高", "impact": "中", "mitigation": "consign虽降低营收但提升周转效率和净利率，关注每季consign占比变化对毛利率的真实影响"},
+    {"risk": "ODM低毛利模式：毛利率仅7%，任何原材料涨价或客户压价都可能大幅侵蚀利润。AI服务器竞争加剧可能进一步压缩利润率", "probability": "中", "impact": "中", "mitigation": "液冷/高端机柜ASP提升有望结构性改善毛利率；关注每季毛利率趋势"},
+    {"risk": "地缘政治风险：台海局势+中美科技脱钩，富士康台资背景在中国大陆面临双重政治风险", "probability": "低", "impact": "高", "mitigation": "公司注册在深圳、A股上市，大陆运营独立性强于台湾母公司；关注两岸政策变化"},
+    {"risk": "存货激增风险：存货从852亿→1509亿(+77%)，若AI服务器需求突然放缓将面临大规模存货减值", "probability": "中", "impact": "中", "mitigation": "关注每季存货周转天数；2026Q1存货继续增加则需警惕"}
+  ],
+  "catalysts": [
+    {"time_window": "2026年7-8月", "event": "2026半年报披露", "expected_impact": "Q2单季净利预计150-180亿(环比+40-70%)，若超预期将催化新一轮上涨", "certainty": "高"},
+    {"time_window": "2026年Q3-Q4", "event": "NVIDIA Rubin平台出货", "expected_impact": "Rubin是AI服务器ASP提升的关键节点，工业富联作为主供将直接受益", "certainty": "高"},
+    {"time_window": "2026年下半年", "event": "CPO全光交换机量产", "expected_impact": "若CPO交换机从样机进入量产，将打开第二增长曲线(通信业务从3%增速跃升至双位数)", "certainty": "中"},
+    {"time_window": "持续", "event": "北美四大CSP季度资本开支指引", "expected_impact": "每季CSP capex指引是AI服务器需求的前瞻指标，2025-2026年指引持续上修中", "certainty": "高"},
+    {"time_window": "2027年", "event": "AI推理需求爆发", "expected_impact": "大模型从训练转向推理，Token消耗驱动推理服务器需求，市场空间进一步扩大", "certainty": "中"}
+  ],
+  "verdict": {
+    "core_thesis": "工业富联是全球AI算力基建最确定的受益标的，没有之一。营收9029亿、AI服务器份额40%+、客户覆盖全球顶级CSP。2026年净利剑指600亿(forward PE仅20x)，是A股AI赛道罕见的'高增长+合理估值'组合。但低毛利ODM商业模式(毛利率7%)决定了其天花板远低于英伟达/台积电等上游芯片企业，当前估值合理但非低估。适合作为AI算力赛道的核心配置，不适合博弈超额收益。",
+    "long_reasons": [
+      "AI服务器全球龙头地位无敌：份额40%+、产能碾压台系同行、客户覆盖全球顶级CSP。AI服务器需求至少3-5年高景气，确定性极强",
+      "Forward PE仅20x(2026E 600亿净利)，是A股AI赛道罕见的'业绩爆发+估值合理'标的。对比中际旭创PE 65x、寒武纪亏损，估值性价比突出",
+      "液冷+CPO+Rubin三代增长曲线接力：液冷渗透率提升改善毛利率、CPO交换机打开新市场、Rubin平台ASP跳升驱动量价齐升。增长故事远未结束"
+    ],
+    "short_reasons": [
+      "毛利率仅7%是硬伤，ODM代工模式决定了利润天花板。即使营收冲到万亿，3.9%净利率下的利润弹性远不及芯片/光模块等上游环节",
+      "consign模式推广将显著压制营收增速(GPU收入不再确认)。市场习惯了50%+增速，若consign后增速骤降至20%可能引发估值杀",
+      "超大盘+低毛利=上涨需要天量资金推动。1.3万亿市值、日均成交额50-100亿，继续翻倍需要的边际资金量巨大"
+    ],
+    "rating": "看好",
+    "suggested_position_pct": 12,
+    "holding_period": "中线",
+    "entry_strategy": "当前PE 37x(TTM)处于合理区间。建议PE回落至30x以下(约50元)分批建仓，或等待半年报超预期后右侧介入。可占AI算力仓位的核心配置",
+    "stop_loss_conditions": "跌破40元(对应2026E PE 13x，约40%下行)止损；或出现北美CSP资本开支连续两个季度下滑/AI服务器市场份额明显流失等基本面恶化信号",
+    "key_tracking_metrics": ["北美四大CSP(微软/Meta/谷歌/亚马逊)每季资本开支指引", "每季AI服务器出货量及ASP变化趋势", "consign模式占比及对毛利率的真实影响", "NVIDIA Rubin平台出货时间表和份额分配", "存货周转天数(当前61天，需降至50天以下)"]
+  }
+}

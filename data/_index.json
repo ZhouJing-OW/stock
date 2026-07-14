@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-10T23:23:52.468564",
-  "total": 116,
+  "updated": "2026-07-14T14:14:27.204480",
+  "total": 117,
   "stocks": [
     {
       "code": "000338",
@@ -1323,6 +1323,26 @@
       "pinyin": "SFGF"
     },
     {
+      "code": "601138",
+      "name": "工业富联",
+      "exchange": "SH",
+      "industry": "电子/消费电子/品牌消费电子",
+      "tags": [
+        "AI服务器",
+        "云计算",
+        "高速交换机",
+        "液冷",
+        "富士康"
+      ],
+      "rating": "看好",
+      "pe": 37.3,
+      "marketCap": 13100,
+      "confidence": 4,
+      "position": 12,
+      "analysis_date": "2026-07-14",
+      "pinyin": "GYFL"
+    },
+    {
       "code": "601208",
       "name": "东材科技",
       "exchange": "SH",
@@ -2210,16 +2230,16 @@
       "tags": [
         "覆铜板CCL",
         "高速CCL",
-        "AI算力PCB上游",
-        "IC载板",
-        "国产替代"
+        "高频材料",
+        "AI算力",
+        "IC载板"
       ],
-      "rating": "中性",
-      "pe": 50,
-      "marketCap": 120,
+      "rating": "谨慎",
+      "pe": 170,
+      "marketCap": 781,
       "confidence": 4,
-      "position": 3.0,
-      "analysis_date": "2026-07-03",
+      "position": 5,
+      "analysis_date": "2026-07-14",
       "pinyin": "NYXC"
     },
     {
