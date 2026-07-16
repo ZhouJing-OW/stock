@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-14T14:14:27.204480",
-  "total": 117,
+  "updated": "2026-07-16T21:10:47.191927",
+  "total": 119,
   "stocks": [
     {
       "code": "000338",
@@ -396,7 +396,7 @@
       ],
       "rating": "中性",
       "pe": 48.2,
-      "marketCap": 65,
+      "marketCap": 654,
       "confidence": 3,
       "position": 3.0,
       "analysis_date": "2026-07-03",
@@ -441,6 +441,26 @@
       "position": 10.0,
       "analysis_date": "2026-07-03",
       "pinyin": "HDGF"
+    },
+    {
+      "code": "002653",
+      "name": "海思科",
+      "exchange": "SZ",
+      "industry": "医药生物/化学制药/化学制剂",
+      "tags": [
+        "创新药",
+        "麻醉镇痛",
+        "围手术期",
+        "BD出海",
+        "代谢疾病"
+      ],
+      "rating": "中性看好",
+      "pe": 83.5,
+      "marketCap": 580,
+      "confidence": 4,
+      "position": 8,
+      "analysis_date": "2026-07-16",
+      "pinyin": "HSK"
     },
     {
       "code": "002821",
@@ -1983,6 +2003,26 @@
       "pinyin": "BKGF"
     },
     {
+      "code": "688222",
+      "name": "成都先导",
+      "exchange": "SH",
+      "industry": "医药生物/医疗服务/医疗研发外包",
+      "tags": [
+        "DEL技术",
+        "AI制药",
+        "CRO",
+        "DNA编码化合物库",
+        "小核酸药物"
+      ],
+      "rating": "谨慎",
+      "pe": 118.3,
+      "marketCap": 146.6,
+      "confidence": 4,
+      "position": 3,
+      "analysis_date": "2026-07-16",
+      "pinyin": "C_XD"
+    },
+    {
       "code": "688234",
       "name": "天岳先进",
       "exchange": "SH",
@@ -2234,11 +2274,11 @@
         "AI算力",
         "IC载板"
       ],
-      "rating": "谨慎",
-      "pe": 170,
+      "rating": "中性看好",
+      "pe": 312,
       "marketCap": 781,
       "confidence": 4,
-      "position": 5,
+      "position": 8,
       "analysis_date": "2026-07-14",
       "pinyin": "NYXC"
     },

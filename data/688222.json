@@ -1,0 +1,365 @@
+{
+  "meta": {
+    "code": "688222",
+    "name": "成都先导",
+    "exchange": "SH",
+    "shenwan_industry": "医药生物/医疗服务/医疗研发外包",
+    "concept_tags": ["DEL技术", "AI制药", "CRO", "DNA编码化合物库", "小核酸药物", "PROTAC", "创新药研发", "FBDD/SBDD"],
+    "analysis_date": "2026-07-16",
+    "fiscal_period": "2026Q1",
+    "confidence": 4,
+    "status": "active",
+    "last_updated": "2026-07-16T12:59:00"
+  },
+
+  "overview": {
+    "full_name": "成都先导药物开发股份有限公司",
+    "market": "上交所科创板",
+    "listed_since": "2020-04-16",
+    "total_market_cap_yi": 146.6,
+    "float_market_cap_yi": 146.6,
+    "pe_ttm": 118.3,
+    "pb": 9.5,
+    "controller": "JIN LI（李进）",
+    "employees": 546,
+    "one_liner": "全球DEL技术领军者，拥有超1.2万亿DNA编码化合物库，以DEL+FBDD/SBDD+OBT+TPD四大技术平台赋能全球新药发现，通过HAILO（DEL+AI+自动化）平台整合药物化学与计算科学，推动从服务型CRO向「服务+产品」双轮驱动转型。",
+    "revenue_segments": [
+      {
+        "segment": "DEL技术平台（DNA编码化合物库筛选与定制服务）",
+        "revenue_pct": 47.5,
+        "gross_margin_pct": 62,
+        "yoy_growth_pct": 25.4
+      },
+      {
+        "segment": "FBDD/SBDD平台（基于片段和三维结构的药物设计）",
+        "revenue_pct": 28.5,
+        "gross_margin_pct": 52,
+        "yoy_growth_pct": 20
+      },
+      {
+        "segment": "OBT/STO平台（寡核苷酸/小核酸药物研发服务）",
+        "revenue_pct": 11.4,
+        "gross_margin_pct": 48,
+        "yoy_growth_pct": 35
+      },
+      {
+        "segment": "TPD平台（PROTAC/分子胶等靶向蛋白降解）及其他",
+        "revenue_pct": 12.6,
+        "gross_margin_pct": 42,
+        "yoy_growth_pct": 25
+      }
+    ]
+  },
+
+  "supply_chain": {
+    "position": "新药研发产业链上游的药物发现阶段，为全球制药企业提供苗头化合物筛选和先导化合物优化服务，同时拥有自主新药管线可向下游延伸至临床阶段。",
+    "upstream": "生物试剂供应商（Thermo Fisher、Sigma-Aldrich）、化学试剂与DNA合成原料供应商、二代测序服务商（Illumina）、自动化设备供应商",
+    "downstream": "全球大型制药企业（辉瑞、阿斯利康、百时美施贵宝、强生、默沙东、罗氏）及创新型生物技术公司，2024年10月与辉瑞等MNC共同组建全球首个DEL联盟",
+    "upstream_bargaining": {
+      "level": "弱",
+      "reason": "上游试剂和测序供应商众多，竞争充分，公司作为DEL领域头部企业采购规模有议价优势"
+    },
+    "downstream_bargaining": {
+      "level": "强",
+      "reason": "下游为全球大型跨国药企，议价能力强；但DEL技术稀缺性和公司领先地位带来一定反制力"
+    },
+    "substitution_risk": {
+      "level": "中",
+      "by_whom": "AI驱动计算药物发现（AlphaFold/扩散模型）、高通量筛选（HTS）技术持续进化",
+      "cycle_years": 5
+    },
+    "supply_constraints": {
+      "capacity_bottleneck": "全球药物研发生产基地一期已封顶，当前产能可支撑业务增长",
+      "license_barrier": "DEL库为自主知识产权，无外部授权依赖",
+      "key_material_dependency": "DNA合成原料和测序试剂为核心消耗品，但供应商选择多元",
+      "has_hard_constraint": false
+    }
+  },
+
+  "moat": {
+    "scores": {
+      "tech_barrier": {
+        "score": 5,
+        "detail": "拥有全球已知最大的实体DEL小分子库之一（超1.2万亿化合物+3500亿类环肽+1000亿线性多肽），DEL技术从建库到筛选的完整know-how全球仅3-4家企业掌握。2024年10月与辉瑞、阿斯利康、BMS、强生、默沙东、罗氏共建全球首个DEL联盟，技术领导地位获MNC背书。"
+      },
+      "scale_effect": {
+        "score": 4,
+        "detail": "累计服务全球600+客户，完成135个IP转让项目（约1300个活性化合物实体），DEL库规模和项目积累形成数据飞轮效应。年营收5.26亿元在DEL细分赛道排名靠前，但相比药明康德等全产业链CRO规模差距悬殊。"
+      },
+      "customer_stickiness": {
+        "score": 4,
+        "detail": "新药研发项目周期长（从筛选到临床需5-10年），客户切换DEL供应商成本极高。IP转让模式绑定后续里程碑收入（每个项目里程碑费从数百万到数千万不等），形成长期合作粘性。与辉瑞等MNC的DEL联盟进一步深化锁定关系。"
+      },
+      "brand_patent_license": {
+        "score": 4,
+        "detail": "DEL库为完全自主知识产权，公司在DEL领域拥有多项核心专利。2025年推出升级版自助筛选产品OpenDEL（含40亿化合物、59个子库），以标准化产品形式拓展中小客户。品牌在DEL技术服务领域具有全球知名度。"
+      },
+      "cost_advantage": {
+        "score": 3,
+        "detail": "中国CRO行业整体具有人力成本优势（员工546人，人均创收约96万元人民币），但DEL库的维护和持续扩展需要高额研发投入（2025年研发费用率约15%），成本优势不如传统化学CRO突出。"
+      }
+    },
+    "trend_3_5yr": "拓宽",
+    "core_risk": "AI驱动计算药物发现技术（如AlphaFold 3+扩散模型）快速发展，若未来可在硅片上完成大部分苗头化合物发现，DEL技术的物理筛选价值可能被削弱。"
+  },
+
+  "financials": {
+    "periods": ["2022", "2023", "2024", "2025", "2026Q1"],
+    "metrics": {
+      "revenue_yi": [3.30, 3.71, 4.27, 5.26, 1.61],
+      "net_profit_yi": [0.25, 0.41, 0.51, 1.10, 0.42],
+      "gross_margin_pct": [47.67, 49.25, 51.86, 54.22, 56.34],
+      "net_margin_pct": [7.73, 11.00, 11.69, 20.94, 25.86],
+      "roe_pct": [1.91, 3.09, 3.74, 7.63, 2.73],
+      "debt_ratio_pct": [20.48, 20.04, 19.02, 22.88, 23.26],
+      "ocf_to_profit": [2.09, 3.08, 2.49, 1.98, 2.02],
+      "rd_ratio_pct": [18.82, 22.42, 17.14, 14.72, 12.88],
+      "ar_turnover_days": [85, 78, 72, 68, null],
+      "inventory_turnover_days": [73, 70, 65, 68, null]
+    },
+    "highlights": [
+      "营收连续3年加速增长：2023年+12.6%→2024年+15.0%→2025年+23.1%，2026Q1进一步提速至+50.4%，业绩拐点明确确立",
+      "毛利率持续攀升：从2022年47.67%提升至2025年54.22%再到2026Q1的56.34%，规模效应和技术平台效率改善驱动盈利能力提升",
+      "归母净利2025年同比+113.2%至1.10亿，扣非净利润+96.3%，利润弹性远超收入增速，经营杠杆逐步释放",
+      "经营现金流持续健康，2025年OCF/净利润达198%，盈利质量扎实"
+    ],
+    "risk_points": [
+      "ROE绝对水平偏低（2025年仅7.63%），资产周转效率有待提升，大量资产以现金和金融资产形式存在",
+      "2026Q1人民币升值导致汇兑损失约643万元（去年同期汇兑收益251万元），美元收入敞口大",
+      "研发费用率从2023年22.4%降至2026Q1的12.9%，虽反映商业化效率提升，但也需警惕技术投入不足的风险"
+    ]
+  },
+
+  "growth": {
+    "short_term_6m": [
+      "2026Q1营收同比+50.4%、扣非净利润+126.4%，业绩加速释放态势明确，各技术平台商业项目按计划推进",
+      "AI制药主题持续催化：2026年5月华为参与AI制药核心平台建设，行业关注度显著提升",
+      "创新药BD出海交易2025年总额突破1300亿美元创历史新高，上游药物发现需求旺盛，公司直接受益"
+    ],
+    "mid_term_18m": [
+      "DEL板块新商业模式变现：OpenDEL自助筛选产品升级（40亿化合物+59子库），打开中小客户市场",
+      "OBT平台小核酸一站式项目商业转化加速，小核酸药物为当前创新药最热赛道之一",
+      "全球药物研发生产基地一期已封顶，投产后突破产能瓶颈，支撑2-3年持续增长",
+      "HG146（实体瘤HDAC抑制剂）II期临床推进中，管线价值有望逐步兑现"
+    ],
+    "long_term_5y": [
+      "新药管线（HG146/LDR2402等）进入临床后期，里程碑收入+销售分成的远期变现空间大",
+      "DEL+AI+自动化（HAILO平台）形成技术飞轮，有望定义下一代药物发现范式",
+      "从服务型CRO向「服务+产品」双轮驱动转型，自主新药管线价值释放将大幅提升估值天花板"
+    ],
+    "tam_yi": 1400,
+    "penetration_pct": 0.38,
+    "ceiling": "全球药物发现CRO市场约200亿美元（~1400亿人民币），DEL技术渗透率仍低但增速快。公司在DEL细分领域市占率全球领先，但整体药物发现市场份额不足0.4%，成长空间大。"
+  },
+
+  "competition": {
+    "rivals": [
+      {
+        "name": "药明康德",
+        "code": "603259",
+        "market_cap": "约2500亿",
+        "tech_gap": "DEL非其核心业务，但全产业链一体化服务能力碾压，客户覆盖面和品牌力远超成都先导",
+        "share_comparison": "CRO行业市场份额21.5%，绝对龙头",
+        "differentiation": "全产业链CRO/CDMO龙头，DEL仅为众多技术平台之一；成都先导以DEL为核心差异化，技术深度更优但广度不足"
+      },
+      {
+        "name": "康龙化成",
+        "code": "300759",
+        "market_cap": "约600亿",
+        "tech_gap": "实验室化学和CDMO见长，DEL技术储备弱于成都先导",
+        "share_comparison": "CRO市场份额约6%，第二梯队",
+        "differentiation": "实验室服务+CMC+临床CRO全流程覆盖；成都先导聚焦药物发现前端，以DEL技术稀缺性构筑壁垒"
+      },
+      {
+        "name": "X-Chem (美国私有)",
+        "code": "",
+        "market_cap": "未上市",
+        "tech_gap": "全球DEL领域主要竞争对手，拥有超2500亿化合物的DEL库，与多家MNC有合作",
+        "share_comparison": "DEL技术服务市场与成都先导并列为全球前二",
+        "differentiation": "总部在美国，地缘优势带来更便利的MNC客户触达；成都先导库规模更大（1.2万亿 vs 2500亿）且成本更低"
+      },
+      {
+        "name": "维亚生物",
+        "code": "1873.HK",
+        "market_cap": "约30亿港元",
+        "tech_gap": "基于结构生物学的药物发现（SBDD/FBDD），与成都先导FBDD/SBDD板块形成竞争，但无DEL技术",
+        "share_comparison": "规模较小，营收约4-5亿港元",
+        "differentiation": "以结构生物学（蛋白结晶）为特色，EFS投资孵化模式独特；成都先导在化合物库规模和DEL技术上具有不可替代性"
+      }
+    ],
+    "porter_five": {
+      "new_entrants": "中",
+      "supplier_power": "低",
+      "buyer_power": "高",
+      "substitutes": "中",
+      "rivalry": "中"
+    }
+  },
+
+  "governance": {
+    "core_team": "董事长/总经理JIN LI（李进），英国曼彻斯特大学博士，DEL技术核心发明人之一，曾任阿斯利康高级研究员。CFO刘红哿，董秘耿世伟。核心技术团队深耕DEL领域超10年。",
+    "incentive_alignment": "已实施2025年员工持股计划（123.87万股）。核心管理层通过宁波聚智先导员工持股平台间接持股9.88%，利益绑定较充分。2025年度每10股派1.3元（含税），分红率47.57%。",
+    "board_structure": "董事会9人，含3名独立董事。德勤华永出具标准无保留意见审计报告。公司治理结构规范，但信息披露曾被市场质疑（募集资金使用透明度问题）。",
+    "integrity_record": "无重大违规记录。2026年5月华博器械（持股10.42%）拟减持400万股、钧天投资（持股2.51%）拟减持1006.77万股，引发市场对原始股东信心的担忧。2026年1月17日钧天投资上一轮减持计划已完成。",
+    "shareholder_structure": {
+      "institutional_pct": 51.95,
+      "retail_pct": 48.05,
+      "shareholder_count_trend": "持续上升——从2024年末13716户增至2026Q1末25798户，筹码持续分散化，散户化趋势明显"
+    }
+  },
+
+  "fund_attention": {
+    "holding_funds_count": 13,
+    "total_holding_shares_wan": 180.3,
+    "holding_pct_of_float": 0.45,
+    "qoq_change": "锐减：2025Q4有228家基金持股1538.82万股，2026Q1骤降至13家180.30万股",
+    "new_entries": 5,
+    "exits": 182,
+    "heavy_position_rank": null,
+    "star_manager_holdings": [
+      {
+        "fund": "华泰柏瑞中证2000ETF",
+        "shares_wan": 69.34
+      },
+      {
+        "fund": "百嘉科技创新混合A",
+        "shares_wan": 39.0
+      },
+      {
+        "fund": "华富健康文娱灵活配置混合A",
+        "shares_wan": 30.0
+      }
+    ],
+    "recent_research_visits": 2,
+    "trend": "下降",
+    "score": 3,
+    "comment": "2026Q1机构数量从2025Q4的235家大降至20家，基金从228家锐减至13家，基金持股占流通比仅0.45%。主因：①高估值下主动基金获利了结 ②部分为季报披露窗口差异。当前机构持仓以被动指数基金为主，缺乏明星主动基金重仓背书。"
+  },
+
+  "valuation": {
+    "current": {
+      "pe_ttm": 118.3,
+      "pe_percentile": 75,
+      "pe_industry_median": 52,
+      "pb": 9.5,
+      "pb_percentile": 70,
+      "pb_industry_median": 3.8,
+      "ps_ttm": 25.3,
+      "ps_industry_median": 5.5,
+      "ev_ebitda": 95,
+      "ev_ebitda_industry_median": 38
+    },
+    "scenarios": {
+      "bull": {
+        "assumptions": "2026全年营收6.5亿(+24%)，归母净利润1.50亿(+36%)，DEL+AI主题热度持续，市场给予120xPE",
+        "target_market_cap_yi": 180,
+        "target_price": 44.9,
+        "upside_pct": 22.8
+      },
+      "base": {
+        "assumptions": "2026全年营收6.46亿(+23%)，归母净利润1.38亿(+25%)，业绩符合预期但高估值收敛至100xPE",
+        "target_market_cap_yi": 138,
+        "target_price": 34.4,
+        "upside_pct": -5.9
+      },
+      "bear": {
+        "assumptions": "2026下半年订单增速回落，全年净利润1.15亿(+5%低增长)，估值杀至80xPE",
+        "target_market_cap_yi": 92,
+        "target_price": 23.0,
+        "downside_pct": 37.2
+      }
+    }
+  },
+
+  "risks": [
+    {
+      "risk": "高估值压缩风险：PE TTM 118x远超CRO行业中位数52x，一旦业绩增速放缓或市场风格切换，面临戴维斯双杀",
+      "probability": "高",
+      "impact": "高",
+      "mitigation": "控制仓位不超过5%，设置严格的止损纪律，密切跟踪季度营收增速变化"
+    },
+    {
+      "risk": "股东持续减持压力：华博器械（10.42%持股）拟减持400万股，钧天投资（2.51%）拟清仓式减持1006.77万股，合计占流通股约3.5%",
+      "probability": "高",
+      "impact": "中",
+      "mitigation": "关注减持进展公告，待减持利空充分消化后再考虑加仓"
+    },
+    {
+      "risk": "汇率波动侵蚀利润：2026Q1人民币升值导致汇兑损失643万元，若人民币持续升值将进一步压制利润",
+      "probability": "中",
+      "impact": "中",
+      "mitigation": "公司使用结构性存款等工具对冲部分汇率风险，关注美元收入占比和汇率敞口披露"
+    },
+    {
+      "risk": "AI制药替代风险：AlphaFold 3+扩散模型等计算药物发现技术快速进化，可能减少对物理DEL筛选的依赖",
+      "probability": "中",
+      "impact": "高",
+      "mitigation": "公司自身已布局HAILO（DEL+AI+自动化），将AI作为增强工具而非替代品，需持续关注AI制药技术进展"
+    },
+    {
+      "risk": "地缘政治与海外收入风险：海外收入占比高，中美关系紧张可能影响与MNC客户的合作稳定性",
+      "probability": "低",
+      "impact": "高",
+      "mitigation": "公司已在英国设立子公司Vernalis，全球化布局分散风险"
+    }
+  ],
+
+  "catalysts": [
+    {
+      "time_window": "2026年8月",
+      "event": "2026年中报发布",
+      "expected_impact": "验证Q1高增长可持续性，若Q2营收增速维持40%以上将显著提振市场信心",
+      "certainty": "高"
+    },
+    {
+      "time_window": "2026 H2",
+      "event": "HG146（实体瘤HDAC抑制剂）II期临床数据读出",
+      "expected_impact": "若数据积极，管线估值将大幅提升，可能成为股价向上突破的核心催化剂",
+      "certainty": "中"
+    },
+    {
+      "time_window": "2026全年",
+      "event": "全球药物研发生产基地一期投产",
+      "expected_impact": "产能瓶颈突破，支撑2-3年持续增长，提升新签订单承接能力",
+      "certainty": "高"
+    },
+    {
+      "time_window": "2026-2027",
+      "event": "AI制药政策利好+DEL联盟合作深化",
+      "expected_impact": "华为等巨头入局AI制药提升板块关注度，DEL联盟合作带来增量订单和行业标准制定话语权",
+      "certainty": "中"
+    },
+    {
+      "time_window": "2026 H2-2027",
+      "event": "新药在研项目权益转让（POL）里程碑收入确认",
+      "expected_impact": "单个项目里程碑费数百万至数千万，多个项目集中确认将显著增厚利润",
+      "certainty": "中"
+    }
+  ],
+
+  "verdict": {
+    "core_thesis": "全球DEL技术领军者，正处于「服务规模化+产品管线兑现」的业绩加速期。2026Q1营收+50%、扣非+126%验证拐点，HAILO平台打开AI制药想象空间。但PE TTM 118x的高估值、原始股东持续减持和基金持仓锐减构成显著压制，当前时点风险收益比中性偏谨慎。",
+    "long_reasons": [
+      "DEL技术壁垒极高且得到MNC背书（全球DEL联盟），1.2万亿化合物库+AI驱动HAILO平台构成难以复制的竞争护城河",
+      "业绩拐点确认：营收增速连续4个季度加速（13%→17%→23%→50%），毛利率从48%攀升至56%，利润弹性持续释放",
+      "OBT小核酸+TPD蛋白降解两大新兴技术平台商业转化加速，叠加HG146临床推进，管线价值催化剂密集"
+    ],
+    "short_reasons": [
+      "PE TTM 118x较CRO行业中位数52x溢价超一倍，即使按2026年一致预期1.38亿净利润计算，前瞻PE仍达106x，估值安全边际极薄",
+      "基金持仓从228家骤降至13家（持股占流通比仅0.45%），机构投资者用脚投票；华博器械+钧天投资合计拟减持超1400万股，抛压尚未释放完毕",
+      "2026Q1营收高增包含低基数效应（2025Q1营收仅+0.6%），2026年剩余季度面临较高基数，全年增速大概率前高后低"
+    ],
+    "rating": "谨慎",
+    "suggested_position_pct": 3,
+    "holding_period": "中线",
+    "entry_strategy": "不建议追高。理想建仓区间30-32元（对应2026E PE约90-95x），可在中报前分批布局10%试探仓位，中报验证高增长持续性后再加至目标仓位。若股价未回调直接上冲至40元以上，放弃建仓。",
+    "stop_loss_conditions": "①跌破28元无条件止损（回撤约23%，对应2026E PE约80x）②Q2单季营收同比增速降至25%以下应减半仓③华博器械/钧天投资减持加速且股价放量下跌时清仓观望",
+    "key_tracking_metrics": [
+      "季度营收同比增速（维持>35%为安全边际线）",
+      "DEL板块新签订单及OpenDEL客户增长",
+      "基金持股家数变化（回升至50家以上为机构信心恢复信号）",
+      "股东减持实施进度（关注大宗交易接盘方身份）",
+      "HG146 II期临床数据及里程碑收入公告"
+    ]
+  }
+}
