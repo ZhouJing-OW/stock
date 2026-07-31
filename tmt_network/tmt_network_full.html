@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TMT产业链网络 v4.3</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="tmt_network_data.js?v=202607310948"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#c9d1d9;font-family:'Microsoft YaHei',sans-serif;overflow:hidden}
+#container{width:100vw;height:100vh;position:relative}
+svg{width:100%;height:100%}
+#info{position:absolute;top:12px;left:16px;z-index:10}
+#info h1{font-size:18px;color:#58a6ff;margin-bottom:4px}
+#info p{font-size:12px;color:#8b949e}
+#legend{position:absolute;bottom:0;left:0;right:0;z-index:10;font-size:11px;display:flex;flex-wrap:wrap;align-items:center;row-gap:3px;column-gap:0;padding:6px 16px 8px;background:rgba(13,17,23,0.85)}
+#legend span{display:inline-flex;align-items:center;margin-right:10px;flex-shrink:0}
+#legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:3px;vertical-align:middle}
+#legend .legendItem{cursor:pointer;padding:1px 3px;border-radius:3px;transition:background 0.15s}
+#legend .legendItem:hover{background:#1f2937}
+#legend .legendItem.active{background:#1f6feb33;outline:1px solid #58a6ff;border-radius:3px}
+#legend .legendExpand{cursor:pointer;color:#58a6ff;padding:1px 4px;border-radius:3px}
+#legend .legendExpand:hover{background:#1f2937}
+#search{position:absolute;top:14px;right:16px;z-index:10;display:flex;gap:6px;align-items:center;width:210px}
+#search input{padding:6px 10px;border-radius:6px;border:1px solid #30363d;background:#161b22;color:#c9d1d9;font-size:13px;flex:1;min-width:0}
+#search input:focus{outline:none;border-color:#58a6ff}
+#tdxBtn{padding:6px 8px;border-radius:6px;border:1px solid #30363d;background:#161b22;color:#58a6ff;font-size:12px;cursor:pointer;white-space:nowrap}
+#tdxBtn:hover,#sliderToggle:hover{background:#1f2937;border-color:#58a6ff}
+#sliderToggle{padding:6px 6px;border-radius:6px;border:1px solid #30363d;background:#161b22;color:#8b949e;font-size:13px;cursor:pointer;line-height:1}
+#sliderToggle.open{color:#58a6ff;border-color:#58a6ff}
+#sliders{position:absolute;top:100px;right:16px;z-index:10;width:210px;font-size:11px;color:#8b949e;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px 12px;box-sizing:border-box}
+#sliders input[type=range]{width:125px;vertical-align:middle}
+#stats{position:absolute;top:48px;right:16px;z-index:10;font-size:11px;color:#8b949e;text-align:right}
+#colorToggle{padding:2px 6px;border-radius:4px;border:1px solid #30363d;background:#161b22;color:#c9d1d9;font-size:11px;cursor:pointer;vertical-align:middle}
+#colorToggle:hover{background:#1f2937;border-color:#58a6ff}
+#colorToggle.active{color:#58a6ff;border-color:#58a6ff}
+#tooltip{position:absolute;pointer-events:none;opacity:0;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px 12px;font-size:12px;color:#c9d1d9;max-width:260px;z-index:20;transition:opacity 0.15s;box-shadow:0 4px 12px rgba(0,0,0,0.5)}
+#tooltip .tt-name{font-size:14px;font-weight:bold;color:#fff;margin-bottom:2px}
+#tooltip .tt-badge{display:inline-block;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:bold;margin-left:4px;vertical-align:middle}
+#tooltip .tt-badge.S{background:#f0c040;color:#0d1117}
+#tooltip .tt-badge.A{background:#f0883e;color:#0d1117}
+#tooltip .tt-desc{color:#8b949e;margin-top:3px;line-height:1.4}
+#tooltip .tt-products{color:#58a6ff;font-size:11px;margin-top:3px;line-height:1.4}
+#tooltip .tt-group{color:#484f58;font-size:10px;margin-top:2px}
+.ship-group,.trail-group{pointer-events:none}
+#captainVoice{position:absolute;z-index:25;max-width:380px;min-width:200px;background:rgba(22,27,34,0.96);border:2px solid #f0c040;border-radius:12px;padding:8px 14px;font-size:12px;color:#e6d5a8;line-height:1.7;opacity:0;transition:opacity 0.3s;box-shadow:0 3px 16px rgba(240,192,64,0.2);display:none;pointer-events:none}
+#captainVoice.visible{opacity:1;display:block}
+.cv-arrow{position:absolute;top:50%;right:-20px;width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:20px solid #f0c040;transform:translateY(-50%)}
+.cv-arrow-inner{position:absolute;top:50%;right:-17px;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:17px solid rgba(22,27,34,0.96);transform:translateY(-50%)}
+#captainVoice .cv-header{font-size:10px;color:#f0c040;text-transform:uppercase;letter-spacing:2px;margin-bottom:2px}
+#captainVoice .cv-name{color:#fff;font-weight:bold;font-size:14px}
+#captainVoice .cv-rating{display:inline-block;padding:0 5px;border-radius:3px;font-size:10px;font-weight:bold;margin-left:4px;vertical-align:middle}
+#captainVoice .cv-rating.S{background:#f0c040;color:#0d1117}
+#captainVoice .cv-rating.A{background:#f0883e;color:#0d1117}
+#captainVoice .cv-rating.B{background:#58a6ff;color:#0d1117}
+#captainVoice .cv-closing{color:#f0c040;font-style:italic;margin-top:4px;font-size:11px}
+#captainVoice .cv-close{position:absolute;top:4px;right:8px;color:#484f58;font-size:14px;cursor:pointer;pointer-events:auto;line-height:1}
+#captainVoice .cv-close:hover{color:#c9d1d9}
+.tw-cursor{color:#f0c040;animation:blink 0.8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+</style>
+</head>
+<body>
+<div id="container">
+<div id="info"><h1>TMT产业链网络 v4.4</h1><p>A股半导体全产业链 · 2026-07-31</p></div>
+<div id="search"><input type="text" placeholder="搜索公司..." id="searchInput"><button id="tdxBtn" title="复制通达信跳转码">📋 TDX</button><button id="sliderToggle" title="展开参数面板">⚙</button></div>
+<div id="sliders" style="display:none">
+<span style="color:#58a6ff;font-size:11px">⚡ 力仿真</span><br>
+引力 <input type="range" id="linkStr" min="1" max="20" value="11"><span id="linkVal">0.55</span><br>
+斥力 <input type="range" id="chargeStr" min="1" max="20" value="11"><span id="chargeVal">550</span><br>
+间距 <input type="range" id="spacingStr" min="0" max="30" value="16"><span id="spacingVal">16</span>
+<hr style="border-color:#30363d;margin:8px 0">
+<span style="color:#58a6ff;font-size:11px">🔗 供应链聚焦</span><br>
+层级 <input type="range" id="focusDepth" min="1" max="5" value="2"><span id="depthVal">2</span>
+<hr style="border-color:#30363d;margin:8px 0">
+<span style="color:#58a6ff;font-size:11px">🚢 舰长室</span><br>
+空闲 <input type="range" id="idleSlider" min="1" max="20" value="3"><span id="idleVal">90s</span><br>
+间隔 <input type="range" id="intervalSlider" min="2" max="12" value="3"><span id="intervalVal">30s</span><br>
+自动航行 <input type="checkbox" id="autoNavToggle" checked> 播报 <input type="checkbox" id="captainVoiceToggle"> <span id="captainVoiceLabel">关</span>
+</div>
+<div id="stats"><span id="nodeCount"></span><br><span id="edgeCount"></span></div>
+<div id="legend">
+<button id="colorToggle" title="切换着色模式">🎨 类型</button>
+<span id="legendEdgeStyles" style="margin-left:6px">━━ L1高置信度</span><span>┅┅ L2</span>
+</div>
+<div id="tooltip"></div>
+<div id="captainVoice"><span class="cv-close" id="cvClose">✕</span><div class="cv-header">🚀 舰长播报</div><div class="cv-body"></div><div class="cv-closing"></div><div class="cv-arrow"></div><div class="cv-arrow-inner"></div></div>
+<svg id="svg"></svg></div>
+<script>
+const W=window.innerWidth,H=window.innerHeight;
+const svg=d3.select("#svg"),g=svg.append("g");
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -5 10 10").attr("refX",20).attr("refY",0).attr("markerWidth",6).attr("markerHeight",6).attr("orient","auto").append("path").attr("d","M0,-5L10,0L0,5").attr("fill","#d2a861");
+svg.select("defs").append("marker").attr("id","arrowL1").attr("viewBox","0 -5 10 10").attr("refX",20).attr("refY",0).attr("markerWidth",6).attr("markerHeight",6).attr("orient","auto").append("path").attr("d","M0,-5L10,0L0,5").attr("fill","#7ee787");
+const defs=svg.select("defs");
+const glowS=defs.append("filter").attr("id","glowS").attr("x","-150%").attr("y","-150%").attr("width","400%").attr("height","400%");
+glowS.append("feGaussianBlur").attr("stdDeviation","8").attr("result","blur");
+glowS.append("feMerge").selectAll("feMergeNode").data(["blur","SourceGraphic"]).join("feMergeNode").attr("in",d=>d);
+let currentCode=null;
+let lastFocusedNode=null;
+let focusDirection='up';
+function applyFocus(nodeId,maxDepth,direction){
+  const visited=new Set();const depth=new Map();
+  const queue=[nodeId];visited.add(nodeId);depth.set(nodeId,0);
+  while(queue.length){
+    const cur=queue.shift();const curDepth=depth.get(cur);
+    if(curDepth>=maxDepth)continue;
+    if(direction==='down'){
+      EDGES.filter(l=>{const s=typeof l.source==='string'?l.source:l.source.id;return s===cur;}).forEach(l=>{
+        const t=typeof l.target==='string'?l.target:l.target.id;
+        if(!visited.has(t)){visited.add(t);depth.set(t,curDepth+1);queue.push(t);}
+      });
+    }else{
+      EDGES.filter(l=>{const t=typeof l.target==='string'?l.target:l.target.id;return t===cur;}).forEach(l=>{
+        const s=typeof l.source==='string'?l.source:l.source.id;
+        if(!visited.has(s)){visited.add(s);depth.set(s,curDepth+1);queue.push(s);}
+      });
+    }
+  }
+  node.attr("opacity",nd=>visited.has(nd.id)?1:0.1).attr("fill",nd=>visited.has(nd.id)?gColors(nd.group):getNodeFill(nd));
+  link.attr("opacity",l=>{const si=typeof l.source==='string'?l.source:l.source.id;const ti=typeof l.target==='string'?l.target:l.target.id;return visited.has(si)&&visited.has(ti)?0.8:0;});
+  label.attr("opacity",nd=>visited.has(nd.id)?1:0.05);
+}
+let focusRAF=null;
+d3.select("#focusDepth").on("input",function(){
+  const v=+this.value;d3.select("#depthVal").text(v===5?"∞":v);
+  localStorage.setItem('tmt_focus',v);
+  if(!lastFocusedNode)return;
+  const nid=lastFocusedNode;
+  if(focusRAF)cancelAnimationFrame(focusRAF);
+  focusRAF=requestAnimationFrame(()=>applyFocus(nid,v,focusDirection));
+});
+const c={a:"#58a6ff",o:"#f0883e",n:"#8b949e"};
+const CHAIN_GROUP={光模块:["光通信"],光器件:["光通信"],光芯片:["光通信"],光纤光缆:["光通信"],通信设备:["光通信"],网络设备:["光通信"],交换芯片:["光通信"],服务器:["AI服务器"],AI芯片:[],CPU:[],通信芯片:[],云厂:[],晶圆代工:["半导体制造"],先进封装:["半导体制造"],半导体设备:["半导体制造"],半导体材料:["半导体制造"],芯片设计:[],IDM:[],存储:["存储"],存储模组:["存储"],存储制造:["存储"],PCB:["PCB"],CCL覆铜板:["PCB"],电子树脂:["PCB"],电子布:["PCB"],玻纤:["PCB"],IC载板:["PCB"],PCB设备:["PCB"],石英材料:["半导体制造"],电池:["锂电池"],新能源:[],关键矿产:[],磁材:[],铜箔:["锂电池","PCB"],正极材料:["锂电池"],前驱体:["锂电池"],回收:["锂电池"],代工组装:[],电源:[],连接器:["AI服务器"],散热:[],零部件:["半导体制造"],工具耗材:["PCB"],伺服驱动:["机器人"],减速器:["机器人"],传感器:["机器人"],机器人本体:["机器人"],控制器:["机器人"],执行器:["机器人"]};
+const CHAIN_EXTRA={中际旭创:["TFLN","AI服务器"],新易盛:["TFLN","AI服务器"],天孚通信:["AI服务器"],光迅科技:["TFLN","AI服务器"],华工科技:["AI服务器"],联特科技:["TFLN"],德科立:["TFLN"],光库科技:["TFLN"],沪硅产业:["TFLN"],源杰科技:["InP","TFLN"],天通股份:["TFLN","光通信"],华卓精科:["光刻机"],上海微电子:["光刻机"],茂莱光学:["光刻机"],福晶科技:["光刻机"],波长光电:["光刻机"],至纯科技:["光刻机"],宇量晟:["光刻机"],海立股份:["光刻机"],新莱应材:["光刻机"],江丰电子:["光刻机"],高澜股份:["AI服务器"],蔚蓝锂芯:["AI服务器"],南亚新材:["AI服务器"],英维克:["AI服务器"],麦格米特:["AI服务器"],三环集团:["AI服务器"],顺络电子:["AI服务器"],风华高科:["AI服务器"],铂科新材:["AI服务器"],光迅科技:["AI服务器"],华工科技:["AI服务器"],沪电股份:["AI服务器"],深南电路:["AI服务器"],盛科通信:["AI服务器"],紫光股份:["AI服务器"],英伟达:["AI服务器"],华为:["AI服务器"],谷歌:["AI服务器"],亚马逊:["AI服务器"],芯源微:["光刻机"],中船特气:["光刻机"],珂玛科技:["光刻机"],富创精密:["光刻机"],通美晶体:["InP"],云南锗业:["InP"],AXT:["InP"],住友电工:["InP"],三菱电机:["InP"],Lumentum:["InP"],Coherent:["InP"],南大光电:["InP"],锡业股份:["InP"],兴发集团:["InP"],三安光电:["InP","光通信","TFLN"],三井金属:["PCB"],铜陵有色:["PCB"],联瑞新材:["PCB"],汇川技术:["机器人"],绿的谐波:["机器人"],双环传动:["机器人"],柯力传感:["机器人"],埃斯顿:["机器人"],华中数控:["机器人"],鸣志电器:["机器人"],雷赛智能:["机器人"],兆威机电:["机器人"],双林股份:["机器人"],步科股份:["机器人"],奥比中光:["机器人"],五洲新春:["机器人"],智元机器人:["机器人"],拓普集团:["机器人"],三花智控:["机器人"],中大力德:["机器人"],长盛轴承:["机器人"],禾川科技:["机器人"],蓝思科技:["机器人"],富临精工:["机器人"],汉威科技:["机器人"],博众精工:["机器人"],特斯拉:["机器人"],比亚迪:["锂电池"],赣锋锂业:["锂电池"],天齐锂业:["锂电池"],华友钴业:["锂电池"],洛阳钼业:["锂电池"],铜陵有色:["锂电池"],中芯国际:["存储"],澜起科技:["存储"],兆易创新:["存储"],江波龙:["存储"],北京君正:["存储"],雅克科技:["存储"],中船特气:["存储"],多氟多:["存储"],三星电子:["存储"],长电科技:["存储"],通富微电:["存储"],华天科技:["存储"],甬矽电子:["存储"]};
+NODES.forEach(d=>{const g=CHAIN_GROUP[d.group]||[];const x=CHAIN_EXTRA[d.id]||[];d.chains=[...new Set([...g,...x])];});
+const groups=[...new Set(NODES.map(d=>d.group))];
+const gColors=d3.scaleOrdinal(d3.schemeTableau10).domain(groups);
+const allChains=[...new Set(NODES.flatMap(d=>d.chains))].sort((a,b)=>{const na=NODES.filter(d=>d.chains.includes(b)).length-NODES.filter(d=>d.chains.includes(a)).length;return na||a.localeCompare(b);});
+const chainColors=d3.scaleOrdinal(["#7ee787","#f0c040","#58a6ff","#f0883e","#f778ba","#a371f7","#39d353","#ff6b6b","#d2a861","#56d4dd","#e6b422"]).domain(allChains);
+let colorMode=localStorage.getItem('tmt_color')||"chain";
+if(colorMode==="group"){d3.select("#colorToggle").text("🎨 行业").classed("active",true);}
+if(colorMode==="chain"){d3.select("#colorToggle").text("🔗 产业链").classed("active",true);}
+function getNodeFill(d){
+  if(colorMode==="chain"){
+    if(!d.chains||d.chains.length===0)return"#444";
+    return chainColors(d.chains[0]);
+  }
+  if(colorMode==="group"){
+    return d.type==="a"?gColors(d.group):"#555";
+  }
+  return c[d.type];
+}
+let activeFilterGroup=null,legendExpanded=false;
+function updateLegend(){
+  d3.selectAll("#legend .legendItem,#legend .legendExpand").remove();
+  const anchor=d3.select("#legendEdgeStyles");
+  function insertBeforeAnchor(el,cls){anchor.node().parentNode.insertBefore(el.node(),anchor.node());}
+  function addItem(name,color){
+    const s=d3.create("span").attr("class","legendItem"+(activeFilterGroup===name?" active":""));
+    s.append("span").attr("class","dot").style("background",color);
+    s.append("span").text(name);
+    s.on("click",function(e){
+      e.stopPropagation();
+      if(activeFilterGroup===name){activeFilterGroup=null;applyGroupFilter(null);}
+      else{activeFilterGroup=name;applyGroupFilter(name);}
+    });
+    insertBeforeAnchor(s,'legendItem');
+  }
+  if(colorMode==="chain"){
+    const chainList=[...new Set(NODES.flatMap(d=>d.chains))].sort((a,b)=>{const na=NODES.filter(d=>d.chains.includes(b)).length-NODES.filter(d=>d.chains.includes(a)).length;return na||a.localeCompare(b);});
+    const max=legendExpanded?chainList.length:Math.min(chainList.length,9);
+    for(let i=0;i<max;i++)addItem(chainList[i],chainColors(chainList[i]));
+    if(!legendExpanded&&chainList.length>9){
+      const x=d3.create("span").attr("class","legendExpand").text(`+${chainList.length-9}`);
+      x.on("click",function(e){e.stopPropagation();legendExpanded=true;updateLegend();});
+      insertBeforeAnchor(x,'legendExpand');
+    }
+    if(legendExpanded&&chainList.length>9){
+      const x=d3.create("span").attr("class","legendExpand").text("− 折叠");
+      x.on("click",function(e){e.stopPropagation();legendExpanded=false;updateLegend();});
+      insertBeforeAnchor(x,'legendExpand');
+    }
+  }else if(colorMode==="group"){
+    const allGroups=[...new Set(NODES.map(d=>d.group))];
+    const max=legendExpanded?allGroups.length:Math.min(allGroups.length,8);
+    for(let i=0;i<max;i++)addItem(allGroups[i],gColors(allGroups[i]));
+    if(!legendExpanded&&allGroups.length>8){
+      const x=d3.create("span").attr("class","legendExpand").text(`+${allGroups.length-8}`);
+      x.on("click",function(e){e.stopPropagation();legendExpanded=true;updateLegend();});
+      insertBeforeAnchor(x,'legendExpand');
+    }
+    if(legendExpanded&&allGroups.length>8){
+      const x=d3.create("span").attr("class","legendExpand").text("− 折叠");
+      x.on("click",function(e){e.stopPropagation();legendExpanded=false;updateLegend();});
+      insertBeforeAnchor(x,'legendExpand');
+    }
+  }else{
+    const types=[{n:"A股",c:"#58a6ff"},{n:"海外",c:"#f0883e"},{n:"非上市",c:"#8b949e"}];
+    types.forEach(t=>addItem(t.n,t.c));
+  }
+}
+function applyGroupFilter(group){
+  if(!group){
+    node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35).attr("fill",d=>getNodeFill(d));
+    link.attr("opacity",1);
+    label.attr("opacity",1);
+    updateLegend();
+    return;
+  }
+  node.attr("opacity",d=>{
+    if(colorMode==="chain")return d.chains&&d.chains.includes(group)?1:0.05;
+    if(colorMode==="group")return d.group===group?1:0.08;
+    const map={"A股":"a","海外":"o","非上市":"n"};
+    return d.type===map[group]?1:0.08;
+  });
+  if(colorMode==="chain"){node.attr("fill",d=>d.chains&&d.chains.includes(group)?gColors(d.group):getNodeFill(d));}
+  else{node.attr("fill",d=>getNodeFill(d));}
+  link.attr("opacity",d=>{
+    const si=typeof d.source==='string'?d.source:d.source.id;
+    const ti=typeof d.target==='string'?d.target:d.target.id;
+    const ns=NODES.find(n=>n.id===si),nt=NODES.find(n=>n.id===ti);
+    if(!ns||!nt)return 0.02;
+    if(colorMode==="chain")return (ns.chains&&ns.chains.includes(group))&&(nt.chains&&nt.chains.includes(group))?0.4:0.02;
+    if(colorMode==="group")return ns.group===group||nt.group===group?0.5:0.02;
+    const map={"A股":"a","海外":"o","非上市":"n"};
+    return ns.type===map[group]||nt.type===map[group]?0.5:0.02;
+  });
+  label.attr("opacity",d=>{
+    if(colorMode==="chain")return d.chains&&d.chains.includes(group)?1:0.05;
+    if(colorMode==="group")return d.group===group?1:0.05;
+    const map={"A股":"a","海外":"o","非上市":"n"};
+    return d.type===map[group]?1:0.05;
+  });
+  updateLegend();
+}
+updateLegend();
+d3.select("#colorToggle").on("click",function(){
+  const modes=["type","group","chain"];
+  const labels={"type":"🎨 类型","group":"🎨 行业","chain":"🔗 产业链"};
+  const idx=modes.indexOf(colorMode);
+  colorMode=modes[(idx+1)%3];
+  localStorage.setItem('tmt_color',colorMode);
+  activeFilterGroup=null;legendExpanded=false;
+  const btn=d3.select(this);
+  btn.text(labels[colorMode]);
+  btn.classed("active",colorMode!=="type");
+  node.attr("fill",d=>getNodeFill(d));
+  node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35);link.attr("opacity",1);label.attr("opacity",1);
+  updateLegend();
+});
+function copyTDX(code){
+  if(!code)return;
+  const t=`TDX_JUMP:${code}`;
+  navigator.clipboard.writeText(t).then(()=>{
+    const b=d3.select("#tdxBtn");b.text("✓ 已复制").style("color","#7ee787");
+    setTimeout(()=>b.text("📋 TDX").style("color","#58a6ff"),1500);
+  }).catch(()=>{});
+}
+d3.select("#tdxBtn").on("click",()=>{
+  if(currentCode)copyTDX(currentCode);
+  else{const q=d3.select("#searchInput").property("value").trim();if(q){const n=NODES.find(d=>d.id===q||d.code===q);if(n&&n.code)copyTDX(n.code);}}
+});
+
+const degree={};NODES.forEach(d=>degree[d.id]=0);
+EDGES.forEach(e=>{const s=typeof e.source==='string'?e.source:e.source.id;const t=typeof e.target==='string'?e.target:e.target.id;degree[s]=(degree[s]||0)+1;degree[t]=(degree[t]||0)+1});
+const rScale=d3.scaleSqrt().domain([1,Math.max(10,d3.max(Object.values(degree)))]).range([14,35]);
+const nodeRadii={};NODES.forEach(d=>nodeRadii[d.id]=rScale(degree[d.id]||1));
+
+const sim=d3.forceSimulation(NODES)
+  .force("link",d3.forceLink(EDGES).id(d=>d.id).distance(d=>d.type==="L1"?70:85).strength(d=>d.type==="L1"?0.55*1.1:0.55*0.9))
+  .force("charge",d3.forceManyBody().strength(d=>{const deg=degree[d.id]||1;return deg>15?-1100:deg>8?-550:deg>4?-220:-83;}))
+  .force("center",d3.forceCenter(W/2,H/2).strength(0.06));
+let collidePad=16;
+function collideRadius(d){const r=rScale(degree[d.id]||1);return r+collidePad*Math.pow(r/14,2);}
+sim.force("collide",d3.forceCollide().radius(collideRadius));
+
+const link=g.append("g").selectAll("line").data(EDGES).join("line")
+  .attr("stroke",d=>d.type==="L1"?"#7ee787":"#d2a861")
+  .attr("stroke-opacity",d=>d.type==="L1"?0.4:0.2)
+  .attr("stroke-width",d=>d.type==="L1"?1:0.7)
+  .attr("stroke-dasharray",d=>d.type==="L1"?"":"3,2")
+  .attr("marker-end",d=>"url(#"+(d.type==="L1"?"arrowL1":"arrow")+")");
+
+const node=g.append("g").selectAll("circle").data(NODES).join("circle")
+  .attr("r",d=>rScale(degree[d.id]||1))
+  .attr("fill",d=>getNodeFill(d))
+  .attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35)
+  .attr("stroke","#1c2128").attr("stroke-width",1)
+  .attr("filter",d=>d.rating==="S"?"url(#glowS)":null)
+  .call(d3.drag().on("start",(e,d)=>{if(!e.active)sim.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y;})
+    .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y;})
+    .on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null;}))
+    .on("click",(e,d)=>{
+      e.stopPropagation();
+      const maxDepth=+d3.select("#focusDepth").node().value;
+      if(lastFocusedNode===d.id){focusDirection=focusDirection==='up'?'down':'up';}
+      else{focusDirection='up';}
+      lastFocusedNode=d.id;applyFocus(d.id,maxDepth,focusDirection);
+      d3.select("#searchInput").property("value",d.id);
+      if(d.code)currentCode=d.code;
+      flyToPlanet(d);
+      idleFirst = true; resetIdleTimer();
+    });
+
+d3.select("svg").on("click",()=>{
+  if (lastFocusedNode) {
+    node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35).attr("fill",d=>getNodeFill(d));link.attr("opacity",1);label.attr("opacity",1);
+    lastFocusedNode=null;focusDirection='up';activeFilterGroup=null;updateLegend();
+    return;
+  }
+  node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35).attr("fill",d=>getNodeFill(d));link.attr("opacity",1);label.attr("opacity",1);
+  d3.select("#searchInput").property("value","");
+  currentCode=null;lastFocusedNode=null;focusDirection='up';activeFilterGroup=null;updateLegend();
+  document.getElementById("captainVoice").classList.remove("visible");
+  idleFirst = true; resetIdleTimer();
+});
+const label=g.append("g").selectAll("text").data(NODES).join("text")
+  .text(d=>d.id.length>4?d.id.slice(0,4):d.id).attr("font-size",d=>rScale(degree[d.id]||1)>20?10:8).attr("fill","white")
+  .attr("text-anchor","middle").attr("dominant-baseline","central").attr("dx",0).attr("dy",0).attr("pointer-events","none");
+
+const tip=d3.select("#tooltip");
+let tipTimer=null;
+node.on("mouseover",function(e,d){
+  clearTimeout(tipTimer);
+  const desc=NODE_DESC&&NODE_DESC[d.id]?NODE_DESC[d.id]:"";
+  const r=d.rating||"";
+  const products=d.products&&d.products.length?d.products.join(" · "):"";
+  tip.html(`<div class="tt-name">${d.id}${r?`<span class="tt-badge ${r}">${r}</span>`:""}</div>${desc?`<div class="tt-desc">${desc}</div>`:""}${products?`<div class="tt-products">${products}</div>`:""}<div class="tt-group">${d.group}${d.code?" · "+d.code:""}${d.chains&&d.chains.length?" · 🔗"+d.chains.join(","):""}</div>`);
+  tip.style("opacity",1);
+  const mx=e.clientX,my=e.clientY;
+  const tw=tip.node().offsetWidth,th=tip.node().offsetHeight;
+  let lx=mx+14,ly=my-th/2;
+  if(lx+tw>W)lx=mx-tw-14;
+  if(ly<0)ly=4;
+  if(ly+th>H)ly=H-th-4;
+  tip.style("left",lx+"px").style("top",ly+"px");
+}).on("mousemove",function(e){
+  const tw=tip.node().offsetWidth,th=tip.node().offsetHeight;
+  let lx=e.clientX+14,ly=e.clientY-th/2;
+  if(lx+tw>W)lx=e.clientX-tw-14;
+  if(ly<0)ly=4;
+  if(ly+th>H)ly=H-th-4;
+  tip.style("left",lx+"px").style("top",ly+"px");
+}).on("mouseout",function(){
+  tipTimer=setTimeout(()=>tip.style("opacity",0),150);
+});
+tip.on("mouseover",()=>{clearTimeout(tipTimer);tip.style("opacity",1);}).on("mouseout",()=>tip.style("opacity",0));
+
+let searchRAF=null;
+d3.select("#searchInput").on("input",function(){
+  const q=this.value.trim().toLowerCase();
+  if(q!==lastQuery){matchIdx=0;lastQuery=q;}
+  if(searchRAF)cancelAnimationFrame(searchRAF);
+  searchRAF=requestAnimationFrame(()=>{
+    node.attr("opacity",d=>!q?(d.rating==="S"||d.rating==="A"?1:0.35):(d.id.toLowerCase().includes(q)||(d.code||"").toLowerCase().includes(q)||d.group.toLowerCase().includes(q)||d.py.includes(q))?1:0.08);
+    link.attr("opacity",d=>!q?1:(d.source.id.toLowerCase().includes(q)||d.target.id.toLowerCase().includes(q))?0.5:0.02);
+    label.attr("opacity",d=>!q?1:(d.id.toLowerCase().includes(q)||(d.code||"").toLowerCase().includes(q)||d.group.toLowerCase().includes(q)||d.py.includes(q))?1:0.05);
+  });
+});
+document.addEventListener("keydown",e=>{
+  if(e.target.tagName==="INPUT")return;
+  if(e.key.length===1&&!/[\x00-\x1f]/.test(e.key)){
+    d3.select("#searchInput").node().focus();
+  }
+});
+let matchIdx=0,lastQuery="";
+d3.select("#searchInput").on("keydown",function(e){
+  if(e.key!=="Enter")return;
+  const q=this.value.trim().toLowerCase();
+  if(!q)return;
+  if(q!==lastQuery){matchIdx=0;lastQuery=q;}
+  const matches=NODES.filter(d=>d.id.toLowerCase().includes(q)||(d.code||"").toLowerCase().includes(q)||d.group.toLowerCase().includes(q)||d.py.includes(q));
+  if(!matches.length)return;
+  if(matchIdx>=matches.length)matchIdx=0;
+  const t=matches[matchIdx];matchIdx++;
+  flyToPlanet(t);
+  idleFirst = true; resetIdleTimer();
+  svg.transition().duration(500).call(zoom.transform,d3.zoomIdentity.translate(W/2,H/2).scale(2).translate(-t.x,-t.y));
+});
+
+sim.on("tick",()=>{
+  link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y)
+      .attr("x2",d=>{const dx=d.target.x-d.source.x,dy=d.target.y-d.source.y,dist=Math.sqrt(dx*dx+dy*dy)||1,r=nodeRadii[d.target.id]||14;return d.target.x-dx/dist*r;})
+      .attr("y2",d=>{const dx=d.target.x-d.source.x,dy=d.target.y-d.source.y,dist=Math.sqrt(dx*dx+dy*dy)||1,r=nodeRadii[d.target.id]||14;return d.target.y-dy/dist*r;});
+  node.attr("cx",d=>d.x).attr("cy",d=>d.y);
+  label.attr("x",d=>d.x).attr("y",d=>d.y);
+  updateBubblePosition();
+});
+sim.alphaDecay(0.02).alphaMin(0.001);
+
+// ===== 飞船系统 =====
+const SHIP_SPEED = 400;
+let shipGroup = null;
+let shipState = { planet: null, angle: 0, flying: false, x: 0, y: 0, trail: [] };
+let orbitTimer = null;
+let trailGroup = null;
+let idleTimer = null;
+let idleFirst = true;
+let idleDuration = 90;
+let idleInterval = 30;
+let autoNavOn = true;
+let captainVoiceOn = false;
+
+function resetIdleTimer() {
+  if (idleTimer) clearTimeout(idleTimer);
+  if (!autoNavOn) return;
+  idleTimer = setTimeout(idleFly, idleFirst ? idleDuration * 1000 : idleInterval * 1000);
+}
+
+function idleFly() {
+  var candidates = NODES.filter(function(d) { return d.type === 'a'; });
+  if (candidates.length === 0) candidates = NODES;
+  var pick = candidates[Math.floor(Math.random() * candidates.length)];
+  flyToPlanet(pick);
+  var dx = pick.x - shipState.x, dy = pick.y - shipState.y;
+  var dist = Math.sqrt(dx * dx + dy * dy);
+  var dur = Math.max(300, dist / SHIP_SPEED * 1000);
+  svg.transition().duration(dur).ease(d3.easeLinear)
+    .call(zoom.transform, d3.zoomIdentity.translate(W/2 - pick.x * 1.5, H/2 - pick.y * 1.5).scale(1.5));
+  idleFirst = false;
+  resetIdleTimer();
+}
+
+function startOrbit() {
+  if (orbitTimer) orbitTimer.stop();
+  orbitTimer = d3.timer(function() {
+    if (!shipState.planet || shipState.flying) return;
+    shipState.trail.push({x: shipState.x, y: shipState.y});
+    if (shipState.trail.length > 40) shipState.trail.shift();
+    shipState.angle += 0.04;
+    var r = (nodeRadii[shipState.planet.id] || 14) + 15;
+    shipState.x = shipState.planet.x + r * Math.cos(shipState.angle);
+    shipState.y = shipState.planet.y + r * Math.sin(shipState.angle);
+    shipGroup.attr("transform", `translate(${shipState.x},${shipState.y}) rotate(${shipState.angle * 180 / Math.PI + 90})`);
+    var dots = trailGroup.selectAll("circle").data(shipState.trail);
+    dots.enter().append("circle").attr("fill", "#f0c040");
+    dots.merge(dots)
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; })
+      .attr("r", function(d, i) { return (i / shipState.trail.length) * 3; })
+      .attr("opacity", function(d, i) { return (i / shipState.trail.length) * 0.5; });
+    dots.exit().remove();
+    updateBubblePosition();
+  });
+}
+
+// ===== 船长播报 =====
+const captainClosings = [
+  "舷窗外的星光刚好够亮，不需要再开灯了。",
+  "每次跃迁后，星图都会多几个新标记。今天也是。",
+  "舰上有个传统：每到一颗新星球，就敲一下舱壁，算是问好。",
+  "导航员刚泡了一壶茶，说这趟旅程不急。",
+  "宇宙不会给你地图，但会给暗示。刚才那个就是。",
+  "有人问为什么总往没去过的地方飞——因为去过的地方已经没有悬念了。",
+  "飞船的引擎声在太空中其实听不到，但你可以想象它在你脚下低鸣。",
+  "星际快递刚才送来一份匿名星图，标记了一个从未听说过的坐标。",
+  "舷窗结了薄薄一层霜，用袖子擦开，外面是一片新星域。",
+  "航行记录显示：你已经飞了很远。但最精彩的航段，永远还没有开始。",
+  "宇宙很大，但好奇心是无限燃料。",
+  "有些星球，来了就不想走。有些星球，走了还想再来。",
+  "导航员打了个哈欠，说这片星域还挺有意思。",
+  "舷窗外有一颗流星划过，就当是星际欢迎仪式。",
+  "舰载AI刚才小声嘀咕了一句：值得关注。",
+  "有时候停下来看看星图，比一直赶路更重要。",
+  "下一片星域据说有未被标注的航道，有兴趣吗？",
+  "船舱里的咖啡还热着，星图又多了几个标记。",
+  "听说隔壁舰队在这里蹲了三个周期，收获不小。",
+  "星际商会的简报说，这条航道最近的流量涨了三倍。",
+  "如果每颗星球都是一本书，我们才翻了几页。",
+  "有人问太空里什么最美，我说是未知的航标。",
+  "穿越星云的时候记得关掉自动驾驶，感受一下震荡。",
+  "这颗星球的引力场有点特别，信号都歪了，但也歪得有趣。",
+  "通讯频道里传来一阵白噪音，像是另一个星系在打招呼。",
+  "舰载雷达扫到一个模糊信号，也许只是错觉，也许不是。",
+  "船上的老领航员说，好星球靠鼻子闻，不靠星图找。",
+  "有时候最好的发现，是在走错路的时候撞上的。",
+  "星域边缘有个传说：谁找齐七颗S级星球，就能解锁隐藏航道。",
+  "别急着走，这颗星球的地平线值得多看两眼。",
+  "星际探险家协会的会刊上，有人写过这颗星球的专题。",
+  "刚才收到一条加密讯息，只写了三个字：别眨眼。",
+  "你的飞船尾灯在星云里拖出一道弧线，挺好看的。",
+  "宇宙不会催你，但好奇心会。",
+  "这个星系的气味有点特别，像是机会和不确定性的混合物。",
+  "舰队休息室里的自动点唱机突然放了一首旧地球的老歌。",
+  "有些星球天生就是枢纽，来了就会发现哪条路都通这里。",
+  "太空里没有红绿灯，但有直觉就够用了。",
+  "如果你现在打开通讯广播，说不定能收到附近舰队的八卦。",
+  "每一次随机飞行，都是命运的一次掷骰子。",
+  "导航台刚更新了星图，附近多了三个新标记的天体。",
+  "有人把这片星域叫做银河棋盘，每颗星都是一枚棋子。",
+  "据说在星域最深处，有一片完全未被测绘的区域。",
+  "舰上实习生刚才兴奋地指着一个光点：那个是不是新发现？",
+  "星图不会告诉你一切，有些风景只能自己撞见。",
+  "也许下一站就是改变航线的那颗星。",
+  "在太空里待久了，会对闪烁的东西产生本能的好奇。",
+  "这艘船的名字是你起的，但它似乎有了自己的脾气。",
+  "后勤官提醒：燃料充足，补给够跑三个周期，尽情探索。",
+  "星际标准时间现在是什么根本不重要，探索没有时差。",
+  "每一条被遗忘的航道都曾经是某人的希望之路。",
+  "船上的老猫打了个哈欠，翻了个身继续睡。它见过太多星球了。",
+  "有时候觉得太空太安静了，安静到能听见自己的好奇心在敲舱门。",
+  "这颗星球在星图上的坐标挺不起眼的，但恰恰是这种地方藏着惊喜。",
+  "如果你把迄今到过的所有星球连成一条线，会是什么形状？",
+  "有人为了一个传言横跨半个银河系，有人在一颗星球上待了一辈子。都挺好。",
+  "领航员打了个喷嚏，说这不是感冒，是星际花粉。",
+  "黑暗中闪烁的不一定是恒星，也可能是机会的荧光。",
+  "太空漫游的第一法则：永远别放下望远镜。",
+  "这附近有个废弃空间站，据说里面有上一位探险家留下的日记。",
+  "通信官刚才截获一小段加密信号，破译了一半，内容有点意思。",
+  "星星不等人，但好在下一颗永远在前面。",
+  "星图自动标注系统今天有点兴奋，多标了几个可疑信号。",
+  "你的飞船在这个星域已经留下了一条独特的轨迹线。",
+  "前方有一片离子风暴区，绕过去要多花半天，但风景值得。",
+  "探险的意义不在于走了多远，而在于每条路都是自己选的。",
+  "舰载导航提示：您已偏离常规航线，前方为未测绘星域。",
+  "并不是每颗闪亮的星球都藏着宝藏，但每颗都值得看一眼。",
+  "如果在太空中感到孤独，打开广播，附近舰队的闲聊永远开着。",
+  "听说有人在这附近发现过一个天然虫洞，虽然至今没人能复现。",
+  "窗外的星云换了一种颜色，像是宇宙在换壁纸。",
+  "从来没有两段完全相同的星际旅途，这正是它的魅力。",
+  "舰上有人在讨论：到底是星图定义了旅行，还是旅行重绘了星图。",
+  "这颗星球的自转周期很有意思，日出的颜色每天都不一样。",
+  "数据屏上跳出一个异常读数，大概率是宇宙射线，但万一不是呢？",
+  "太空里最贵的东西不是矿石，是一段还没被讲过的故事。",
+  "导航系统建议左转，但直觉说直走。你决定听谁的？",
+  "这片星域有个别称叫投机者坟场，但从数据来看，幸存者都赚翻了。",
+  "船载AI刚才主动问了一句：要不要试试没走过的路？",
+  "有些决策是在星图前做的，有些是在舷窗前发呆时想通的。",
+  "太空探索者的共同特征：永远觉得下一站才是最好的。",
+  "工程师报告：引擎状态极佳，可以承受最高曲速的冲击。",
+  "这艘船已经陪你飞了不少距离，它比你想象中更可靠。",
+  "远处那个模糊的星团，用望远镜看会是一番完全不同的景象。",
+  "舱内温度正好，灯光调暗一点，星图上的线条看起来像一幅画。",
+  "如果宇宙是一张巨大的网，这颗星球刚好在一个漂亮的节点上。",
+  "偶尔偏离航线，是发现新世界的前提。",
+  "太空里最好的导航方式？有时候是跟着另一艘船的尾灯走。",
+  "舰尾的传感器捕捉到一个引力波涟漪，不知道来自哪里。",
+  "有人说探索星域就是探索自己，这话在别处是鸡汤，在太空里是真的。",
+  "船长，前方到站时间还有一会，要不要看看过往的航行记录？",
+  "这颗星球在红外光下会呈现完全不同的地貌，有兴趣试试吗？",
+  "别总盯着星图看，偶尔也抬头看看真正的星星。",
+  "这是一颗有故事的星球，可惜大部分故事还没被写下来。",
+  "星域就像一张藏宝图，关键不是图有多详细，而是你敢不敢相信那些X。",
+  "舰上有个不成文的规矩：每到一个新星球，就给它取一个只有你知道的别名。",
+  "保持好奇心，它是你在茫茫太空里唯一的北极星。",
+  "前路漫漫，但星光正好。",
+  "星际旅行从来不是直线，有趣的发现都在弯路上。",
+  "别忘了回头看看来时的路，那道航迹线只属于你。",
+  "远处有一颗脉冲星，一闪一闪的，像谁在太空里打摩尔斯电码。",
+  "前方有一个双星系统，两颗恒星互相绕转，像在跳一支跳了十亿年的舞。",
+  "这颗行星的大气层折射出七彩光环，像一枚挂在宇宙胸前的勋章。",
+  "引力透镜把远处的星系拉成一道弧，像宇宙在给你划重点。",
+  "窗外的行星正在经历极光季，整个星球像裹了一层流动的绸缎。",
+  "这颗星球有一片会发光的海洋，夜里看，像一面碎掉的镜子。",
+  "有一颗小行星正沿着你的航线飞，导航员说它只是想搭个便车。",
+  "那颗行星有两颗卫星，一大一小，像一只眼睛的瞳孔和虹膜。",
+  "这片星域的尘埃带在阳光下像一层薄纱，飞船穿过时，舷窗上落满了星屑。",
+  "有一颗彗星正在靠近，它每八十年路过一次，这是它的一生中与你唯一的重逢。",
+  "引擎冷却的时候，整艘船会安静下来，安静得像在听你说话。",
+  "飞船转弯的时候会轻轻倾斜，像一个正在思考的人微微侧头。",
+  "老机械师说，飞船的螺丝也有脾气，拧对了方向，它就服你。",
+  "引擎室里传来规律的嗡鸣，像飞船在哼一首只有它自己会的歌。",
+  "这艘船的舷号被无数只手摸得发亮，每一道光泽都是一段航程。",
+  "仪表盘上有一个从未亮过的按键，工程师说那是个彩蛋，但没人知道触发条件。",
+  "把引擎关掉一会儿，你会听见宇宙自己的声音，很轻，但一直都在。",
+  "飞船的维护日志里夹着一张纸条：它比看起来更念旧。",
+  "船上的老钟摆还在走，它比所有人都守时，也比所有人都沉默。",
+  "货舱的补给箱上贴着旧标签：小心轻放，梦想易碎。",
+  "厨师今天烤了面包，说在太空里，麦子的香味会让人想起家。",
+  "领航员对着舷窗数星星，数到第三千颗的时候，睡着了。",
+  "补给官在清单上打了个勾：燃料、氧气、食物，还有一点多余的勇气。",
+  "医疗官建议每天盯着星图看十分钟，说这对眼睛和好奇心都好。",
+  "舰上的盆栽又长了一片新叶，它在零重力下活得比谁都认真。",
+  "船员们在休息室里打赌，赌下一颗星球上有没有水，赌注是一顿晚饭。",
+  "船上的收音机偶尔收到一段旋律，从很远的地方飘来，像被风吹散的歌。",
+  "厨房的咖啡机今天心情不错，煮出来的咖啡比平时香。",
+  "休息室的书架上有一本无人借阅的星图手册，扉页写着：别信上面任何一页。",
+  "实习生刚做完第一次独立导航，手一直在抖，但航线画得很直。",
+  "星图上那些虚线，每一条都有人走过，只是没人在意名字了。",
+  "星图背面印着一行小字：本图仅供参考，宇宙概不负责。",
+  "如果你把星图倒过来看，那些航线会拼成另一种星座，也好看。",
+  "星图的一角被谁画了个圈，旁边写着：下次再来。字迹已经模糊了。",
+  "导航台提醒：前方航道拥堵指数比昨天高，绕行会错过风景，你选吧。",
+  "这条航线的尽头是什么？没人知道，但每个人都愿意往那儿走。",
+  "导航系统显示前方有一个旧坐标，那里曾经是这条航线最热闹的驿站。",
+  "前方航道即将变窄，别担心，所有窄路都通向开阔的地方。",
+  "星域贸易站贴出告示：本季度流通量创新高，请各位舰长注意秩序。",
+  "补给船每周来一次，船员们说，那是这片星域的星期一。",
+  "舰载AI刚刚更新了笑话库，它说自己终于学会了讲冷笑话。",
+  "通信官说，刚收到的信号里夹着一句歌词，是首很老的歌。",
+  "通信日志里有一条未读消息，发件人不明，内容只有两个字：加油。",
+  "舰队频道里有人在讲笑话，讲了一半信号断了，剩下的部分成了传说。",
+  "通讯频道里偶尔传来很轻的沙沙声，像宇宙在翻书页。",
+  "星港的广播在循环播放：欢迎来到本星系，祝您航程愉快。已经播了四百年。",
+  "你收到一条延时讯息，是三个月前从这附近发出的：一切顺利，勿念。",
+  "星际百科里关于这颗星球的词条只有三行，剩下的空白留给后来者。",
+  "星域传说：有人在这里见过一艘没有舰长的船，它自己开得很稳。",
+  "听说这片星域以前一片荒芜，直到有人发现了第一座矿脉，故事才从这里开始。",
+  "宇宙的尺度太大，所以它允许每个人都拥有自己的坐标系。",
+  "宇宙里没有路灯，但每颗恒星都愿意为你亮着。",
+  "星星之间的距离按光年算，但人和好奇心之间的距离是零。",
+  "宇宙最公平的地方是：无论你飞多远，星星都愿意陪你。",
+  "太空的沉默是一种颜色，深蓝色，边缘缀着星光。",
+  "宇宙不会记得你来过，但你的星图会。",
+  "在太空里待久了你会发现，最亮的往往是回家的灯。",
+  "宇宙的答案写在星光里，可惜没有人能一次读完。",
+  "太空里最好的导航方式，有时候是跟着另一艘船的尾灯走。",
+  "偶尔关掉所有仪器，用肉眼看看星星，它们比数据显示的更亮。",
+  "别急着规划下一站，先把这一站的星光看完。",
+  "如果你在太空里迷路了，就跟着好奇心走，它从不出错。",
+  "连续飞了很久之后，记得停下来，让引擎和你都喘口气。",
+  "有人问舰长探索的终点是什么，舰长说，大概是下一颗星球吧。",
+  "星港的灯塔是这片星域最亮的东西，它照亮的，是这片星域的信心。",
+  "宇宙的规则很简单：你越认真看，它给你看的东西越多。",
+  "你每答对一道宇宙的考题，就会多收到一张新星图。",
+  "如果不知道去哪，就朝着光的方向飞，准没错。",
+  "探索是唯一一种没有库存的消耗品，越用越多。",
+  "看星星的时候，记得顺便看看自己，你也是这片星域的一部分。",
+  "这颗星球的山脉从轨道上看像一道疤痕，但当地人叫它脊梁。",
+  "这颗星球表面有一条发光的河流，从太空看，像一道正在愈合的伤口。",
+  "这颗星球上的城市在夜间连成一片光海，从轨道上看，像陆地长出了星空。",
+  "这颗星球的风带着一种奇怪的味道，像金属、土壤和故事混在一起。",
+  "这颗星球的一天比别处长一些，适合把没想通的事情慢慢想通。",
+  "这颗星球的港口泊满了货船，从这头排到那头，像一串等待点燃的灯。",
+  "这颗星球在红外光下是另一副模样，有兴趣的话，下次可以换个滤镜看。",
+  "这颗星球上有一片会唱歌的沙丘，风一过，整个星球都在低语。",
+  "从轨道上看，这颗星球的海岸线弯弯绕绕，像宇宙随手写下的签名。",
+  "这颗星球的气温刚好，不冷不热，适合把舷窗打开一会儿。",
+  "星际商路上有个说法：跟着补给船走，不会迷路，也不会饿着。",
+  "太空站的大厅里挂着一张老航线图，标注的枢纽已经换了名字，但没人舍得换图。",
+  "这条航道上的货船来来往往，每一艘都装着别处的故事和此处的货。",
+  "星域交易所的屏幕跳动着数字，有人说那是星图的另一种读法。",
+  "老商人说，判断一颗星球值不值得停靠，看它港口的灯亮不亮就够了。",
+  "最近停靠这颗星球的货船越来越多，港口的灯熄得越来越晚。",
+  "有些星球靠资源出名，有些靠位置，这颗星球刚好两样都占一点。",
+  "星际商会的年报里写着：本年度最繁忙的十条航道，这条排第三。",
+  "补给站的老板见过一万个舰长，每个人的目的地都不同，但眼神都一样。",
+  "有人在这片星域囤了一仓库的星光，等着涨价。你猜怎么着？真涨了。",
+  "如果你现在往窗外看，星光刚好落进舷窗，像被安排好的。",
+  "这颗星球的轨道上漂着一只旧靴子，不知是谁的，也不知要去哪。",
+  "舷窗上凝着一层水汽，用手指画一个圈，圈住一颗你最喜欢的星。",
+  "舰长室的墙上贴着一张便签，只有四个字：别忘了看窗外。",
+  "宇宙今天心情不错，给你的航线旁边多画了几颗星。",
+  "有一颗小星星跟着你飞了很久，它大概以为你是它那一队的。",
+  "广播里突然放了一首很老的歌，全船的人都在跟着哼。",
+  "今天在补给站看到一只跟着货船到处跑的狗，据说它已经去过四十个星系了。",
+  "有一片星云长得像一只猫，导航员已经盯着它看了半小时。",
+  "最后一颗星熄灭之前，记得把想去的地方都去一遍。"
+];
+let captainTimer = null;
+
+// 内容模板池
+var productTemplates = [
+  "如果想带点伴手礼，当地特产 <span style=\"color:#f0c040\">{p}</span> 绝对不会错。",
+  "这里的招牌货是 <span style=\"color:#f0c040\">{p}</span>，星际商人都抢着进货。",
+  "星球特产 <span style=\"color:#f0c040\">{p}</span>，在整个星域都小有名气。",
+  "路过别忘了捎点 <span style=\"color:#f0c040\">{p}</span>，别处可不好找。"
+];
+var customerTemplates = [
+  "贸易航线上，<span style=\"color:#58a6ff\">{c}</span>{more}的货船常年往来于此。",
+  "它的主要客户包括 <span style=\"color:#58a6ff\">{c}</span>{more}，航路相当繁忙。",
+  "这条航线上的常客是 <span style=\"color:#58a6ff\">{c}</span>{more}。",
+  "下游买家 <span style=\"color:#58a6ff\">{c}</span>{more}经常从这里进货。"
+];
+var chainTemplates = {
+  S: [
+    "从星图上看，这颗行星横跨 <span style=\"color:#a371f7\">{ch}</span> 领域，是整片星域的贸易中枢。",
+    "星域图上，它处于 <span style=\"color:#a371f7\">{ch}</span> 星座的核心位置，所有航道最终都指向这里。",
+    "在产业链的版图里，<span style=\"color:#a371f7\">{ch}</span> 是它最重要的航标，整个星域都围着它转。",
+    "这颗星球坐落在 <span style=\"color:#a371f7\">{ch}</span> 星域，说它是银河系的十字路口也不为过。"
+  ],
+  A: [
+    "从星图上看，这颗行星横跨 <span style=\"color:#a371f7\">{ch}</span> 领域，商船往来相当频繁。",
+    "星域图上，它处于 <span style=\"color:#a371f7\">{ch}</span> 星座，算得上是贸易枢纽级别的节点。",
+    "在产业链的版图里，<span style=\"color:#a371f7\">{ch}</span> 是它最重要的航标，几条核心航路在这里交汇。",
+    "这颗星球坐落在 <span style=\"color:#a371f7\">{ch}</span> 星域，航路四通八达。"
+  ],
+  B: [
+    "从星图上看，这颗行星横跨 <span style=\"color:#a371f7\">{ch}</span> 领域，属于正在崛起的新兴星域。",
+    "星域图上，它处于 <span style=\"color:#a371f7\">{ch}</span> 星座，虽然年轻但航路已经不少。",
+    "在产业链的版图里，<span style=\"color:#a371f7\">{ch}</span> 是它最重要的航标，值得留意的发展方向。",
+    "这颗星球坐落在 <span style=\"color:#a371f7\">{ch}</span> 星域，供应链位置有上升空间。"
+  ],
+  C: [
+    "从星图上看，这颗行星横跨 <span style=\"color:#a371f7\">{ch}</span> 领域，规模不大但有独特定位。",
+    "星域图上，它处于 <span style=\"color:#a371f7\">{ch}</span> 星座，偏安一隅的小众航线。",
+    "在产业链的版图里，<span style=\"color:#a371f7\">{ch}</span> 是它最重要的航标，走的是差异化路线。",
+    "这颗星球坐落在 <span style=\"color:#a371f7\">{ch}</span> 星域，虽然冷门但有自己的生态位。"
+  ]
+};
+var inviteTemplates = [
+  "如果你对这些星域感兴趣，来这里准没错。",
+  "对这条赛道好奇的舰长，值得多停留一会儿。",
+  "研究这片星域的朋友，这里是个不错的观察哨。",
+  "想深入了解这条产业链的话，从这里入手是个好选择。"
+];
+var groupTemplates = [
+  "它主要经营<span style=\"color:#d2a861\">{g}</span>产业。",
+  "这颗星球的主业是<span style=\"color:#d2a861\">{g}</span>。",
+  "在产业分类上，它属于<span style=\"color:#d2a861\">{g}</span>领域。",
+  "管辖的产业板块是<span style=\"color:#d2a861\">{g}</span>。"
+];
+
+function showCaptainVoice(target) {
+  if (!target) return;
+  if (!captainVoiceOn) return;
+  var cv = document.getElementById("captainVoice");
+  var body = cv.querySelector(".cv-body");
+  var idx = target.code || "";
+  var desc = (NODE_DESC && NODE_DESC[target.id]) ? NODE_DESC[target.id] : "";
+  var products = target.products && target.products.length ? target.products.join("、") : "";
+  var rating = target.rating || "";
+  var ratingLabel = {S:"S级核心枢纽",A:"A级明星行星",B:"B级潜力新星",C:"C级探索星球"}[rating] || (rating+"级行星");
+  var ratingFlavors = {
+    S: ["这可是银河系里数得上号的重镇——","放眼整个星域都排得上号的重量级行星——","不必多说，这颗星球的名字本身就是招牌——"],
+    A: ["一颗热热闹闹的繁华星球，","生意相当红火的一颗行星，","航道上商船络绎不绝的活跃星球，"],
+    B: ["一颗值得留意的新兴行星，","星图上新标记的有趣目的地，","正在快速发展中的潜力星球，"],
+    C: ["一颗小而美的特色星球，","不太起眼但有自己独特定位的小众行星，","星图边缘的一颗低调星球，"]
+  };
+  var pool = ratingFlavors[rating] || ratingFlavors["C"];
+  var ratingFlavor = pool[Math.floor(Math.random() * pool.length)];
+
+  // 下游客户
+  var customers = [];
+  EDGES.forEach(function(e) {
+    var s = typeof e.source === "string" ? e.source : e.source.id;
+    if (s === target.id) {
+      var t = typeof e.target === "string" ? e.target : e.target.id;
+      if (customers.indexOf(t) === -1) customers.push(t);
+    }
+  });
+
+  // 产业链
+  var chains = target.chains && target.chains.length ? target.chains.slice(0, 3) : [];
+
+  var html = '舰长，我们刚刚降落在 <span class="cv-name">' + ratingLabel + ' ' + target.id + '</span> 星球上';
+  if (idx) html += '，行星编号 <span style="color:#f0c040">' + idx + '</span>';
+  html += '。';
+  if (ratingFlavor) html += ratingFlavor;
+  if (target.group) {
+    var gt = groupTemplates[Math.floor(Math.random() * groupTemplates.length)];
+    html += gt.replace('{g}', target.group) + ' ';
+  }
+  if (desc) html += desc + '。';
+  if (products) {
+    var pt = productTemplates[Math.floor(Math.random() * productTemplates.length)];
+    html += ' ' + pt.replace('{p}', products);
+  }
+  if (customers.length) {
+    var topCust = customers.slice(0, 4);
+    var more = customers.length > 4 ? ' 等' + customers.length + '家' : '';
+    var ct = customerTemplates[Math.floor(Math.random() * customerTemplates.length)];
+    html += ' ' + ct.replace('{c}', topCust.join('、')).replace('{more}', more);
+  }
+  if (chains.length) {
+    var pool2 = chainTemplates[rating] || chainTemplates["C"];
+    var sentence = pool2[Math.floor(Math.random() * pool2.length)];
+    var chainStr = chains.join('、');
+    html += ' ' + sentence.replace('{ch}', chainStr);
+    var inv = inviteTemplates[Math.floor(Math.random() * inviteTemplates.length)];
+    html += ' ' + inv;
+  }
+
+  var closingLine = captainClosings[Math.floor(Math.random() * captainClosings.length)];
+  html += '<br><span style="color:#f0c040;font-style:italic">—— ' + closingLine + '</span>';
+
+  typewriteBody(body, html);
+
+  cv.classList.add("visible");
+  updateBubblePosition();
+}
+
+function typewriteBody(el, html) {
+  if (el._twTimer) clearInterval(el._twTimer);
+  var visible = '';
+  var i = 0;
+  el.innerHTML = '<span class="tw-cursor">|</span>';
+  var timer = setInterval(function() {
+    if (i >= html.length) { clearInterval(timer); el.innerHTML = html; return; }
+    if (html[i] === '<') {
+      var end = html.indexOf('>', i);
+      if (end === -1) end = html.length;
+      visible += html.substring(i, end + 1);
+      i = end + 1;
+    } else {
+      visible += html[i];
+      i++;
+    }
+    el.innerHTML = visible + '<span class="tw-cursor">|</span>';
+  }, 30);
+  el._twTimer = timer;
+}
+
+function updateBubblePosition() {
+  var cv = document.getElementById("captainVoice");
+  if (!cv.classList.contains("visible")) return;
+  if (!shipState.planet) return;
+  var tf = d3.zoomTransform(svg.node());
+  var px = tf.applyX(shipState.planet.x);
+  var py = tf.applyY(shipState.planet.y);
+  cv.style.left = (px - 420) + "px";
+  cv.style.top = (py - cv.offsetHeight / 2) + "px";
+  cv.style.bottom = "auto";
+  cv.style.transform = "none";
+}
+
+function createShip() {
+  trailGroup = g.append("g").attr("class", "trail-group");
+  shipGroup = g.append("g").attr("class", "ship-group").style("opacity", 0);
+  shipGroup.append("path")
+    .attr("d", "M-8,-6 L8,0 L-8,6 L-3,0 Z")
+    .attr("fill", "#f0c040")
+    .attr("stroke", "#b8860b")
+    .attr("stroke-width", 1.5);
+  shipGroup.append("path")
+    .attr("d", "M-3,-4 L-12,0 L-3,4 Z")
+    .attr("fill", "#ff6b35")
+    .attr("opacity", 0.8);
+}
+
+function flyToPlanet(target) {
+  if (!target) return;
+  if (!shipGroup) createShip();
+  shipGroup.interrupt();
+  if (orbitTimer) { orbitTimer.stop(); orbitTimer = null; }
+  document.getElementById("captainVoice").classList.remove("visible");
+  shipState.flying = true;
+  shipGroup.style("opacity", 1);
+
+  const orbitR = (nodeRadii[target.id] || 14) + 15;
+  const entryAngle = Math.atan2(shipState.y - target.y, shipState.x - target.x);
+  const entryX = target.x + orbitR * Math.cos(entryAngle);
+  const entryY = target.y + orbitR * Math.sin(entryAngle);
+
+  const dx = entryX - shipState.x;
+  const dy = entryY - shipState.y;
+  const dist = Math.sqrt(dx * dx + dy * dy);
+  const duration = Math.max(300, dist / SHIP_SPEED * 1000);
+  const flightAngle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+  var sx = shipState.x, sy = shipState.y;
+  shipGroup.transition().duration(duration).ease(d3.easeLinear)
+    .attrTween("transform", function() {
+      return function(t) {
+        var px = sx + dx * t, py = sy + dy * t;
+        shipState.trail.push({x: px, y: py});
+        if (shipState.trail.length > 40) shipState.trail.shift();
+        var dots = trailGroup.selectAll("circle").data(shipState.trail);
+        dots.enter().append("circle").attr("fill", "#f0c040");
+        dots.merge(dots)
+          .attr("cx", function(d) { return d.x; })
+          .attr("cy", function(d) { return d.y; })
+          .attr("r", function(d, i) { return (i / shipState.trail.length) * 3; })
+          .attr("opacity", function(d, i) { return (i / shipState.trail.length) * 0.5; });
+        dots.exit().remove();
+        return `translate(${px},${py}) rotate(${flightAngle})`;
+      };
+    })
+    .on("end", function() {
+      shipState.planet = target;
+      shipState.angle = entryAngle;
+      shipState.x = entryX;
+      shipState.y = entryY;
+      shipState.flying = false;
+      startOrbit();
+      showCaptainVoice(target);
+    });
+}
+
+d3.select("#nodeCount").text(`节点: ${NODES.length} (A股${NODES.filter(d=>d.type==='a').length}+海外${NODES.filter(d=>d.type==='o').length}+非上市${NODES.filter(d=>d.type==='n').length})`);
+d3.select("#edgeCount").text(`边: ${EDGES.length} (L1: ${EDGES.filter(d=>d.type==='L1').length} + L2: ${EDGES.filter(d=>d.type==='L2').length})`);
+const zoom=d3.zoom().extent([[0,0],[W,H]]).scaleExtent([0.3,5]).on("zoom",e=>{g.attr("transform",e.transform);idleFirst=true;resetIdleTimer();});
+svg.call(zoom);
+
+// 初始全景视野：自动缩放到能容纳全部节点
+function fitView(duration){
+  if(!NODES.length)return;
+  let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
+  NODES.forEach(d=>{
+    const r=nodeRadii[d.id]||14;
+    x0=Math.min(x0,d.x-r);y0=Math.min(y0,d.y-r);
+    x1=Math.max(x1,d.x+r);y1=Math.max(y1,d.y+r);
+  });
+  const pad=50;
+  const bw=x1-x0+pad*2,bh=y1-y0+pad*2;
+  const s=Math.max(0.3,Math.min(1,Math.min(W/bw,H/bh)));
+  const tx=W/2-s*(x0+x1)/2,ty=H/2-s*(y0+y1)/2;
+  svg.transition().duration(duration||800).call(zoom.transform,d3.zoomIdentity.translate(tx,ty).scale(s));
+}
+
+const savedLink=localStorage.getItem('tmt_link');
+const savedCharge=localStorage.getItem('tmt_charge');
+if(savedLink){const sl=d3.select("#linkStr").node();sl.value=savedLink*20;d3.select("#linkVal").text((+savedLink).toFixed(2));sim.force("link").strength(d=>d.type==="L1"?+savedLink*1.1:+savedLink*0.9);}
+if(savedCharge){const sc=d3.select("#chargeStr").node();sc.value=savedCharge/50;d3.select("#chargeVal").text(+savedCharge);sim.force("charge",d3.forceManyBody().strength(d=>{const deg=degree[d.id]||1;const base=-savedCharge;return deg>15?base*2.0:deg>8?base*1.0:deg>4?base*0.4:base*0.15;}));}
+const savedFocus=localStorage.getItem('tmt_focus');
+const savedSpacing=localStorage.getItem('tmt_spacing');
+if(savedSpacing){collidePad=+savedSpacing;const ss=d3.select("#spacingStr").node();ss.value=collidePad;d3.select("#spacingVal").text(collidePad);sim.force("collide",d3.forceCollide().radius(collideRadius));}
+if(savedFocus){const sf=d3.select("#focusDepth").node();sf.value=savedFocus;d3.select("#depthVal").text(+savedFocus===5?"∞":+savedFocus);}
+const savedIdle=localStorage.getItem('tmt_idle');
+if(savedIdle){idleDuration=+savedIdle;const si=d3.select("#idleSlider").node();si.value=savedIdle/30;d3.select("#idleVal").text(savedIdle+"s");}
+const savedInterval=localStorage.getItem('tmt_interval');
+if(savedInterval){idleInterval=+savedInterval;const svi=d3.select("#intervalSlider").node();svi.value=savedInterval/10;d3.select("#intervalVal").text(savedInterval+"s");}
+const savedCV=localStorage.getItem('tmt_cv');
+if(savedCV!==null){captainVoiceOn=savedCV==='1';d3.select("#captainVoiceToggle").property("checked",captainVoiceOn);d3.select("#captainVoiceLabel").text(captainVoiceOn?"开":"关");}
+const savedAutoNav=localStorage.getItem('tmt_autonav');
+if(savedAutoNav!==null){autoNavOn=savedAutoNav==='1';d3.select("#autoNavToggle").property("checked",autoNavOn);}
+const sliderPanel=d3.select("#sliders"),sliderBtn=d3.select("#sliderToggle");
+let sliderOpen=localStorage.getItem('tmt_sliders')==='open';
+function applySliderState(open){
+  sliderPanel.style("display",open?"block":"none");
+  sliderBtn.classed("open",open).attr("title",open?"收起参数面板":"展开参数面板");
+}
+if(sliderOpen)applySliderState(true);
+sliderBtn.on("click",()=>{
+  sliderOpen=!sliderOpen;
+  localStorage.setItem('tmt_sliders',sliderOpen?'open':'closed');
+  applySliderState(sliderOpen);
+});
+d3.select("#linkStr").on("input",function(){
+  const v=+this.value/20;d3.select("#linkVal").text(v.toFixed(2));
+  localStorage.setItem('tmt_link',v);
+  sim.force("link").strength(d=>d.type==="L1"?v*1.1:v*0.9);sim.alpha(0.3).restart();
+});
+d3.select("#chargeStr").on("input",function(){
+  const v=+this.value*50;d3.select("#chargeVal").text(v);
+  localStorage.setItem('tmt_charge',v);
+  sim.force("charge",d3.forceManyBody().strength(d=>{const deg=degree[d.id]||1;const base=-v;return deg>15?base*2.0:deg>8?base*1.0:deg>4?base*0.4:base*0.15;}));
+  sim.alpha(0.3).restart();
+});
+d3.select("#spacingStr").on("input",function(){
+  const v=+this.value;d3.select("#spacingVal").text(v);
+  localStorage.setItem('tmt_spacing',v);
+  collidePad=v;
+  sim.force("collide",d3.forceCollide().radius(collideRadius));
+  sim.alpha(0.3).restart();
+});
+d3.select("#idleSlider").on("input",function(){
+  const v=+this.value * 30; d3.select("#idleVal").text(v + "s");
+  localStorage.setItem('tmt_idle', v);
+  idleDuration = v;
+});
+d3.select("#intervalSlider").on("input",function(){
+  const v=+this.value * 10; d3.select("#intervalVal").text(v + "s");
+  localStorage.setItem('tmt_interval', v);
+  idleInterval = v;
+});
+d3.select("#autoNavToggle").on("change",function(){
+  autoNavOn = this.checked;
+  localStorage.setItem('tmt_autonav', autoNavOn ? '1' : '0');
+  if (autoNavOn) resetIdleTimer(); else { if (idleTimer) { clearTimeout(idleTimer); idleTimer = null; } }
+});
+d3.select("#captainVoiceToggle").on("change",function(){
+  captainVoiceOn = this.checked;
+  localStorage.setItem('tmt_cv', captainVoiceOn ? '1' : '0');
+  d3.select("#captainVoiceLabel").text(captainVoiceOn ? "开" : "关");
+  if (!captainVoiceOn) document.getElementById("captainVoice").classList.remove("visible");
+});
+document.getElementById("cvClose").addEventListener("click",function(e){
+  e.stopPropagation();
+  var cv = document.getElementById("captainVoice");
+  var body = cv.querySelector(".cv-body");
+  if (body._twTimer) clearInterval(body._twTimer);
+  cv.classList.remove("visible");
+});
+
+// 初始全景视野：布局稳定后自动缩放至全貌
+setTimeout(function() {
+  fitView(900);
+}, 1000);
+
+// 初始随机飞向一个星球
+setTimeout(function() {
+  var candidates = NODES.filter(function(d) { return d.type === 'a'; });
+  if (candidates.length === 0) candidates = NODES;
+  var pick = candidates[Math.floor(Math.random() * candidates.length)];
+  flyToPlanet(pick);
+  resetIdleTimer();
+}, 3000);
+</script></body></html>

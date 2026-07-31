@@ -1,7 +1,8 @@
 # stock-research — 通达信基本面分析自动化系统 v2.0
 
-> 在通达信中按 `Ctrl+Shift+A`，自动触发 Hanako 对当前股票进行 12 维基本面深度分析。
+> 在通达信中按 `Ctrl+Shift+D`，自动触发 Hanako 对当前股票进行 12 维基本面深度分析。
 > 分析结果以 JSON 存储，通过统一 HTML 页面查看。
+> ⚠️ 数据源：基础数据通过 TDX 本地技能(tdx_api_data)拉取，行业动态/催化等通过 Bocha MCP 联网补充。
 
 ## 架构
 

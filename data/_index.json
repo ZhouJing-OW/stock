@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-16T21:10:47.191927",
-  "total": 119,
+  "updated": "2026-07-31T23:34:17.088137",
+  "total": 121,
   "stocks": [
     {
       "code": "000338",
@@ -823,6 +823,26 @@
       "pinyin": "SHJT"
     },
     {
+      "code": "300475",
+      "name": "香农芯创",
+      "exchange": "SZ",
+      "industry": "电子/其他电子Ⅱ/其他电子",
+      "tags": [
+        "电子元器件分销",
+        "存储芯片",
+        "SK海力士代理",
+        "HBM",
+        "AI存力"
+      ],
+      "rating": "谨慎",
+      "pe": 68.6,
+      "marketCap": 1274,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-07-18",
+      "pinyin": "XNXC"
+    },
+    {
       "code": "300476",
       "name": "胜宏科技",
       "exchange": "SZ",
@@ -1541,6 +1561,26 @@
       "position": 10.0,
       "analysis_date": "2026-07-03",
       "pinyin": "YLGF"
+    },
+    {
+      "code": "603444",
+      "name": "吉比特",
+      "exchange": "SH",
+      "industry": "传媒/游戏/移动互联网服务",
+      "tags": [
+        "精品游戏研发",
+        "高分红现金牛",
+        "修仙放置赛道",
+        "游戏出海",
+        "AI+游戏"
+      ],
+      "rating": "看好",
+      "pe": 12.36,
+      "marketCap": 250.56,
+      "confidence": 4,
+      "position": 8.0,
+      "analysis_date": "2026-07-29",
+      "pinyin": "_BT"
     },
     {
       "code": "603501",

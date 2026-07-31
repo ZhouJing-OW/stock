@@ -180,6 +180,7 @@ function renderContent() {
   const freshCnt = allStocks.filter(s => s.analysis_date && (Date.now()-new Date(s.analysis_date).getTime())/86400000 <= 90).length;
   h += '<div class="page-header"><div><h1>基本面分析数据库</h1><div class="stats">共 <strong>'+displayStocks.length+'</strong> 只标的 · '+bought+' 只看好 · '+new Date().toLocaleDateString('zh-CN')+'</div></div>';
   h += '<button class="filter-btn'+(_freshOnly?' active':'')+'" onclick="_freshOnly=!_freshOnly;render()">仅有效<span class="count">'+freshCnt+'</span></button>';
+  h += '<a class="filter-btn" href="tmt_network.html" target="_blank" style="text-decoration:none">TMT产业链</a>';
   h += '</div>';
 
   // Groups
