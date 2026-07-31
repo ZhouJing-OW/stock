@@ -869,7 +869,7 @@ function flyToPlanet(target) {
 
 d3.select("#nodeCount").text(`节点: ${NODES.length} (A股${NODES.filter(d=>d.type==='a').length}+海外${NODES.filter(d=>d.type==='o').length}+非上市${NODES.filter(d=>d.type==='n').length})`);
 d3.select("#edgeCount").text(`边: ${EDGES.length} (L1: ${EDGES.filter(d=>d.type==='L1').length} + L2: ${EDGES.filter(d=>d.type==='L2').length})`);
-const zoom=d3.zoom().extent([[0,0],[W,H]]).scaleExtent([0.3,5]).on("zoom",e=>{g.attr("transform",e.transform);idleFirst=true;resetIdleTimer();});
+const zoom=d3.zoom().extent([[0,0],[W,H]]).scaleExtent([0.3,5]).on("zoom",e=>{g.attr("transform",e.transform);if(e.sourceEvent){idleFirst=true;resetIdleTimer();}});
 svg.call(zoom);
 
 // 初始全景视野：自动缩放到能容纳全部节点
