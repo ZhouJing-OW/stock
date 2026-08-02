@@ -43,17 +43,22 @@ svg{width:100%;height:100%}
 #tooltip .tt-products{color:#58a6ff;font-size:11px;margin-top:3px;line-height:1.4}
 #tooltip .tt-group{color:#484f58;font-size:10px;margin-top:2px}
 .ship-group,.trail-group{pointer-events:none}
-#captainVoice{position:absolute;z-index:25;max-width:380px;min-width:200px;background:rgba(22,27,34,0.96);border:2px solid #f0c040;border-radius:12px;padding:8px 14px;font-size:12px;color:#e6d5a8;line-height:1.7;opacity:0;transition:opacity 0.3s;box-shadow:0 3px 16px rgba(240,192,64,0.2);display:none;pointer-events:none}
+#captainVoice{position:absolute;z-index:25;max-width:380px;min-width:200px;background:#161b22;border:2px solid #f0c040;border-radius:12px;padding:8px 14px;font-size:12px;color:#e6d5a8;line-height:1.7;opacity:0;transition:opacity 0.3s;box-shadow:0 3px 16px rgba(240,192,64,0.2);display:none;pointer-events:none}
 #captainVoice.visible{opacity:1;display:block}
-.cv-arrow{position:absolute;top:50%;right:-20px;width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:20px solid #f0c040;transform:translateY(-50%)}
-.cv-arrow-inner{position:absolute;top:50%;right:-17px;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:17px solid rgba(22,27,34,0.96);transform:translateY(-50%)}
+#captainVoice .cv-dots{display:none;color:#f0c040;cursor:pointer;line-height:1.7}
+/* 折叠态：隐藏标题、正文和关闭按钮，只留三个等待点（纯文本样式），框体收窄 */
+#captainVoice.collapsed .cv-header,#captainVoice.collapsed .cv-body,#captainVoice.collapsed .cv-close{display:none}
+#captainVoice.collapsed .cv-dots{display:block}
+#captainVoice.collapsed{padding:2px 8px;min-width:auto;max-width:none;pointer-events:auto}
+.cv-arrow{position:absolute;top:50%;right:-5.5px;width:9px;height:9px;background:#161b22;border-top:2px solid #f0c040;border-right:2px solid #f0c040;transform:translateY(-50%) rotate(45deg)}
 #captainVoice .cv-header{font-size:10px;color:#f0c040;text-transform:uppercase;letter-spacing:2px;margin-bottom:2px}
 #captainVoice .cv-name{color:#fff;font-weight:bold;font-size:14px}
 #captainVoice .cv-rating{display:inline-block;padding:0 5px;border-radius:3px;font-size:10px;font-weight:bold;margin-left:4px;vertical-align:middle}
 #captainVoice .cv-rating.S{background:#f0c040;color:#0d1117}
 #captainVoice .cv-rating.A{background:#f0883e;color:#0d1117}
 #captainVoice .cv-rating.B{background:#58a6ff;color:#0d1117}
-#captainVoice .cv-closing{color:#f0c040;font-style:italic;margin-top:4px;font-size:11px}
+#captainVoice .cv-rating.C{background:#8b949e;color:#0d1117}
+#captainVoice .cv-closing{color:#f0c040;font-style:italic;margin-top:2px;font-size:11px}
 #captainVoice .cv-close{position:absolute;top:4px;right:8px;color:#484f58;font-size:14px;cursor:pointer;pointer-events:auto;line-height:1}
 #captainVoice .cv-close:hover{color:#c9d1d9}
 .tw-cursor{color:#f0c040;animation:blink 0.8s infinite}
@@ -76,7 +81,7 @@ svg{width:100%;height:100%}
 <span style="color:#58a6ff;font-size:11px">🚢 舰长室</span><br>
 空闲 <input type="range" id="idleSlider" min="1" max="20" value="3"><span id="idleVal">90s</span><br>
 间隔 <input type="range" id="intervalSlider" min="2" max="12" value="3"><span id="intervalVal">30s</span><br>
-自动航行 <input type="checkbox" id="autoNavToggle" checked> 播报 <input type="checkbox" id="captainVoiceToggle"> <span id="captainVoiceLabel">关</span>
+自动航行 <input type="checkbox" id="autoNavToggle" checked> 日志 <input type="checkbox" id="captainVoiceToggle"> <span id="captainVoiceLabel">关</span>
 </div>
 <div id="stats"><span id="nodeCount"></span><br><span id="edgeCount"></span></div>
 <div id="legend">
@@ -84,7 +89,7 @@ svg{width:100%;height:100%}
 <span id="legendEdgeStyles" style="margin-left:6px">━━ L1高置信度</span><span>┅┅ L2</span>
 </div>
 <div id="tooltip"></div>
-<div id="captainVoice"><span class="cv-close" id="cvClose">✕</span><div class="cv-header">🚀 舰长播报</div><div class="cv-body"></div><div class="cv-closing"></div><div class="cv-arrow"></div><div class="cv-arrow-inner"></div></div>
+<div id="captainVoice"><span class="cv-close" id="cvClose">✕</span><div class="cv-header">📖 舰长日志</div><div class="cv-body"></div><div class="cv-dots">···</div><div class="cv-arrow"></div></div>
 <svg id="svg"></svg></div>
 <script>
 const W=window.innerWidth,H=window.innerHeight;
@@ -407,11 +412,27 @@ function resetIdleTimer() {
   idleTimer = setTimeout(idleFly, idleFirst ? idleDuration * 1000 : idleInterval * 1000);
 }
 
+// 取消聚焦/筛选状态：idle 自动飞行前清理，恢复全量显示
+function clearFocusState() {
+  if (!lastFocusedNode && !activeFilterGroup) return;
+  node.attr("opacity", d => d.rating === "S" || d.rating === "A" ? 1 : 0.35).attr("fill", d => getNodeFill(d));
+  link.attr("opacity", 1);
+  label.attr("opacity", 1);
+  d3.select("#searchInput").property("value", "");
+  currentCode = null;
+  lastFocusedNode = null;
+  focusDirection = 'up';
+  activeFilterGroup = null;
+  legendExpanded = false;
+  updateLegend();
+}
+
 function idleFly() {
+  clearFocusState();
   var candidates = NODES.filter(function(d) { return d.type === 'a'; });
   if (candidates.length === 0) candidates = NODES;
   var pick = candidates[Math.floor(Math.random() * candidates.length)];
-  flyToPlanet(pick);
+  flyToPlanet(pick, true);
   var dx = pick.x - shipState.x, dy = pick.y - shipState.y;
   var dist = Math.sqrt(dx * dx + dy * dy);
   var dur = Math.max(300, dist / SHIP_SPEED * 1000);
@@ -444,7 +465,7 @@ function startOrbit() {
   });
 }
 
-// ===== 船长播报 =====
+// ===== 船长日志 =====
 const captainClosings = [
   "舷窗外的星光刚好够亮，不需要再开灯了。",
   "每次跃迁后，星图都会多几个新标记。今天也是。",
@@ -454,15 +475,15 @@ const captainClosings = [
   "有人问为什么总往没去过的地方飞——因为去过的地方已经没有悬念了。",
   "飞船的引擎声在太空中其实听不到，但你可以想象它在你脚下低鸣。",
   "星际快递刚才送来一份匿名星图，标记了一个从未听说过的坐标。",
-  "舷窗结了薄薄一层霜，用袖子擦开，外面是一片新星域。",
+  "舷窗结了薄薄一层霜，用袖子擦开，外面是一片新星链。",
   "航行记录显示：你已经飞了很远。但最精彩的航段，永远还没有开始。",
   "宇宙很大，但好奇心是无限燃料。",
   "有些星球，来了就不想走。有些星球，走了还想再来。",
-  "导航员打了个哈欠，说这片星域还挺有意思。",
+  "导航员打了个哈欠，说这片星链还挺有意思。",
   "舷窗外有一颗流星划过，就当是星际欢迎仪式。",
   "舰载AI刚才小声嘀咕了一句：值得关注。",
   "有时候停下来看看星图，比一直赶路更重要。",
-  "下一片星域据说有未被标注的航道，有兴趣吗？",
+  "下一片星链据说有未被标注的航道，有兴趣吗？",
   "船舱里的咖啡还热着，星图又多了几个标记。",
   "听说隔壁舰队在这里蹲了三个周期，收获不小。",
   "星际商会的简报说，这条航道最近的流量涨了三倍。",
@@ -474,7 +495,7 @@ const captainClosings = [
   "舰载雷达扫到一个模糊信号，也许只是错觉，也许不是。",
   "船上的老领航员说，好星球靠鼻子闻，不靠星图找。",
   "有时候最好的发现，是在走错路的时候撞上的。",
-  "星域边缘有个传说：谁找齐七颗S级星球，就能解锁隐藏航道。",
+  "星链边缘有个传说：谁找齐七颗S级星球，就能解锁隐藏航道。",
   "别急着走，这颗星球的地平线值得多看两眼。",
   "星际探险家协会的会刊上，有人写过这颗星球的专题。",
   "刚才收到一条加密讯息，只写了三个字：别眨眼。",
@@ -487,8 +508,8 @@ const captainClosings = [
   "如果你现在打开通讯广播，说不定能收到附近舰队的八卦。",
   "每一次随机飞行，都是命运的一次掷骰子。",
   "导航台刚更新了星图，附近多了三个新标记的天体。",
-  "有人把这片星域叫做银河棋盘，每颗星都是一枚棋子。",
-  "据说在星域最深处，有一片完全未被测绘的区域。",
+  "有人把这片星链叫做银河棋盘，每颗星都是一枚棋子。",
+  "据说在星链最深处，有一片完全未被测绘的区域。",
   "舰上实习生刚才兴奋地指着一个光点：那个是不是新发现？",
   "星图不会告诉你一切，有些风景只能自己撞见。",
   "也许下一站就是改变航线的那颗星。",
@@ -509,10 +530,10 @@ const captainClosings = [
   "通信官刚才截获一小段加密信号，破译了一半，内容有点意思。",
   "星星不等人，但好在下一颗永远在前面。",
   "星图自动标注系统今天有点兴奋，多标了几个可疑信号。",
-  "你的飞船在这个星域已经留下了一条独特的轨迹线。",
+  "你的飞船在这个星链已经留下了一条独特的轨迹线。",
   "前方有一片离子风暴区，绕过去要多花半天，但风景值得。",
   "探险的意义不在于走了多远，而在于每条路都是自己选的。",
-  "舰载导航提示：您已偏离常规航线，前方为未测绘星域。",
+  "舰载导航提示：您已偏离常规航线，前方为未测绘星链。",
   "并不是每颗闪亮的星球都藏着宝藏，但每颗都值得看一眼。",
   "如果在太空中感到孤独，打开广播，附近舰队的闲聊永远开着。",
   "听说有人在这附近发现过一个天然虫洞，虽然至今没人能复现。",
@@ -523,7 +544,7 @@ const captainClosings = [
   "数据屏上跳出一个异常读数，大概率是宇宙射线，但万一不是呢？",
   "太空里最贵的东西不是矿石，是一段还没被讲过的故事。",
   "导航系统建议左转，但直觉说直走。你决定听谁的？",
-  "这片星域有个别称叫投机者坟场，但从数据来看，幸存者都赚翻了。",
+  "这片星链有个别称叫投机者坟场，但从数据来看，幸存者都赚翻了。",
   "船载AI刚才主动问了一句：要不要试试没走过的路？",
   "有些决策是在星图前做的，有些是在舷窗前发呆时想通的。",
   "太空探索者的共同特征：永远觉得下一站才是最好的。",
@@ -535,12 +556,12 @@ const captainClosings = [
   "偶尔偏离航线，是发现新世界的前提。",
   "太空里最好的导航方式？有时候是跟着另一艘船的尾灯走。",
   "舰尾的传感器捕捉到一个引力波涟漪，不知道来自哪里。",
-  "有人说探索星域就是探索自己，这话在别处是鸡汤，在太空里是真的。",
+  "有人说探索星链就是探索自己，这话在别处是鸡汤，在太空里是真的。",
   "船长，前方到站时间还有一会，要不要看看过往的航行记录？",
   "这颗星球在红外光下会呈现完全不同的地貌，有兴趣试试吗？",
   "别总盯着星图看，偶尔也抬头看看真正的星星。",
   "这是一颗有故事的星球，可惜大部分故事还没被写下来。",
-  "星域就像一张藏宝图，关键不是图有多详细，而是你敢不敢相信那些X。",
+  "星链就像一张藏宝图，关键不是图有多详细，而是你敢不敢相信那些X。",
   "舰上有个不成文的规矩：每到一个新星球，就给它取一个只有你知道的别名。",
   "保持好奇心，它是你在茫茫太空里唯一的北极星。",
   "前路漫漫，但星光正好。",
@@ -554,7 +575,7 @@ const captainClosings = [
   "这颗星球有一片会发光的海洋，夜里看，像一面碎掉的镜子。",
   "有一颗小行星正沿着你的航线飞，导航员说它只是想搭个便车。",
   "那颗行星有两颗卫星，一大一小，像一只眼睛的瞳孔和虹膜。",
-  "这片星域的尘埃带在阳光下像一层薄纱，飞船穿过时，舷窗上落满了星屑。",
+  "这片星链的尘埃带在阳光下像一层薄纱，飞船穿过时，舷窗上落满了星屑。",
   "有一颗彗星正在靠近，它每八十年路过一次，这是它的一生中与你唯一的重逢。",
   "引擎冷却的时候，整艘船会安静下来，安静得像在听你说话。",
   "飞船转弯的时候会轻轻倾斜，像一个正在思考的人微微侧头。",
@@ -584,8 +605,8 @@ const captainClosings = [
   "这条航线的尽头是什么？没人知道，但每个人都愿意往那儿走。",
   "导航系统显示前方有一个旧坐标，那里曾经是这条航线最热闹的驿站。",
   "前方航道即将变窄，别担心，所有窄路都通向开阔的地方。",
-  "星域贸易站贴出告示：本季度流通量创新高，请各位舰长注意秩序。",
-  "补给船每周来一次，船员们说，那是这片星域的星期一。",
+  "星链贸易站贴出告示：本季度流通量创新高，请各位舰长注意秩序。",
+  "补给船每周来一次，船员们说，那是这片星链的星期一。",
   "舰载AI刚刚更新了笑话库，它说自己终于学会了讲冷笑话。",
   "通信官说，刚收到的信号里夹着一句歌词，是首很老的歌。",
   "通信日志里有一条未读消息，发件人不明，内容只有两个字：加油。",
@@ -594,8 +615,8 @@ const captainClosings = [
   "星港的广播在循环播放：欢迎来到本星系，祝您航程愉快。已经播了四百年。",
   "你收到一条延时讯息，是三个月前从这附近发出的：一切顺利，勿念。",
   "星际百科里关于这颗星球的词条只有三行，剩下的空白留给后来者。",
-  "星域传说：有人在这里见过一艘没有舰长的船，它自己开得很稳。",
-  "听说这片星域以前一片荒芜，直到有人发现了第一座矿脉，故事才从这里开始。",
+  "星链传说：有人在这里见过一艘没有舰长的船，它自己开得很稳。",
+  "听说这片星链以前一片荒芜，直到有人发现了第一座矿脉，故事才从这里开始。",
   "宇宙的尺度太大，所以它允许每个人都拥有自己的坐标系。",
   "宇宙里没有路灯，但每颗恒星都愿意为你亮着。",
   "星星之间的距离按光年算，但人和好奇心之间的距离是零。",
@@ -610,12 +631,12 @@ const captainClosings = [
   "如果你在太空里迷路了，就跟着好奇心走，它从不出错。",
   "连续飞了很久之后，记得停下来，让引擎和你都喘口气。",
   "有人问舰长探索的终点是什么，舰长说，大概是下一颗星球吧。",
-  "星港的灯塔是这片星域最亮的东西，它照亮的，是这片星域的信心。",
+  "星港的灯塔是这片星链最亮的东西，它照亮的，是这片星链的信心。",
   "宇宙的规则很简单：你越认真看，它给你看的东西越多。",
   "你每答对一道宇宙的考题，就会多收到一张新星图。",
   "如果不知道去哪，就朝着光的方向飞，准没错。",
   "探索是唯一一种没有库存的消耗品，越用越多。",
-  "看星星的时候，记得顺便看看自己，你也是这片星域的一部分。",
+  "看星星的时候，记得顺便看看自己，你也是这片星链的一部分。",
   "这颗星球的山脉从轨道上看像一道疤痕，但当地人叫它脊梁。",
   "这颗星球表面有一条发光的河流，从太空看，像一道正在愈合的伤口。",
   "这颗星球上的城市在夜间连成一片光海，从轨道上看，像陆地长出了星空。",
@@ -629,13 +650,13 @@ const captainClosings = [
   "星际商路上有个说法：跟着补给船走，不会迷路，也不会饿着。",
   "太空站的大厅里挂着一张老航线图，标注的枢纽已经换了名字，但没人舍得换图。",
   "这条航道上的货船来来往往，每一艘都装着别处的故事和此处的货。",
-  "星域交易所的屏幕跳动着数字，有人说那是星图的另一种读法。",
+  "星链交易所的屏幕跳动着数字，有人说那是星图的另一种读法。",
   "老商人说，判断一颗星球值不值得停靠，看它港口的灯亮不亮就够了。",
   "最近停靠这颗星球的货船越来越多，港口的灯熄得越来越晚。",
   "有些星球靠资源出名，有些靠位置，这颗星球刚好两样都占一点。",
   "星际商会的年报里写着：本年度最繁忙的十条航道，这条排第三。",
   "补给站的老板见过一万个舰长，每个人的目的地都不同，但眼神都一样。",
-  "有人在这片星域囤了一仓库的星光，等着涨价。你猜怎么着？真涨了。",
+  "有人在这片星链囤了一仓库的星光，等着涨价。你猜怎么着？真涨了。",
   "如果你现在往窗外看，星光刚好落进舷窗，像被安排好的。",
   "这颗星球的轨道上漂着一只旧靴子，不知是谁的，也不知要去哪。",
   "舷窗上凝着一层水汽，用手指画一个圈，圈住一颗你最喜欢的星。",
@@ -649,123 +670,507 @@ const captainClosings = [
 ];
 let captainTimer = null;
 
-// 内容模板池
-var productTemplates = [
-  "如果想带点伴手礼，当地特产 <span style=\"color:#f0c040\">{p}</span> 绝对不会错。",
-  "这里的招牌货是 <span style=\"color:#f0c040\">{p}</span>，星际商人都抢着进货。",
-  "星球特产 <span style=\"color:#f0c040\">{p}</span>，在整个星域都小有名气。",
-  "路过别忘了捎点 <span style=\"color:#f0c040\">{p}</span>，别处可不好找。"
+// ===== 船长日志模板池 =====
+// 到达事件库（50条）
+var arrivalTemplates = [
+  "飞船航行至",
+  "经历一段不太无聊的航行终于到达",
+  "我们降落在",
+  "获得星际海关批准，进入",
+  "飞船不太平稳地着陆",
+  "绕过一片小行星带后抵达",
+  "顺着商队留下的尾迹找到",
+  "在星图角落圈出一个新坐标，飞往",
+  "穿越电离层，平稳进入",
+  "避开巡逻线，悄声停靠",
+  "跟着一段古老的航线来到",
+  "在燃料耗尽前最后一刻抵达",
+  "从跃迁通道口弹出，出现在",
+  "沿着信标灯的指引降落",
+  "被一阵意外的星风推到",
+  "追踪一段模糊的信号来到",
+  "穿过双层星环，进入",
+  "借着行星引力弹弓，掠过",
+  "收到商会密信后绕道来到",
+  "在星港泊位登记后，登上",
+  "混在一队运输船中间，进入",
+  "翻越星云褶皱，抵达",
+  "绕了三圈才找到入口，降落",
+  "趁着流星雨的空隙，俯冲进入",
+  "顺着磁力线的方向漂到",
+  "跟随一队朝圣者的飞船，来到",
+  "在星图边缘校准坐标后，飞向",
+  "穿过一片发光的尘埃云，抵达",
+  "从补给站出发，航行三日后到达",
+  "贴着星环内侧滑行，进入",
+  "在引力井边缘减速，停靠",
+  "循着老领航员的记忆，找到",
+  "跨越半个星链，终于到达",
+  "用望远镜确认坐标后，降落",
+  "跟着货船队浩浩荡荡地进入",
+  "在双星日食的奇景下抵达",
+  "穿越离子风暴的尾迹，到达",
+  "从废弃空间站中转后，来到",
+  "沿着古老的商路，再次来到",
+  "在晨昏线交界处，悄然降落",
+  "借助一次罕见的引力透镜，直达",
+  "绕开海盗的封锁线，潜入",
+  "带着一船补给，驶入",
+  "在星港塔台的引导下，进入",
+  "跟在一颗彗星后面，慢慢靠近",
+  "用旧式六分仪测出方位，抵达",
+  "从星云的缝隙里穿出，到达",
+  "贴着大气层擦了两圈，降落",
+  "在自动驾驶的蜂鸣声中，抵达",
+  "靠着最后一点燃料，滑行进入"
 ];
-var customerTemplates = [
-  "贸易航线上，<span style=\"color:#58a6ff\">{c}</span>{more}的货船常年往来于此。",
-  "它的主要客户包括 <span style=\"color:#58a6ff\">{c}</span>{more}，航路相当繁忙。",
-  "这条航线上的常客是 <span style=\"color:#58a6ff\">{c}</span>{more}。",
-  "下游买家 <span style=\"color:#58a6ff\">{c}</span>{more}经常从这里进货。"
-];
-var chainTemplates = {
+// 星球评价库（S/A/B/C 各30条）
+var ratingComments = {
   S: [
-    "从星图上看，这颗行星横跨 <span style=\"color:#a371f7\">{ch}</span> 领域，是整片星域的贸易中枢。",
-    "星域图上，它处于 <span style=\"color:#a371f7\">{ch}</span> 星座的核心位置，所有航道最终都指向这里。",
-    "在产业链的版图里，<span style=\"color:#a371f7\">{ch}</span> 是它最重要的航标，整个星域都围着它转。",
-    "这颗星球坐落在 <span style=\"color:#a371f7\">{ch}</span> 星域，说它是银河系的十字路口也不为过。"
+    "无需过多介绍，这个星球的名字早已传遍宇宙的每个角落。",
+    "这里是星图的圆心，几乎每条航线的终点都写着它的名字。",
+    "繁华得像一场永不落幕的庆典，连星光都为它让路。",
+    "宇宙商会的总部就设在这里，一切大生意都在它的注视下成交。",
+    "传说中，只要它一声咳嗽，半个星链的经济都要感冒。",
+    "它的港口昼夜不熄，灯火亮得能照见另一端的恒星。",
+    "在这里，连路边卖茶的老妪都能给你讲三桩价值连城的交易。",
+    "星图上的标记密密麻麻，而它是最大最亮的那颗。",
+    "它是无数传说的起点，也是无数传说的终点。",
+    "有人说它是宇宙的十字路口，其实十字路口没它热闹。",
+    "所有舰队都想在这里拥有一块泊位，哪怕只是名义上的。",
+    "它的名字本身就是通行证，比任何证件都管用。",
+    "财富在这里流动得比光还快，而且永远不迷路。",
+    "它繁华到什么程度？连废弃的轨道上都停满了飞船。",
+    "星际年鉴每年都把它放在第一页，从无例外。",
+    "在这里，机会多得像尘埃，但抓得住的才是星星。",
+    "它的交易所墙上挂着一句话：宇宙的脉动，从这里开始。",
+    "据说运气好的人，在这里随便拐个弯都能遇见贵人。",
+    "它是星图上的太阳，其他星球都围着它公转。",
+    "连最挑剔的旅行家，提起它也只会说：名副其实。",
+    "这里的夜色从不落幕，灯火替星星值完所有的班。",
+    "一颗星球活成了枢纽的样子，大概就是这样。",
+    "它的繁华写在每一块路牌上，连路牌都是金的。",
+    "有人统计过，全宇宙一半的星图都以它为基准点。",
+    "它不需要自我介绍，它的光就是名片。",
+    "宇宙的时钟以它的节奏走，其他星球只是表盘上的刻度。",
+    "在这里迷路是一种荣幸，因为每条路都通向财富。",
+    "它的港口泊着来自所有星链的船，像一场永不散的聚会。",
+    "都说宇宙很大，但它的名字总能出现在任何讨论里。",
+    "它是那种你飞越半个银河，也要来亲眼看看的地方。"
   ],
   A: [
-    "从星图上看，这颗行星横跨 <span style=\"color:#a371f7\">{ch}</span> 领域，商船往来相当频繁。",
-    "星域图上，它处于 <span style=\"color:#a371f7\">{ch}</span> 星座，算得上是贸易枢纽级别的节点。",
-    "在产业链的版图里，<span style=\"color:#a371f7\">{ch}</span> 是它最重要的航标，几条核心航路在这里交汇。",
-    "这颗星球坐落在 <span style=\"color:#a371f7\">{ch}</span> 星域，航路四通八达。"
+    "这颗星球在星图上相当有名，商船都把这里当中转站。",
+    "热闹得恰到好处，既有大港口的排场，又不至于挤破头。",
+    "它是这条航道上的老牌重镇，往来船只都会在此停靠。",
+    "这里的码头永远有人卸货装货，热闹得像一锅沸水。",
+    "商人们提起它时语气会郑重三分，毕竟生意都在这儿谈成过。",
+    "它不算星图中心，但所有航线都愿意为它拐个弯。",
+    "城市的天际线灯火通明，远看像一颗正在燃烧的宝石。",
+    "这里的消息灵通，昨晚的事，今早就传遍了半个星链。",
+    "它是商路上的驿站，也是故事的集散地。",
+    "虽然称不上顶点，但在这一片星链，它说话算数。",
+    "它的港口规模排得进前十，吞吐量更是年年创新高。",
+    "老船员都说，没在这里补过给，就不算真正跑过这条线。",
+    "繁华但不喧嚣，热闹但有秩序，这就是它的气质。",
+    "它像一颗打磨过的宝石，在星图上稳稳地发着光。",
+    "重要航道上的明星，来往船只都要向它致敬。",
+    "这里的集市从早开到晚，讨价还价声是它的背景音乐。",
+    "它在贸易版图上的位置，就像棋盘上的天元。",
+    "虽然不及那些传说中的都会，但它的体量足以让人侧目。",
+    "无数货船在这里卸下远方，又装走希望。",
+    "它的繁荣靠的不是运气，是几代人踩出来的航线。",
+    "在这里，一夜暴富的故事时有发生，没人觉得稀奇。",
+    "它是这片星链的晴雨表，行情好不好，看它就知道了。",
+    "码头的灯塔彻夜亮着，像一只永不闭合的眼睛。",
+    "它算得上星链里的豪门，虽不是王座，但也离王座不远。",
+    "这里的商人精明，但讲信用，生意做得长久。",
+    "它见证了无数笔大交易，港口的石板都磨得发亮。",
+    "在这条航道上，它是绕不开的存在。",
+    "热闹是它的底色，机会是它的特产。",
+    "它的名字经常出现在商会的报告里，位置总是靠前。",
+    "一座有分量的重镇，走到哪里都带着商业的气息。"
   ],
   B: [
-    "从星图上看，这颗行星横跨 <span style=\"color:#a371f7\">{ch}</span> 领域，属于正在崛起的新兴星域。",
-    "星域图上，它处于 <span style=\"color:#a371f7\">{ch}</span> 星座，虽然年轻但航路已经不少。",
-    "在产业链的版图里，<span style=\"color:#a371f7\">{ch}</span> 是它最重要的航标，值得留意的发展方向。",
-    "这颗星球坐落在 <span style=\"color:#a371f7\">{ch}</span> 星域，供应链位置有上升空间。"
+    "这颗星球小有名气，懂行的人会专程绕路过来。",
+    "它是某条支线的源头，货从这儿出发，流向四面八方。",
+    "特色鲜明得让人过目不忘，提起某种货，人们就会想到它。",
+    "规模不大，但在特定圈子里口碑极佳。",
+    "它像一颗安静的卫星，在星图的边缘发着自己的光。",
+    "这里是行家的聚集地，外行人甚至不知道它的存在。",
+    "它专精一行，做出来的东西连大都会都得认。",
+    "虽然名声不如那些大港，但懂行的都知道它的分量。",
+    "它的名字偶尔出现在专业商会的名单上，位置不算靠前，但从不缺席。",
+    "这里的工匠手艺扎实，货真价实，回头客比新客多。",
+    "它守着一条重要的支线航道，来往船只虽少，但都是熟客。",
+    "小地方，大讲究，这是本地人常挂在嘴边的话。",
+    "它像一本冷门的好书，翻过的人都说值。",
+    "在它的领域里，它算得上隐形的冠军。",
+    "它的特产在整个星链都有名，虽然星球本身不显眼。",
+    "聚集了一群认死理的匠人，做出来的东西自然不差。",
+    "它是这条支线上的明星，虽小，但亮。",
+    "少有人特意来，但来过的都成了回头客。",
+    "它的名气靠口碑相传，一传一个准。",
+    "在星图的边角，它稳稳地经营着自己的小天地。",
+    "这里的生活节奏慢，但生意做得一丝不苟。",
+    "它是某种工艺的最后传承地，别处已经找不到了。",
+    "虽然只是颗小星球，但它的东西能进大都会的货架。",
+    "行家说，要收好货，就得来这种不起眼的地方。",
+    "它像一颗被低估的棋子，关键时刻总能派上用场。",
+    "这里的商会不大，但信誉好，说一不二。",
+    "它是源头，是起点，是很多故事开始的地方。",
+    "小有名气，但从不张扬，像一坛陈年的酒。",
+    "在这条支线上，它是当之无愧的老大。",
+    "它守着一条古道，也守着一门老手艺。"
   ],
   C: [
-    "从星图上看，这颗行星横跨 <span style=\"color:#a371f7\">{ch}</span> 领域，规模不大但有独特定位。",
-    "星域图上，它处于 <span style=\"color:#a371f7\">{ch}</span> 星座，偏安一隅的小众航线。",
-    "在产业链的版图里，<span style=\"color:#a371f7\">{ch}</span> 是它最重要的航标，走的是差异化路线。",
-    "这颗星球坐落在 <span style=\"color:#a371f7\">{ch}</span> 星域，虽然冷门但有自己的生态位。"
+    "这颗星球少有人知，星图边缘的角落里才能找到它。",
+    "典型的工矿星球，空气里都飘着矿尘的味道。",
+    "它的存在感很低，但矿藏养活了一整条产业链。",
+    "在星图上，它只是一个不起眼的小点。",
+    "这里的居民世代挖矿，性格像矿石一样硬朗。",
+    "它位于航道的最末端，很少会有船专程来访。",
+    "灰扑扑的外表下，藏着整片星链都需要的资源。",
+    "它的名字只在矿区手册里出现，别处几乎听不到。",
+    "一颗靠矿吃饭的星球，繁荣与否全看矿脉的脸色。",
+    "来这里的多半是矿工和商人，都是务实的人。",
+    "它像宇宙的仓库管理员，安静地守着地下的一切。",
+    "在这里，最值钱的东西埋在地表之下。",
+    "星图边缘的工矿星，设施朴素，但运转得井井有条。",
+    "它默默无闻，但整片星链的工厂都离不开它的原料。",
+    "这里没有繁华的街市，只有轰隆隆的传送带。",
+    "矿车的声音是它的心跳，矿灯是它的眼睛。",
+    "少有人提起它，但它的产出支撑着很多大星球。",
+    "一座不起眼但实打实的工矿产业星。",
+    "它的地表布满矿坑，像一张被岁月刻满的脸。",
+    "在这里，日子过得粗粝，但每一步都踩在实处。",
+    "它偏远，但从不缺货，也不缺埋头苦干的人。",
+    "星图边缘的小角色，却是供应链上不可或缺的一环。",
+    "这里的人们不善言辞，但交出的货从不含糊。",
+    "它像一块沉默的基石，撑起了热闹的远方。",
+    "矿区的灯火在夜里亮着，像大地睁开的眼睛。",
+    "没有观光客，没有吟游诗人，只有实打实的产出。",
+    "它的价值不在表面，而在深深的地层之下。",
+    "一颗硬邦邦的星球，连风都带着铁锈味。",
+    "在星图的最边角，它安静地完成着自己的使命。",
+    "它不指望被人记住，但离了它，很多事都转不动。"
   ]
 };
-var inviteTemplates = [
-  "如果你对这些星域感兴趣，来这里准没错。",
-  "对这条赛道好奇的舰长，值得多停留一会儿。",
-  "研究这片星域的朋友，这里是个不错的观察哨。",
-  "想深入了解这条产业链的话，从这里入手是个好选择。"
+// 商船故事库（100条；min:"SAB" 的故事只出现在 S/A/B 级星球）
+var merchantStories = [
+  {lv:"SAB", t:"这里盛产 {p}，{c}星肯定会需要这些宝贝。货物装满货仓，做好整备，不过在此之前，让我们去放松一下，{r}"},
+  {t:"露天集市悬浮在轨道阴影下，{p} 的货箱堆得像小山，全息报价牌此起彼伏。我们挑挑拣拣，最后用一箱旧零件换到了上等货。{r}"},
+  {t:"星港泊位上有人兜售一批 {p}，说是急着还贷款贱卖。用光谱仪验了货，成色确实不错，这笔买卖做得值。{r}"},
+  {t:"本地商行开出的 {p} 收购价高出行情两成，但要求现款现货。我们盘了盘账，决定赌一把。{r}"},
+  {lv:"SA", t:"拍卖行今天拍一批 {p}，举牌的人挤满了大厅。我们象征性地举了两回，就被喊价声淹没了。{r}"},
+  {t:"黑市的 {p} 交易在废弃轨道站的旧舱段里进行，一手转账一手交货，谁也不多问一句。{r}"},
+  {lv:"SAB", t:"听说隔壁星系的商队正在扫货，{p} 的行情一路上涨。我们庆幸自己下手早。{r}"},
+  {t:"有个老商人想用一艘退役货船换我们的 {p}，那船虽然旧，曲速引擎倒是保养得不错。{r}"},
+  {lv:"SA", t:"交易所的全息大屏上，{p} 的价格曲线一路走高，看客们的眼睛都红了。{r}"},
+  {t:"这里有个奇怪的规矩：{p} 只换不卖，想拿货得先拿出点有意思的东西。{r}"},
+  {t:"我们接了一单运输 {p} 的活儿，货主是个沉默寡言的船长，只说要赶在星环合拢前送到。{r}"},
+  {t:"货仓里堆满了 {p}，这一趟要是顺利，抵得上往常跑三趟。{r}"},
+  {lv:"SA", t:"星际物流的枢纽站里，{p} 的箱子码得比楼还高，传送带一刻不停。{r}"},
+  {t:"运 {p} 的路上遇到航道检查站，查验机器人扫了扫货单，冲我们摆摆手放行了。{r}"},
+  {t:"帮补给站捎了一批 {p} 过去，站长非要请我们喝一杯，说是老规矩。{r}"},
+  {t:"有人委托我们找一批 {p}，说是当年坠毁的货船里遗失的，找到有重谢。{r}"},
+  {t:"星港的全息公告栏贴着一张悬赏：征集 {p} 的优质货源，赏金颇丰。{r}"},
+  {lv:"SA", t:"星球议会的采购官找上我们，说急需一批 {p} 应急，价格好商量。{r}"},
+  {lv:"BC", t:"厂里的老师傅托我们把一箱 {p} 带给他远方的儿子，说那是他干了一辈子的手艺。{r}"},
+  {t:"有个神秘买家要收 {p}，指定在废弃的轨道观景台交货，搞得像接头一样。{r}"},
+  {lv:"SAB", t:"一份关于 {p} 的长期供货合同摆在桌上，条款细得让人头皮发麻，但利润确实诱人。{r}"},
+  {t:"合约的最后一页有一行小字：如遇星云风暴，{p} 的交货期顺延。老规矩了。{r}"},
+  {t:"我们跟当地商会签了 {p} 的意向书，接下来三天都在跑审批站盖章。{r}"},
+  {lv:"SA", t:"这笔 {p} 的大单子，对方派了三个法务机器人来审合同，光条款就改了七版。{r}"},
+  {lv:"BC", t:"口头约定的 {p} 生意，没有合同，只有击掌为誓，再交换一段通讯频段。这地方还信这个。{r}"},
+  {t:"酒馆里有人兜售一张旧星图，据说终点藏着 {p} 的仓库。真假难辨，但故事很好听。{r}"},
+  {lv:"BC", t:"传闻老厂区深处有一片废弃的仓库，里面堆着当年的 {p}。我们决定去看看。{r}"},
+  {lv:"SAB", t:"寻宝队的队长拿着中子探测仪，说这片区域地下有 {p} 的强烈反应。{r}"},
+  {t:"我们沿着废弃的通风管道爬了半天，在一间积灰的货舱里找到一小箱 {p}。不算白跑。{r}"},
+  {t:"藏宝图是假的，但带路的老头很真诚。他请我们喝了碗合成肉汤，说抱歉浪费了时间，临走还送了一小袋 {p}。{r}"},
+  {t:"星港码头上有个孩子追着我们的船跑，就为了看一眼 {p} 长什么样。{r}"},
+  {t:"补给站的老板娘人很好，听说我们要收 {p}，二话不说调出了全息通讯录。{r}"},
+  {lv:"SA", t:"商会晚宴上，邻座的老商人聊起 {p} 的门道，句句都是干货。{r}"},
+  {lv:"BC", t:"产线上的老师傅教我们怎么辨 {p} 的成色，方法土，但管用。{r}"},
+  {t:"我们在悬浮茶馆认识了一位老者，他年轻时跑过 {p} 的生意，讲起往事眼睛发亮。{r}"},
+  {t:"候船厅里偶遇一位老船长，他听说我们要去收 {p}，笑着说那是他的老本行，还递来一支合成雪茄。{r}"},
+  {lv:"SA", t:"在星际博览会上，我们偶然发现 {p} 的新品，据说采用了全新的工艺。{r}"},
+  {t:"迷路的时候碰见一个扛着悬浮货箱的小贩，箱子里正好有 {p}，也算因祸得福。{r}"},
+  {lv:"SAB", t:"轨道电梯里遇见一位工程师，他随口提到的 {p} 应用场景，让我们大开眼界。{r}"},
+  {t:"陨石雨里躲进一间充气仓库，没想到里面堆着半仓库的 {p}。{r}"},
+  {lv:"BC", t:"去厂区提 {p} 的路上，悬浮运输车抛锚了，好在修得快，只耽搁了半天。{r}"},
+  {lv:"SAB", t:"有人想黑吃黑抢我们的 {p}，我们开着飞船在陨石带里绕了三个小时才甩掉尾巴。{r}"},
+  {lv:"BC", t:"为了抄近路，我们穿过了一片废弃的旧厂区，月光下只有 {p} 的样品在反光。{r}"},
+  {t:"运 {p} 的船半路反物质引擎故障，我们一边修一边祈祷别遇到海盗。{r}"},
+  {lv:"SAB", t:"那场离子风暴来得毫无预兆，我们护着 {p} 在风暴边缘擦着飞过去，后怕得很。{r}"},
+  {lv:"SAB", t:"酒保擦着杯子说：最近 {p} 紧俏，好几个舰队都在悄悄囤货。{r}"},
+  {lv:"SAB", t:"酒馆角落里有人压低声音：{p} 的下游买家换了主，价格要变。{r}"},
+  {lv:"BC", t:"一个醉汉拍着桌子说他知道 {p} 的独家货源在哪里，第二天就酒醒了，说什么也不肯认。{r}"},
+  {t:"吧台上贴着一张纸条：高价收 {p}，联系方式是串量子加密乱码。{r}"},
+  {lv:"SAB", t:"情报贩子给了我们一个星图坐标，说那里有批没主儿的 {p}，信不信随你。{r}"},
+  {t:"这里的早市很有意思，卖 {p} 的摊子前总是挤满人，讨价还价声能掀翻棚顶。{r}"},
+  {t:"街角的工匠正在用纳米磨床打磨 {p}，手法娴熟得像在演奏乐器。{r}"},
+  {lv:"SAB", t:"博物馆里陈列着最早的 {p} 标本，据说那是个改变星链命运的发现。{r}"},
+  {lv:"SA", t:"城市的高楼外墙挂满 {p} 相关产业的广告，霓虹灯彻夜闪烁。{r}"},
+  {t:"我们看见一艘货船正在装 {p}，装卸机器人排成一排，节奏感十足。{r}"},
+  {t:"这里的 {p} 在特定光照下会泛出蓝紫色的光，像把一小片星空封进了成品。{r}"},
+  {lv:"BC", t:"厂区上空偶尔会出现极光，据说那是 {p} 产线高压电的静电效应。{r}"},
+  {lv:"SA", t:"城市中央有一座 {p} 铸成的雕塑，据说用了整整一船原料。{r}"},
+  {t:"有人用 {p} 的边角料做成风铃，风一吹，叮叮当当响得很好听。{r}"},
+  {lv:"BC", t:"车间的观景走廊上，一整条 {p} 产线尽收眼底，灯光下像一条金色的河。{r}"},
+  {t:"档案馆的记载说，这颗星球的第一桶金就是从 {p} 开始的。{r}"},
+  {lv:"SAB", t:"三百年前那场著名的商战，导火索就是一船被调包的 {p}。{r}"},
+  {lv:"BC", t:"老城区的墙壁上还留着当年 {p} 商行的全息招牌，闪烁不定，但轮廓清晰。{r}"},
+  {t:"本地人讲起 {p} 的历史，能讲上三天三夜，语气里全是自豪。{r}"},
+  {t:"博物馆的解说员说，{p} 曾经是这片星链的硬通货。{r}"},
+  {lv:"BC", t:"今天是厂庆日，人们把 {p} 摆成长桌，庆祝又一年的好收成。{r}"},
+  {lv:"SAB", t:"星港的灯光节上，{p} 被打磨成灯饰挂满街道，整个城市亮晶晶的。{r}"},
+  {t:"节日集市上，{p} 被做成各种形状的工艺品，孩子们围着摊子不走。{r}"},
+  {t:"庆典的压轴戏是放 {p} 焰火，据说火光里能看到产线的轮廓。{r}"},
+  {lv:"BC", t:"本地的新年习俗是用 {p} 粉末画门楣，寓意来年富足。{r}"},
+  {t:"装货的时候，一只机械臂突然罢工，{p} 撒了一码头，引来看热闹的人群。{r}"},
+  {t:"航行途中我们发现货舱里多了一箱 {p}，大概是哪个好心的装卸工塞的。{r}"},
+  {lv:"SAB", t:"舰长广播说，本舰本次载有 {p}，请各岗位做好安保准备。{r}"},
+  {t:"船员们在休息室打赌 {p} 的行情，输的人负责擦一个月的舷窗。{r}"},
+  {t:"我们的导航仪里不知何时被塞进一张纸条，写着某地有 {p} 出售。{r}"},
+  {t:"这里的 {p} 质量参差不齐，好在行家一眼就能分出高下。{r}"},
+  {lv:"SA", t:"星链商会的季度报告里，{p} 的排名又往前挪了几位。{r}"},
+  {t:"有个买家开出价比市场价低三成，但要求长期供应 {p}，细算下来也不亏。{r}"},
+  {lv:"BC", t:"我们顺手帮厂里的夜班工人捎了一批补给，换到了不错的 {p} 货源。{r}"},
+  {t:"这里的 {p} 卖相普通，但用过的人都说好，属于闷声发财的类型。{r}"},
+  {lv:"SAB", t:"据说隔壁星链新建了工厂，对 {p} 的需求一下子翻了好几倍。{r}"},
+  {lv:"BC", t:"一个老奶奶送了我们一小袋 {p} 样品，说这是她老伴生前留下的配方。{r}"},
+  {t:"市场管理员告诉我们，最近 {p} 摊位换了位置，新地方更好找。{r}"},
+  {t:"我们的 {p} 存货快见底了，正好在这里补上了缺口，运气不错。{r}"},
+  {t:"这里的 {p} 交易讲究先看货再谈价，规矩虽然老，但大家都遵守。{r}"},
+  {lv:"SA", t:"有人在招标会上放话要包下整片星链的 {p}，被当成笑话，但没人敢真笑。{r}"},
+  {t:"我们在一间小铺子里发现了罕见的 {p} 品种，老板自己都不知道那是什么。{r}"},
+  {t:"这里的 {p} 包装很讲究，说是怕运输途中磕碰，其实看着像艺术品。{r}"},
+  {lv:"SAB", t:"港口广播提醒：今日有 {p} 专船到港，请闲杂人员避让。{r}"},
+  {t:"我们帮一个迷路的孩子找到家人，他父亲硬塞给我们一袋 {p} 当谢礼。{r}"},
+  {lv:"SA", t:"商业杂志的封面就是 {p} 的产线全景，标题写着：金色机遇。{r}"},
+  {lv:"BC", t:"这里的 {p} 含杂量低，几乎不用精炼就能直接用，省了不少事。{r}"},
+  {t:"有个小贩踩着悬浮滑板追了我们三条街，就为了多卖半箱 {p}，敬业得让人感动。{r}"},
+  {lv:"BC", t:"我们借宿的农户后院就堆着 {p}，主人说那是给孩子攒的飞船学费。{r}"},
+  {t:"这里的 {p} 传说能带来好运，买的人多半是图个彩头。{r}"},
+  {lv:"SA", t:"星际银行愿意以 {p} 作抵押放贷，可见它的信用有多硬。{r}"},
+  {t:"码头边有人用 {p} 边角料做棋盘棋子，手艺精巧，我们买了一套。{r}"},
+  {t:"这里的行情像天气，一天三变，老手也不敢打包票，但 {p} 的走势从来没人看走眼。{r}"},
+  {t:"我们离开时，补给站的小哥追出来喊：下次来记得还带 {p}！{r}"},
+  {lv:"SA", t:"星际年鉴把 {p} 列为本年度最值得关注的货品之一。{r}"}
 ];
-var groupTemplates = [
-  "它主要经营<span style=\"color:#d2a861\">{g}</span>产业。",
-  "这颗星球的主业是<span style=\"color:#d2a861\">{g}</span>。",
-  "在产业分类上，它属于<span style=\"color:#d2a861\">{g}</span>领域。",
-  "管辖的产业板块是<span style=\"color:#d2a861\">{g}</span>。"
+// 放松细节库（商船故事结尾随机接入，日记体：亲历时间/地点锚点）
+var relaxDetails = [
+  "今天在码头吃了烤串，摊主用等离子喷枪烤肉，受热均匀，就是偶尔会把签子烧穿",
+  "下午路过一家便利店，货架上摆的不是饮料，而是一排排型号各异的螺丝和润滑剂，生意出奇地好",
+  "今天去的茶馆里，有人下一种很古老的棋，棋子是磁悬浮的，落子无声，围观的都不敢喘气",
+  "傍晚在公园坐了一会儿，长椅是用火箭残骸做的，椅背还印着回收编号，坐久了有点烫",
+  "昨晚酒馆打烊后，老板关掉了重力模拟器，让酒杯在天花板上飘了一宿，说这样省得擦",
+  "傍晚看见有人在遛机械狗，狗走两步就得充一次电，主人很有耐心地跟在后面",
+  "今天逛超市，牛奶盒上印着保质期：直到下一颗彗星到来，货架前还真有人专门在等",
+  "刚才路过一台自动点唱机，投币后会唱一首关于地球的老歌，没人知道地球在哪儿，但大家都会哼",
+  "今天去理了发，激光推子理完有轻微的烧焦味，老板说这是本店的招牌香",
+  "傍晚路过广场，孩子们在玩抛接游戏，球是发光的小卫星，飞到半空会自己绕一圈再回来",
+  "这颗星球的公交车是退役的登陆艇，车门得手动拉，售票员的座位还拴着安全带",
+  "今天在菜市场，大叔用光谱仪给水果测甜度，测完还得撕一块尝尝，说仪器不如舌头",
+  "中午在餐厅点了招牌菜，叫家的味道，据说是几百年前地球菜谱的复原版，味道可疑，但都说好",
+  "看见有人养了一缸会发光的生物，说是木卫二进口的，夜里当夜灯用，省电",
+  "这颗星球墙上的挂钟走的是火星时间，本地人早就习惯了，只有新来的船员会对着它发呆",
+  "刚才去洗手间，指示牌写着零重力状态下请勿使用，大家都当没看见",
+  "看见有人在屋顶种菜，浇水用喷淋无人机，偶尔飞偏，把邻居家阳台也浇一遍",
+  "逛到港口一家旧货店，卖的全是拆船拆下来的零件，老板娘按斤卖，还说包教安装",
+  "今天路过广场，喷泉喷的是冷却液，阳光下泛着七彩的油光，孩子们照样往里扔硬币",
+  "晚上在小酒馆坐了一会儿，吧台上趴着一只机器猫，不打呼噜，但会定时发出待机提示音",
+  "今天取钱，自动柜员机吐出小行星碎片当零钱，银行说这是法定货币，大家都认",
+  "这颗星球的药店，感冒药按引力强度分剂量，常去高重力星球出差的人会多买几盒",
+  "路过一家洗衣店，招牌写着本店可洗宇航服，建议送洗前先看使用说明",
+  "今天去健身房，跑步机要设定模拟重力，有人调到月球档跑，说特别轻盈",
+  "路过幼儿园，孩子们午睡要系安全带，老师说是怕睡着睡着飘走",
+  "路过消防站，车队里有一艘老式救生艇，出警时总慢半拍，但没人舍得换",
+  "今早路过街角面包店，凌晨就开了炉，面包是圆环形的，因为方便挂在手指上带回家",
+  "这里晾衣服用晾衣杆挑到屋顶，绳子两头拴着配重块，防止衣服飘走",
+  "今天的报纸头版写着第三星系发现新水源，本地人翻到生活版看菜价",
+  "今天去的茶馆，菜单分两种：正常重力价和高重力价，后者打八折",
+  "路过理发店，门口排着队，有人专门来剃光头，说戴头盔舒服",
+  "路过宠物店，卖的都是会飞的品种，店主说养了三年也没见谁真带它们出门",
+  "今天进药房，柜台后摆着一排罐子，标签写着记忆备份，据说可以恢复三天前的",
+  "看见有人阳台上养了棵盆栽，浇水要穿防护服，因为那植物会咬人",
+  "这颗星球的学校，课程表里有节失重体操，考试是在空中翻三个跟头不掉下来",
+  "路过报刊亭，见它卖星际彩票，头奖是一颗有大气层的行星，中奖率比流星还低",
+  "这里的外卖小哥骑悬浮滑板，取餐时把头盔夹在腋下，动作很熟练",
+  "路过街心广场的相亲角，简历摆了一地，开头都写着可接受跨星系通勤",
+  "今早有人在公园晨跑，身后跟着一圈悬浮打卡机器人，跑完自动发朋友圈",
+  "昨晚的路边摊卖烤硅基生物，摊主说口感像蘑菇，大家信了",
+  "这颗星球的图书馆，自动借书机很老旧，还书时要说声谢谢，不然它会闹脾气",
+  "今天去泡了公共澡堂，池子分三种：干洗、水洗、声波洗，价格依次变贵",
+  "今天买菜，秤都是量子秤，称完打印小票，精确到亚原子",
+  "看见有人楼顶搭了秋千，荡起来能越过整片街区，说是治失眠",
+  "今天进了一家咖啡店，招牌写着本店咖啡零辐射，有人问还有什么卖点，店员说没有",
+  "今天等公交，站台长椅是太阳能的，晴天发热，雨天提醒带伞，虽然太空不下雨",
+  "路过幼儿园，门口挂着牌子：接送请出示身份芯片，爷爷奶奶的可以刷脸",
+  "今天有人溜达时捡到块陨石，拿回家当镇纸，结果把桌子压塌了",
+  "晚上逛夜市，买了包流星糖，说是从彗星上刮下来的，其实只是糖",
+  "深夜的自动售货机偶尔会多找零，本地人说是机器心情好，没人举报过"
 ];
 
-function showCaptainVoice(target) {
+var customerAddons = [
+  "{c}肯定会需要这些宝贝。",
+  "听说{c}最近在大量采购这类货。",
+  "{c}的商船常年在这条航线上蹲货。"
+];
+var supplierAddons = [
+  "据说最好的货色出自{s}，连质检机器人都会多看两眼。",
+  "有消息说{s}的轨道工厂最近在扩产，产能翻倍。",
+  "老水手说，{s}的原料才是这行的硬通货，比信用点还稳。"
+];
+
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// 强调文字（变色/变字号的 span）与前后文字之间加空格分隔；标点两侧不留空格
+function padHighlight(s) {
+  return s
+    .replace(/<span[^>]*>[^<]*<\/span>/g, function(m) { return ' ' + m + ' '; })
+    .replace(/\s+([，。、！？；：——])/g, '$1')
+    .replace(/([，。、！？；：——])\s+/g, '$1')
+    .replace(/ +/g, ' ')
+    .trim();
+}
+
+// 确保字符串以句号结尾（忽略末尾的 HTML 标签和 {r} 占位符），用于拼接追加句前补标点
+function ensurePeriod(s) {
+  if (/\{r\}$/.test(s)) return s; // {r} 会替换为自带句号的放松句，无需补
+  var plain = s.replace(/<[^>]*>$/g, "");
+  if (/[。！？!?]$/.test(plain)) return s;
+  return s + "。";
+}
+
+// T历时间：2026-08-01 09:38 → T历26H01年I38日
+// 年=年份后两位，月=1-12→A-L，日=两位数；时=1-24→A-X，分=两位数
+function tDateStr() {
+  var d = new Date();
+  var y = d.getFullYear() % 100;
+  var mo = d.getMonth() + 1;
+  var day = d.getDate();
+  var h = d.getHours();
+  var mi = d.getMinutes();
+  var moLetter = String.fromCharCode(64 + mo);
+  var hh = h === 0 ? 24 : h;
+  var hLetter = String.fromCharCode(64 + hh);
+  var p2 = function(n){ return (n < 10 ? "0" : "") + n; };
+  return "T历" + p2(y) + moLetter + p2(day) + "年" + hLetter + p2(mi) + "日";
+}
+
+// 上下游邻居（downstream=true 取下游客户，false 取上游供应商）
+function getNeighbors(target, downstream) {
+  var list = [];
+  EDGES.forEach(function(e) {
+    var s = typeof e.source === "string" ? e.source : e.source.id;
+    var t = typeof e.target === "string" ? e.target : e.target.id;
+    if (downstream && s === target.id && list.indexOf(t) === -1) list.push(t);
+    if (!downstream && t === target.id && list.indexOf(s) === -1) list.push(s);
+  });
+  return list;
+}
+
+// 商船故事：按等级过滤池子，替换产品/客户/供应商/放松句占位符
+// lv 字段 = 适用等级字符串：无 lv 通用；lv:"SAB" 仅 S/A/B；lv:"SA" 仅 S/A；lv:"BC" 仅 B/C
+// 强调色：产品金色、客户蓝色、供应商紫色、放松句淡金斜体
+function buildMerchantStory(target) {
+  var rating = target.rating || "C";
+  var pool = merchantStories.filter(function(s) {
+    if (!s.lv) return true;
+    return s.lv.indexOf(rating) !== -1;
+  });
+  var story = pickRandom(pool).t;
+  var products = (target.products && target.products.length) ? target.products.join("，") : "各类特产";
+  story = story.split("{p}").join('<span style="color:#f0c040">' + products + '</span>');
+  var customers = getNeighbors(target, true);
+  var suppliers = getNeighbors(target, false);
+  // 追加句收集到 addons，统一插到 {r} 之前（保证 {r} 始终在末尾）
+  var addons = [];
+  if (story.indexOf("{c}") !== -1) {
+    if (customers.length) {
+      story = story.split("{c}").join('<span style="color:#58a6ff">' + pickRandom(customers) + '</span>星');
+    } else {
+      story = story.split("{c}星肯定会需要这些宝贝").join('<span style="color:#58a6ff">全宇宙</span>都需要这些宝贝');
+      story = story.split("{c}").join('<span style="color:#58a6ff">全宇宙</span>');
+    }
+  } else if (Math.random() < 0.5) {
+    if (customers.length) {
+      addons.push(pickRandom(customerAddons).split("{c}").join('<span style="color:#58a6ff">' + pickRandom(customers) + '</span>星'));
+    } else if (Math.random() < 0.3) {
+      addons.push('<span style="color:#58a6ff">全宇宙</span>都需要这些宝贝。');
+    }
+  }
+  if (story.indexOf("{s}") !== -1) {
+    story = story.split("{s}").join(suppliers.length ? '<span style="color:#a371f7">' + pickRandom(suppliers) + '</span>星' : '<span style="color:#a371f7">远方星链</span>');
+  } else if (suppliers.length && Math.random() < 0.3) {
+    addons.push(pickRandom(supplierAddons).split("{s}").join('<span style="color:#a371f7">' + pickRandom(suppliers) + '</span>星'));
+  }
+  // 追加句插到 {r} 之前（无 {r} 时直接拼到末尾并补句号）
+  if (addons.length) {
+    var extra = " " + addons.join(" ");
+    var ri = story.indexOf("{r}");
+    if (ri !== -1) story = story.slice(0, ri) + extra + story.slice(ri);
+    else story = ensurePeriod(story) + extra;
+  }
+  // 放松句：50% 概率出现；不出现时清理引导语并补句号
+  if (Math.random() < 0.5) {
+    var relax = pickRandom(relaxDetails);
+    if (!/[。！？!?]$/.test(relax)) relax += "。";
+    story = story.split("{r}").join('<span style="color:#e6d5a8;font-style:italic">' + relax + '</span>');
+  } else {
+    story = story.replace(/，?\s*不过在此之前，让我们去放松一下，?\{r\}$/, "。");
+    story = story.replace(/。\{r\}$/, "。");
+    story = story.replace(/[！？!?]\{r\}$/, function(m){ return m.charAt(0); });
+    story = story.replace(/，\{r\}$/, "。");
+    story = story.replace(/\{r\}$/, "。");
+  }
+  return padHighlight(story);
+}
+
+function showCaptainVoice(target, full) {
   if (!target) return;
   if (!captainVoiceOn) return;
   var cv = document.getElementById("captainVoice");
   var body = cv.querySelector(".cv-body");
-  var idx = target.code || "";
+  var rating = target.rating || "C";
+  var chains = target.chains || [];
+  var chainStr = "";
+  var chainTint = function(v){ return '<span style="color:#a371f7">' + v + '</span>'; };
+  if (chains.length === 1) chainStr = "位于" + chainTint(chains[0]) + "星链的";
+  else if (chains.length === 2) chainStr = "横跨" + chainTint(chains[0]) + "和" + chainTint(chains[1]) + "星链的";
+  else if (chains.length === 3) chainStr = "连接" + chains.map(chainTint).join("、") + "3大星链的";
+  else if (chains.length > 3) chainStr = "连接" + chains.slice(0, 3).map(chainTint).join("、") + "等" + chains.length + "大星链的";
+  var ratingColor = {S:"#f0c040", A:"#f0883e", B:"#58a6ff", C:"#8b949e"}[rating] || "#8b949e";
+  var levelStr = '<span style="color:' + ratingColor + ';font-weight:bold">' + rating + '级</span>行星——';
+  var nameStr = '<span style="color:#d2a861">' + (target.group || "未知产业") + '</span>座<span class="cv-name">' + target.id + '</span>星';
+  var navStr = target.code ? "，行星导航码<span style=\"color:#f0c040;font-weight:bold\">" + target.code + "</span>" : "";
   var desc = (NODE_DESC && NODE_DESC[target.id]) ? NODE_DESC[target.id] : "";
-  var products = target.products && target.products.length ? target.products.join("、") : "";
-  var rating = target.rating || "";
-  var ratingLabel = {S:"S级核心枢纽",A:"A级明星行星",B:"B级潜力新星",C:"C级探索星球"}[rating] || (rating+"级行星");
-  var ratingFlavors = {
-    S: ["这可是银河系里数得上号的重镇——","放眼整个星域都排得上号的重量级行星——","不必多说，这颗星球的名字本身就是招牌——"],
-    A: ["一颗热热闹闹的繁华星球，","生意相当红火的一颗行星，","航道上商船络绎不绝的活跃星球，"],
-    B: ["一颗值得留意的新兴行星，","星图上新标记的有趣目的地，","正在快速发展中的潜力星球，"],
-    C: ["一颗小而美的特色星球，","不太起眼但有自己独特定位的小众行星，","星图边缘的一颗低调星球，"]
-  };
-  var pool = ratingFlavors[rating] || ratingFlavors["C"];
-  var ratingFlavor = pool[Math.floor(Math.random() * pool.length)];
+  if (desc) desc += "。";
+  var comment = pickRandom(ratingComments[rating] || ratingComments["C"]);
+  var arrival = pickRandom(arrivalTemplates);
+  var story = buildMerchantStory(target);
+  var closingLine = pickRandom(captainClosings);
+  var headLine = padHighlight(arrival + levelStr + chainStr + nameStr + navStr + '。' + desc + comment);
+  // 日期并入标题行，节约纵向空间
+  cv.querySelector(".cv-header").innerHTML = '📖 舰长日志 <span style="color:#8b949e;font-weight:normal;letter-spacing:1px;font-size:9px">' + tDateStr() + '</span>';
 
-  // 下游客户
-  var customers = [];
-  EDGES.forEach(function(e) {
-    var s = typeof e.source === "string" ? e.source : e.source.id;
-    if (s === target.id) {
-      var t = typeof e.target === "string" ? e.target : e.target.id;
-      if (customers.indexOf(t) === -1) customers.push(t);
-    }
-  });
-
-  // 产业链
-  var chains = target.chains && target.chains.length ? target.chains.slice(0, 3) : [];
-
-  var html = '舰长，我们刚刚降落在 <span class="cv-name">' + ratingLabel + ' ' + target.id + '</span> 星球上';
-  if (idx) html += '，行星编号 <span style="color:#f0c040">' + idx + '</span>';
-  html += '。';
-  if (ratingFlavor) html += ratingFlavor;
-  if (target.group) {
-    var gt = groupTemplates[Math.floor(Math.random() * groupTemplates.length)];
-    html += gt.replace('{g}', target.group) + ' ';
+  var html = '<div style="line-height:1.5">' + headLine + '</div>'
+    + '<div style="line-height:1.5;margin-top:2px">' + story + '</div>'
+    + '<div class="cv-closing">—— ' + closingLine + '</div>';
+  // 触发来源决定显示：full=true（idle自动飞行）完整日志；其余折叠为等待圆点
+  if (!full) {
+    cv._fullHtml = html;
+    cv.classList.add("collapsed");
+    if (body._twTimer) clearInterval(body._twTimer);
+    body.innerHTML = "";
+  } else {
+    cv._fullHtml = null;
+    cv.classList.remove("collapsed");
+    typewriteBody(body, html);
   }
-  if (desc) html += desc + '。';
-  if (products) {
-    var pt = productTemplates[Math.floor(Math.random() * productTemplates.length)];
-    html += ' ' + pt.replace('{p}', products);
-  }
-  if (customers.length) {
-    var topCust = customers.slice(0, 4);
-    var more = customers.length > 4 ? ' 等' + customers.length + '家' : '';
-    var ct = customerTemplates[Math.floor(Math.random() * customerTemplates.length)];
-    html += ' ' + ct.replace('{c}', topCust.join('、')).replace('{more}', more);
-  }
-  if (chains.length) {
-    var pool2 = chainTemplates[rating] || chainTemplates["C"];
-    var sentence = pool2[Math.floor(Math.random() * pool2.length)];
-    var chainStr = chains.join('、');
-    html += ' ' + sentence.replace('{ch}', chainStr);
-    var inv = inviteTemplates[Math.floor(Math.random() * inviteTemplates.length)];
-    html += ' ' + inv;
-  }
-
-  var closingLine = captainClosings[Math.floor(Math.random() * captainClosings.length)];
-  html += '<br><span style="color:#f0c040;font-style:italic">—— ' + closingLine + '</span>';
-
-  typewriteBody(body, html);
-
   cv.classList.add("visible");
   updateBubblePosition();
 }
@@ -796,9 +1201,13 @@ function updateBubblePosition() {
   if (!cv.classList.contains("visible")) return;
   if (!shipState.planet) return;
   var tf = d3.zoomTransform(svg.node());
+  // 气泡与箭头整体固定：箭头尖端位于星球中心向左偏移一个轨道半径的位置（轨道圆左侧），气泡右边缘在其左侧 14px
   var px = tf.applyX(shipState.planet.x);
   var py = tf.applyY(shipState.planet.y);
-  cv.style.left = (px - 420) + "px";
+  // 轨道半径是数据坐标，乘以缩放系数 tf.k 换算成屏幕距离，缩放画面时定位点才不会跑
+  var orbitR = ((nodeRadii[shipState.planet.id] || 14) + 15) * tf.k;
+  cv.style.left = "auto";
+  cv.style.right = (W - px + orbitR + 14) + "px";
   cv.style.top = (py - cv.offsetHeight / 2) + "px";
   cv.style.bottom = "auto";
   cv.style.transform = "none";
@@ -818,7 +1227,7 @@ function createShip() {
     .attr("opacity", 0.8);
 }
 
-function flyToPlanet(target) {
+function flyToPlanet(target, full) {
   if (!target) return;
   if (!shipGroup) createShip();
   shipGroup.interrupt();
@@ -863,7 +1272,7 @@ function flyToPlanet(target) {
       shipState.y = entryY;
       shipState.flying = false;
       startOrbit();
-      showCaptainVoice(target);
+      showCaptainVoice(target, full);
     });
 }
 
@@ -963,12 +1372,23 @@ document.getElementById("cvClose").addEventListener("click",function(e){
   cv.classList.remove("visible");
 });
 
+// 折叠状态点击展开完整日志
+document.getElementById("captainVoice").addEventListener("click",function(){
+  var cv = this;
+  if (!cv.classList.contains("collapsed") || !cv._fullHtml) return;
+  cv.classList.remove("collapsed");
+  var body = cv.querySelector(".cv-body");
+  typewriteBody(body, cv._fullHtml);
+  cv._fullHtml = null;
+  updateBubblePosition();
+});
+
 // 初始全景视野：布局稳定后自动缩放至全貌
 setTimeout(function() {
   fitView(900);
 }, 1000);
 
-// 初始随机飞向一个星球
+// 初始随机飞向一个星球（折叠展示）
 setTimeout(function() {
   var candidates = NODES.filter(function(d) { return d.type === 'a'; });
   if (candidates.length === 0) candidates = NODES;
