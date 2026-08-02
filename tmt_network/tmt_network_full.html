@@ -8,12 +8,12 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0d1117;color:#c9d1d9;font-family:'Microsoft YaHei',sans-serif;overflow:hidden}
-#container{width:100vw;height:100vh;position:relative}
+#container{width:100vw;height:100vh;height:100dvh;position:relative}
 svg{width:100%;height:100%}
 #info{position:absolute;top:12px;left:16px;z-index:10}
 #info h1{font-size:18px;color:#58a6ff;margin-bottom:4px}
 #info p{font-size:12px;color:#8b949e}
-#legend{position:absolute;bottom:0;left:0;right:0;z-index:10;font-size:11px;display:flex;flex-wrap:wrap;align-items:center;row-gap:3px;column-gap:0;padding:6px 16px 8px;background:rgba(13,17,23,0.85)}
+#legend{position:absolute;bottom:0;left:0;right:0;z-index:10;font-size:11px;display:flex;flex-wrap:wrap;align-items:center;row-gap:3px;column-gap:0;padding:6px 16px calc(8px + env(safe-area-inset-bottom));background:rgba(13,17,23,0.85)}
 #legend span{display:inline-flex;align-items:center;margin-right:10px;flex-shrink:0}
 #legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:3px;vertical-align:middle}
 #legend .legendItem{cursor:pointer;padding:1px 3px;border-radius:3px;transition:background 0.15s}
