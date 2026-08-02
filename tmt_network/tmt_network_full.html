@@ -51,14 +51,14 @@ svg{width:100%;height:100%}
 #captainVoice.collapsed .cv-dots{display:block}
 #captainVoice.collapsed{padding:2px 8px;min-width:auto;max-width:none;pointer-events:auto}
 .cv-arrow{position:absolute;top:50%;right:-5.5px;width:9px;height:9px;background:#161b22;border-top:2px solid #f0c040;border-right:2px solid #f0c040;transform:translateY(-50%) rotate(45deg)}
-#captainVoice .cv-header{font-size:10px;color:#f0c040;text-transform:uppercase;letter-spacing:2px;margin-bottom:2px}
+#captainVoice .cv-header{font-size:10px;color:#f0c040;text-transform:uppercase;letter-spacing:2px;padding-bottom:5px;margin-bottom:6px;border-bottom:1px solid #f0c040}
 #captainVoice .cv-name{color:#fff;font-weight:bold;font-size:14px}
 #captainVoice .cv-rating{display:inline-block;padding:0 5px;border-radius:3px;font-size:10px;font-weight:bold;margin-left:4px;vertical-align:middle}
 #captainVoice .cv-rating.S{background:#f0c040;color:#0d1117}
 #captainVoice .cv-rating.A{background:#f0883e;color:#0d1117}
 #captainVoice .cv-rating.B{background:#58a6ff;color:#0d1117}
 #captainVoice .cv-rating.C{background:#8b949e;color:#0d1117}
-#captainVoice .cv-closing{color:#f0c040;font-style:italic;margin-top:2px;font-size:11px}
+#captainVoice .cv-closing{color:#f0c040;font-style:italic;margin-top:10px;font-size:11px}
 #captainVoice .cv-close{position:absolute;top:4px;right:8px;color:#484f58;font-size:14px;cursor:pointer;pointer-events:auto;line-height:1}
 #captainVoice .cv-close:hover{color:#c9d1d9}
 .tw-cursor{color:#f0c040;animation:blink 0.8s infinite}
@@ -429,8 +429,10 @@ function clearFocusState() {
 
 function idleFly() {
   clearFocusState();
-  var candidates = NODES.filter(function(d) { return d.type === 'a'; });
-  if (candidates.length === 0) candidates = NODES;
+  // 随机选下一颗星球：排除当前所在星球，避免原地打转
+  var cur = shipState.planet ? shipState.planet.id : null;
+  var candidates = NODES.filter(function(d) { return d.type === 'a' && d.id !== cur; });
+  if (candidates.length === 0) candidates = NODES.filter(function(d) { return d.type === 'a'; });
   var pick = candidates[Math.floor(Math.random() * candidates.length)];
   flyToPlanet(pick, true);
   var dx = pick.x - shipState.x, dy = pick.y - shipState.y;
@@ -448,7 +450,7 @@ function startOrbit() {
     if (!shipState.planet || shipState.flying) return;
     shipState.trail.push({x: shipState.x, y: shipState.y});
     if (shipState.trail.length > 40) shipState.trail.shift();
-    shipState.angle += 0.04;
+    shipState.angle += 0.02;
     var r = (nodeRadii[shipState.planet.id] || 14) + 15;
     shipState.x = shipState.planet.x + r * Math.cos(shipState.angle);
     shipState.y = shipState.planet.y + r * Math.sin(shipState.angle);
@@ -456,8 +458,8 @@ function startOrbit() {
     var dots = trailGroup.selectAll("circle").data(shipState.trail);
     dots.enter().append("circle").attr("fill", "#f0c040");
     dots.merge(dots)
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; })
+      .attr("cx", function(d) { return d.x + (Math.random()-0.5)*1.6; })
+      .attr("cy", function(d) { return d.y + (Math.random()-0.5)*1.6; })
       .attr("r", function(d, i) { return (i / shipState.trail.length) * 3; })
       .attr("opacity", function(d, i) { return (i / shipState.trail.length) * 0.5; });
     dots.exit().remove();
@@ -1017,10 +1019,25 @@ var customerAddons = [
   "听说{c}最近在大量采购这类货。",
   "{c}的商船常年在这条航线上蹲货。"
 ];
-var supplierAddons = [
-  "据说最好的货色出自{s}，连质检机器人都会多看两眼。",
-  "有消息说{s}的轨道工厂最近在扩产，产能翻倍。",
-  "老水手说，{s}的原料才是这行的硬通货，比信用点还稳。"
+// 供应故事模板池（接在主故事/下游故事之后，以转折语开头，主体用本港/商会/交易中心，不直说"当前星球"）
+// SP=供应方+产品，S=纯供应方，P=纯产品
+var supplierAddonsSP = [
+  "至于本港要的 {p}，{s}那里可能有很多。",
+  "说到进货的 {p}，本地商会一直认{s}出的货。",
+  "提及 {p} 这门生意，{s}向来是首选货源。",
+  "论起 {p} 的成色，{s}在圈子里口碑最稳。"
+];
+var supplierAddonsS = [
+  "至于本港的货源，本地商会说基本都走{s}这条线。",
+  "说到进口渠道，{s}是本地商会的长期供应商。",
+  "提及上游供货，圈子里都说主要来自{s}。",
+  "论起进货来源，进口交易中心那边一直认{s}。"
+];
+var supplierAddonsP = [
+  "至于本港需要的 {p}，最近货源一直很稳。",
+  "说到 {p}，进口交易中心那边据说货源紧俏。",
+  "提及 {p} 这种货，本地商会正在加紧调货。",
+  "论起 {p} 的行情，本港向来靠外头星链供应。"
 ];
 
 function pickRandom(arr) {
@@ -1106,7 +1123,41 @@ function buildMerchantStory(target) {
   if (story.indexOf("{s}") !== -1) {
     story = story.split("{s}").join(suppliers.length ? '<span style="color:#a371f7">' + pickRandom(suppliers) + '</span>星' : '<span style="color:#a371f7">远方星链</span>');
   } else if (suppliers.length && Math.random() < 0.3) {
-    addons.push(pickRandom(supplierAddons).split("{s}").join('<span style="color:#a371f7">' + pickRandom(suppliers) + '</span>星'));
+    // 供应故事：从指向当前星球的链（EDGES 中 target=当前星球的边）取供应商
+    var sup = pickRandom(suppliers);
+    // 收集所有上游供应商（指向当前星球的链的 source）的产品合集，供纯产品池使用
+    var allSupProds = [];
+    suppliers.forEach(function(sid){
+      var sn = null;
+      NODES.forEach(function(n){ if (n.id === sid) sn = n; });
+      if (sn && sn.products && sn.products.length) allSupProds = allSupProds.concat(sn.products);
+    });
+    var supNode = null;
+    NODES.forEach(function(n){ if (n.id === sup) supNode = n; });
+    var supProds = (supNode && supNode.products && supNode.products.length) ? supNode.products : [];
+    var supText = null;
+    if (Math.random() < 0.5) {
+      // SP 池：供应方 + 其产品（链内供应商的产品）
+      if (supProds.length) {
+        var sp = pickRandom(supplierAddonsSP);
+        var prod = pickRandom(supProds);
+        supText = sp.split("{s}").join('<span style="color:#a371f7">' + sup + '</span>星')
+                    .split("{p}").join('<span style="color:#f0c040">' + prod + '</span>');
+      } else {
+        supText = pickRandom(supplierAddonsS).split("{s}").join('<span style="color:#a371f7">' + sup + '</span>星');
+      }
+    } else if (allSupProds.length && Math.random() < 0.6) {
+      // P 池：纯产品，从指向当前星球的链的上游供应商产品合集中取
+      var pp = pickRandom(supplierAddonsP);
+      var prod2 = pickRandom(allSupProds);
+      supText = pp.split("{p}").join('<span style="color:#f0c040">' + prod2 + '</span>');
+    } else {
+      // S 池：纯供应方
+      supText = pickRandom(supplierAddonsS).split("{s}").join('<span style="color:#a371f7">' + sup + '</span>星');
+    }
+    // 模板里 {s} 后面自带“星”字时避免重复，统一清理双星
+    supText = supText.split("星星").join("星");
+    addons.push(supText);
   }
   // 追加句插到 {r} 之前（无 {r} 时直接拼到末尾并补句号）
   if (addons.length) {
@@ -1115,11 +1166,11 @@ function buildMerchantStory(target) {
     if (ri !== -1) story = story.slice(0, ri) + extra + story.slice(ri);
     else story = ensurePeriod(story) + extra;
   }
-  // 放松句：50% 概率出现；不出现时清理引导语并补句号
+  // 放松句：50% 概率出现；出现时前面加换行，与主体/供应故事分开
   if (Math.random() < 0.5) {
     var relax = pickRandom(relaxDetails);
     if (!/[。！？!?]$/.test(relax)) relax += "。";
-    story = story.split("{r}").join('<span style="color:#e6d5a8;font-style:italic">' + relax + '</span>');
+    story = story.split("{r}").join('<br><span style="color:#e6d5a8;font-style:italic">' + relax + '</span>');
   } else {
     story = story.replace(/，?\s*不过在此之前，让我们去放松一下，?\{r\}$/, "。");
     story = story.replace(/。\{r\}$/, "。");
@@ -1257,8 +1308,8 @@ function flyToPlanet(target, full) {
         var dots = trailGroup.selectAll("circle").data(shipState.trail);
         dots.enter().append("circle").attr("fill", "#f0c040");
         dots.merge(dots)
-          .attr("cx", function(d) { return d.x; })
-          .attr("cy", function(d) { return d.y; })
+          .attr("cx", function(d) { return d.x + (Math.random()-0.5)*1.6; })
+          .attr("cy", function(d) { return d.y + (Math.random()-0.5)*1.6; })
           .attr("r", function(d, i) { return (i / shipState.trail.length) * 3; })
           .attr("opacity", function(d, i) { return (i / shipState.trail.length) * 0.5; });
         dots.exit().remove();
