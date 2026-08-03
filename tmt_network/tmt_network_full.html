@@ -121,9 +121,19 @@ function applyFocus(nodeId,maxDepth,direction){
       });
     }
   }
-  node.attr("opacity",nd=>visited.has(nd.id)?1:0.1).attr("fill",nd=>visited.has(nd.id)?gColors(nd.group):getNodeFill(nd));
-  link.attr("opacity",l=>{const si=typeof l.source==='string'?l.source:l.source.id;const ti=typeof l.target==='string'?l.target:l.target.id;return visited.has(si)&&visited.has(ti)?0.8:0;});
-  label.attr("opacity",nd=>visited.has(nd.id)?1:0.05);
+  // 聚焦：非访问节点/标签降为半透明（保留可见），仅不相关连线 display:none 隐藏
+  node.attr("opacity", nd => visited.has(nd.id) ? 1 : 0.1)
+      .attr("fill", nd => visited.has(nd.id) ? gColors(nd.group) : getNodeFill(nd));
+  link.attr("display", l => {
+    const si = typeof l.source === 'string' ? l.source : l.source.id;
+    const ti = typeof l.target === 'string' ? l.target : l.target.id;
+    return visited.has(si) && visited.has(ti) ? null : "none";
+  }).attr("opacity", l => {
+    const si = typeof l.source === 'string' ? l.source : l.source.id;
+    const ti = typeof l.target === 'string' ? l.target : l.target.id;
+    return visited.has(si) && visited.has(ti) ? 0.8 : 0;
+  });
+  label.attr("opacity", nd => visited.has(nd.id) ? 1 : 0.05);
 }
 let focusRAF=null;
 d3.select("#focusDepth").on("input",function(){
@@ -207,7 +217,7 @@ function updateLegend(){
 function applyGroupFilter(group){
   if(!group){
     node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35).attr("fill",d=>getNodeFill(d));
-    link.attr("opacity",1);
+    link.attr("display",null).attr("opacity",1);
     label.attr("opacity",1);
     updateLegend();
     return;
@@ -220,7 +230,16 @@ function applyGroupFilter(group){
   });
   if(colorMode==="chain"){node.attr("fill",d=>d.chains&&d.chains.includes(group)?gColors(d.group):getNodeFill(d));}
   else{node.attr("fill",d=>getNodeFill(d));}
-  link.attr("opacity",d=>{
+  link.attr("display",d=>{
+    const si=typeof d.source==='string'?d.source:d.source.id;
+    const ti=typeof d.target==='string'?d.target:d.target.id;
+    const ns=NODES.find(n=>n.id===si),nt=NODES.find(n=>n.id===ti);
+    if(!ns||!nt)return "none";
+    if(colorMode==="chain")return (ns.chains&&ns.chains.includes(group))&&(nt.chains&&nt.chains.includes(group))?null:"none";
+    if(colorMode==="group")return ns.group===group||nt.group===group?null:"none";
+    const map={"A股":"a","海外":"o","非上市":"n"};
+    return ns.type===map[group]||nt.type===map[group]?null:"none";
+  }).attr("opacity",d=>{
     const si=typeof d.source==='string'?d.source:d.source.id;
     const ti=typeof d.target==='string'?d.target:d.target.id;
     const ns=NODES.find(n=>n.id===si),nt=NODES.find(n=>n.id===ti);
@@ -250,7 +269,7 @@ d3.select("#colorToggle").on("click",function(){
   btn.text(labels[colorMode]);
   btn.classed("active",colorMode!=="type");
   node.attr("fill",d=>getNodeFill(d));
-  node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35);link.attr("opacity",1);label.attr("opacity",1);
+  node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35);link.attr("display",null).attr("opacity",1);label.attr("opacity",1);
   updateLegend();
 });
 function copyTDX(code){
@@ -309,11 +328,11 @@ const node=g.append("g").selectAll("circle").data(NODES).join("circle")
 
 d3.select("svg").on("click",()=>{
   if (lastFocusedNode) {
-    node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35).attr("fill",d=>getNodeFill(d));link.attr("opacity",1);label.attr("opacity",1);
+    node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35).attr("fill",d=>getNodeFill(d));link.attr("display",null).attr("opacity",1);label.attr("opacity",1);
     lastFocusedNode=null;focusDirection='up';activeFilterGroup=null;updateLegend();
     return;
   }
-  node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35).attr("fill",d=>getNodeFill(d));link.attr("opacity",1);label.attr("opacity",1);
+  node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35).attr("fill",d=>getNodeFill(d));link.attr("display",null).attr("opacity",1);label.attr("opacity",1);
   d3.select("#searchInput").property("value","");
   currentCode=null;lastFocusedNode=null;focusDirection='up';activeFilterGroup=null;updateLegend();
   document.getElementById("captainVoice").classList.remove("visible");
@@ -358,7 +377,8 @@ d3.select("#searchInput").on("input",function(){
   if(searchRAF)cancelAnimationFrame(searchRAF);
   searchRAF=requestAnimationFrame(()=>{
     node.attr("opacity",d=>!q?(d.rating==="S"||d.rating==="A"?1:0.35):(d.id.toLowerCase().includes(q)||(d.code||"").toLowerCase().includes(q)||d.group.toLowerCase().includes(q)||d.py.includes(q))?1:0.08);
-    link.attr("opacity",d=>!q?1:(d.source.id.toLowerCase().includes(q)||d.target.id.toLowerCase().includes(q))?0.5:0.02);
+    link.attr("display",d=>!q?null:((d.source.id.toLowerCase().includes(q)||d.target.id.toLowerCase().includes(q))?null:"none"))
+        .attr("opacity",d=>!q?1:(d.source.id.toLowerCase().includes(q)||d.target.id.toLowerCase().includes(q))?0.5:0.02);
     label.attr("opacity",d=>!q?1:(d.id.toLowerCase().includes(q)||(d.code||"").toLowerCase().includes(q)||d.group.toLowerCase().includes(q)||d.py.includes(q))?1:0.05);
   });
 });
@@ -395,6 +415,8 @@ sim.alphaDecay(0.02).alphaMin(0.001);
 
 // ===== 飞船系统 =====
 const SHIP_SPEED = 400;
+// 航迹火焰色：最新（贴近飞船）红 → 橙 → 白黄 → 最老端蓝色焰尾（更接近真实火焰的燃烧层次）
+const flameColor = d3.interpolateRgbBasis(["#4da3ff", "#fff3c4", "#ffd166", "#ff8c42", "#ff4d4d"]);
 let shipGroup = null;
 let shipState = { planet: null, angle: 0, flying: false, x: 0, y: 0, trail: [] };
 let orbitTimer = null;
@@ -416,7 +438,7 @@ function resetIdleTimer() {
 function clearFocusState() {
   if (!lastFocusedNode && !activeFilterGroup) return;
   node.attr("opacity", d => d.rating === "S" || d.rating === "A" ? 1 : 0.35).attr("fill", d => getNodeFill(d));
-  link.attr("opacity", 1);
+  link.attr("display", null).attr("opacity", 1);
   label.attr("opacity", 1);
   d3.select("#searchInput").property("value", "");
   currentCode = null;
@@ -448,16 +470,18 @@ function startOrbit() {
   if (orbitTimer) orbitTimer.stop();
   orbitTimer = d3.timer(function() {
     if (!shipState.planet || shipState.flying) return;
-    shipState.trail.push({x: shipState.x, y: shipState.y});
-    if (shipState.trail.length > 40) shipState.trail.shift();
     shipState.angle += 0.02;
     var r = (nodeRadii[shipState.planet.id] || 14) + 15;
     shipState.x = shipState.planet.x + r * Math.cos(shipState.angle);
     shipState.y = shipState.planet.y + r * Math.sin(shipState.angle);
     shipGroup.attr("transform", `translate(${shipState.x},${shipState.y}) rotate(${shipState.angle * 180 / Math.PI + 90})`);
+    // 航迹从船尾（局部 -6,0，机头朝 angle+90°）喷出
+    shipState.trail.push({x: shipState.x + 6 * Math.sin(shipState.angle), y: shipState.y - 6 * Math.cos(shipState.angle)});
+    if (shipState.trail.length > 40) shipState.trail.shift();
     var dots = trailGroup.selectAll("circle").data(shipState.trail);
-    dots.enter().append("circle").attr("fill", "#f0c040");
+    dots.enter().append("circle").attr("fill", "#ff8c42");
     dots.merge(dots)
+      .attr("fill", function(d, i) { return flameColor(i / shipState.trail.length); })
       .attr("cx", function(d) { return d.x + (Math.random()-0.5)*1.6; })
       .attr("cy", function(d) { return d.y + (Math.random()-0.5)*1.6; })
       .attr("r", function(d, i) { return (i / shipState.trail.length) * 3; })
@@ -1272,10 +1296,6 @@ function createShip() {
     .attr("fill", "#f0c040")
     .attr("stroke", "#b8860b")
     .attr("stroke-width", 1.5);
-  shipGroup.append("path")
-    .attr("d", "M-3,-4 L-12,0 L-3,4 Z")
-    .attr("fill", "#ff6b35")
-    .attr("opacity", 0.8);
 }
 
 function flyToPlanet(target, full) {
@@ -1303,11 +1323,14 @@ function flyToPlanet(target, full) {
     .attrTween("transform", function() {
       return function(t) {
         var px = sx + dx * t, py = sy + dy * t;
-        shipState.trail.push({x: px, y: py});
+        // 航迹从船尾（局部 -6,0，机头朝 flightAngle）喷出
+        var rad = flightAngle * Math.PI / 180;
+        shipState.trail.push({x: px - 6 * Math.cos(rad), y: py - 6 * Math.sin(rad)});
         if (shipState.trail.length > 40) shipState.trail.shift();
         var dots = trailGroup.selectAll("circle").data(shipState.trail);
-        dots.enter().append("circle").attr("fill", "#f0c040");
+        dots.enter().append("circle").attr("fill", "#ff8c42");
         dots.merge(dots)
+          .attr("fill", function(d, i) { return flameColor(i / shipState.trail.length); })
           .attr("cx", function(d) { return d.x + (Math.random()-0.5)*1.6; })
           .attr("cy", function(d) { return d.y + (Math.random()-0.5)*1.6; })
           .attr("r", function(d, i) { return (i / shipState.trail.length) * 3; })
