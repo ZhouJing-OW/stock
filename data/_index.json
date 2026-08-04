@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-04T17:20:03.205050",
-  "total": 121,
+  "updated": "2026-08-05T02:13:39.924384",
+  "total": 126,
   "stocks": [
     {
       "code": "000338",
@@ -863,6 +863,26 @@
       "pinyin": "SHKJ"
     },
     {
+      "code": "300489",
+      "name": "光智科技",
+      "exchange": "SZ",
+      "industry": "制造业/计算机、通信和其他电子设备制造业",
+      "tags": [
+        "红外光学",
+        "红外热成像",
+        "超高纯锗",
+        "国产替代",
+        "军工电子"
+      ],
+      "rating": "谨慎",
+      "pe": 382.66,
+      "marketCap": 235.46,
+      "confidence": 3,
+      "position": 3.0,
+      "analysis_date": "2026-08-05",
+      "pinyin": "GZKJ"
+    },
+    {
       "code": "300499",
       "name": "高澜股份",
       "exchange": "SZ",
@@ -1580,7 +1600,7 @@
       "confidence": 4,
       "position": 8.0,
       "analysis_date": "2026-07-29",
-      "pinyin": "_BT"
+      "pinyin": "JBT"
     },
     {
       "code": "603501",
@@ -1661,6 +1681,26 @@
       "position": 5.0,
       "analysis_date": "2026-07-03",
       "pinyin": "WZXC"
+    },
+    {
+      "code": "603688",
+      "name": "石英股份",
+      "exchange": "SH",
+      "industry": "基础化工/非金属材料（高纯石英砂与石英制品）",
+      "tags": [
+        "高纯石英砂",
+        "光伏辅材",
+        "半导体材料",
+        "国产替代",
+        "光纤光缆"
+      ],
+      "rating": "回避",
+      "pe": 160,
+      "marketCap": 235.4,
+      "confidence": 3,
+      "position": 0.0,
+      "analysis_date": "2026-08-05",
+      "pinyin": "SYGF"
     },
     {
       "code": "603728",
@@ -1761,6 +1801,26 @@
       "position": 10.0,
       "analysis_date": "2026-07-03",
       "pinyin": "ZYCX"
+    },
+    {
+      "code": "605098",
+      "name": "行动教育",
+      "exchange": "SH",
+      "industry": "社会服务/教育培训",
+      "tags": [
+        "企业管理培训",
+        "职业教育",
+        "高股息",
+        "高ROE",
+        "轻资产"
+      ],
+      "rating": "中性看好",
+      "pe": 26.35,
+      "marketCap": 71.67,
+      "confidence": 3,
+      "position": 6.0,
+      "analysis_date": "2026-08-05",
+      "pinyin": "HDJY"
     },
     {
       "code": "605358",
@@ -1983,6 +2043,26 @@
       "pinyin": "JHQT"
     },
     {
+      "code": "688107",
+      "name": "安路科技",
+      "exchange": "SH",
+      "industry": "电子/半导体/数字芯片设计",
+      "tags": [
+        "FPGA",
+        "国产替代",
+        "AI算力",
+        "数据中心",
+        "Chiplet"
+      ],
+      "rating": "中性看好",
+      "pe": -43.5,
+      "marketCap": 110.2,
+      "confidence": 4,
+      "position": 5.0,
+      "analysis_date": "2026-08-04",
+      "pinyin": "ALKJ"
+    },
+    {
       "code": "688126",
       "name": "沪硅产业",
       "exchange": "SH",
@@ -2060,7 +2140,7 @@
       "confidence": 4,
       "position": 3,
       "analysis_date": "2026-07-16",
-      "pinyin": "C_XD"
+      "pinyin": "CDXD"
     },
     {
       "code": "688234",
@@ -2261,6 +2341,26 @@
       "position": 5.0,
       "analysis_date": "2026-07-03",
       "pinyin": "NCJH"
+    },
+    {
+      "code": "688432",
+      "name": "有研硅",
+      "exchange": "SH",
+      "industry": "电子/半导体/半导体材料",
+      "tags": [
+        "半导体硅片",
+        "8英寸硅片",
+        "国产替代",
+        "硅片涨价",
+        "区熔硅"
+      ],
+      "rating": "谨慎",
+      "pe": 174.6,
+      "marketCap": 350.5,
+      "confidence": 3,
+      "position": 2.0,
+      "analysis_date": "2026-08-05",
+      "pinyin": "YYG"
     },
     {
       "code": "688498",
