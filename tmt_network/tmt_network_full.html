@@ -31,10 +31,14 @@ svg{width:100%;height:100%}
 #sliders{position:absolute;top:100px;right:16px;z-index:10;width:210px;font-size:11px;color:#8b949e;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px 12px;box-sizing:border-box}
 #sliders input[type=range]{width:125px;vertical-align:middle}
 #stats{position:absolute;top:48px;right:16px;z-index:10;font-size:11px;color:#8b949e;text-align:right}
+/* UI 淡入淡出（tooltip 保留自身 0.15s 过渡） */
+#info,#search,#sliders,#stats,#legend{transition:opacity .3s ease}
 #colorToggle{padding:2px 6px;border-radius:4px;border:1px solid #30363d;background:#161b22;color:#c9d1d9;font-size:11px;cursor:pointer;vertical-align:middle}
 #colorToggle:hover{background:#1f2937;border-color:#58a6ff}
 #colorToggle.active{color:#58a6ff;border-color:#58a6ff}
 #tooltip{position:absolute;pointer-events:none;opacity:0;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px 12px;font-size:12px;color:#c9d1d9;max-width:260px;z-index:20;transition:opacity 0.15s;box-shadow:0 4px 12px rgba(0,0,0,0.5)}
+/* idle 巡航时隐藏除日志外的所有 UI：opacity 淡出 + 不响应点击 */
+.cruise-hidden{opacity:0!important;pointer-events:none!important}
 #tooltip .tt-name{font-size:14px;font-weight:bold;color:#fff;margin-bottom:2px}
 #tooltip .tt-badge{display:inline-block;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:bold;margin-left:4px;vertical-align:middle}
 #tooltip .tt-badge.S{background:#f0c040;color:#0d1117}
@@ -311,11 +315,12 @@ const node=g.append("g").selectAll("circle").data(NODES).join("circle")
   .attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35)
   .attr("stroke","#1c2128").attr("stroke-width",1)
   .attr("filter",d=>d.rating==="S"?"url(#glowS)":null)
-  .call(d3.drag().on("start",(e,d)=>{if(!e.active)sim.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y;})
+  .call(d3.drag().on("start",(e,d)=>{setCruiseUI(false);if(!e.active)sim.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y;})
     .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y;})
     .on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null;}))
     .on("click",(e,d)=>{
       e.stopPropagation();
+      setCruiseUI(false);  // 用户主动点击，退出巡航恢复 UI
       const maxDepth=+d3.select("#focusDepth").node().value;
       if(lastFocusedNode===d.id){focusDirection=focusDirection==='up'?'down':'up';}
       else{focusDirection='up';}
@@ -327,6 +332,7 @@ const node=g.append("g").selectAll("circle").data(NODES).join("circle")
     });
 
 d3.select("svg").on("click",()=>{
+  setCruiseUI(false);  // 用户点击空白，恢复 UI
   if (lastFocusedNode) {
     node.attr("opacity",d=>d.rating==="S"||d.rating==="A"?1:0.35).attr("fill",d=>getNodeFill(d));link.attr("display",null).attr("opacity",1);label.attr("opacity",1);
     lastFocusedNode=null;focusDirection='up';activeFilterGroup=null;updateLegend();
@@ -372,6 +378,7 @@ tip.on("mouseover",()=>{clearTimeout(tipTimer);tip.style("opacity",1);}).on("mou
 
 let searchRAF=null;
 d3.select("#searchInput").on("input",function(){
+  setCruiseUI(false);  // 用户开始搜索，恢复 UI
   const q=this.value.trim().toLowerCase();
   if(q!==lastQuery){matchIdx=0;lastQuery=q;}
   if(searchRAF)cancelAnimationFrame(searchRAF);
@@ -434,6 +441,14 @@ function resetIdleTimer() {
   idleTimer = setTimeout(idleFly, idleFirst ? idleDuration * 1000 : idleInterval * 1000);
 }
 
+// idle 巡航：隐藏除日志外的所有 UI（沉浸体验），hide=false 恢复
+function setCruiseUI(hide) {
+  ["info", "search", "sliders", "stats", "legend", "tooltip"].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.classList.toggle("cruise-hidden", hide);
+  });
+}
+
 // 取消聚焦/筛选状态：idle 自动飞行前清理，恢复全量显示
 function clearFocusState() {
   if (!lastFocusedNode && !activeFilterGroup) return;
@@ -451,6 +466,7 @@ function clearFocusState() {
 
 function idleFly() {
   clearFocusState();
+  setCruiseUI(true);  // 隐藏除日志外的所有 UI，进入沉浸巡航
   // 随机选下一颗星球：排除当前所在星球，避免原地打转
   var cur = shipState.planet ? shipState.planet.id : null;
   var candidates = NODES.filter(function(d) { return d.type === 'a' && d.id !== cur; });
@@ -1340,6 +1356,7 @@ function flyToPlanet(target, full) {
       };
     })
     .on("end", function() {
+      // idle 巡航到达后继续隐藏 UI，直到用户交互退出巡航
       shipState.planet = target;
       shipState.angle = entryAngle;
       shipState.x = entryX;
@@ -1352,7 +1369,7 @@ function flyToPlanet(target, full) {
 
 d3.select("#nodeCount").text(`节点: ${NODES.length} (A股${NODES.filter(d=>d.type==='a').length}+海外${NODES.filter(d=>d.type==='o').length}+非上市${NODES.filter(d=>d.type==='n').length})`);
 d3.select("#edgeCount").text(`边: ${EDGES.length} (L1: ${EDGES.filter(d=>d.type==='L1').length} + L2: ${EDGES.filter(d=>d.type==='L2').length})`);
-const zoom=d3.zoom().extent([[0,0],[W,H]]).scaleExtent([0.3,5]).on("zoom",e=>{g.attr("transform",e.transform);if(e.sourceEvent){idleFirst=true;resetIdleTimer();}});
+const zoom=d3.zoom().extent([[0,0],[W,H]]).scaleExtent([0.3,5]).on("zoom",e=>{g.attr("transform",e.transform);if(e.sourceEvent){setCruiseUI(false);idleFirst=true;resetIdleTimer();}});
 svg.call(zoom);
 
 // 初始全景视野：自动缩放到能容纳全部节点
