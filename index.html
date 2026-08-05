@@ -14,7 +14,11 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; }
-  .container { max-width:1800px; margin:0 auto; padding:40px 48px 80px; }
+  .topnav { position:sticky; top:0; z-index:100; display:flex; align-items:center; gap:4px; padding:0 48px; height:52px; background:var(--card-bg); border-bottom:1px solid var(--border); }
+  .topnav .nav-tab { display:inline-flex; align-items:center; height:100%; padding:0 18px; font-size:14px; font-weight:600; color:var(--text-muted); text-decoration:none; border-bottom:2px solid transparent; transition:color 0.15s,border-color 0.15s; }
+  .topnav .nav-tab:hover { color:var(--text); }
+  .topnav .nav-tab.active { color:var(--accent); border-bottom-color:var(--accent); }
+  .container { max-width:1800px; margin:0 auto; padding:32px 48px 80px; }
 
   .page-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; padding-bottom:16px; border-bottom:2px solid var(--border); flex-wrap:wrap; gap:12px; }
   .page-header h1 { font-size:26px; font-weight:700; letter-spacing:-0.5px; }
@@ -71,6 +75,10 @@
 </style>
 </head>
 <body>
+<nav class="topnav">
+  <a class="nav-tab active" href="index.html">个股研究</a>
+  <a class="nav-tab" href="tmt_network/tmt_network_full.html" target="_blank">TMT产业链</a>
+</nav>
 <div class="container" id="app">
   <div id="filterArea"></div>
   <div id="contentArea">
@@ -180,7 +188,6 @@ function renderContent() {
   const freshCnt = allStocks.filter(s => s.analysis_date && (Date.now()-new Date(s.analysis_date).getTime())/86400000 <= 90).length;
   h += '<div class="page-header"><div><h1>基本面分析数据库</h1><div class="stats">共 <strong>'+displayStocks.length+'</strong> 只标的 · '+bought+' 只看好 · '+new Date().toLocaleDateString('zh-CN')+'</div></div>';
   h += '<button class="filter-btn'+(_freshOnly?' active':'')+'" onclick="_freshOnly=!_freshOnly;render()">仅有效<span class="count">'+freshCnt+'</span></button>';
-  h += '<a class="filter-btn" href="tmt_network/tmt_network_full.html" target="_blank" style="text-decoration:none">TMT产业链</a>';
   h += '</div>';
 
   // Groups
