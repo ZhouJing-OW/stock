@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>硬逻辑看板</title>
+<style>
+/* =============== Modern Dashboard =============== */
+:root {
+  --accent: #4A90D9;
+  --accent-hover: #357ABD;
+  --accent-light: rgba(74,144,217,.08);
+  --bg: #2A2E36;
+  --bg-elevated: #32363E;
+  --card-bg: #ECEEF1;
+  --card-hover: #F2F3F6;
+  --text-on-dark: #D8DBE0;
+  --text-on-dark-secondary: #959AA2;
+  --text-on-dark-muted: #6C7178;
+  --text: #1E2024;
+  --text-secondary: #585C63;
+  --text-muted: #90949B;
+  --line: rgba(0,0,0,.08);
+  --line-dark: rgba(255,255,255,.07);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,.18);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.22);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --overlay1: rgba(0,0,0,.03);
+  --overlay2: rgba(0,0,0,.06);
+  --success: #52B788;
+  --danger: #E05565;
+  --coral: #E8877B;
+  --new-glow: rgba(74,144,217,.22);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+  background: var(--bg);
+  color: var(--text-on-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1800px; margin: 0 auto; padding: 48px 32px 80px; }
+
+/* =============== Header =============== */
+.header { text-align: center; margin-bottom: 40px; }
+.header h1 { font-size: 2rem; font-weight: 700; color: var(--text-on-dark); letter-spacing: -.01em; margin-bottom: 6px; }
+.header .subtitle { font-size: 0.95rem; color: var(--text-on-dark-secondary); }
+.header .meta-row { margin-top: 16px; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+.meta-item { font-size: 0.8rem; color: var(--text-on-dark-muted); }
+.meta-item strong { color: var(--text-on-dark-secondary); font-weight: 600; }
+
+/* =============== Stats Bar =============== */
+.stats-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.stat-chip { font-size: 0.78rem; color: var(--text-on-dark-secondary); background: var(--bg-elevated); border: 1px solid var(--line-dark); border-radius: 100px; padding: 4px 14px; }
+.stat-chip .num { color: var(--accent); font-family: 'JetBrains Mono',ui-monospace,monospace; font-weight: 600; }
+
+/* =============== Filter Bar =============== */
+.filter-bar { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.filter-label { font-size: 0.8rem; color: var(--text-on-dark-secondary); margin-right: 4px; }
+.filter-btn { font-size: 0.76rem; color: var(--text-on-dark-secondary); background: var(--bg-elevated); border: 1px solid var(--line-dark); border-radius: 100px; padding: 5px 18px; cursor: pointer; transition: all .15s; }
+.filter-btn:hover { border-color: rgba(91,155,213,.3); color: var(--text-on-dark); }
+.filter-btn.active { color: #fff; background: var(--accent); border-color: var(--accent); }
+.filter-sep { color: var(--text-on-dark-muted); font-size: 0.7rem; opacity: 0.5; }
+.exit-toggle-btn { font-size: 0.76rem; color: var(--text-on-dark-secondary); background: var(--bg-elevated); border: 1px solid var(--line-dark); border-radius: 100px; padding: 5px 18px; cursor: pointer; transition: all .15s; }
+.exit-toggle-btn:hover { border-color: rgba(220,53,69,.35); }
+.exit-toggle-btn.active { color: #fff; background: #DC3545; border-color: #DC3545; }
+
+/* =============== Recent Alert =============== */
+.recent-alert { background: var(--bg-elevated); border: 1px solid rgba(91,155,213,.18); border-radius: var(--radius-sm); padding: 10px 18px; margin-bottom: 24px; font-size: 0.88rem; color: var(--text-on-dark); text-align: center; }
+
+/* =============== Quick Index =============== */
+.quick-index { margin-bottom: 32px; background: var(--card-bg); border-radius: var(--radius-md); padding: 20px 24px; box-shadow: var(--shadow-sm); }
+.idx-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+.idx-title { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+.idx-count { font-size: 0.75rem; color: var(--text-muted); }
+.idx-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 4px; }
+.idx-item { display: flex; align-items: baseline; gap: 8px; padding: 6px 10px; border-radius: 6px; text-decoration: none; transition: background .12s; }
+.idx-item:hover { background: var(--accent-light); }
+.idx-code { font-family: 'JetBrains Mono',ui-monospace,monospace; font-size: 0.68rem; color: var(--text-muted); flex-shrink: 0; min-width: 54px; }
+.idx-name { font-size: 0.85rem; color: var(--text); font-weight: 500; white-space: nowrap; flex-shrink: 0; }
+.idx-logic { font-size: 0.8rem; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.idx-new, .idx-hot, .idx-exit { font-size: 0.55rem; color: #fff; padding: 1px 5px; border-radius: 6px; margin-left: 3px; font-weight: 600; vertical-align: middle; }
+.idx-new { background: var(--accent); }
+.idx-hot { background: #E86A4D; }
+.idx-exit { background: #DC3545; }
+
+/* =============== Cards Grid: 固定列数保证宽度一致 =============== */
+.category-section { margin-bottom: 40px; }
+.cat-title { font-size: 1.15rem; font-weight: 600; color: var(--text-on-dark); padding-left: 14px; border-left: 3px solid var(--accent); margin-bottom: 16px; }
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* =============== Card =============== */
+.card { background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 20px; box-shadow: var(--shadow-sm); transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; position: relative; display: flex; flex-direction: column; min-height: 280px; }
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: rgba(74,144,217,.12); }
+.card-hot { border-color: rgba(232,106,77,.4); box-shadow: var(--shadow-md), 0 0 24px rgba(232,106,77,.18); }
+.card-exit { display: none; }
+.card-exit.visible { display: flex; border-color: rgba(220,53,69,.35); opacity: 0.85; }
+
+/* 概念周期筛选隐藏 */
+.hidden { display: none !important; }
+
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.card-idx { font-family: 'JetBrains Mono',ui-monospace,monospace; font-size: 0.78rem; color: var(--text-muted); }
+.card-category { display: flex; gap: 6px; align-items: baseline; }
+.cat { font-size: 0.74rem; font-weight: 500; color: var(--accent); }
+.subcat { font-size: 0.72rem; color: var(--text-muted); }
+
+.score-badge { font-family: 'JetBrains Mono',ui-monospace,monospace; font-size: 0.78rem; font-weight: 600; padding: 1px 9px; border-radius: 100px; margin-left: auto; margin-right: 6px; }
+.score-high { color: #1A7D4F; background: rgba(26,125,79,.12); border: 1px solid rgba(26,125,79,.22); }
+.score-mid { color: #A6792B; background: rgba(166,121,43,.10); border: 1px solid rgba(166,121,43,.18); }
+.score-ok { color: var(--text-muted); background: var(--overlay1); border: 1px solid var(--line); }
+
+.new-badge, .hot-badge, .exit-badge { font-size: 0.66rem; font-weight: 600; color: #fff; padding: 2px 8px; border-radius: 100px; margin-left: 2px; white-space: nowrap; }
+.new-badge { background: var(--accent); }
+.hot-badge { background: #E86A4D; }
+.exit-badge { background: #DC3545; }
+
+.card-title-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.stock-link { display: flex; align-items: baseline; gap: 8px; text-decoration: none; transition: opacity .15s; flex: 1; min-width: 0; }
+.stock-link:hover { opacity: 0.78; }
+.stock-name { font-size: 1.1rem; font-weight: 600; color: var(--text); white-space: nowrap; }
+.stock-code { font-family: 'JetBrains Mono',ui-monospace,monospace; font-size: 0.72rem; color: var(--text-muted); }
+
+.tdx-btn { font-size: 0.65rem; font-weight: 600; font-family: 'JetBrains Mono',ui-monospace,monospace; color: var(--text-muted); background: var(--overlay1); border: 1px solid var(--line); border-radius: 6px; padding: 2px 7px; cursor: pointer; flex-shrink: 0; transition: all .15s; }
+
+.card-section { margin-bottom: 8px; }
+.section-title { font-size: 0.68rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
+.logic-text { font-size: 0.85rem; color: var(--text); line-height: 1.55; }
+.sd-text { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+
+.card-metrics { margin: 8px 0; padding: 8px 10px; background: var(--overlay1); border-radius: var(--radius-sm); border: 1px solid var(--line); }
+.metric { display: flex; gap: 8px; align-items: baseline; margin-bottom: 3px; }
+.metric:last-child { margin-bottom: 0; }
+.metric-label { font-size: 0.68rem; font-weight: 500; color: var(--text-muted); white-space: nowrap; min-width: 48px; }
+.metric-value { font-size: 0.82rem; color: var(--text); }
+
+.reinforcement-section { margin: 8px 0; padding: 8px 10px; background: rgba(74,144,217,.03); border-radius: var(--radius-sm); border: 1px dashed rgba(74,144,217,.15); }
+.timeline { display: flex; flex-direction: column; gap: 4px; }
+.tl-item { display: flex; align-items: baseline; gap: 6px; font-size: 0.76rem; }
+.tl-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.tl-date { font-family: 'JetBrains Mono',ui-monospace,monospace; font-size: 0.68rem; color: var(--accent); white-space: nowrap; flex-shrink: 0; }
+.tl-desc { color: var(--text-secondary); line-height: 1.4; }
+.tl-source, .concept-source-link { font-size: 0.66rem; color: var(--accent); text-decoration: none; opacity: 0.65; flex-shrink: 0; }
+.tl-source:hover, .concept-source-link:hover { opacity: 1; text-decoration: underline; }
+
+.card-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto; }
+.tags-row { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 0.68rem; color: var(--text-muted); background: var(--overlay1); padding: 1px 6px; border-radius: 4px; }
+.concept-date { font-size: 0.7rem; color: var(--text-muted); }
+.concept-date[data-recent="true"] { color: var(--accent); font-weight: 600; }
+.concept-date[data-hot="true"] { color: #E86A4D; font-weight: 600; }
+
+.card-risk { margin-top: 6px; font-size: 0.74rem; color: var(--text-muted); line-height: 1.4; font-style: italic; }
+.risk-icon { color: var(--coral); }
+
+.page-footer { text-align: center; padding-top: 36px; border-top: 1px solid var(--line-dark); margin-top: 48px; }
+.page-footer p { font-size: 0.78rem; color: var(--text-on-dark-muted); }
+
+/* =============== Responsive =============== */
+@media (max-width: 1600px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1100px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .container { padding: 20px 14px 40px; }
+  .header h1 { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+<div class="container" id="app">
+  <div style="text-align:center;padding:80px 0;color:var(--text-on-dark-muted)">加载中...</div>
+</div>
+
+<script>
+const DATA_URL = 'data/dashboard_data.json';
+
+async function main() {
+  try {
+    const resp = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const d = await resp.json();
+    render(d);
+  } catch (e) {
+    document.getElementById('app').innerHTML =
+      '<div style="text-align:center;padding:60px 0;color:#E05565">加载失败: ' + e.message +
+      '<br><small>请确认已通过本地服务器访问 (http://localhost:8899/hardlogic/hardlogic.html)</small></div>';
+  }
+}
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+  ));
+}
+
+function oneLiner(logic) {
+  const first = String(logic || '').split('。')[0].split('；')[0];
+  return first.length > 48 ? first.slice(0, 48) + '…' : first;
+}
+
+function ageBadge(s) {
+  if (s.ageClass === 'hot') return '<span class="hot-badge">NEW</span>';
+  if (s.ageClass === 'new') return '<span class="new-badge">NEW</span>';
+  const w = s.ageWeeks;
+  const cls = w <= 4 ? 'age-fresh' : (w <= 8 ? 'age-warm' : 'age-old');
+  const color = w <= 4 ? {c:'#3B8C5A',b:'rgba(59,140,90,.1)'} : (w <= 8 ? {c:'#B37A3A',b:'rgba(179,122,58,.1)'} : {c:'var(--text-muted)',b:'var(--overlay1)'});
+  return `<span style="font-size:0.66rem;padding:2px 8px;border-radius:100px;margin-left:2px;color:${color.c};background:${color.b};border:1px solid ${color.c}33;white-space:nowrap">已过${w}周</span>`;
+}
+
+function scoreBadge(s) {
+  const sc = s.score || 5;
+  const cls = sc >= 9 ? 'score-high' : (sc >= 8 ? 'score-mid' : 'score-ok');
+  return `<span class="score-badge ${cls}">${sc.toFixed(1)}</span>`;
+}
+
+function reinfTimeline(s) {
+  const reinfs = s.conceptReinforcements || [];
+  if (!reinfs.length) return '';
+  const items = reinfs.map(r => `
+    <div class="tl-item">
+      <span class="tl-dot"></span>
+      <span class="tl-date">${esc(r.date)}</span>
+      <span class="tl-desc">${esc(r.desc)}</span>
+      ${r.source ? `<a href="${esc(r.source)}" class="tl-source" target="_blank" rel="noopener">[源]</a>` : ''}
+    </div>`).join('');
+  return `<div class="card-section reinforcement-section">
+    <div class="section-title">概念增强</div>
+    <div class="timeline">${items}</div>
+  </div>`;
+}
+
+function stockCard(s) {
+  const isHot = s.ageClass === 'hot';
+  const isRecent = s.ageClass === 'new';
+  const isExit = s.exitStatus === 'exit';
+  let cardCls = 'card';
+  if (isHot) cardCls += ' card-hot';
+  if (isExit) cardCls += ' card-exit';
+
+  const badges = [];
+  if (isHot) badges.push('<span class="hot-badge">NEW</span>');
+  else if (isRecent) badges.push('<span class="new-badge">NEW</span>');
+  else badges.push(ageBadge(s));
+  if (isExit) badges.push(`<span class="exit-badge" title="${esc(s.exitDesc)}">⚠ 退出</span>`);
+
+  const sourceLink = s.conceptSourceUrl
+    ? `<a href="${esc(s.conceptSourceUrl)}" class="concept-source-link" target="_blank" rel="noopener">信息源 ↗</a>`
+    : '';
+
+  const tags = (s.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+
+  return `
+  <div class="${cardCls}" id="s${s.id}" data-concept-date="${esc(s.conceptAdded)}">
+    <div class="card-header">
+      <span class="card-idx">#${String(s.id).padStart(2,'0')}</span>
+      <div class="card-category">
+        <span class="cat">${esc(s.category)}</span>
+        <span class="subcat">${esc(s.subCategory || '')}</span>
+      </div>
+      ${scoreBadge(s)}
+      ${badges.join('')}
+    </div>
+    <div class="card-title-row">
+      <a href="${s.viewerUrl || window.__VIEWER__}?code=${esc(s.code)}" class="stock-link" target="_blank" rel="noopener" title="查看基本面分析">
+        <span class="stock-name">${esc(s.name)}</span>
+        <span class="stock-code">${esc(s.code)} · ${esc(s.market || '')}</span>
+      </a>
+      <button class="tdx-btn" onclick="navigator.clipboard.writeText('TDX_JUMP:${esc(s.code)}').then(()=>{this.textContent='✓';setTimeout(()=>{this.textContent='TDX'},800)})" title="复制到剪贴板，AHK打开通达信">TDX</button>
+    </div>
+    <div class="card-section">
+      <div class="section-title">上涨硬逻辑</div>
+      <p class="logic-text">${esc(s.coreLogic)}</p>
+    </div>
+    <div class="card-section">
+      <div class="section-title">供需格局</div>
+      <p class="sd-text">${esc(s.supplyDemand)}</p>
+    </div>
+    <div class="card-metrics">
+      <div class="metric"><span class="metric-label">价格信号</span><span class="metric-value">${esc(s.priceSignal)}</span></div>
+      <div class="metric"><span class="metric-label">核心催化</span><span class="metric-value">${esc(s.catalyst)}</span></div>
+    </div>
+    ${reinfTimeline(s)}
+    <div class="card-footer">
+      <div class="tags-row">${tags}</div>
+      <div class="concept-date" data-recent="${isRecent||isHot}" data-hot="${isHot}">
+        概念触发：${esc(s.conceptAdded)} ${sourceLink}
+      </div>
+    </div>
+    <div class="card-risk"><span class="risk-icon">⚠</span> ${esc(s.riskNote)}</div>
+  </div>`;
+}
+
+function render(d) {
+  const groups = d.groups;
+  const catOrder = d.categoryOrder;
+
+  // 顶部统计
+  const statsHtml = Object.entries(groups).map(([cat, list]) =>
+    `<span class="stat-chip">${esc(cat)} <span class="num">${list.length}</span></span>`).join('');
+
+  // 最近新增
+  const recentAlert = d.recentNames.length
+    ? `<div class="recent-alert">近14天新增概念：<strong>${d.recentNames.map(esc).join('、')}</strong>（卡片右上角 NEW 标记）</div>`
+    : '';
+
+  // 快速索引
+  const idxItems = catOrder.map(cat =>
+    groups[cat].map(s => `
+    <a href="#s${s.id}" class="idx-item" data-concept-date="${esc(s.conceptAdded)}">
+      <span class="idx-code">${esc(s.code)}</span>
+      <span class="idx-name">${esc(s.name)}
+        ${s.ageClass==='hot'?'<span class="idx-hot">N</span>':(s.ageClass==='new'?'<span class="idx-new">N</span>':'')}
+        ${s.exitStatus==='exit'?'<span class="idx-exit">✕</span>':''}
+      </span>
+      <span class="idx-logic">${esc(oneLiner(s.coreLogic))}</span>
+    </a>`).join('')
+  ).join('');
+
+  // 分类卡片
+  const sectionsHtml = catOrder.map(cat => `
+    <div class="category-section">
+      <h2 class="cat-title">${esc(cat)}</h2>
+      <div class="cards-grid">${groups[cat].map(stockCard).join('')}</div>
+    </div>`).join('');
+
+  // 退出切换初始隐藏索引中的退出项
+  let exitIdxIds = [];
+  catOrder.forEach(cat => groups[cat].forEach(s => { if (s.exitStatus==='exit') exitIdxIds.push('#s'+s.id); }));
+
+  document.getElementById('app').innerHTML = `
+    <header class="header">
+      <h1>${esc(d.meta.title || 'A股上涨逻辑最硬')}</h1>
+      <p class="subtitle">${esc(d.meta.subtitle || '')}</p>
+      <div class="meta-row">
+        <span class="meta-item">更新日期 <strong>${esc(d.meta.updated)}</strong></span>
+        <span class="meta-item">标的 <strong>${Object.values(groups).reduce((a,l)=>a+l.length,0)}</strong> 只</span>
+        <span class="meta-item">分类 <strong>${catOrder.length}</strong> 个</span>
+      </div>
+    </header>
+    <div class="stats-bar">${statsHtml}</div>
+    <div class="filter-bar">
+      <span class="filter-label">概念周期</span>
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="w4">4周内</button>
+      <button class="filter-btn" data-filter="new">NEW</button>
+      <span class="filter-sep">|</span>
+      <button class="exit-toggle-btn" id="toggle-exit">显示已退出 (${d.exitCount})</button>
+    </div>
+    ${recentAlert}
+    <div class="quick-index">
+      <div class="idx-header"><span class="idx-title">快速索引</span><span class="idx-count">${Object.values(groups).reduce((a,l)=>a+l.length,0)} 只标的</span></div>
+      <div class="idx-grid">${idxItems}</div>
+    </div>
+    ${sectionsHtml}
+    <footer class="page-footer">
+      <p>数据加载自 data/dashboard_data.json · 更新于 ${esc(d.meta.updated)}</p>
+      <p style="margin-top:4px">⚠ 仅供研究参考，不构成投资建议</p>
+    </footer>`;
+
+  // ---- 交互（状态持久化到 localStorage） ----
+  const cutoffNew = 14, cutoffW4 = 28;
+  const today = new Date(d.meta.updated);
+  const daysSince = ds => Math.floor((today - new Date(ds)) / 86400000);
+  const LS_KEY = 'hardlogic_filter_state';
+
+  // 读取保存的状态
+  let savedState = { filter: 'all', showExit: false };
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) savedState = Object.assign(savedState, JSON.parse(raw));
+  } catch (e) {}
+
+  function saveState() {
+    try {
+      localStorage.setItem(LS_KEY, JSON.stringify(savedState));
+    } catch (e) {}
+  }
+
+  function applyFilter(filter) {
+    savedState.filter = filter;
+    saveState();
+    document.querySelectorAll('.card, .idx-item').forEach(el => {
+      const ds = el.getAttribute('data-concept-date');
+      if (!ds) return;
+      if (el.classList.contains('card-exit') ||
+          (el.tagName === 'A' && document.querySelector(el.getAttribute('href') + '.card-exit'))) return;
+      const days = daysSince(ds);
+      const show = filter==='new' ? days<=cutoffNew : (filter==='w4' ? days<=cutoffW4 : true);
+      el.classList.toggle('hidden', !show);
+    });
+  }
+
+  function applyExitState(show) {
+    savedState.showExit = show;
+    saveState();
+    document.querySelectorAll('.card-exit').forEach(c => c.classList.toggle('visible', show));
+    document.querySelectorAll('.idx-item').forEach(item => {
+      const href = item.getAttribute('href');
+      if (href && document.querySelector(href + '.card-exit')) item.classList.toggle('hidden', !show);
+    });
+  }
+
+  // 绑定筛选按钮
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      applyFilter(this.getAttribute('data-filter'));
+    });
+  });
+
+  // 绑定退出切换
+  const exitToggle = document.getElementById('toggle-exit');
+  if (exitToggle) {
+    exitToggle.addEventListener('click', function() {
+      const show = !this.classList.contains('active');
+      this.classList.toggle('active', show);
+      applyExitState(show);
+    });
+    // 初始隐藏退出索引
+    document.querySelectorAll('.idx-item').forEach(item => {
+      const href = item.getAttribute('href');
+      if (href && document.querySelector(href + '.card-exit')) item.classList.add('hidden');
+    });
+  }
+
+  // 恢复保存的状态
+  // 1) 恢复筛选按钮高亮
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-filter') === savedState.filter);
+  });
+  // 2) 应用筛选
+  applyFilter(savedState.filter);
+  // 3) 恢复退出状态（先隐藏再按需显示，避免初始隐藏逻辑冲突）
+  if (exitToggle) {
+    exitToggle.classList.toggle('active', savedState.showExit);
+    applyExitState(savedState.showExit);
+  }
+}
+
+// 注入 viewer 基础 URL（由 data 提供，这里兜底）
+main();
+</script>
+</body>
+</html>
