@@ -57,6 +57,9 @@
   .rating.avoid { background:#fee2e2; color:#b91c1c; }
   .rating.strong-avoid { background:#fee2e2; color:#dc2626; }
   .stars { font-size:13px; color:var(--amber); white-space:nowrap; }
+  .zz-badge { display:inline-block; padding:3px 10px; border-radius:100px; font-size:11px; font-weight:600; color:#fff; background:#dc2626; vertical-align:middle; white-space:nowrap; cursor:default; flex-shrink:0; }
+  .zz-badge:hover { background:#b91c1c; }
+  .badge-group { display:inline-flex; align-items:center; gap:6px; flex-shrink:0; margin-left:auto; }
 
   .state-msg { text-align:center; padding:60px 20px; color:var(--text-muted); grid-column:1/-1; }
   .loader { width:32px; height:32px; border:3px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin 0.8s linear infinite; margin:0 auto 16px; }
@@ -96,6 +99,8 @@
 <script>
 const RO = { '强烈看好':0,'看好':1,'中性看好':2,'中性':3,'谨慎':4,'回避':5,'强烈回避':6 };
 const RC = { '强烈看好':'strong-buy','看好':'buy','中性看好':'mild-buy','中性':'neutral','谨慎':'cautious','回避':'avoid','强烈回避':'strong-avoid' };
+// 2026中报预增映射（code: 预增%）数据源: 研报/2026中报预增/2026中报预增100以上.json
+const ZZ = { '002156':313, '002167':175, '002185':253, '002384':289, '002407':884, '002428':205, '002436':282, '002452':435, '002653':544, '300223':481, '300475':2276, '300604':122, '300620':180, '300666':106, '301200':261, '301308':68299, '301377':319, '600111':117, '600183':124, '600487':104, '601869':812, '603186':322, '603256':322, '603938':207, '603986':1099, '688519':428 };
 let allStocks = [];
 let _filter = null;
 let _freshOnly = false;
@@ -202,9 +207,11 @@ function renderContent() {
         const peStr = s.pe ? 'PE '+s.pe : '', capStr = s.marketCap ? s.marketCap+'亿' : '';
         const stars = '★'.repeat(s.confidence||0)+'☆'.repeat(5-(s.confidence||0));
         const posStr = s.position ? s.position+'%' : '';
+        const zzPct = ZZ[s.code];
+        const zzBadge = zzPct ? '<span class="zz-badge" title="2026中报预增" onclick="event.preventDefault();event.stopPropagation()">预增+'+zzPct+'%</span>' : '';
         const tagsHtml = (s.tags||[]).map(t => '<span onclick="event.preventDefault();event.stopPropagation();showModal(\''+esc(t)+'\')" style="cursor:pointer" title="点击查看同概念个股">'+esc(t)+'</span>').join('');
         h += '<a class="stock-card'+stale+'" href="viewer.html?code='+s.code+'" target="_blank">';
-        h += '<div class="row"><span class="name">'+esc(s.name)+' <span onclick="event.preventDefault();event.stopPropagation();showModal(null,\''+esc(s.industry||'')+'\')" style="font-weight:400;font-size:12px;color:var(--text-muted);cursor:pointer" title="点击查看同三级分类个股">'+(s.industry||'')+'</span></span><span class="rating '+cls+'">'+s.rating+'</span></div>';
+        h += '<div class="row"><span class="name">'+esc(s.name)+' <span onclick="event.preventDefault();event.stopPropagation();showModal(null,\''+esc(s.industry||'')+'\')" style="font-weight:400;font-size:12px;color:var(--text-muted);cursor:pointer" title="点击查看同三级分类个股">'+(s.industry||'')+'</span></span><span class="badge-group">'+zzBadge+'<span class="rating '+cls+'">'+s.rating+'</span></span></div>';
         h += '<span class="code">'+s.code+' · '+(s.exchange||'')+'</span>';
         h += '<span class="tags">'+tagsHtml+'</span>';
         h += '<div class="row" style="font-size:12px;color:var(--text-secondary)">';
