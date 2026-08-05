@@ -4,12 +4,23 @@
     "name": "瑞芯微",
     "exchange": "SH",
     "shenwan_industry": "电子/半导体/数字芯片设计",
-    "concept_tags": ["AIoT SoC", "端侧AI", "协处理器", "智能座舱", "机器人", "机器视觉", "Fabless", "NPU自研", "汽车电子"],
+    "concept_tags": [
+      "AIoT SoC",
+      "端侧AI",
+      "协处理器",
+      "智能座舱",
+      "机器人",
+      "机器视觉",
+      "Fabless",
+      "NPU自研",
+      "汽车电子"
+    ],
     "analysis_date": "2026-07-03",
     "fiscal_period": "2026Q1",
     "confidence": 4,
     "status": "active",
-    "last_updated": "2026-07-03T23:20:00"
+    "last_updated": "2026-07-03T23:20:00",
+    "pinyin": "RXW"
   },
   "overview": {
     "full_name": "瑞芯微电子股份有限公司",
@@ -100,18 +111,73 @@
     "core_risk": "端侧AI时代巨头加速下沉（高通骁龙/联发科天玑/英伟达Jetson向中低端延伸）可能挤压瑞芯微在中高端AIoT市场的份额；ARM架构授权和先进制程代工双重依赖构成供应链脆弱性；协处理器路线若被集成化SoC方案（NPU算力持续提升）替代，双轨战略的差异化优势将被削弱"
   },
   "financials": {
-    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "periods": [
+      "2023",
+      "2024",
+      "2025",
+      "2026Q1"
+    ],
     "metrics": {
-      "revenue_yi": [21.35, 31.36, 44.02, 12.05],
-      "net_profit_yi": [1.35, 5.95, 10.40, 3.29],
-      "gross_margin_pct": [34.25, 37.59, 41.95, 43.04],
-      "net_margin_pct": [6.32, 18.97, 23.63, 27.31],
-      "roe_pct": [4.41, 13.42, 25.79, 7.23],
-      "debt_ratio_pct": [12.73, 13.5, 21.54, 17.85],
-      "ocf_to_profit": [5.04, 2.32, 1.0, 1.16],
-      "rd_ratio_pct": [20.0, 20.0, 15.54, 15.0],
-      "ar_turnover_days": [50, 45, 42, null],
-      "inventory_turnover_days": [354, 180, 120, null]
+      "revenue_yi": [
+        21.35,
+        31.36,
+        44.02,
+        12.05
+      ],
+      "net_profit_yi": [
+        1.35,
+        5.95,
+        10.4,
+        3.29
+      ],
+      "gross_margin_pct": [
+        34.25,
+        37.59,
+        41.95,
+        43.04
+      ],
+      "net_margin_pct": [
+        6.32,
+        18.97,
+        23.63,
+        27.31
+      ],
+      "roe_pct": [
+        4.41,
+        13.42,
+        25.79,
+        7.23
+      ],
+      "debt_ratio_pct": [
+        12.73,
+        13.5,
+        21.54,
+        17.85
+      ],
+      "ocf_to_profit": [
+        5.04,
+        2.32,
+        1.0,
+        1.16
+      ],
+      "rd_ratio_pct": [
+        20.0,
+        20.0,
+        15.54,
+        15.0
+      ],
+      "ar_turnover_days": [
+        50,
+        45,
+        42,
+        null
+      ],
+      "inventory_turnover_days": [
+        354,
+        180,
+        120,
+        null
+      ]
     },
     "highlights": [
       "毛利率三连升（34.25%→37.59%→41.95%→43.04%），产品结构持续向高附加值的中高端AIoT芯片升级，RK3588/RK3576等旗舰芯片收入占比提升是核心驱动",

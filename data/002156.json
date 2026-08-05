@@ -4,12 +4,23 @@
     "name": "通富微电",
     "exchange": "SZ",
     "shenwan_industry": "电子/半导体/集成电路封测",
-    "concept_tags": ["先进封装", "Chiplet", "AMD产业链", "AI算力", "CPO光电合封", "半导体封测", "汽车电子", "存储芯片", "国家大基金"],
+    "concept_tags": [
+      "先进封装",
+      "Chiplet",
+      "AMD产业链",
+      "AI算力",
+      "CPO光电合封",
+      "半导体封测",
+      "汽车电子",
+      "存储芯片",
+      "国家大基金"
+    ],
     "analysis_date": "2026-07-03",
     "fiscal_period": "2026Q1",
     "confidence": 4,
     "status": "active",
-    "last_updated": "2026-07-03T22:41:00"
+    "last_updated": "2026-07-03T22:41:00",
+    "pinyin": "TFWD"
   },
   "overview": {
     "full_name": "通富微电子股份有限公司",
@@ -23,17 +34,37 @@
     "employees": 23000,
     "one_liner": "全球第四/中国大陆第二大OSAT封测厂商，AMD最大封测供应商(承接超80%订单)，AI算力先进封装核心受益标的，FCBGA+Chiplet+CPO三线推进",
     "revenue_segments": [
-      {"segment": "集成电路封装测试", "revenue_pct": 97.6, "gross_margin_pct": 14.5, "yoy_growth_pct": 17.5},
-      {"segment": "模具及材料销售等", "revenue_pct": 2.4, "gross_margin_pct": 18.0, "yoy_growth_pct": -30.0}
+      {
+        "segment": "集成电路封装测试",
+        "revenue_pct": 97.6,
+        "gross_margin_pct": 14.5,
+        "yoy_growth_pct": 17.5
+      },
+      {
+        "segment": "模具及材料销售等",
+        "revenue_pct": 2.4,
+        "gross_margin_pct": 18.0,
+        "yoy_growth_pct": -30.0
+      }
     ]
   },
   "supply_chain": {
     "position": "集成电路封装测试(OSAT)，处于半导体产业链后道环节。上游为封装材料(引线框架/基板/金丝/塑封料)和设备供应商，下游为芯片设计公司和IDM厂商。核心客户AMD贡献超50%营收",
     "upstream": "封装基板(深南电路/兴森科技/揖斐电)、引线框架(康强电子)、金丝(贺利氏/田中贵金属)、塑封料(住友电木/华海诚科)、封装设备(ASM/Disco/大族激光)、测试设备(泰瑞达/爱德万)",
     "downstream": "AMD(CPU/GPU/AI加速器)、汽车Tier1(博世/大陆/比亚迪)、存储芯片厂(长江存储/长鑫存储)、显示驱动芯片设计公司、电源管理芯片厂商、消费电子芯片设计公司",
-    "upstream_bargaining": {"level": "中", "reason": "封装基板和高端设备供应商集中度高(日系主导)，但通富微电采购规模大(OSAT全球第四)，具备一定议价能力。ABF载板受味之素供应垄断约束明显"},
-    "downstream_bargaining": {"level": "弱", "reason": "先进封装产能供不应求，AMD高度依赖通富微电(超80%封测订单)，切换供应商成本高周期长(1-2年认证周期)。国内客户在电源管理/显示驱动领域同样面临产能紧缺，公司议价能力偏强"},
-    "substitution_risk": {"level": "中", "by_whom": "长电科技可替代部分传统封装及消费电子订单；日月光/安靠在高端先进封装领域存在竞争。但AMD深度绑定+先进封装技术壁垒使核心业务替代风险可控", "cycle_years": 3},
+    "upstream_bargaining": {
+      "level": "中",
+      "reason": "封装基板和高端设备供应商集中度高(日系主导)，但通富微电采购规模大(OSAT全球第四)，具备一定议价能力。ABF载板受味之素供应垄断约束明显"
+    },
+    "downstream_bargaining": {
+      "level": "弱",
+      "reason": "先进封装产能供不应求，AMD高度依赖通富微电(超80%封测订单)，切换供应商成本高周期长(1-2年认证周期)。国内客户在电源管理/显示驱动领域同样面临产能紧缺，公司议价能力偏强"
+    },
+    "substitution_risk": {
+      "level": "中",
+      "by_whom": "长电科技可替代部分传统封装及消费电子订单；日月光/安靠在高端先进封装领域存在竞争。但AMD深度绑定+先进封装技术壁垒使核心业务替代风险可控",
+      "cycle_years": 3
+    },
     "supply_constraints": {
       "capacity_bottleneck": "先进封装(FCBGA/Chiplet/2.5D/3D)产能扩建周期长(2-3年)，南通/苏州/槟城各基地改造累计约13万平米，短期内供给弹性有限",
       "license_barrier": "无特殊牌照门槛，但先进封装工艺know-how积累周期长，客户认证壁垒高(2年以上)，AMD生态绑定构成事实上的进入壁垒",
@@ -43,28 +74,98 @@
   },
   "moat": {
     "scores": {
-      "tech_barrier": {"score": 4, "detail": "国内少数掌握FCBGA超大尺寸多芯片合封+SIP薄Die双面封装+3nm多芯片封装的OSAT厂商。CPO光电合封已通过可靠性测试进入量产导入阶段。先进封装技术储备仅次于长电科技，在AMD GPU/CPU封装领域有独特工艺优势"},
-      "scale_effect": {"score": 5, "detail": "2025年营收279.21亿居全球OSAT第4、中国大陆第2。南通/合肥/厦门/苏州/槟城六地布局，15.18亿总股本，年封测产能和生产规模达到行业头部水平。大规模固定资产投入摊薄单位成本的能力显著"},
-      "customer_stickiness": {"score": 5, "detail": "与AMD「合资+合作」模式深度绑定(2016年收购AMD苏州/槟城各85%股权)，承接AMD超80%封测订单，切换成本极高。车载客户认证周期长，覆盖数量翻番后粘性增强。圆片级封装已与国内头部客户全面合作"},
-      "brand_patent_license": {"score": 3, "detail": "国家大基金一期+二期合计持股超7.4%，国家级产业资本背书。先进封装技术专利储备丰富，但封测行业品牌溢价有限，技术know-how比专利壁垒更实质"},
-      "cost_advantage": {"score": 3, "detail": "规模效应+国内劳动力成本优势+马来西亚槟城工厂关税规避，综合成本低于日月光/安靠等海外厂商。但封测行业原材料占比高(60%+)，毛利率天花板明显(14-15%)，成本优势非核心护城河"}
+      "tech_barrier": {
+        "score": 4,
+        "detail": "国内少数掌握FCBGA超大尺寸多芯片合封+SIP薄Die双面封装+3nm多芯片封装的OSAT厂商。CPO光电合封已通过可靠性测试进入量产导入阶段。先进封装技术储备仅次于长电科技，在AMD GPU/CPU封装领域有独特工艺优势"
+      },
+      "scale_effect": {
+        "score": 5,
+        "detail": "2025年营收279.21亿居全球OSAT第4、中国大陆第2。南通/合肥/厦门/苏州/槟城六地布局，15.18亿总股本，年封测产能和生产规模达到行业头部水平。大规模固定资产投入摊薄单位成本的能力显著"
+      },
+      "customer_stickiness": {
+        "score": 5,
+        "detail": "与AMD「合资+合作」模式深度绑定(2016年收购AMD苏州/槟城各85%股权)，承接AMD超80%封测订单，切换成本极高。车载客户认证周期长，覆盖数量翻番后粘性增强。圆片级封装已与国内头部客户全面合作"
+      },
+      "brand_patent_license": {
+        "score": 3,
+        "detail": "国家大基金一期+二期合计持股超7.4%，国家级产业资本背书。先进封装技术专利储备丰富，但封测行业品牌溢价有限，技术know-how比专利壁垒更实质"
+      },
+      "cost_advantage": {
+        "score": 3,
+        "detail": "规模效应+国内劳动力成本优势+马来西亚槟城工厂关税规避，综合成本低于日月光/安靠等海外厂商。但封测行业原材料占比高(60%+)，毛利率天花板明显(14-15%)，成本优势非核心护城河"
+      }
     },
     "trend_3_5yr": "拓宽",
     "core_risk": "AMD营收占比超50%，单一客户集中度风险极高；若AMD在AI GPU市场被英伟达持续压制或更换封测供应商，将造成业绩断层式下跌"
   },
   "financials": {
-    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "periods": [
+      "2023",
+      "2024",
+      "2025",
+      "2026Q1"
+    ],
     "metrics": {
-      "revenue_yi": [222.69, 238.82, 279.21, 74.82],
-      "net_profit_yi": [1.69, 6.78, 12.19, 3.29],
-      "gross_margin_pct": [11.8, 14.84, 14.59, 13.32],
-      "net_margin_pct": [0.76, 3.31, 4.93, 4.68],
-      "roe_pct": [1.22, 4.75, 8.08, 2.10],
-      "debt_ratio_pct": [57.0, 60.06, 63.73, 64.92],
-      "ocf_to_profit": [3.5, 1.4, 1.1, 0.7],
-      "rd_ratio_pct": [5.8, 6.4, 5.7, null],
-      "ar_turnover_days": [68, 75, 70, null],
-      "inventory_turnover_days": [52, 55, 58, null]
+      "revenue_yi": [
+        222.69,
+        238.82,
+        279.21,
+        74.82
+      ],
+      "net_profit_yi": [
+        1.69,
+        6.78,
+        12.19,
+        3.29
+      ],
+      "gross_margin_pct": [
+        11.8,
+        14.84,
+        14.59,
+        13.32
+      ],
+      "net_margin_pct": [
+        0.76,
+        3.31,
+        4.93,
+        4.68
+      ],
+      "roe_pct": [
+        1.22,
+        4.75,
+        8.08,
+        2.1
+      ],
+      "debt_ratio_pct": [
+        57.0,
+        60.06,
+        63.73,
+        64.92
+      ],
+      "ocf_to_profit": [
+        3.5,
+        1.4,
+        1.1,
+        0.7
+      ],
+      "rd_ratio_pct": [
+        5.8,
+        6.4,
+        5.7,
+        null
+      ],
+      "ar_turnover_days": [
+        68,
+        75,
+        70,
+        null
+      ],
+      "inventory_turnover_days": [
+        52,
+        55,
+        58,
+        null
+      ]
     },
     "highlights": [
       "2025年归母净利润同比+79.86%(12.19亿)，剔除2024年低基数效应后仍属强劲复苏，2026Q1进一步同比+224.55%(3.29亿)，经营杠杆效应加速释放",
@@ -140,14 +241,24 @@
         "differentiation": "美系OSAT龙头，地缘政治格局下享受「制造业回流」政策红利。与通富在AMD供应体系中形成互补(各自服务不同区域市场)而非完全替代"
       }
     ],
-    "porter_five": {"new_entrants": "低", "supplier_power": "中", "buyer_power": "低", "substitutes": "低", "rivalry": "高"}
+    "porter_five": {
+      "new_entrants": "低",
+      "supplier_power": "中",
+      "buyer_power": "低",
+      "substitutes": "低",
+      "rivalry": "高"
+    }
   },
   "governance": {
     "core_team": "董事长兼总经理石磊(南通华达微电子集团背景)，核心管理层在封测行业深耕20年以上。AMD合资公司管理团队兼具国际视野和本土执行力。2025年各工厂(苏州/槟城/崇川/通富通科)经营质量均有跃升",
     "incentive_alignment": "2025年分红预案每10股派0.81元(含税)，分红率约10%，偏低。无大规模股权激励计划公开信息，管理层激励主要依托业绩考核和薪酬体系",
     "board_structure": "无单一实际控制人，华达微电子(18.80%)+大基金一期/二期(合计7.42%)+香港中央结算(北向4.63%)构成主要股东阵营，治理结构相对分散化。大基金持续减持(2026Q1减持313.74万股)需关注",
     "integrity_record": "无财务造假/违规/重大减持套现前科。致同会计师事务所连续多年出具标准无保留意见审计报告。控股股东南通华达2026Q1减持1500万股需关注动机",
-    "shareholder_structure": {"institutional_pct": 35.67, "retail_pct": 64.33, "shareholder_count_trend": "2026Q1股东总数281,833户，散户化特征明显。基金持仓从2025Q4 597家骤降至2026Q1 46家(季报披露节奏因素为主)，筹码趋于分散"}
+    "shareholder_structure": {
+      "institutional_pct": 35.67,
+      "retail_pct": 64.33,
+      "shareholder_count_trend": "2026Q1股东总数281,833户，散户化特征明显。基金持仓从2025Q4 597家骤降至2026Q1 46家(季报披露节奏因素为主)，筹码趋于分散"
+    }
   },
   "fund_attention": {
     "holding_funds_count": 46,
@@ -157,7 +268,12 @@
     "new_entries": 15,
     "exits": 365,
     "heavy_position_rank": 120,
-    "star_manager_holdings": ["永赢半导体产业智选混合发起A(张海啸，1000万股，占净值8.27%)", "华夏国证半导体芯片ETF(1407.92万股)", "南方中证500ETF(876.10万股)", "国联安半导体ETF(772.61万股，增持16.77万股)"],
+    "star_manager_holdings": [
+      "永赢半导体产业智选混合发起A(张海啸，1000万股，占净值8.27%)",
+      "华夏国证半导体芯片ETF(1407.92万股)",
+      "南方中证500ETF(876.10万股)",
+      "国联安半导体ETF(772.61万股，增持16.77万股)"
+    ],
     "recent_research_visits": 8,
     "trend": "下降",
     "score": 4,
@@ -290,6 +406,12 @@
     "holding_period": "中线",
     "entry_strategy": "建议等待PE回落至55x以下(对应股价约52元，较当前-20%)或半年报验证OCF改善+扣非增速回升后分批建仓。若CPO量产交付或AMD MI400订单超预期，可在PE 60x以内右侧加仓至8-10%",
     "stop_loss_conditions": "跌破45元(对应2026E PE 44x，约30%下行)止损；或出现AMD丢单/大客户关系恶化/季度扣非净利润转负等基本面恶化信号立即离场",
-    "key_tracking_metrics": ["AMD季度GPU出货量及市场份额变化(Passmark/Mercury Research数据)", "季度扣非净利润增速与经营现金流/净利润比率(关键：需回升至0.8以上)", "CPO光电合封量产进度及营收贡献(每季投关记录)", "大基金/华达微减持公告频率及规模", "日月光涨价后公司是否跟随提价及毛利率变化"]
+    "key_tracking_metrics": [
+      "AMD季度GPU出货量及市场份额变化(Passmark/Mercury Research数据)",
+      "季度扣非净利润增速与经营现金流/净利润比率(关键：需回升至0.8以上)",
+      "CPO光电合封量产进度及营收贡献(每季投关记录)",
+      "大基金/华达微减持公告频率及规模",
+      "日月光涨价后公司是否跟随提价及毛利率变化"
+    ]
   }
 }

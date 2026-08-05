@@ -4,12 +4,23 @@
     "name": "东山精密",
     "exchange": "SZ",
     "shenwan_industry": "电子/元件/印制电路板",
-    "concept_tags": ["PCB", "FPC", "光模块", "光芯片", "AI算力", "消费电子", "苹果产业链", "英伟达概念", "汽车电子"],
+    "concept_tags": [
+      "PCB",
+      "FPC",
+      "光模块",
+      "光芯片",
+      "AI算力",
+      "消费电子",
+      "苹果产业链",
+      "英伟达概念",
+      "汽车电子"
+    ],
     "analysis_date": "2026-07-03",
     "fiscal_period": "2026Q1",
     "confidence": 4,
     "status": "active",
-    "last_updated": "2026-07-03T18:30:00"
+    "last_updated": "2026-07-03T18:30:00",
+    "pinyin": "DSJM"
   },
   "overview": {
     "full_name": "苏州东山精密制造股份有限公司",
@@ -23,19 +34,49 @@
     "employees": 25000,
     "one_liner": "全球第三大PCB厂商+全球唯一'PCB+光芯片+光模块'垂直一体化AI算力基础设施供应商，收购索尔思光电布局800G/1.6T高速光模块，拥有稀缺200G EML光芯片自研量产能力",
     "revenue_segments": [
-      {"segment": "电子电路(PCB/FPC)", "revenue_pct": 63.8, "gross_margin_pct": 17.6, "yoy_growth_pct": 12.0},
-      {"segment": "触控面板及LCM模组", "revenue_pct": 14.9, "gross_margin_pct": 5.2, "yoy_growth_pct": -5.0},
-      {"segment": "精密组件", "revenue_pct": 14.8, "gross_margin_pct": 9.2, "yoy_growth_pct": 8.0},
-      {"segment": "光模块(含光芯片)", "revenue_pct": 3.6, "gross_margin_pct": 36.7, "yoy_growth_pct": 100.0}
+      {
+        "segment": "电子电路(PCB/FPC)",
+        "revenue_pct": 63.8,
+        "gross_margin_pct": 17.6,
+        "yoy_growth_pct": 12.0
+      },
+      {
+        "segment": "触控面板及LCM模组",
+        "revenue_pct": 14.9,
+        "gross_margin_pct": 5.2,
+        "yoy_growth_pct": -5.0
+      },
+      {
+        "segment": "精密组件",
+        "revenue_pct": 14.8,
+        "gross_margin_pct": 9.2,
+        "yoy_growth_pct": 8.0
+      },
+      {
+        "segment": "光模块(含光芯片)",
+        "revenue_pct": 3.6,
+        "gross_margin_pct": 36.7,
+        "yoy_growth_pct": 100.0
+      }
     ]
   },
   "supply_chain": {
     "position": "PCB/FPC制造+光模块/光芯片IDM，处于电子产业链中游偏上游。PCB业务覆盖消费电子和AI服务器两大场景；光模块业务通过索尔思光电实现'光芯片设计+晶圆制造+封装测试+模块组装'全链条垂直整合，为国内唯一可自供EML芯片并大规模量产的企业",
     "upstream": "CCL覆铜板(生益科技/建滔积层板)、铜箔(诺德股份/嘉元科技)、高速电子树脂(东材科技/圣泉集团)、磷化铟衬底、EML光芯片晶圆(索尔思自研)、精密设备(大族激光)",
     "downstream": "AI服务器(英伟达/Meta/微软/谷歌)、消费电子(苹果/三星)、新能源汽车(特斯拉/比亚迪/大众)、通信设备(华为/爱立信)",
-    "upstream_bargaining": {"level": "中", "reason": "CCL集中度高(建滔+生益占主导)，2026年CCL持续涨价，但东山作为全球第三大PCB厂商有较强议价能力；光芯片端因索尔思自研EML芯片，核心原材料自主可控，不受海外芯片供应商制约"},
-    "downstream_bargaining": {"level": "强", "reason": "AI算力PCB和高速光模块供不应求，800G/1.6T光模块产能紧缺，EML芯片全球缺口25-30%且订单排至2028年，客户出现提前锁定产能行为；苹果FPC方面供应商认证周期长达1-2年转换成本极高"},
-    "substitution_risk": {"level": "中", "by_whom": "中低端PCB可被鹏鼎控股/深南电路替代；FPC可被臻鼎/住友电工替代；光模块领域中际旭创/新易盛/天孚通信等国内厂商在800G/1.6T领域竞争激烈，CPO/硅光新技术可能颠覆传统分立光模块格局", "cycle_years": 3},
+    "upstream_bargaining": {
+      "level": "中",
+      "reason": "CCL集中度高(建滔+生益占主导)，2026年CCL持续涨价，但东山作为全球第三大PCB厂商有较强议价能力；光芯片端因索尔思自研EML芯片，核心原材料自主可控，不受海外芯片供应商制约"
+    },
+    "downstream_bargaining": {
+      "level": "强",
+      "reason": "AI算力PCB和高速光模块供不应求，800G/1.6T光模块产能紧缺，EML芯片全球缺口25-30%且订单排至2028年，客户出现提前锁定产能行为；苹果FPC方面供应商认证周期长达1-2年转换成本极高"
+    },
+    "substitution_risk": {
+      "level": "中",
+      "by_whom": "中低端PCB可被鹏鼎控股/深南电路替代；FPC可被臻鼎/住友电工替代；光模块领域中际旭创/新易盛/天孚通信等国内厂商在800G/1.6T领域竞争激烈，CPO/硅光新技术可能颠覆传统分立光模块格局",
+      "cycle_years": 3
+    },
     "supply_constraints": {
       "capacity_bottleneck": "200G EML光芯片产能严重不足(索尔思计划2026年底扩至22KK/月，2027年3亿颗)；AI服务器高多层PCB产能(78层+)扩张需10亿美元以上投入，新产能2026年内投产",
       "license_barrier": "无特殊牌照门槛，但光芯片IDM全流程涉及磷化铟衬底外延生长等关键工艺know-how，海外云厂商认证周期长达18-24个月",
@@ -45,28 +86,109 @@
   },
   "moat": {
     "scores": {
-      "tech_barrier": {"score": 5, "detail": "国内唯一同时具备FPC(全球第二)+高端硬板(78层+HDI)+200G EML光芯片自研量产+800G/1.6T光模块的全栈能力。索尔思IDM模式自主设计EML芯片且实现规模化量产，全球仅少数企业具备此能力。关键性能指标与量产良率达到国际一流水平，区别于纯组装型光模块企业"},
-      "scale_effect": {"score": 4, "detail": "2025年营收401亿，全球PCB第三/FPC第二。Multek+MFLEX+索尔思+精密组件四大事业部协同，海外收入占比超81%，在墨西哥/泰国/越南多地布局。但FPC业务受苹果单一客户影响较大，规模优势在AI PCB领域尚未完全释放"},
-      "customer_stickiness": {"score": 4, "detail": "苹果十年深度合作(FPC全球第二供应商)，北美四大云厂商(英伟达/Meta/谷歌/微软)全覆盖，客户认证周期长达1-2年且转换成本极高。AI算力客户出现提前锁定产能的抢单行为。特斯拉4680电池FPC独家供应商。但前五大客户收入占比超60%集中度风险较高"},
-      "brand_patent_license": {"score": 3, "detail": "CPCA副理事长单位/监事长单位，行业标准参与度较高。光芯片端拥有自主知识产权的100G/200G EML芯片设计能力，但专利壁垒不如海外光芯片龙头(Lumentum/Coherent)。PCB领域know-how积累深厚但非绝对壁垒"},
-      "cost_advantage": {"score": 3, "detail": "规模采购带来一定原材料议价能力，索尔思自供光芯片使光模块成本比纯组装厂低10-15%。但CCL等原材料占比高(40-50%)，成本结构决定了无法像IC设计公司那样高毛利。2025年整体毛利率仅14.09%，被低毛利触控面板和精密组件拖累"}
+      "tech_barrier": {
+        "score": 5,
+        "detail": "国内唯一同时具备FPC(全球第二)+高端硬板(78层+HDI)+200G EML光芯片自研量产+800G/1.6T光模块的全栈能力。索尔思IDM模式自主设计EML芯片且实现规模化量产，全球仅少数企业具备此能力。关键性能指标与量产良率达到国际一流水平，区别于纯组装型光模块企业"
+      },
+      "scale_effect": {
+        "score": 4,
+        "detail": "2025年营收401亿，全球PCB第三/FPC第二。Multek+MFLEX+索尔思+精密组件四大事业部协同，海外收入占比超81%，在墨西哥/泰国/越南多地布局。但FPC业务受苹果单一客户影响较大，规模优势在AI PCB领域尚未完全释放"
+      },
+      "customer_stickiness": {
+        "score": 4,
+        "detail": "苹果十年深度合作(FPC全球第二供应商)，北美四大云厂商(英伟达/Meta/谷歌/微软)全覆盖，客户认证周期长达1-2年且转换成本极高。AI算力客户出现提前锁定产能的抢单行为。特斯拉4680电池FPC独家供应商。但前五大客户收入占比超60%集中度风险较高"
+      },
+      "brand_patent_license": {
+        "score": 3,
+        "detail": "CPCA副理事长单位/监事长单位，行业标准参与度较高。光芯片端拥有自主知识产权的100G/200G EML芯片设计能力，但专利壁垒不如海外光芯片龙头(Lumentum/Coherent)。PCB领域know-how积累深厚但非绝对壁垒"
+      },
+      "cost_advantage": {
+        "score": 3,
+        "detail": "规模采购带来一定原材料议价能力，索尔思自供光芯片使光模块成本比纯组装厂低10-15%。但CCL等原材料占比高(40-50%)，成本结构决定了无法像IC设计公司那样高毛利。2025年整体毛利率仅14.09%，被低毛利触控面板和精密组件拖累"
+      }
     },
     "trend_3_5yr": "拓宽",
     "core_risk": "CPO/硅光新技术可能颠覆传统分立光模块架构，索尔思EML芯片优势在中长期面临技术替代风险；高负债率(64%)叠加47.69亿商誉，若光模块行业景气下行将产生大额减值；EML芯片产能急剧扩张后若AI资本开支放缓将面临价格战"
   },
   "financials": {
-    "periods": ["2022", "2023", "2024", "2025", "2026Q1"],
+    "periods": [
+      "2022",
+      "2023",
+      "2024",
+      "2025",
+      "2026Q1"
+    ],
     "metrics": {
-      "revenue_yi": [315.80, 336.51, 367.70, 401.25, 131.38],
-      "net_profit_yi": [23.68, 19.65, 10.86, 13.86, 11.10],
-      "gross_margin_pct": [17.60, 15.18, 14.02, 14.09, 19.33],
-      "net_margin_pct": [7.50, 5.84, 2.95, 3.47, 8.56],
-      "roe_pct": [14.47, 10.83, 5.50, 6.88, 5.03],
-      "debt_ratio_pct": [59.0, 58.5, 61.5, 63.98, 64.5],
-      "ocf_to_profit": [1.35, 1.22, 2.10, 3.83, 1.02],
-      "rd_ratio_pct": [3.2, 3.3, 3.5, 2.9, 2.83],
-      "ar_turnover_days": [62, 68, 72, 76, null],
-      "inventory_turnover_days": [52, 58, 63, 68, null]
+      "revenue_yi": [
+        315.8,
+        336.51,
+        367.7,
+        401.25,
+        131.38
+      ],
+      "net_profit_yi": [
+        23.68,
+        19.65,
+        10.86,
+        13.86,
+        11.1
+      ],
+      "gross_margin_pct": [
+        17.6,
+        15.18,
+        14.02,
+        14.09,
+        19.33
+      ],
+      "net_margin_pct": [
+        7.5,
+        5.84,
+        2.95,
+        3.47,
+        8.56
+      ],
+      "roe_pct": [
+        14.47,
+        10.83,
+        5.5,
+        6.88,
+        5.03
+      ],
+      "debt_ratio_pct": [
+        59.0,
+        58.5,
+        61.5,
+        63.98,
+        64.5
+      ],
+      "ocf_to_profit": [
+        1.35,
+        1.22,
+        2.1,
+        3.83,
+        1.02
+      ],
+      "rd_ratio_pct": [
+        3.2,
+        3.3,
+        3.5,
+        2.9,
+        2.83
+      ],
+      "ar_turnover_days": [
+        62,
+        68,
+        72,
+        76,
+        null
+      ],
+      "inventory_turnover_days": [
+        52,
+        58,
+        63,
+        68,
+        null
+      ]
     },
     "highlights": [
       "2026Q1归母净利11.10亿同比+143.47%，单季接近2025全年利润(13.86亿)，光模块并表带来利润结构性质变，高毛利光模块(36.7%)利润贡献占比超50%",
@@ -158,15 +280,27 @@
   "fund_attention": {
     "holding_funds_count": 425,
     "total_holding_shares_wan": 28837.86,
-    "holding_pct_of_float": 20.80,
+    "holding_pct_of_float": 20.8,
     "qoq_change": "基金家数-714家，持股-17584万股(Q1 vs 2025Q4)，机构大幅减仓",
     "new_entries": 150,
     "exits": 536,
     "heavy_position_rank": null,
     "star_manager_holdings": [
-      {"fund_name": "睿远成长价值混合A(傅鹏博)", "shares_wan": 1709.24, "value_yi": 17.66},
-      {"fund_name": "摩根新兴动力混合A(杜猛)", "shares_wan": 975.02, "value_yi": 10.07},
-      {"fund_name": "广发科技先锋混合(刘格菘)", "shares_wan": 761.05, "value_yi": 7.86}
+      {
+        "fund_name": "睿远成长价值混合A(傅鹏博)",
+        "shares_wan": 1709.24,
+        "value_yi": 17.66
+      },
+      {
+        "fund_name": "摩根新兴动力混合A(杜猛)",
+        "shares_wan": 975.02,
+        "value_yi": 10.07
+      },
+      {
+        "fund_name": "广发科技先锋混合(刘格菘)",
+        "shares_wan": 761.05,
+        "value_yi": 7.86
+      }
     ],
     "recent_research_visits": 12,
     "trend": "下降",

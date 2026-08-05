@@ -4,12 +4,22 @@
     "name": "光智科技",
     "exchange": "SZ",
     "shenwan_industry": "制造业/计算机、通信和其他电子设备制造业",
-    "concept_tags": ["红外光学", "红外热成像", "超高纯锗", "国产替代", "军工电子", "半导体材料", "锗资源", "资产重组"],
+    "concept_tags": [
+      "红外光学",
+      "红外热成像",
+      "超高纯锗",
+      "国产替代",
+      "军工电子",
+      "半导体材料",
+      "锗资源",
+      "资产重组"
+    ],
     "analysis_date": "2026-08-05",
     "fiscal_period": "2026Q1",
     "confidence": 3,
     "status": "active",
-    "last_updated": "2026-08-05T02:00:00"
+    "last_updated": "2026-08-05T02:00:00",
+    "pinyin": "GZKJ"
   },
   "overview": {
     "full_name": "光智科技股份有限公司",
@@ -88,18 +98,84 @@
     "core_risk": "锗材料环节竞争加剧（云南锗业、先导稀材等资源方扩产进入深加工）；军品订单波动导致盈利兑现不及预期；重组/并购预期反复引致股价剧烈波动反噬公司信誉"
   },
   "financials": {
-    "periods": ["2022", "2023", "2024", "2025", "2026Q1"],
+    "periods": [
+      "2022",
+      "2023",
+      "2024",
+      "2025",
+      "2026Q1"
+    ],
     "metrics": {
-      "revenue_yi": [9.36, 10.11, 14.55, 20.80, 5.68],
-      "net_profit_yi": [-1.14, -2.41, 0.32, -0.33, 0.15],
-      "gross_margin_pct": [20.3, 18.5, 27.6, 25.9, 30.1],
-      "net_margin_pct": [-12.2, -23.8, 2.2, -1.6, 2.6],
-      "roe_pct": [null, null, 3.2, -3.2, 1.5],
-      "debt_ratio_pct": [null, null, 77.7, 78.4, 78.1],
-      "ocf_to_profit": [null, -0.17, -4.99, -0.87, 2.29],
-      "rd_ratio_pct": [11.6, 22.8, 8.8, 8.4, 10.6],
-      "ar_turnover_days": [null, null, null, null, null],
-      "inventory_turnover_days": [null, null, null, null, null]
+      "revenue_yi": [
+        9.36,
+        10.11,
+        14.55,
+        20.8,
+        5.68
+      ],
+      "net_profit_yi": [
+        -1.14,
+        -2.41,
+        0.32,
+        -0.33,
+        0.15
+      ],
+      "gross_margin_pct": [
+        20.3,
+        18.5,
+        27.6,
+        25.9,
+        30.1
+      ],
+      "net_margin_pct": [
+        -12.2,
+        -23.8,
+        2.2,
+        -1.6,
+        2.6
+      ],
+      "roe_pct": [
+        null,
+        null,
+        3.2,
+        -3.2,
+        1.5
+      ],
+      "debt_ratio_pct": [
+        null,
+        null,
+        77.7,
+        78.4,
+        78.1
+      ],
+      "ocf_to_profit": [
+        null,
+        -0.17,
+        -4.99,
+        -0.87,
+        2.29
+      ],
+      "rd_ratio_pct": [
+        11.6,
+        22.8,
+        8.8,
+        8.4,
+        10.6
+      ],
+      "ar_turnover_days": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "inventory_turnover_days": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
     },
     "highlights": [
       "营收连续高增：2024年+43.9%、2025年+42.96%至20.80亿元，2026Q1续增20.5%至5.68亿元，红外主业（占营收89%）驱动明确",

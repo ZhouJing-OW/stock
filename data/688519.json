@@ -4,12 +4,22 @@
     "name": "南亚新材",
     "exchange": "SH",
     "shenwan_industry": "电子/元件/印制电路板",
-    "concept_tags": ["覆铜板CCL", "高速CCL", "高频材料", "AI算力", "IC载板", "英伟达认证", "光模块PCB上游", "M10级CCL"],
+    "concept_tags": [
+      "覆铜板CCL",
+      "高速CCL",
+      "高频材料",
+      "AI算力",
+      "IC载板",
+      "英伟达认证",
+      "光模块PCB上游",
+      "M10级CCL"
+    ],
     "analysis_date": "2026-07-14",
     "fiscal_period": "2026Q1",
     "confidence": 4,
     "status": "active",
-    "last_updated": "2026-07-14T09:00:00"
+    "last_updated": "2026-07-14T09:00:00",
+    "pinyin": "NYXC"
   },
   "overview": {
     "full_name": "南亚新材料科技股份有限公司",
@@ -23,18 +33,43 @@
     "employees": 2800,
     "one_liner": "国内高速覆铜板第二梯队龙头，M10级CCL量产+英伟达/AMD双认证，Q1 2026净利+611%，产能利用率超90%，AI算力CCL需求爆发最受益标的之一",
     "revenue_segments": [
-      {"segment": "高速覆铜板(含M8/M9/M10)", "revenue_pct": 55, "gross_margin_pct": 20.0, "yoy_growth_pct": 120},
-      {"segment": "中低端覆铜板(FR-4等)", "revenue_pct": 30, "gross_margin_pct": 10.0, "yoy_growth_pct": 40},
-      {"segment": "粘结片/半固化片", "revenue_pct": 15, "gross_margin_pct": 12.0, "yoy_growth_pct": 60}
+      {
+        "segment": "高速覆铜板(含M8/M9/M10)",
+        "revenue_pct": 55,
+        "gross_margin_pct": 20.0,
+        "yoy_growth_pct": 120
+      },
+      {
+        "segment": "中低端覆铜板(FR-4等)",
+        "revenue_pct": 30,
+        "gross_margin_pct": 10.0,
+        "yoy_growth_pct": 40
+      },
+      {
+        "segment": "粘结片/半固化片",
+        "revenue_pct": 15,
+        "gross_margin_pct": 12.0,
+        "yoy_growth_pct": 60
+      }
     ]
   },
   "supply_chain": {
     "position": "覆铜板(CCL)制造，处于PCB产业链上游。CCL占PCB成本40%，是AI服务器高速电路板的核心基材。上游是电子级玻璃纤维布/铜箔/树脂，下游是PCB制造商(深南电路/沪电股份/鹏鼎控股)",
     "upstream": "电子级玻璃纤维布(宏和科技/中国巨石)、电解铜箔(诺德股份/铜冠铜箔/HVLP铜箔)、特种环氧树脂(东材科技/圣泉集团/日本钟渊PPO)、二氧化硅填料(联瑞新材)",
     "downstream": "深南电路/沪电股份/鹏鼎控股/胜宏科技(高端PCB制造商)、英伟达GPU基板/AMD AI芯片基板(通过PCB厂间接供货)、光模块厂商(中际旭创/新易盛用PCB的上游材料)",
-    "upstream_bargaining": {"level": "中", "reason": "电子布/铜箔/树脂三大原料2025-2026年全面涨价(HVLP铜箔+50-80%、电子布+100-150%)，成本端压力大。但南亚新材通过产品升级(M8→M10)和向下游传导涨价，部分对冲了原材料压力"},
-    "downstream_bargaining": {"level": "强", "reason": "M8级以上高速CCL全球仅3-4家能量产(生益/南亚/台光/松下)，供给严重不足。英伟达/AMD认证壁垒极高(认证周期12-18个月)，通过认证后定价权显著增强。下游PCB厂排队抢产能"},
-    "substitution_risk": {"level": "低", "by_whom": "生益科技(600183)在M8/M9产品线是最大竞争对手，但M10级南亚率先量产形成差异化。日本松下/日立化成在超高端有优势但产能有限。大陆新进入者(华正新材/金安国纪)仍在中低端", "cycle_years": 3},
+    "upstream_bargaining": {
+      "level": "中",
+      "reason": "电子布/铜箔/树脂三大原料2025-2026年全面涨价(HVLP铜箔+50-80%、电子布+100-150%)，成本端压力大。但南亚新材通过产品升级(M8→M10)和向下游传导涨价，部分对冲了原材料压力"
+    },
+    "downstream_bargaining": {
+      "level": "强",
+      "reason": "M8级以上高速CCL全球仅3-4家能量产(生益/南亚/台光/松下)，供给严重不足。英伟达/AMD认证壁垒极高(认证周期12-18个月)，通过认证后定价权显著增强。下游PCB厂排队抢产能"
+    },
+    "substitution_risk": {
+      "level": "低",
+      "by_whom": "生益科技(600183)在M8/M9产品线是最大竞争对手，但M10级南亚率先量产形成差异化。日本松下/日立化成在超高端有优势但产能有限。大陆新进入者(华正新材/金安国纪)仍在中低端",
+      "cycle_years": 3
+    },
     "supply_constraints": {
       "capacity_bottleneck": "高速CCL产线投资大(单条产线2-3亿)+建设周期长(18-24个月)。公司2025年产能利用率已超90%，新增年产720万张覆铜板项目(定增7.4亿)预计2027年投产，在此之前产能天花板明确",
       "license_barrier": "英伟达/AMD认证是进入AI服务器供应链的门票，认证周期12-18个月。目前仅生益(M9)+南亚(M10)两家大陆企业通过，形成双寡头格局",
@@ -44,28 +79,98 @@
   },
   "moat": {
     "scores": {
-      "tech_barrier": {"score": 5, "detail": "国内率先量产M10级超低损耗CCL(Df<0.002)，英伟达/AMD双认证。M10技术难度极高(需同时控制介电常数Dk和损耗因子Df在极窄范围)，全球仅3家企业具备量产能力。2025年新增专利40+件"},
-      "scale_effect": {"score": 2, "detail": "2025年营收约75亿，仅为生益科技(284亿)的26%。高速CCL产能利用率超90%但绝对产能规模有限。定增项目达产后产能翻倍，届时规模效应将显著改善"},
-      "customer_stickiness": {"score": 4, "detail": "英伟达/AMD认证周期12-18个月，一旦进入供应体系极难被替换。PCB厂(深南/沪电)根据终端客户(英伟达/AMD)指定CCL供应商，南亚通过认证即锁定订单。产能利用率超90%说明订单供不应求"},
-      "brand_patent_license": {"score": 3, "detail": "科创板上市公司，高速CCL领域品牌认知快速提升。M10级产品率先量产带来的技术品牌溢价正在形成。但相比生益科技(全球第二+30年历史)，品牌积累仍有差距"},
-      "cost_advantage": {"score": 2, "detail": "规模远小于生益科技，单位制造成本偏高。但高端产品(M10)溢价显著(单价是普通FR-4的8-10倍)，毛利率(15-20%)高于中低端产品。产能利用率超90%摊薄固定成本，Q1 2026毛利率同比+52%验证了规模效应正在改善"}
+      "tech_barrier": {
+        "score": 5,
+        "detail": "国内率先量产M10级超低损耗CCL(Df<0.002)，英伟达/AMD双认证。M10技术难度极高(需同时控制介电常数Dk和损耗因子Df在极窄范围)，全球仅3家企业具备量产能力。2025年新增专利40+件"
+      },
+      "scale_effect": {
+        "score": 2,
+        "detail": "2025年营收约75亿，仅为生益科技(284亿)的26%。高速CCL产能利用率超90%但绝对产能规模有限。定增项目达产后产能翻倍，届时规模效应将显著改善"
+      },
+      "customer_stickiness": {
+        "score": 4,
+        "detail": "英伟达/AMD认证周期12-18个月，一旦进入供应体系极难被替换。PCB厂(深南/沪电)根据终端客户(英伟达/AMD)指定CCL供应商，南亚通过认证即锁定订单。产能利用率超90%说明订单供不应求"
+      },
+      "brand_patent_license": {
+        "score": 3,
+        "detail": "科创板上市公司，高速CCL领域品牌认知快速提升。M10级产品率先量产带来的技术品牌溢价正在形成。但相比生益科技(全球第二+30年历史)，品牌积累仍有差距"
+      },
+      "cost_advantage": {
+        "score": 2,
+        "detail": "规模远小于生益科技，单位制造成本偏高。但高端产品(M10)溢价显著(单价是普通FR-4的8-10倍)，毛利率(15-20%)高于中低端产品。产能利用率超90%摊薄固定成本，Q1 2026毛利率同比+52%验证了规模效应正在改善"
+      }
     },
     "trend_3_5yr": "拓宽",
     "core_risk": "生益科技在M8/M9的产能和客户关系碾压式领先，若生益M10量产将直接冲击南亚的技术溢价；AI资本开支周期若见顶回落，高端CCL需求增速将从120%骤降至个位数"
   },
   "financials": {
-    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "periods": [
+      "2023",
+      "2024",
+      "2025",
+      "2026Q1"
+    ],
     "metrics": {
-      "revenue_yi": [32.5, 38.2, 58.0, 18.32],
-      "net_profit_yi": [-1.42, 0.52, 2.50, 1.50],
-      "gross_margin_pct": [8.5, 10.0, 12.5, 15.2],
-      "net_margin_pct": [-4.4, 1.4, 4.3, 8.2],
-      "roe_pct": [-5.2, 2.0, 9.1, 5.1],
-      "debt_ratio_pct": [38, 42, 48, 50],
-      "ocf_to_profit": [3.2, 4.5, 1.8, -0.44],
-      "rd_ratio_pct": [6.5, 6.0, 5.2, null],
-      "ar_turnover_days": [82, 75, 65, null],
-      "inventory_turnover_days": [55, 50, 48, null]
+      "revenue_yi": [
+        32.5,
+        38.2,
+        58.0,
+        18.32
+      ],
+      "net_profit_yi": [
+        -1.42,
+        0.52,
+        2.5,
+        1.5
+      ],
+      "gross_margin_pct": [
+        8.5,
+        10.0,
+        12.5,
+        15.2
+      ],
+      "net_margin_pct": [
+        -4.4,
+        1.4,
+        4.3,
+        8.2
+      ],
+      "roe_pct": [
+        -5.2,
+        2.0,
+        9.1,
+        5.1
+      ],
+      "debt_ratio_pct": [
+        38,
+        42,
+        48,
+        50
+      ],
+      "ocf_to_profit": [
+        3.2,
+        4.5,
+        1.8,
+        -0.44
+      ],
+      "rd_ratio_pct": [
+        6.5,
+        6.0,
+        5.2,
+        null
+      ],
+      "ar_turnover_days": [
+        82,
+        75,
+        65,
+        null
+      ],
+      "inventory_turnover_days": [
+        55,
+        50,
+        48,
+        null
+      ]
     },
     "highlights": [
       "2026年半年报预告：H1净利4.2-5.0亿(+382-473%)，Q2单季2.7-3.5亿环比再翻倍。全年净利有望冲击10-12亿(forward PE从312x降至65-78x)",
@@ -102,18 +207,49 @@
   },
   "competition": {
     "rivals": [
-      {"name": "生益科技", "code": "600183", "market_cap": "~3200亿", "tech_gap": "全球第二/国内第一CCL龙头，英伟达M9认证唯一大陆厂商，AI服务器CCL市占30%+。南亚在M10率先量产形成技术错位竞争，但生益规模和技术底蕴碾压式领先", "share_comparison": "营收284亿(南亚的3.8倍)，净利33亿(南亚的7.2倍)，毛利率26.5%远高于南亚12.8%。生益在规模/客户/毛利率三个维度全面碾压", "differentiation": "全产业链布局(从玻纤布到CCL)，M8/M9认证最早+客户关系最深+规模最大。南亚靠M10错位竞争+更高的业绩弹性(小基数爆发力强)"},
-      {"name": "华正新材", "code": "603186", "market_cap": "~200亿", "tech_gap": "高频高速CCL+IC载板材料(CBF积层膜)，M9级CCL已通过台光认证但英伟达认证进度慢于南亚。IC载板材料是独特差异化", "share_comparison": "营收~40亿，归母~2亿，规模和技术进度均不及南亚", "differentiation": "IC载板用CBF积层膜是独门产品(ABF替代方案)，若突破将是重大催化剂。但在标准高速CCL领域落后于南亚"},
-      {"name": "台光电子", "code": "2383.TW", "market_cap": "~1500亿台币", "tech_gap": "台系CCL龙头，英伟达GB300服务器CCL主供之一。技术实力全球前三，M9/M10均有布局", "share_comparison": "营收~500亿台币(~115亿人民币)，AI服务器CCL份额约25%。技术强但受限于台湾产能", "differentiation": "英伟达主力供应商，技术深厚。但大陆产能布局不足，在地缘政治背景下份额可能被生益/南亚蚕食"}
+      {
+        "name": "生益科技",
+        "code": "600183",
+        "market_cap": "~3200亿",
+        "tech_gap": "全球第二/国内第一CCL龙头，英伟达M9认证唯一大陆厂商，AI服务器CCL市占30%+。南亚在M10率先量产形成技术错位竞争，但生益规模和技术底蕴碾压式领先",
+        "share_comparison": "营收284亿(南亚的3.8倍)，净利33亿(南亚的7.2倍)，毛利率26.5%远高于南亚12.8%。生益在规模/客户/毛利率三个维度全面碾压",
+        "differentiation": "全产业链布局(从玻纤布到CCL)，M8/M9认证最早+客户关系最深+规模最大。南亚靠M10错位竞争+更高的业绩弹性(小基数爆发力强)"
+      },
+      {
+        "name": "华正新材",
+        "code": "603186",
+        "market_cap": "~200亿",
+        "tech_gap": "高频高速CCL+IC载板材料(CBF积层膜)，M9级CCL已通过台光认证但英伟达认证进度慢于南亚。IC载板材料是独特差异化",
+        "share_comparison": "营收~40亿，归母~2亿，规模和技术进度均不及南亚",
+        "differentiation": "IC载板用CBF积层膜是独门产品(ABF替代方案)，若突破将是重大催化剂。但在标准高速CCL领域落后于南亚"
+      },
+      {
+        "name": "台光电子",
+        "code": "2383.TW",
+        "market_cap": "~1500亿台币",
+        "tech_gap": "台系CCL龙头，英伟达GB300服务器CCL主供之一。技术实力全球前三，M9/M10均有布局",
+        "share_comparison": "营收~500亿台币(~115亿人民币)，AI服务器CCL份额约25%。技术强但受限于台湾产能",
+        "differentiation": "英伟达主力供应商，技术深厚。但大陆产能布局不足，在地缘政治背景下份额可能被生益/南亚蚕食"
+      }
     ],
-    "porter_five": {"new_entrants": "低", "supplier_power": "中", "buyer_power": "低", "substitutes": "低", "rivalry": "高"}
+    "porter_five": {
+      "new_entrants": "低",
+      "supplier_power": "中",
+      "buyer_power": "低",
+      "substitutes": "低",
+      "rivalry": "高"
+    }
   },
   "governance": {
     "core_team": "创始人包秀银家族控制(上海南亚科技集团53.69%)，管理层行业经验20年+。董事长包秀银白手起家，从温州小厂做到科创板上市公司，执行力强",
     "incentive_alignment": "创始人绝对控股(53.69%)，利益高度绑定。2025年定增7.4亿扩产显示发展信心。但家族企业治理透明度不如央企和公众公司",
     "board_structure": "民营家族企业，创始人控股。决策效率高但制衡机制不足。科创板上市后治理规范性逐步提升",
     "integrity_record": "无财务造假/重大违规前科。2023年亏损主因行业周期+产能爬坡期费用，非诚信问题。2025年扭亏后积极回报股东(加大分红)",
-    "shareholder_structure": {"institutional_pct": 63.91, "retail_pct": 36.09, "shareholder_count_trend": "大股东持股53.69%稳定，社保基金(193万股/0.82%)Q1 2026新进，易方达系基金(郑希)重仓。筹码结构健康"}
+    "shareholder_structure": {
+      "institutional_pct": 63.91,
+      "retail_pct": 36.09,
+      "shareholder_count_trend": "大股东持股53.69%稳定，社保基金(193万股/0.82%)Q1 2026新进，易方达系基金(郑希)重仓。筹码结构健康"
+    }
   },
   "fund_attention": {
     "holding_funds_count": 41,
@@ -123,32 +259,107 @@
     "new_entries": 38,
     "exits": 310,
     "heavy_position_rank": 180,
-    "star_manager_holdings": ["易方达战略新兴产业(223万股，郑希管理，新进，郑希为易方达明星基金经理，从业13年+，擅长价值成长挖掘)", "摩根士丹利数字经济混合(189万股，增持22万股)", "国寿安保智慧生活(205万股，持有未变，保险系资金稳定性强)"],
+    "star_manager_holdings": [
+      "易方达战略新兴产业(223万股，郑希管理，新进，郑希为易方达明星基金经理，从业13年+，擅长价值成长挖掘)",
+      "摩根士丹利数字经济混合(189万股，增持22万股)",
+      "国寿安保智慧生活(205万股，持有未变，保险系资金稳定性强)"
+    ],
     "recent_research_visits": 15,
     "trend": "上升",
     "score": 7,
     "comment": "易方达明星基金经理郑希重仓新进(旗下多只基金合计持有近500万股)是最大看点。社保基金六零一组合(193万股)Q1新进，长线资金开始布局。Q1 2026净利+611%的业绩爆发后，机构关注度正在快速升温(15次调研)。基金家数因季报周期数字偏低，半年报后有望大幅回升。"
   },
   "valuation": {
-    "current": {"pe_ttm": 170, "pe_percentile": 95, "pe_industry_median": 50, "pb": 27.3, "pb_percentile": 98, "pb_industry_median": 4.5, "ps_ttm": 10.4, "ps_industry_median": 3.8, "ev_ebitda": 85, "ev_ebitda_industry_median": 25},
+    "current": {
+      "pe_ttm": 170,
+      "pe_percentile": 95,
+      "pe_industry_median": 50,
+      "pb": 27.3,
+      "pb_percentile": 98,
+      "pb_industry_median": 4.5,
+      "ps_ttm": 10.4,
+      "ps_industry_median": 3.8,
+      "ev_ebitda": 85,
+      "ev_ebitda_industry_median": 25
+    },
     "scenarios": {
-      "bull": {"assumptions": "2026年净利12亿(H2环比继续增长)，M10级CCL通过Rubin认证+ASP持续提升+下游需求超预期，给予35x PE(高速成长+技术稀缺性溢价)", "target_market_cap_yi": 420, "target_price": 179, "upside_pct": 80},
-      "base": {"assumptions": "2026年净利10亿(H2维持Q2水平)，高速CCL订单饱满+产能利用率90%+，给予28x PE(对应PEG 0.6，合理偏低)", "target_market_cap_yi": 280, "target_price": 119, "upside_pct": 20},
-      "bear": {"assumptions": "2026年净利7.5亿(H2回落至Q1水平)，AI需求放缓+生益M10量产冲击，给予22x PE(回归周期股估值)", "target_market_cap_yi": 165, "target_price": 70, "downside_pct": 30}
+      "bull": {
+        "assumptions": "2026年净利12亿(H2环比继续增长)，M10级CCL通过Rubin认证+ASP持续提升+下游需求超预期，给予35x PE(高速成长+技术稀缺性溢价)",
+        "target_market_cap_yi": 420,
+        "target_price": 179,
+        "upside_pct": 80
+      },
+      "base": {
+        "assumptions": "2026年净利10亿(H2维持Q2水平)，高速CCL订单饱满+产能利用率90%+，给予28x PE(对应PEG 0.6，合理偏低)",
+        "target_market_cap_yi": 280,
+        "target_price": 119,
+        "upside_pct": 20
+      },
+      "bear": {
+        "assumptions": "2026年净利7.5亿(H2回落至Q1水平)，AI需求放缓+生益M10量产冲击，给予22x PE(回归周期股估值)",
+        "target_market_cap_yi": 165,
+        "target_price": 70,
+        "downside_pct": 30
+      }
     }
   },
   "risks": [
-    {"risk": "生益科技M10量产冲击：生益在M8/M9的产能和客户关系碾压式领先，若M10量产(预计2026H2)将直接冲击南亚的技术溢价和市场份额", "probability": "中", "impact": "高", "mitigation": "南亚需要在生益M10量产前通过Rubin认证并锁定大客户长协，建立先发优势。关注生益M10认证进度和南亚客户订单visibility"},
-    {"risk": "AI资本开支周期见顶：若2027年后北美CSP资本开支增速放缓，高端CCL需求可能从100%+增速骤降至个位数，产能过剩将导致价格战", "probability": "低", "impact": "极高", "mitigation": "跟踪北美四大CSP每季资本开支指引；关注AI推理需求能否接棒训练需求维持高速增长"},
-    {"risk": "PE 170x极其昂贵：即使2026E净利6.5亿(forward PE 120x)，估值仍处于历史极端高位。任何业绩miss都将触发戴维斯双杀", "probability": "高", "impact": "高", "mitigation": "当前价位(330元+)不建议重仓追高。等待PE回落至60-80x区间(对应2026E净利6.5亿，股价165-220元)再考虑"},
-    {"risk": "原材料涨价侵蚀毛利率：HVLP铜箔+50-80%、电子布+100-150%，若涨价无法完全向下游传导，毛利率将承压", "probability": "中", "impact": "中", "mitigation": "M10级CCL供给严重不足环境下，南亚议价权强，大概率能传导大部分成本上涨。关注每季毛利率趋势验证"},
-    {"risk": "经营现金流为负：Q1 2026 OCF为-0.28元/股，应收账款同比+87%，高速增长期的现金流失是隐忧", "probability": "中", "impact": "中", "mitigation": "关注Q2 OCF是否改善；若全年OCF/净利润持续<0.5则需警惕应收账款坏账风险"}
+    {
+      "risk": "生益科技M10量产冲击：生益在M8/M9的产能和客户关系碾压式领先，若M10量产(预计2026H2)将直接冲击南亚的技术溢价和市场份额",
+      "probability": "中",
+      "impact": "高",
+      "mitigation": "南亚需要在生益M10量产前通过Rubin认证并锁定大客户长协，建立先发优势。关注生益M10认证进度和南亚客户订单visibility"
+    },
+    {
+      "risk": "AI资本开支周期见顶：若2027年后北美CSP资本开支增速放缓，高端CCL需求可能从100%+增速骤降至个位数，产能过剩将导致价格战",
+      "probability": "低",
+      "impact": "极高",
+      "mitigation": "跟踪北美四大CSP每季资本开支指引；关注AI推理需求能否接棒训练需求维持高速增长"
+    },
+    {
+      "risk": "PE 170x极其昂贵：即使2026E净利6.5亿(forward PE 120x)，估值仍处于历史极端高位。任何业绩miss都将触发戴维斯双杀",
+      "probability": "高",
+      "impact": "高",
+      "mitigation": "当前价位(330元+)不建议重仓追高。等待PE回落至60-80x区间(对应2026E净利6.5亿，股价165-220元)再考虑"
+    },
+    {
+      "risk": "原材料涨价侵蚀毛利率：HVLP铜箔+50-80%、电子布+100-150%，若涨价无法完全向下游传导，毛利率将承压",
+      "probability": "中",
+      "impact": "中",
+      "mitigation": "M10级CCL供给严重不足环境下，南亚议价权强，大概率能传导大部分成本上涨。关注每季毛利率趋势验证"
+    },
+    {
+      "risk": "经营现金流为负：Q1 2026 OCF为-0.28元/股，应收账款同比+87%，高速增长期的现金流失是隐忧",
+      "probability": "中",
+      "impact": "中",
+      "mitigation": "关注Q2 OCF是否改善；若全年OCF/净利润持续<0.5则需警惕应收账款坏账风险"
+    }
   ],
   "catalysts": [
-    {"time_window": "2026年7-8月", "event": "2026半年报披露", "expected_impact": "Q2单季净利预计1.8-2.5亿(环比+20-70%)，若超预期将催化新一轮上涨。市场最关注毛利率是否继续环比改善", "certainty": "高"},
-    {"time_window": "2026年H2", "event": "英伟达Rubin平台M10 CCL认证结果", "expected_impact": "若通过Rubin认证将是股价翻倍的催化剂(从GB300供应商升级为Rubin供应商，ASP和份额双升)", "certainty": "中"},
-    {"time_window": "2027年", "event": "720万张/年高速CCL新增产能投产", "expected_impact": "产能翻倍打破供给瓶颈，打开50亿+增量营收空间。市场将从\"产能受限的小盘成长\"重估为\"规模扩张的中盘龙头\"", "certainty": "中"},
-    {"time_window": "持续", "event": "北美CSP资本开支指引+AI服务器出货数据", "expected_impact": "每季CSP capex指引是AI基础设施需求的前瞻指标，持续上修中", "certainty": "高"}
+    {
+      "time_window": "2026年7-8月",
+      "event": "2026半年报披露",
+      "expected_impact": "Q2单季净利预计1.8-2.5亿(环比+20-70%)，若超预期将催化新一轮上涨。市场最关注毛利率是否继续环比改善",
+      "certainty": "高"
+    },
+    {
+      "time_window": "2026年H2",
+      "event": "英伟达Rubin平台M10 CCL认证结果",
+      "expected_impact": "若通过Rubin认证将是股价翻倍的催化剂(从GB300供应商升级为Rubin供应商，ASP和份额双升)",
+      "certainty": "中"
+    },
+    {
+      "time_window": "2027年",
+      "event": "720万张/年高速CCL新增产能投产",
+      "expected_impact": "产能翻倍打破供给瓶颈，打开50亿+增量营收空间。市场将从\"产能受限的小盘成长\"重估为\"规模扩张的中盘龙头\"",
+      "certainty": "中"
+    },
+    {
+      "time_window": "持续",
+      "event": "北美CSP资本开支指引+AI服务器出货数据",
+      "expected_impact": "每季CSP capex指引是AI基础设施需求的前瞻指标，持续上修中",
+      "certainty": "高"
+    }
   ],
   "verdict": {
     "core_thesis": "南亚新材是A股高速CCL赛道业绩爆发力最强的标的。H1 2026预增+382-473%(净利4.2-5.0亿)，全年有望冲击10-12亿(forward PE从312x骤降至65-78x)。M10级CCL英伟达/AMD双认证+产能利用率超90%构成极深护城河。核心矛盾：业绩增速惊人(448%)但估值仍高(forward PE 65x+)，需要在爆发力和安全边际之间找到平衡。适合作为AI算力材料赛道的中等仓位配置。",
@@ -167,6 +378,12 @@
     "holding_period": "中线",
     "entry_strategy": "H1预增4.2-5.0亿验证了业绩爆发逻辑，forward PE 65-78x仍偏高但估值正在快速消化。建议等待回调至280元以下(对应2026E 10亿净利、PE 65x)分批建仓。若Q3业绩继续环比增长确认全年12亿+路径，可加仓至10-12%",
     "stop_loss_conditions": "跌破200元(较当前~330元跌40%)止损；或出现H2毛利率环比回落/生益科技宣布M10量产/英伟达认证流失等基本面恶化信号",
-    "key_tracking_metrics": ["每季毛利率趋势(核心指标，需维持在15%以上并环比改善)", "英伟达Rubin平台M10 CCL认证进度", "生益科技M10量产时间表(最大竞争威胁)", "产能利用率(当前90%+，低于70%将触发亏损)", "每季应收账款/营收比(当前偏高，需下降)"]
+    "key_tracking_metrics": [
+      "每季毛利率趋势(核心指标，需维持在15%以上并环比改善)",
+      "英伟达Rubin平台M10 CCL认证进度",
+      "生益科技M10量产时间表(最大竞争威胁)",
+      "产能利用率(当前90%+，低于70%将触发亏损)",
+      "每季应收账款/营收比(当前偏高，需下降)"
+    ]
   }
 }

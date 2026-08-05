@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-05T02:13:39.924384",
-  "total": 126,
+  "updated": "2026-08-05T08:46:38.315627",
+  "total": 127,
   "stocks": [
     {
       "code": "000338",
@@ -60,7 +60,7 @@
       "confidence": 4,
       "position": 8.0,
       "analysis_date": "2026-07-03",
-      "pinyin": "JDFa"
+      "pinyin": "JDFA"
     },
     {
       "code": "000962",
@@ -420,7 +420,7 @@
       "confidence": 4,
       "position": 6.0,
       "analysis_date": "2026-07-07",
-      "pinyin": "ZGDX"
+      "pinyin": "CGDX"
     },
     {
       "code": "002463",
@@ -940,7 +940,27 @@
       "confidence": 4,
       "position": 8.0,
       "analysis_date": "2026-07-03",
-      "pinyin": "ZCKJ"
+      "pinyin": "CCKJ"
+    },
+    {
+      "code": "300620",
+      "name": "光库科技",
+      "exchange": "SZ",
+      "industry": "通信/通信设备/光通信器件",
+      "tags": [
+        "AI算力",
+        "光通信",
+        "光模块",
+        "铌酸锂",
+        "CPO"
+      ],
+      "rating": "谨慎",
+      "pe": 354,
+      "marketCap": 633.7,
+      "confidence": 3,
+      "position": 3.0,
+      "analysis_date": "2026-08-05",
+      "pinyin": "GKKJ"
     },
     {
       "code": "300661",
@@ -1360,7 +1380,7 @@
       "confidence": 4,
       "position": 8.0,
       "analysis_date": "2026-07-03",
-      "pinyin": "ZDKJ"
+      "pinyin": "CDKJ"
     },
     {
       "code": "601126",
@@ -1480,7 +1500,7 @@
       "confidence": 4,
       "position": 8.0,
       "analysis_date": "2026-07-03",
-      "pinyin": "ZFGX"
+      "pinyin": "CFGX"
     },
     {
       "code": "601958",
@@ -1820,7 +1840,7 @@
       "confidence": 3,
       "position": 6.0,
       "analysis_date": "2026-08-05",
-      "pinyin": "HDJY"
+      "pinyin": "XDJY"
     },
     {
       "code": "605358",

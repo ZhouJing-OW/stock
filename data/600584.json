@@ -4,12 +4,23 @@
     "name": "长电科技",
     "exchange": "SH",
     "shenwan_industry": "电子/半导体/集成电路封测",
-    "concept_tags": ["先进封装", "Chiplet", "XDFOI", "CPO", "2.5D/3D封装", "存储封测", "汽车电子", "AI算力", "国产替代"],
+    "concept_tags": [
+      "先进封装",
+      "Chiplet",
+      "XDFOI",
+      "CPO",
+      "2.5D/3D封装",
+      "存储封测",
+      "汽车电子",
+      "AI算力",
+      "国产替代"
+    ],
     "analysis_date": "2026-07-03",
     "fiscal_period": "2026Q1",
     "confidence": 4,
     "status": "active",
-    "last_updated": "2026-07-03T22:45:00"
+    "last_updated": "2026-07-03T22:45:00",
+    "pinyin": "CDKJ"
   },
   "overview": {
     "full_name": "江苏长电科技股份有限公司",
@@ -23,20 +34,55 @@
     "employees": 23000,
     "one_liner": "中国大陆第一/全球第三大封测厂商，XDFOI Chiplet先进封装已量产，CPO硅光引擎完成客户验证，AI算力+存储+汽车电子三引擎驱动成长",
     "revenue_segments": [
-      {"segment": "通讯电子封测", "revenue_pct": 36.4, "gross_margin_pct": 12, "yoy_growth_pct": -12.18},
-      {"segment": "消费电子封测", "revenue_pct": 23.6, "gross_margin_pct": 12, "yoy_growth_pct": 5.85},
-      {"segment": "运算电子封测（AI/HPC）", "revenue_pct": 21.3, "gross_margin_pct": 18, "yoy_growth_pct": 42.12},
-      {"segment": "汽车电子封测", "revenue_pct": 9.6, "gross_margin_pct": 16, "yoy_growth_pct": 31.35},
-      {"segment": "工业及医疗电子封测", "revenue_pct": 9.1, "gross_margin_pct": 15, "yoy_growth_pct": 40.52}
+      {
+        "segment": "通讯电子封测",
+        "revenue_pct": 36.4,
+        "gross_margin_pct": 12,
+        "yoy_growth_pct": -12.18
+      },
+      {
+        "segment": "消费电子封测",
+        "revenue_pct": 23.6,
+        "gross_margin_pct": 12,
+        "yoy_growth_pct": 5.85
+      },
+      {
+        "segment": "运算电子封测（AI/HPC）",
+        "revenue_pct": 21.3,
+        "gross_margin_pct": 18,
+        "yoy_growth_pct": 42.12
+      },
+      {
+        "segment": "汽车电子封测",
+        "revenue_pct": 9.6,
+        "gross_margin_pct": 16,
+        "yoy_growth_pct": 31.35
+      },
+      {
+        "segment": "工业及医疗电子封测",
+        "revenue_pct": 9.1,
+        "gross_margin_pct": 15,
+        "yoy_growth_pct": 40.52
+      }
     ]
   },
   "supply_chain": {
     "position": "全球第三大半导体封测（OSAT）厂商，处于半导体产业链后道工序。上游为晶圆代工/封装材料/设备，下游为芯片设计公司和系统集成商。拥有中国/韩国/新加坡八大生产基地，全球20+业务机构",
     "upstream": "晶圆代工（台积电/中芯国际/华虹）、封装基板（深南电路/兴森科技/揖斐电）、引线框架/键合线、封装设备（ASM/迪斯科/北方华创）、环氧塑封料（华海诚科）",
     "downstream": "AI芯片（英伟达/AMD/寒武纪/海光信息）、存储芯片（三星/SK海力士/长江存储/长鑫存储）、车规芯片（英飞凌/NXP/比亚迪）、通信芯片（高通/博通/华为海思）",
-    "upstream_bargaining": {"level": "中", "reason": "晶圆代工产能由台积电主导，封测厂议价能力有限。但长电已成为全球前三大客户的重要封测伙伴，规模采购可部分对冲上游涨价"},
-    "downstream_bargaining": {"level": "中", "reason": "传统封装领域竞争激烈，下游客户议价权强。但XDFOI/CPO等先进封装产能稀缺，公司对AI/HPC客户议价权显著提升。摩根大通预计可通过涨价传导材料成本上涨"},
-    "substitution_risk": {"level": "低", "by_whom": "台积电CoWoS/三星I-Cube向上整合先进封装（但产能高度自用，外溢资源稀缺）。华天科技/通富微电在部分领域可替代，但技术代差明显。日月光在全球市场是最大竞争对手", "cycle_years": 5},
+    "upstream_bargaining": {
+      "level": "中",
+      "reason": "晶圆代工产能由台积电主导，封测厂议价能力有限。但长电已成为全球前三大客户的重要封测伙伴，规模采购可部分对冲上游涨价"
+    },
+    "downstream_bargaining": {
+      "level": "中",
+      "reason": "传统封装领域竞争激烈，下游客户议价权强。但XDFOI/CPO等先进封装产能稀缺，公司对AI/HPC客户议价权显著提升。摩根大通预计可通过涨价传导材料成本上涨"
+    },
+    "substitution_risk": {
+      "level": "低",
+      "by_whom": "台积电CoWoS/三星I-Cube向上整合先进封装（但产能高度自用，外溢资源稀缺）。华天科技/通富微电在部分领域可替代，但技术代差明显。日月光在全球市场是最大竞争对手",
+      "cycle_years": 5
+    },
     "supply_constraints": {
       "capacity_bottleneck": "2.5D/3D先进封装产能紧俏，长电微（专门从事2.5D/3D）产能仍在爬坡。临港78亿新工厂2028年才投产，短期产能无法满足AI爆发需求",
       "license_barrier": "车规级IATF16949认证（八大基地全部通过）、AEC会员（大陆首家），认证壁垒较高",
@@ -46,28 +92,98 @@
   },
   "moat": {
     "scores": {
-      "tech_barrier": {"score": 5, "detail": "国内唯一XDFOI Chiplet高密度多维异构集成已量产的厂商，CPO硅光引擎完成客户样品验证，32层闪存堆叠和Hybrid异型堆叠技术国际领先。技术矩阵覆盖2.5D/3D/SiP/FC/WLP全场景，是国内封测技术天花板"},
-      "scale_effect": {"score": 5, "detail": "全球第三大OSAT（前三大合计市占率52%+），2025年营收389亿创历史新高。全球八大生产基地+20+业务机构，2026年固定资产投资计划99.8亿，产能投资力度远超国内竞争对手"},
-      "customer_stickiness": {"score": 4, "detail": "与全球前三大存储器制造商密切合作，运算电子（AI/HPC）客户深度绑定。车规认证+20年+memory量产经验构建客户信任。但传统封装客户切换成本偏低，真正确保粘性的是先进封装的工艺协同和认证壁垒"},
-      "brand_patent_license": {"score": 4, "detail": "Brand Finance「2025全球半导体品牌价值30强」中国大陆仅两家入选之一。大基金持股3.20%+华润央企背书，品牌和产业地位受国家认可。XDFOI®为自主品牌先进封装平台"},
-      "cost_advantage": {"score": 3, "detail": "中国+韩国+新加坡全球化布局平衡成本与关税风险，但2025年毛利率仅14.15%，净利率4.04%，盈利能力在半导体产业链中偏低。高强度资本开支（2026年100亿）将在投产后形成折旧压力"}
+      "tech_barrier": {
+        "score": 5,
+        "detail": "国内唯一XDFOI Chiplet高密度多维异构集成已量产的厂商，CPO硅光引擎完成客户样品验证，32层闪存堆叠和Hybrid异型堆叠技术国际领先。技术矩阵覆盖2.5D/3D/SiP/FC/WLP全场景，是国内封测技术天花板"
+      },
+      "scale_effect": {
+        "score": 5,
+        "detail": "全球第三大OSAT（前三大合计市占率52%+），2025年营收389亿创历史新高。全球八大生产基地+20+业务机构，2026年固定资产投资计划99.8亿，产能投资力度远超国内竞争对手"
+      },
+      "customer_stickiness": {
+        "score": 4,
+        "detail": "与全球前三大存储器制造商密切合作，运算电子（AI/HPC）客户深度绑定。车规认证+20年+memory量产经验构建客户信任。但传统封装客户切换成本偏低，真正确保粘性的是先进封装的工艺协同和认证壁垒"
+      },
+      "brand_patent_license": {
+        "score": 4,
+        "detail": "Brand Finance「2025全球半导体品牌价值30强」中国大陆仅两家入选之一。大基金持股3.20%+华润央企背书，品牌和产业地位受国家认可。XDFOI®为自主品牌先进封装平台"
+      },
+      "cost_advantage": {
+        "score": 3,
+        "detail": "中国+韩国+新加坡全球化布局平衡成本与关税风险，但2025年毛利率仅14.15%，净利率4.04%，盈利能力在半导体产业链中偏低。高强度资本开支（2026年100亿）将在投产后形成折旧压力"
+      }
     },
     "trend_3_5yr": "拓宽",
     "core_risk": "78亿临港工厂2028年才投产，建设空窗期面临AI需求景气回落和同行集中扩产的双重风险；巨额资本开支（年100亿）带来折旧摊销压力，若产能利用率不足将直接侵蚀利润"
   },
   "financials": {
-    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "periods": [
+      "2023",
+      "2024",
+      "2025",
+      "2026Q1"
+    ],
     "metrics": {
-      "revenue_yi": [296.6, 359.6, 388.7, 91.7],
-      "net_profit_yi": [14.7, 16.1, 15.65, 2.90],
-      "gross_margin_pct": [12.0, 13.1, 14.15, 14.5],
-      "net_margin_pct": [5.0, 4.5, 4.04, 3.2],
-      "roe_pct": [5.6, 5.5, 5.0, 1.01],
-      "debt_ratio_pct": [39.0, 42.0, 45.0, 47.7],
-      "ocf_to_profit": [2.5, 2.8, 3.0, 6.1],
-      "rd_ratio_pct": [4.8, 4.8, 5.4, 5.5],
-      "ar_turnover_days": [55, 58, 57, null],
-      "inventory_turnover_days": [43, 38, 35, null]
+      "revenue_yi": [
+        296.6,
+        359.6,
+        388.7,
+        91.7
+      ],
+      "net_profit_yi": [
+        14.7,
+        16.1,
+        15.65,
+        2.9
+      ],
+      "gross_margin_pct": [
+        12.0,
+        13.1,
+        14.15,
+        14.5
+      ],
+      "net_margin_pct": [
+        5.0,
+        4.5,
+        4.04,
+        3.2
+      ],
+      "roe_pct": [
+        5.6,
+        5.5,
+        5.0,
+        1.01
+      ],
+      "debt_ratio_pct": [
+        39.0,
+        42.0,
+        45.0,
+        47.7
+      ],
+      "ocf_to_profit": [
+        2.5,
+        2.8,
+        3.0,
+        6.1
+      ],
+      "rd_ratio_pct": [
+        4.8,
+        4.8,
+        5.4,
+        5.5
+      ],
+      "ar_turnover_days": [
+        55,
+        58,
+        57,
+        null
+      ],
+      "inventory_turnover_days": [
+        43,
+        38,
+        35,
+        null
+      ]
     },
     "highlights": [
       "2025年营收388.71亿元创历史新高，运算电子（+42.12%）和汽车电子（+31.35%）高增长驱动产品结构升级",
@@ -105,19 +221,57 @@
   },
   "competition": {
     "rivals": [
-      {"name": "日月光（ASE）", "code": "3711.TW", "market_cap": "~1500亿美元新台币", "tech_gap": "全球封测第一（25%+份额），技术+产能+客户全方位领先，先进封装全平台覆盖，是长电全球化最大竞争对手", "share_comparison": "营收约长电2-3倍，在苹果/高通等顶级客户绑定上领先", "differentiation": "与台积电深度绑定，SiP/AiP/Fan-Out技术领先，全球布局最广"},
-      {"name": "安靠（Amkor）", "code": "AMKR（美股）", "market_cap": "~80亿美元", "tech_gap": "全球第二，在汽车电子和通信封装领域有深厚积累，先进封装技术与长电相近", "share_comparison": "营收规模略大于长电，在欧美客户资源上有优势", "differentiation": "美国本土产能（亚利桑那）+全球化布局，地缘优势明显"},
-      {"name": "通富微电", "code": "002156", "market_cap": "~550亿", "tech_gap": "国内第二/全球第四，与AMD深度绑定（贡献约50%营收），FCBGA技术成熟但先进封装技术宽度不及长电", "share_comparison": "营收约250亿约为长电65%，客户集中度风险高", "differentiation": "AMD独家CPU/GPU封测合作伙伴，在高性能计算细分领域有独特壁垒"},
-      {"name": "华天科技", "code": "002185", "market_cap": "~633亿", "tech_gap": "国内第三/全球第六，2.5D/3D产线刚跑通，技术落后长电1-2年。成本端有优势但技术追赶仍需时间", "share_comparison": "营收172亿约为长电44%，盈利能力更弱（净利率4.7%）", "differentiation": "天水+马来西亚低成本布局，板级FOPLP差异化路线"}
+      {
+        "name": "日月光（ASE）",
+        "code": "3711.TW",
+        "market_cap": "~1500亿美元新台币",
+        "tech_gap": "全球封测第一（25%+份额），技术+产能+客户全方位领先，先进封装全平台覆盖，是长电全球化最大竞争对手",
+        "share_comparison": "营收约长电2-3倍，在苹果/高通等顶级客户绑定上领先",
+        "differentiation": "与台积电深度绑定，SiP/AiP/Fan-Out技术领先，全球布局最广"
+      },
+      {
+        "name": "安靠（Amkor）",
+        "code": "AMKR（美股）",
+        "market_cap": "~80亿美元",
+        "tech_gap": "全球第二，在汽车电子和通信封装领域有深厚积累，先进封装技术与长电相近",
+        "share_comparison": "营收规模略大于长电，在欧美客户资源上有优势",
+        "differentiation": "美国本土产能（亚利桑那）+全球化布局，地缘优势明显"
+      },
+      {
+        "name": "通富微电",
+        "code": "002156",
+        "market_cap": "~550亿",
+        "tech_gap": "国内第二/全球第四，与AMD深度绑定（贡献约50%营收），FCBGA技术成熟但先进封装技术宽度不及长电",
+        "share_comparison": "营收约250亿约为长电65%，客户集中度风险高",
+        "differentiation": "AMD独家CPU/GPU封测合作伙伴，在高性能计算细分领域有独特壁垒"
+      },
+      {
+        "name": "华天科技",
+        "code": "002185",
+        "market_cap": "~633亿",
+        "tech_gap": "国内第三/全球第六，2.5D/3D产线刚跑通，技术落后长电1-2年。成本端有优势但技术追赶仍需时间",
+        "share_comparison": "营收172亿约为长电44%，盈利能力更弱（净利率4.7%）",
+        "differentiation": "天水+马来西亚低成本布局，板级FOPLP差异化路线"
+      }
     ],
-    "porter_five": {"new_entrants": "低", "supplier_power": "中", "buyer_power": "中", "substitutes": "低", "rivalry": "高"}
+    "porter_five": {
+      "new_entrants": "低",
+      "supplier_power": "中",
+      "buyer_power": "中",
+      "substitutes": "低",
+      "rivalry": "高"
+    }
   },
   "governance": {
     "core_team": "CEO郑力（半导体行业30年+经验），管理团队国际化程度高。2025年华润（磐石润企）入主成为控股股东，央企治理框架注入",
     "incentive_alignment": "2025年实施股票期权激励计划（行权价36.89元/份），绑定核心骨干。华润入主后治理结构从民企向央企转型，激励机制面临调整",
     "board_structure": "央企华润控股（22.53%）+大基金（3.20%）+北上资金（4.19%），治理结构从原民企创始团队主导转为央企+产业资本+外资多元共治",
     "integrity_record": "无重大财务造假或违规前科。华润入主后治理规范性进一步提升",
-    "shareholder_structure": {"institutional_pct": 40, "retail_pct": 60, "shareholder_count_trend": "Q1 2026股东总数32.04万户，银河创新成长（2200万股）/华夏半导体芯片ETF（1751万股）/华泰柏瑞沪深300ETF（1151万股）等基金重仓"}
+    "shareholder_structure": {
+      "institutional_pct": 40,
+      "retail_pct": 60,
+      "shareholder_count_trend": "Q1 2026股东总数32.04万户，银河创新成长（2200万股）/华夏半导体芯片ETF（1751万股）/华泰柏瑞沪深300ETF（1151万股）等基金重仓"
+    }
   },
   "fund_attention": {
     "holding_funds_count": 250,
@@ -127,33 +281,113 @@
     "new_entries": null,
     "exits": null,
     "heavy_position_rank": 35,
-    "star_manager_holdings": ["银河创新成长混合A（2200万股，郑巍山明星基金经理重仓）", "兴全趋势投资混合（945万股，老牌明星基金）", "永赢半导体产业智选（1000万股，半导体主题新锐基金）"],
+    "star_manager_holdings": [
+      "银河创新成长混合A（2200万股，郑巍山明星基金经理重仓）",
+      "兴全趋势投资混合（945万股，老牌明星基金）",
+      "永赢半导体产业智选（1000万股，半导体主题新锐基金）"
+    ],
     "recent_research_visits": 20,
     "trend": "上升",
     "score": 8,
     "comment": "摩根大通6月上调至增持（目标价110元），认为强劲AI需求+产能升级将驱动长期上行。银河创新成长+兴全趋势等明星基金重仓。大基金持股3.20%为战略背书。机构关注度持续升温，近期20+次调研覆盖。"
   },
   "valuation": {
-    "current": {"pe_ttm": 49.0, "pe_percentile": 72, "pe_industry_median": 45.0, "pb": 2.7, "pb_percentile": 60, "pb_industry_median": 3.0, "ps_ttm": 1.97, "ps_industry_median": 4.5, "ev_ebitda": 26.4, "ev_ebitda_industry_median": 25.0},
+    "current": {
+      "pe_ttm": 49.0,
+      "pe_percentile": 72,
+      "pe_industry_median": 45.0,
+      "pb": 2.7,
+      "pb_percentile": 60,
+      "pb_industry_median": 3.0,
+      "ps_ttm": 1.97,
+      "ps_industry_median": 4.5,
+      "ev_ebitda": 26.4,
+      "ev_ebitda_industry_median": 25.0
+    },
     "scenarios": {
-      "bull": {"assumptions": "2026年归母净利22.5亿（超摩根大通预测），AI/HPC封测超预期+CPO商业化落地，给予60x PE（AI先进封装估值重估）", "target_market_cap_yi": 1350, "target_price": 75.5, "upside_pct": 76.2},
-      "base": {"assumptions": "2026年归母净利18.8亿（开源证券预测），先进封装爬坡+传统业务稳定，给予40x PE", "target_market_cap_yi": 752, "target_price": 42.0, "upside_pct": -1.9},
-      "bear": {"assumptions": "2026年归母净利14亿（低于预期25%），AI需求景气回落+折旧压力+通讯电子持续下滑，给予28x PE", "target_market_cap_yi": 392, "target_price": 21.9, "downside_pct": 48.9}
+      "bull": {
+        "assumptions": "2026年归母净利22.5亿（超摩根大通预测），AI/HPC封测超预期+CPO商业化落地，给予60x PE（AI先进封装估值重估）",
+        "target_market_cap_yi": 1350,
+        "target_price": 75.5,
+        "upside_pct": 76.2
+      },
+      "base": {
+        "assumptions": "2026年归母净利18.8亿（开源证券预测），先进封装爬坡+传统业务稳定，给予40x PE",
+        "target_market_cap_yi": 752,
+        "target_price": 42.0,
+        "upside_pct": -1.9
+      },
+      "bear": {
+        "assumptions": "2026年归母净利14亿（低于预期25%），AI需求景气回落+折旧压力+通讯电子持续下滑，给予28x PE",
+        "target_market_cap_yi": 392,
+        "target_price": 21.9,
+        "downside_pct": 48.9
+      }
     }
   },
   "risks": [
-    {"risk": "巨额资本开支的折旧压力：2026年计划固投99.8亿+临港78亿项目，未来5年累计折旧超百亿。若AI需求景气回落导致产能利用率不足，折旧将严重侵蚀利润", "probability": "中", "impact": "高", "mitigation": "跟踪季度产能利用率和毛利率趋势；若产能利用率持续低于85%需警惕"},
-    {"risk": "临港工厂2028年投产存在建设空窗期风险：2-3年建设期内无法贡献营收，且面临AI需求不确定性和同行集中扩产的竞争压力", "probability": "中", "impact": "中", "mitigation": "长电微现有2.5D/3D产能在2026-28年持续爬坡，可部分填补空窗期；关注产能爬坡节奏和客户导入进度"},
-    {"risk": "传统通讯电子持续下滑：2025年通讯电子营收141.49亿（-12.18%），占比仍达36.4%。若智能手机/通信设备需求持续疲软，将拖累整体增速", "probability": "中", "impact": "中", "mitigation": "通讯电子中射频/5G相关先进封装占比提升可部分对冲量下滑，但需要时间验证"},
-    {"risk": "高端封装设备/材料海外依赖：先进封装核心设备和ABF等材料仍高度依赖日韩欧供应商，地缘政治若升级可能造成供应中断", "probability": "低", "impact": "高", "mitigation": "大基金+华润央企背景有助于保障供应链安全；国产设备和材料替代在加速推进"},
-    {"risk": "行业竞争加剧：通富微电/华天科技/甬矽电子等纷纷加码先进封装，2027年后可能出现中低端先进封装产能过剩和价格战", "probability": "中", "impact": "中", "mitigation": "长电在XDFOI/CPO/存储堆叠等高端领域的技术壁垒短期难以被追赶，聚焦差异化竞争"}
+    {
+      "risk": "巨额资本开支的折旧压力：2026年计划固投99.8亿+临港78亿项目，未来5年累计折旧超百亿。若AI需求景气回落导致产能利用率不足，折旧将严重侵蚀利润",
+      "probability": "中",
+      "impact": "高",
+      "mitigation": "跟踪季度产能利用率和毛利率趋势；若产能利用率持续低于85%需警惕"
+    },
+    {
+      "risk": "临港工厂2028年投产存在建设空窗期风险：2-3年建设期内无法贡献营收，且面临AI需求不确定性和同行集中扩产的竞争压力",
+      "probability": "中",
+      "impact": "中",
+      "mitigation": "长电微现有2.5D/3D产能在2026-28年持续爬坡，可部分填补空窗期；关注产能爬坡节奏和客户导入进度"
+    },
+    {
+      "risk": "传统通讯电子持续下滑：2025年通讯电子营收141.49亿（-12.18%），占比仍达36.4%。若智能手机/通信设备需求持续疲软，将拖累整体增速",
+      "probability": "中",
+      "impact": "中",
+      "mitigation": "通讯电子中射频/5G相关先进封装占比提升可部分对冲量下滑，但需要时间验证"
+    },
+    {
+      "risk": "高端封装设备/材料海外依赖：先进封装核心设备和ABF等材料仍高度依赖日韩欧供应商，地缘政治若升级可能造成供应中断",
+      "probability": "低",
+      "impact": "高",
+      "mitigation": "大基金+华润央企背景有助于保障供应链安全；国产设备和材料替代在加速推进"
+    },
+    {
+      "risk": "行业竞争加剧：通富微电/华天科技/甬矽电子等纷纷加码先进封装，2027年后可能出现中低端先进封装产能过剩和价格战",
+      "probability": "中",
+      "impact": "中",
+      "mitigation": "长电在XDFOI/CPO/存储堆叠等高端领域的技术壁垒短期难以被追赶，聚焦差异化竞争"
+    }
   ],
   "catalysts": [
-    {"time_window": "2026年8月", "event": "半年报披露+AI封测订单指引", "expected_impact": "若Q2营收增速转正+AI/HPC封测收入占比超25%，将验证产品结构升级逻辑，催化估值上修", "certainty": "高"},
-    {"time_window": "2026年H2", "event": "CPO硅光引擎进入量产阶段", "expected_impact": "光互联封装是AI算力下一个瓶颈，长电若率先量产将获得先发优势，打开光模块封装新市场", "certainty": "中"},
-    {"time_window": "2026年H2", "event": "临港78亿工厂一期建设进展+核心客户意向披露", "expected_impact": "若披露具体产能规划和预签约客户，将实质性强化长期成长确定性", "certainty": "中"},
-    {"time_window": "持续", "event": "国产AI芯片（寒武纪/海光/华为昇腾）持续放量", "expected_impact": "本土AI芯片封装需求爆发，长电作为国内先进封装龙头将直接受益于国产替代+自主可控", "certainty": "高"},
-    {"time_window": "2027年", "event": "长电微2.5D/3D产能爬坡达产", "expected_impact": "CAGR超150%的高增速若兑现，将带来显著收入弹性和利润贡献", "certainty": "中"}
+    {
+      "time_window": "2026年8月",
+      "event": "半年报披露+AI封测订单指引",
+      "expected_impact": "若Q2营收增速转正+AI/HPC封测收入占比超25%，将验证产品结构升级逻辑，催化估值上修",
+      "certainty": "高"
+    },
+    {
+      "time_window": "2026年H2",
+      "event": "CPO硅光引擎进入量产阶段",
+      "expected_impact": "光互联封装是AI算力下一个瓶颈，长电若率先量产将获得先发优势，打开光模块封装新市场",
+      "certainty": "中"
+    },
+    {
+      "time_window": "2026年H2",
+      "event": "临港78亿工厂一期建设进展+核心客户意向披露",
+      "expected_impact": "若披露具体产能规划和预签约客户，将实质性强化长期成长确定性",
+      "certainty": "中"
+    },
+    {
+      "time_window": "持续",
+      "event": "国产AI芯片（寒武纪/海光/华为昇腾）持续放量",
+      "expected_impact": "本土AI芯片封装需求爆发，长电作为国内先进封装龙头将直接受益于国产替代+自主可控",
+      "certainty": "高"
+    },
+    {
+      "time_window": "2027年",
+      "event": "长电微2.5D/3D产能爬坡达产",
+      "expected_impact": "CAGR超150%的高增速若兑现，将带来显著收入弹性和利润贡献",
+      "certainty": "中"
+    }
   ],
   "verdict": {
     "core_thesis": "长电科技是国内封测行业绝对龙头，XDFOI Chiplet量产+CPO硅光验证+存储/汽车多元布局，技术实力领先国内同行一个身位。AI算力浪潮下先进封装从「后端工序」升级为「系统集成核心」，公司正站在封测行业价值重估的历史拐点。但低利润率（4%）、高资本开支（年100亿）和临港工厂的长建设周期构成了现实的回报率约束。摩根大通目标价110元（+157%上行）代表了极端乐观情景，当前股价更接近基准情景。",
@@ -172,6 +406,12 @@
     "holding_period": "中线",
     "entry_strategy": "建议PE回落至35x以下（对应股价约30-32元）分批建仓。临港工厂若披露核心客户预签约可右侧加仓至12%。CPO硅光引擎进入量产是重大加仓信号",
     "stop_loss_conditions": "跌破25元（对应2026E PE 24x，约42%下行）止损；或出现XDFOI量产良率重大倒退/大客户流失/连续两季营收负增长等恶化信号",
-    "key_tracking_metrics": ["运算电子（AI/HPC）季度营收增速及占比（核心：验证先进封装放量）", "综合毛利率趋势（关键：需稳定在14-15%并持续改善）", "长电微2.5D/3D产能利用率和客户导入进展", "CPO硅光引擎量产进度和订单金额", "季度资本开支vs经营现金流匹配度（判断财务健康度）"]
+    "key_tracking_metrics": [
+      "运算电子（AI/HPC）季度营收增速及占比（核心：验证先进封装放量）",
+      "综合毛利率趋势（关键：需稳定在14-15%并持续改善）",
+      "长电微2.5D/3D产能利用率和客户导入进展",
+      "CPO硅光引擎量产进度和订单金额",
+      "季度资本开支vs经营现金流匹配度（判断财务健康度）"
+    ]
   }
 }

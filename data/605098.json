@@ -4,12 +4,22 @@
     "name": "行动教育",
     "exchange": "SH",
     "shenwan_industry": "社会服务/教育培训",
-    "concept_tags": ["企业管理培训", "职业教育", "高股息", "高ROE", "轻资产", "沪股通", "在线教育", "AI+教育"],
+    "concept_tags": [
+      "企业管理培训",
+      "职业教育",
+      "高股息",
+      "高ROE",
+      "轻资产",
+      "沪股通",
+      "在线教育",
+      "AI+教育"
+    ],
     "analysis_date": "2026-08-05",
     "fiscal_period": "2026Q1",
     "confidence": 3,
     "status": "active",
-    "last_updated": "2026-08-05T02:30:00"
+    "last_updated": "2026-08-05T02:30:00",
+    "pinyin": "XDJY"
   },
   "overview": {
     "full_name": "上海行动教育科技股份有限公司",
@@ -94,18 +104,73 @@
     "core_risk": "AI降低管理知识获取门槛，传统线下培训的“信息差”价值可能被侵蚀；核心人物李践个人IP是品牌核心资产，存在关键人风险；竞争对手及替代品（线上知识付费、商学院EMBA）持续分流高端客群"
   },
   "financials": {
-    "periods": ["2023", "2024", "2025", "2026Q1"],
+    "periods": [
+      "2023",
+      "2024",
+      "2025",
+      "2026Q1"
+    ],
     "metrics": {
-      "revenue_yi": [6.72, 7.83, 8.11, 1.73],
-      "net_profit_yi": [2.19, 2.69, 3.20, 0.39],
-      "gross_margin_pct": [76.0, 75.9, 77.0, 78.0],
-      "net_margin_pct": [32.6, 34.4, 39.5, 22.5],
-      "roe_pct": [25.0, 28.0, 32.0, 3.8],
-      "debt_ratio_pct": [55.0, 56.9, 57.8, 57.3],
-      "ocf_to_profit": [1.40, 1.49, 1.30, 1.39],
-      "rd_ratio_pct": [3.0, 2.8, 3.8, 4.5],
-      "ar_turnover_days": [5, 5, 5, null],
-      "inventory_turnover_days": [10, 10, 10, null]
+      "revenue_yi": [
+        6.72,
+        7.83,
+        8.11,
+        1.73
+      ],
+      "net_profit_yi": [
+        2.19,
+        2.69,
+        3.2,
+        0.39
+      ],
+      "gross_margin_pct": [
+        76.0,
+        75.9,
+        77.0,
+        78.0
+      ],
+      "net_margin_pct": [
+        32.6,
+        34.4,
+        39.5,
+        22.5
+      ],
+      "roe_pct": [
+        25.0,
+        28.0,
+        32.0,
+        3.8
+      ],
+      "debt_ratio_pct": [
+        55.0,
+        56.9,
+        57.8,
+        57.3
+      ],
+      "ocf_to_profit": [
+        1.4,
+        1.49,
+        1.3,
+        1.39
+      ],
+      "rd_ratio_pct": [
+        3.0,
+        2.8,
+        3.8,
+        4.5
+      ],
+      "ar_turnover_days": [
+        5,
+        5,
+        5,
+        null
+      ],
+      "inventory_turnover_days": [
+        10,
+        10,
+        10,
+        null
+      ]
     },
     "highlights": [
       "2025年归母净利3.20亿（+19.12%），净利率39.5%，净利增速远超营收增速（+3.55%），经营杠杆显著——固定成本（场地、讲师薪酬）摊薄效应明显",
@@ -187,7 +252,7 @@
   },
   "fund_attention": {
     "holding_funds_count": 33,
-    "total_holding_shares_wan": 4298.70,
+    "total_holding_shares_wan": 4298.7,
     "holding_pct_of_float": 36.05,
     "qoq_change": "较2025Q4（183家→33家，持股从4,575万股→4,299万股）基金家数大幅下降，主因季报披露口径差异（Q4为年报全量、Q1仅部分基金披露），持仓绝对量仅小幅减少6%，实际机构持仓未出现恐慌性出逃",
     "new_entries": null,
