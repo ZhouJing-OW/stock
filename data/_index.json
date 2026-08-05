@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-05T22:07:23.358824",
-  "total": 127,
+  "updated": "2026-08-05T23:41:41.999143",
+  "total": 128,
   "stocks": [
     {
       "code": "000338",
@@ -1321,6 +1321,26 @@
       "position": 10.0,
       "analysis_date": "2026-07-03",
       "pinyin": "HRYY"
+    },
+    {
+      "code": "600330",
+      "name": "天通股份",
+      "exchange": "SH",
+      "industry": "电子/元件/磁性材料",
+      "tags": [
+        "软磁材料",
+        "蓝宝石",
+        "铌酸锂",
+        "压电晶体",
+        "CPO"
+      ],
+      "rating": "谨慎",
+      "pe": null,
+      "marketCap": 242.7,
+      "confidence": 3,
+      "position": 2.0,
+      "analysis_date": "2026-08-05",
+      "pinyin": "TTGF"
     },
     {
       "code": "600487",
