@@ -102,10 +102,9 @@ body {
 .card { background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 20px; box-shadow: var(--shadow-sm); transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; position: relative; display: flex; flex-direction: column; min-height: 280px; }
 .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: rgba(74,144,217,.12); }
 .card-hot { border-color: rgba(232,106,77,.4); box-shadow: var(--shadow-md), 0 0 24px rgba(232,106,77,.18); }
-.card-exit { display: none; }
-.card-exit.visible { display: flex; border-color: rgba(220,53,69,.35); opacity: 0.85; }
+.card-exit { border-color: rgba(220,53,69,.35); opacity: 0.85; }
 
-/* 概念周期筛选隐藏 */
+/* 统一隐藏控制 */
 .hidden { display: none !important; }
 
 .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -366,46 +365,58 @@ function render(d) {
       <p style="margin-top:4px">⚠ 仅供研究参考，不构成投资建议</p>
     </footer>`;
 
-  // ---- 交互（状态持久化到 localStorage） ----
+  // ---- 交互（交集逻辑：概念周期 × 退出状态，状态持久化） ----
   const cutoffNew = 14, cutoffW4 = 28;
   const today = new Date(d.meta.updated);
   const daysSince = ds => Math.floor((today - new Date(ds)) / 86400000);
   const LS_KEY = 'hardlogic_filter_state';
 
-  // 读取保存的状态
-  let savedState = { filter: 'all', showExit: false };
+  let state = { filter: 'all', showExit: false };
   try {
     const raw = localStorage.getItem(LS_KEY);
-    if (raw) savedState = Object.assign(savedState, JSON.parse(raw));
+    if (raw) state = Object.assign(state, JSON.parse(raw));
   } catch (e) {}
 
   function saveState() {
-    try {
-      localStorage.setItem(LS_KEY, JSON.stringify(savedState));
-    } catch (e) {}
+    try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {}
   }
 
-  function applyFilter(filter) {
-    savedState.filter = filter;
-    saveState();
-    document.querySelectorAll('.card, .idx-item').forEach(el => {
-      const ds = el.getAttribute('data-concept-date');
-      if (!ds) return;
-      if (el.classList.contains('card-exit') ||
-          (el.tagName === 'A' && document.querySelector(el.getAttribute('href') + '.card-exit'))) return;
+  // 统一可见性计算：通过概念周期 AND 通过退出状态，才显示
+  function updateVisibility() {
+    document.querySelectorAll('.card').forEach(card => {
+      const ds = card.getAttribute('data-concept-date');
+      if (!ds) { card.classList.add('hidden'); return; }
+      const isExit = card.classList.contains('card-exit');
       const days = daysSince(ds);
-      const show = filter==='new' ? days<=cutoffNew : (filter==='w4' ? days<=cutoffW4 : true);
-      el.classList.toggle('hidden', !show);
-    });
-  }
 
-  function applyExitState(show) {
-    savedState.showExit = show;
-    saveState();
-    document.querySelectorAll('.card-exit').forEach(c => c.classList.toggle('visible', show));
+      // 条件1：概念周期
+      let passFilter = true;
+      if (state.filter === 'new') passFilter = days <= cutoffNew;
+      else if (state.filter === 'w4') passFilter = days <= cutoffW4;
+
+      // 条件2：退出状态（交集）
+      let passExit = true;
+      if (isExit) passExit = state.showExit;
+
+      card.classList.toggle('hidden', !(passFilter && passExit));
+    });
+
+    // 索引项同步：同一逻辑
     document.querySelectorAll('.idx-item').forEach(item => {
+      const ds = item.getAttribute('data-concept-date');
+      if (!ds) { item.classList.add('hidden'); return; }
       const href = item.getAttribute('href');
-      if (href && document.querySelector(href + '.card-exit')) item.classList.toggle('hidden', !show);
+      const isExit = href && document.querySelector(href + '.card-exit');
+      const days = daysSince(ds);
+
+      let passFilter = true;
+      if (state.filter === 'new') passFilter = days <= cutoffNew;
+      else if (state.filter === 'w4') passFilter = days <= cutoffW4;
+
+      let passExit = true;
+      if (isExit) passExit = state.showExit;
+
+      item.classList.toggle('hidden', !(passFilter && passExit));
     });
   }
 
@@ -414,7 +425,9 @@ function render(d) {
     btn.addEventListener('click', function() {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       this.classList.add('active');
-      applyFilter(this.getAttribute('data-filter'));
+      state.filter = this.getAttribute('data-filter');
+      saveState();
+      updateVisibility();
     });
   });
 
@@ -422,29 +435,19 @@ function render(d) {
   const exitToggle = document.getElementById('toggle-exit');
   if (exitToggle) {
     exitToggle.addEventListener('click', function() {
-      const show = !this.classList.contains('active');
-      this.classList.toggle('active', show);
-      applyExitState(show);
-    });
-    // 初始隐藏退出索引
-    document.querySelectorAll('.idx-item').forEach(item => {
-      const href = item.getAttribute('href');
-      if (href && document.querySelector(href + '.card-exit')) item.classList.add('hidden');
+      state.showExit = !state.showExit;
+      this.classList.toggle('active', state.showExit);
+      saveState();
+      updateVisibility();
     });
   }
 
   // 恢复保存的状态
-  // 1) 恢复筛选按钮高亮
   document.querySelectorAll('.filter-btn').forEach(b => {
-    b.classList.toggle('active', b.getAttribute('data-filter') === savedState.filter);
+    b.classList.toggle('active', b.getAttribute('data-filter') === state.filter);
   });
-  // 2) 应用筛选
-  applyFilter(savedState.filter);
-  // 3) 恢复退出状态（先隐藏再按需显示，避免初始隐藏逻辑冲突）
-  if (exitToggle) {
-    exitToggle.classList.toggle('active', savedState.showExit);
-    applyExitState(savedState.showExit);
-  }
+  if (exitToggle) exitToggle.classList.toggle('active', state.showExit);
+  updateVisibility();
 }
 
 // 注入 viewer 基础 URL（由 data 提供，这里兜底）
