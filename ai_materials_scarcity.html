@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI时代稀缺半导体材料图谱 · 稀缺度阶梯</title>
+<style>
+  :root {
+    --bg:#F8F4ED; --card:#FCFAF5; --text:#3B3D3F; --text2:#6B6F73; --text3:#8E9196;
+    --line:rgba(122,96,88,.18); --accent:#537D96; --accent-hover:#456A80;
+    --serif:'EB Garamond','Noto Serif SC','Source Han Serif SC','Songti SC','STSong','SimSun',serif;
+    --ui:system-ui,-apple-system,'PingFang SC',sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:var(--serif); background:var(--bg); color:var(--text); line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .topnav { position:sticky; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; flex-wrap:wrap; gap:0 4px; padding:0 40px; min-height:24px; width:100%; box-sizing:border-box; background:var(--card); border-bottom:1px solid var(--line); font-family:var(--ui); }
+  .topnav .nav-tab { display:inline-flex; align-items:center; height:20px; padding:0 10px; font-size:12px; font-weight:500; color:var(--text3); text-decoration:none; border-bottom:2px solid transparent; white-space:nowrap; }
+  .topnav .nav-tab:hover { color:var(--text); }
+  .topnav .nav-tab.active { color:var(--accent); border-bottom-color:var(--accent); }
+  @media (max-width:800px) { .topnav { padding:0 8px; } .topnav .nav-tab { padding:0 6px; } }
+  .wrap { max-width:1120px; margin:0 auto; padding:48px 40px 80px; }
+
+  .doc-head { padding-bottom:28px; border-bottom:1px solid var(--line); margin-bottom:40px; }
+  .doc-head .kicker { font-family:var(--ui); font-size:.8rem; letter-spacing:.12em; color:var(--text3); margin-bottom:12px; }
+  .doc-head h1 { font-size:2rem; font-weight:500; letter-spacing:.01em; color:var(--text); line-height:1.3; }
+  .doc-head .sub { margin-top:10px; font-size:.95rem; color:var(--text2); max-width:64ch; }
+  .doc-meta { display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:18px; font-family:var(--ui); font-size:.8rem; color:var(--text3); }
+  .doc-meta b { font-weight:500; color:var(--text2); }
+
+  .frame { background:var(--card); border:1px solid var(--line); border-radius:4px; padding:20px 28px; margin-bottom:40px; }
+  .frame h2, .tier h2 { font-size:1.25rem; font-weight:500; color:var(--text); border-left:2px solid var(--accent); padding-left:8px; border-radius:0; margin:0 0 14px; }
+  .frame .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px 32px; }
+  .frame .item .dim { font-family:var(--ui); font-size:.78rem; color:var(--text3); margin-bottom:2px; }
+  .frame .item .val { font-size:.92rem; color:var(--text2); }
+
+  .tier { margin-bottom:44px; }
+  .tier h2 { cursor:pointer; user-select:none; display:flex; align-items:baseline; gap:10px; }
+  .tier h2 .tname { color:inherit; }
+  .tier h2 .tnote { font-size:.8rem; color:var(--text3); font-weight:400; }
+  .tier h2 .chev { font-family:var(--ui); font-size:.7rem; color:var(--text3); transition:transform .15s; }
+  .tier.collapsed h2 .chev { transform:rotate(-90deg); }
+  .tier.t1 h2 { color:var(--text); }
+  .tier.t2 h2 { color:var(--text2); }
+  .tier.t3 h2 { color:var(--text3); }
+  .tier .tbl-wrap { overflow-x:auto; }
+
+  table { width:100%; border-collapse:collapse; font-size:.9rem; }
+  th { text-align:left; font-weight:500; color:var(--text2); padding:6px 10px; border-bottom:1px solid var(--line); font-family:var(--ui); font-size:.8rem; white-space:nowrap; }
+  td { padding:8px 10px; border-bottom:1px solid rgba(0,0,0,.05); color:var(--text); vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  tbody tr { transition:background .15s cubic-bezier(.16,1,.3,1); }
+  tbody tr:hover { background:rgba(83,125,150,.045); }
+  td .m { font-weight:500; color:var(--text); }
+  td .d { color:var(--text2); }
+  td .none { color:var(--text3); }
+  .col-m { width:11%; }
+  .col-c { width:37%; }
+  .col-a { width:27%; }
+  .col-s { width:25%; }
+
+  .purity { display:inline-flex; padding:1px 8px; font-size:.72rem; font-weight:500; border-radius:4px; font-family:var(--mono); font-variant-numeric:tabular-nums; vertical-align:middle; }
+  .p5 { background:var(--accent); color:#FCFAF5; }
+  .p4 { background:rgba(83,125,150,.13); color:var(--accent-hover); }
+  .p3 { background:rgba(122,96,88,.13); color:var(--text2); }
+  .p2 { background:rgba(122,96,88,.06); color:var(--text3); }
+  .alt { margin-top:2px; font-size:.8rem; color:var(--text3); line-height:1.5; }
+  td a { color:var(--accent); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:2px; text-decoration-color:rgba(83,125,150,.35); transition:color .15s cubic-bezier(.16,1,.3,1), text-decoration-color .15s cubic-bezier(.16,1,.3,1); }
+  td a:hover { color:var(--accent-hover); text-decoration-color:currentColor; }
+
+  .doc-foot { border-top:1px solid var(--line); padding-top:20px; font-family:var(--ui); font-size:.78rem; color:var(--text3); display:flex; flex-wrap:wrap; gap:6px 28px; }
+  .doc-foot b { font-weight:500; color:var(--text2); }
+
+  @media (max-width:880px) {
+    .wrap { padding:32px 20px 60px; }
+    .doc-head h1 { font-size:1.6rem; }
+    .col-m { width:14%; }
+  }
+  @media print {
+    body { background:#fff; }
+    .tier h2 .chev { display:none; }
+    .tier h2 { cursor:default; }
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="nav-tab" href="index.html">个股研究</a>
+  <a class="nav-tab" href="tmt_network/tmt_network_full.html" target="_blank">TMT产业链</a>
+  <a class="nav-tab" href="hardlogic/hardlogic.html" target="_blank">硬逻辑</a>
+  <a class="nav-tab" href="fund_top100.html" target="_blank">基金重仓</a>
+  <a class="nav-tab active" href="ai_materials_scarcity.html">稀缺材料</a>
+  <a class="nav-tab" href="https://onechart.top/" target="_blank">板块资金雷达</a>
+  <a class="nav-tab" href="https://onechart.top/macro/" target="_blank">宏观择时</a>
+</nav>
+<div class="wrap">
+
+  <header class="doc-head">
+    <div class="kicker">SEMICONDUCTOR MATERIALS · SCARCITY LADDER</div>
+    <h1>AI时代稀缺半导体材料图谱</h1>
+    <p class="sub">以供给约束的刚性程度排序：不止看垄断度，还看扩产周期、地缘断供可能、国产化难度与 AI 需求弹性。档位与标的纯度均为 2026-08 时点判断。</p>
+    <div class="doc-meta">
+      <span><b>材料数</b>&nbsp;16</span>
+      <span><b>分档</b>&nbsp;T1 战略级 / T2 高稀缺 / T3 中稀缺</span>
+      <span><b>更新</b>&nbsp;2026-08-07</span>
+      <span><b>卡位标准</b>&nbsp;纯度 ≥ 3/5</span>
+    </div>
+  </header>
+
+  <section class="frame">
+    <h2>排序与纯度框架</h2>
+    <div class="grid">
+      <div class="item">
+        <div class="dim">稀缺度排序</div>
+        <div class="val">供给集中度 × 扩产周期 × 国产化难度 × AI 需求弹性</div>
+      </div>
+      <div class="item">
+        <div class="dim">纯度评级</div>
+        <div class="val">收入占比 × 供给卡位 × AI 传导直接性</div>
+      </div>
+      <div class="item">
+        <div class="dim">卡位 / 次选</div>
+        <div class="val">卡位栏仅收 3/5 以上；低纯度标的归入次选观察池</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tier t1" id="t1">
+    <h2><span class="chev">▾</span><span class="tname">T1 · 战略级，供给约束极硬</span><span class="tnote">点击折叠</span></h2>
+    <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th class="col-m">材料</th><th class="col-c">供给约束核心</th><th class="col-a">A股卡位</th><th class="col-s">次选</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="m">氦气 He</td>
+          <td class="d">对外依存 84%，俄临时管制至 2027 底 + 卡塔尔断供，7 月禁出口；国内气田丰度仅国际的 1/30，无替代</td>
+          <td><a class="m" href="viewer.html?code=688268" target="_blank">华特气体</a> <span class="purity p4">4/5</span><div class="alt">6N-7N 电子氦 + ASML 认证，氦气占比 45% 最高</div></td>
+          <td><a class="m" href="viewer.html?code=605090" target="_blank">九丰能源</a> <span class="purity p3">3/5</span><div class="alt">自产 150 万方；<a href="viewer.html?code=688548" target="_blank">广钢气体</a> 3/5 卡塔尔长协 + 9N</div></td>
+        </tr>
+        <tr>
+          <td class="m">ABF 膜</td>
+          <td class="d">味之素垄断 95%+，新产能 2032 年才投产，Q3 起涨价 30–50%；国产良率 85% vs 99%</td>
+          <td><a class="m" href="viewer.html?code=603186" target="_blank">华正新材</a> <span class="purity p4">4/5</span><div class="alt">CBF 过华为昇腾验证，唯一小批量供货</div></td>
+          <td><a class="m" href="viewer.html?code=688300" target="_blank">联瑞新材</a> <span class="purity p3">3/5</span><div class="alt">球硅填料唯一突破；<a href="viewer.html?code=600186" target="_blank">莲花控股</a> 2/5 纽菲斯 NBF</div></td>
+        </tr>
+        <tr>
+          <td class="m">WF6 六氟化钨</td>
+          <td class="d">日本关东电化 / 中央硝子 2026 年 7 月永久停产，全球刚性缺口约 2000 吨/年，7N 纯度全球仅一家</td>
+          <td><a class="m" href="viewer.html?code=688146" target="_blank">中船特气</a> <span class="purity p5">5/5</span><div class="alt">2230 吨全球产能第一，国内市占 70%+</div></td>
+          <td><a class="m" href="viewer.html?code=600378" target="_blank">昊华科技</a> <span class="purity p3">3/5</span><div class="alt">600 吨国内第二</div></td>
+        </tr>
+        <tr>
+          <td class="m">InP 磷化铟</td>
+          <td class="d">供需缺口约 70%，住友 / AXT / JX 垄断全球 90%，晶体生长扩产周期 2–3 年</td>
+          <td><a class="m" href="viewer.html?code=002428" target="_blank">云南锗业</a> <span class="purity p5">5/5</span><div class="alt">国内唯一规模化衬底（鑫耀），15 万片扩至 45 万片</div></td>
+          <td><a class="m" href="viewer.html?code=300489" target="_blank">光智科技</a> <span class="purity p4">4/5</span><div class="alt">高纯铟 + 衬底一体化</div></td>
+        </tr>
+        <tr>
+          <td class="m">HVLP / 载体铜箔</td>
+          <td class="d">日韩垄断 85%+，缺口 1500 → 2500 吨；英伟达直采 HVLP4，载体铜箔三井独占 90%</td>
+          <td><a class="m" href="viewer.html?code=301217" target="_blank">铜冠铜箔</a> <span class="purity p4">4/5</span><div class="alt">HVLP1-4 全谱系 + 英伟达认证，满产满销</div></td>
+          <td><a class="m" href="viewer.html?code=301511" target="_blank">德福科技</a> <span class="purity p4">4/5</span><div class="alt">载体 Q2 出货；<a href="viewer.html?code=600110" target="_blank">诺德股份</a> 3/5 已过认证</div></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="tier t2" id="t2">
+    <h2><span class="chev">▾</span><span class="tname">T2 · 高稀缺，国产破局中</span><span class="tnote">点击折叠</span></h2>
+    <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th class="col-m">材料</th><th class="col-c">供给约束核心</th><th class="col-a">A股卡位</th><th class="col-s">次选</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="m">钌 Ru</td>
+          <td class="d">2nm 以下铜互连触顶，钌为下一代互连金属；南非铂族矿副产，资源高度集中</td>
+          <td class="none">暂无高纯度标的</td>
+          <td><a class="m" href="viewer.html?code=300666" target="_blank">江丰电子</a> <span class="purity p2">2/5</span><div class="alt">钌靶材布局，A股无纯标的</div></td>
+        </tr>
+        <tr>
+          <td class="m">AlN 氮化铝</td>
+          <td class="d">高端粉体德山垄断，1.6T 薄膜基板全球仅京瓷 + 中瓷两家量产；光模块 / CPO 刚需</td>
+          <td><a class="m" href="viewer.html?code=300285" target="_blank">国瓷材料</a> <span class="purity p4">4/5</span><div class="alt">99.99% 高纯粉体自研，破德山垄断</div></td>
+          <td><a class="m" href="viewer.html?code=003031" target="_blank">中瓷电子</a> <span class="purity p4">4/5</span><div class="alt">1.6T 基板订单排至 2027；<a href="viewer.html?code=300408" target="_blank">三环集团</a> 3/5</div></td>
+        </tr>
+        <tr>
+          <td class="m">金刚石热沉</td>
+          <td class="d">单晶大尺寸全球无稳定量产，Rubin GPU 功耗破 2000W，2026 量产元年</td>
+          <td><a class="m" href="viewer.html?code=600172" target="_blank">黄河旋风</a> <span class="purity p4">4/5</span><div class="alt">国内首条 8 英寸多晶线投产，规划成第一大主业</div></td>
+          <td><a class="m" href="viewer.html?code=301071" target="_blank">力量钻石</a> <span class="purity p3">3/5</span><div class="alt">单晶路线，英伟达测试传闻未证实</div></td>
+        </tr>
+        <tr>
+          <td class="m">高纯石英</td>
+          <td class="d">矿源集中美俄挪澳，2025 年列为 174 号新矿种；光纤预制棒涨超 500%</td>
+          <td><a class="m" href="viewer.html?code=603688" target="_blank">石英股份</a> <span class="purity p4">4/5</span><div class="alt">光纤半导体营收占比 51%，Q布新产能 2026 底投产</div></td>
+          <td><a class="m" href="viewer.html?code=300395" target="_blank">菲利华</a> <span class="purity p3">3/5</span><div class="alt">石英玻璃 + 合成石英</div></td>
+        </tr>
+        <tr>
+          <td class="m">前驱体</td>
+          <td class="d">HBM 堆叠层数翻倍则单耗翻倍，客户认证周期数年，韩系寡头格局</td>
+          <td><a class="m" href="viewer.html?code=002409" target="_blank">雅克科技</a> <span class="purity p4">4/5</span><div class="alt">UP Chemical 供货 SK 海力士超 10 年，稼动率 59% 爬坡中</div></td>
+          <td class="none">无</td>
+        </tr>
+        <tr>
+          <td class="m">钼 Mo</td>
+          <td class="d">3D NAND 字线金属钨 → 钼迁移（电阻更低），三星 / 长存转产带来新增需求</td>
+          <td><a class="m" href="viewer.html?code=601958" target="_blank">金钼股份</a> <span class="purity p3">3/5</span><div class="alt">钼主业龙头，AI 链预期差标的</div></td>
+          <td><a class="m" href="viewer.html?code=603993" target="_blank">洛阳钼业</a> <span class="purity p2">2/5</span><div class="alt">钼钴铜多元，钼占比有限</div></td>
+        </tr>
+        <tr>
+          <td class="m">靶材</td>
+          <td class="d">全球仅中欧美少数厂商，钨靶 / 钽靶 / 铜锰合金因 3D NAND 与先进制程紧缺</td>
+          <td><a class="m" href="viewer.html?code=300666" target="_blank">江丰电子</a> <span class="purity p4">4/5</span><div class="alt">先进制程靶材批量出货，营收 46 亿高增</div></td>
+          <td><a class="m" href="viewer.html?code=600206" target="_blank">有研新材</a> <span class="purity p3">3/5</span><div class="alt">高纯金属平台</div></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section class="tier t3" id="t3">
+    <h2><span class="chev">▾</span><span class="tname">T3 · 中稀缺，前瞻卡位</span><span class="tnote">点击折叠</span></h2>
+    <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th class="col-m">材料</th><th class="col-c">供给约束核心</th><th class="col-a">A股卡位</th><th class="col-s">次选</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="m">玻璃基板</td>
+          <td class="d">2026 商业化元年，2030 年市场规模 320 亿美元；全球均处早期，卡位窗口</td>
+          <td class="none">暂无高纯度标的</td>
+          <td><a class="m" href="viewer.html?code=603773" target="_blank">沃格光电</a> <span class="purity p2">2/5</span><div class="alt">TGV 工艺先行；<a href="viewer.html?code=600552" target="_blank">凯盛科技</a> 2/5 中建材系</div></td>
+        </tr>
+        <tr>
+          <td class="m">低介电玻纤布 / PTFE</td>
+          <td class="d">Rubin 平台点名 HVLP5 铜箔配套 PTFE 基板；高端电子布日企垄断</td>
+          <td><a class="m" href="viewer.html?code=603256" target="_blank">宏和科技</a> <span class="purity p3">3/5</span><div class="alt">低介电电子布</div></td>
+          <td><a class="m" href="viewer.html?code=300936" target="_blank">中英科技</a> <span class="purity p3">3/5</span><div class="alt">PTFE 覆铜板</div></td>
+        </tr>
+        <tr>
+          <td class="m">光刻胶</td>
+          <td class="d">日本垄断 90%+，ArF 国产化率个位数；AI 弹性传导慢</td>
+          <td><a class="m" href="viewer.html?code=603650" target="_blank">彤程新材</a> <span class="purity p3">3/5</span><div class="alt">北京科华，ArF 在研</div></td>
+          <td><a class="m" href="viewer.html?code=300346" target="_blank">南大光电</a> <span class="purity p2">2/5</span><div class="alt">ArF 光刻胶研发</div></td>
+        </tr>
+        <tr>
+          <td class="m">SiC 衬底</td>
+          <td class="d">AI 服务器电源 / 800V 器件刚需，国产已放量，稀缺度中等</td>
+          <td><a class="m" href="viewer.html?code=688234" target="_blank">天岳先进</a> <span class="purity p3">3/5</span><div class="alt">衬底龙头，8 英寸放量</div></td>
+          <td><a class="m" href="viewer.html?code=600703" target="_blank">三安光电</a> <span class="purity p2">2/5</span><div class="alt">SiC IDM，占比有限</div></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <footer class="doc-foot">
+    <span><b>信源</b> 公开报道 / 公司公告 / 券商研报，2026-08 时点</span>
+    <span><b>注意</b> 稀缺度衡量供给约束刚性，与股价定价程度是两套坐标</span>
+    <span><b>声明</b> 研究存档，不构成投资建议</span><span><b>跳转</b> 标的名可点击，打开个股研究查看器；未收录标的将提示数据缺失</span>
+  </footer>
+
+</div>
+<script>
+  document.querySelectorAll('.tier h2').forEach(function(h){
+    h.addEventListener('click', function(){
+      var t = h.parentElement;
+      t.classList.toggle('collapsed');
+      var w = t.querySelector('.tbl-wrap');
+      if (w) { w.style.display = t.classList.contains('collapsed') ? 'none' : ''; }
+    });
+  });
+</script>
+</body>
+</html>

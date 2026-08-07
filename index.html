@@ -86,6 +86,7 @@
   <a class="nav-tab" href="tmt_network/tmt_network_full.html" target="_blank">TMT产业链</a>
   <a class="nav-tab" href="hardlogic/hardlogic.html" target="_blank">硬逻辑</a>
   <a class="nav-tab" href="fund_top100.html" target="_blank">基金重仓</a>
+  <a class="nav-tab" href="ai_materials_scarcity.html" target="_blank">稀缺材料</a>
   <a class="nav-tab" href="https://onechart.top/" target="_blank">板块资金雷达</a>
   <a class="nav-tab" href="https://onechart.top/macro/" target="_blank">宏观择时</a>
 </nav>
@@ -106,10 +107,10 @@
 <script>
 const RO = { '强烈看好':0,'看好':1,'中性看好':2,'中性':3,'谨慎':4,'回避':5,'强烈回避':6 };
 const RC = { '强烈看好':'strong-buy','看好':'buy','中性看好':'mild-buy','中性':'neutral','谨慎':'cautious','回避':'avoid','强烈回避':'strong-avoid' };
-// 2026中报预增映射（code: 预增%）——运行时会从 data/zz_map.json 加载覆盖
-let ZZ = { '002156':313, '002167':175, '002185':253, '002384':289, '002407':884, '002428':205, '002436':282, '002452':435, '002653':544, '300223':481, '300475':2276, '300604':122, '300620':180, '300666':106, '301200':261, '301308':68299, '301377':319, '600111':117, '600183':124, '600487':104, '601869':812, '603186':322, '603256':322, '603938':207, '603986':1099, '688519':428 };
-// 2026H1公募基金持有家数Top100映射（code: 全市场基金家数排名）——运行时会从 data/jgcz_map.json 加载覆盖
-let JGCZ = { '300308':1, '300502':3, '603986':5, '688041':6, '002371':7, '688012':8, '002384':10, '688981':11, '603259':13, '688008':14, '688498':15, '300408':16, '300604':17, '688072':19, '600183':20, '688347':21, '002463':23, '600276':25, '300394':28, '002353':30, '300223':31, '002916':37, '600487':38, '688766':39, '300475':47, '301308':48, '002422':60, '605376':62, '002821':63, '300661':66, '300666':67, '688019':72, '688235':75, '688331':76, '688266':87, '688506':94, '002653':97, '000636':100 };
+// 中报预增映射（code: 预增%）——从 data/zz_map.json 动态加载（公告期更新名单后由 scan_index 重建）
+let ZZ = {};
+// 公募基金家数 Top100 映射（code: 全市场排名）——从 data/jgcz_map.json 动态加载
+let JGCZ = {};
 
 async function loadLabelMaps() {
   try {
@@ -119,7 +120,7 @@ async function loadLabelMaps() {
     ]);
     if (zz && Object.keys(zz).length) ZZ = zz;
     if (jgcz && Object.keys(jgcz).length) JGCZ = jgcz;
-  } catch(e) { /* 保留内嵌 fallback */ }
+  } catch(e) { /* 加载失败则无标签，不影响列表渲染 */ }
 }
 let allStocks = [];
 let _filter = null;

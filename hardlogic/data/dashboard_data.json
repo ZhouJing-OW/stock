@@ -2,7 +2,7 @@
   "meta": {
     "title": "A股上涨逻辑最硬",
     "subtitle": "聚焦供给硬约束 + 海外缺口 + 国产替代三重逻辑共振标的",
-    "updated": "2026-08-06",
+    "updated": "2026-08-07",
     "updateFreq": "每日更新，关注新增概念及逻辑变化",
     "highlightWindowDays": 14,
     "author": "Zogin × Hanako"
@@ -11,15 +11,15 @@
     "半导体上游",
     "PCB产业链",
     "被动元件",
-    "电子特气",
     "先进封装",
+    "电子特气",
     "制造与存储",
     "光互连",
-    "芯片设计(FPGA)",
-    "小金属(AI金属)",
     "功率半导体",
-    "半导体设备零部件",
-    "医疗材料"
+    "小金属(AI金属)",
+    "芯片设计(FPGA)",
+    "医疗材料",
+    "半导体设备零部件"
   ],
   "groups": {
     "半导体上游": [
@@ -61,9 +61,9 @@
             "source": "https://finance.jrj.com.cn/2026/07/02114557666357.shtml"
           }
         ],
-        "id": 34,
-        "ageClass": "aged20",
-        "ageWeeks": 20,
+        "id": 35,
+        "ageClass": "aged21",
+        "ageWeeks": 21,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-12.8%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -105,9 +105,9 @@
             "desc": "腾讯新闻再次确认：信越/SUMCO/环球晶5月二轮提价，12英寸+5-8%、AI专用+18-22%；2026年12英寸月需求1100万片vs供给<1000万片"
           }
         ],
-        "id": 35,
-        "ageClass": "aged8",
-        "ageWeeks": 8,
+        "id": 36,
+        "ageClass": "aged9",
+        "ageWeeks": 9,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-21.2%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -140,7 +140,7 @@
             "source": "https://stock.jrj.com.cn/2026/07/02073957661190.shtml"
           }
         ],
-        "id": 36,
+        "id": 37,
         "ageClass": "aged22",
         "ageWeeks": 22,
         "exitStatus": "exit",
@@ -175,7 +175,7 @@
             "desc": "壹壹捌芯城7/1：6月末官宣12英寸导电型SiC衬底批量交付（全球领先）；8英寸全球市占51.3%、导电型整体份额27.6%全球第一；2026Q1毛利率转正至19.12%"
           }
         ],
-        "id": 37,
+        "id": 38,
         "ageClass": "aged9",
         "ageWeeks": 9,
         "exitStatus": "exit",
@@ -215,7 +215,7 @@
             "source": "https://finance.jrj.com.cn/2026/07/02114557666357.shtml"
           }
         ],
-        "id": 38,
+        "id": 39,
         "ageClass": "aged5",
         "ageWeeks": 5,
         "exitStatus": "exit",
@@ -250,7 +250,7 @@
             "source": "https://www.21jingji.com/article/20260620/herald/7c929615032e5e22af2a541faa3564eb.html"
           }
         ],
-        "id": 39,
+        "id": 40,
         "ageClass": "aged22",
         "ageWeeks": 22,
         "exitStatus": "exit",
@@ -280,9 +280,9 @@
         ],
         "score": 8.0,
         "conceptReinforcements": [],
-        "id": 40,
-        "ageClass": "aged5",
-        "ageWeeks": 5,
+        "id": 41,
+        "ageClass": "aged6",
+        "ageWeeks": 6,
         "exitStatus": "ok",
         "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -315,7 +315,7 @@
             "desc": "36氪：重掺硅片全球仅信越/SUMCO稳定供货、价格被推高10-25%；12英寸重掺订单饱满，中信测算2025-2028年需求年化增速20-30%"
           }
         ],
-        "id": 41,
+        "id": 42,
         "ageClass": "aged6",
         "ageWeeks": 6,
         "exitStatus": "exit",
@@ -356,9 +356,9 @@
             "source": "https://www.cls.cn/detail/2428607"
           }
         ],
-        "id": 42,
-        "ageClass": "aged5",
-        "ageWeeks": 5,
+        "id": 43,
+        "ageClass": "aged6",
+        "ageWeeks": 6,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-16.5%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -385,7 +385,7 @@
         ],
         "score": 7.5,
         "conceptReinforcements": [],
-        "id": 43,
+        "id": 44,
         "ageClass": "aged20",
         "ageWeeks": 20,
         "exitStatus": "exit",
@@ -425,7 +425,7 @@
             "source": "https://news.10jqka.com.cn/20260630/c677828308.shtml"
           }
         ],
-        "id": 44,
+        "id": 45,
         "ageClass": "aged10",
         "ageWeeks": 10,
         "exitStatus": "exit",
@@ -454,7 +454,7 @@
         ],
         "score": 7.0,
         "conceptReinforcements": [],
-        "id": 45,
+        "id": 46,
         "ageClass": "aged19",
         "ageWeeks": 19,
         "exitStatus": "exit",
@@ -484,38 +484,9 @@
         ],
         "score": 7.0,
         "conceptReinforcements": [],
-        "id": 46,
+        "id": 47,
         "ageClass": "aged3",
         "ageWeeks": 3,
-        "exitStatus": "ok",
-        "exitDesc": "",
-        "viewerUrl": "http://localhost:8899/viewer.html"
-      },
-      {
-        "category": "半导体上游",
-        "subCategory": "电子级硅烷气",
-        "code": "688269",
-        "name": "凯立新材",
-        "market": "科创板",
-        "coreLogic": "国内电子级硅烷气龙头，产品用于半导体薄膜沉积(CVD/ALD)。AI芯片3D化趋势拉动CVD步骤数暴增，硅烷气需求同步增长。",
-        "supplyDemand": "电子级硅烷气认证壁垒极高，全球供给高度集中。国内电子级硅烷气国产化率约35%。",
-        "priceSignal": "Q1营收+42%，净利+58%；电子级硅烷气持续放量",
-        "catalyst": "AI芯片3D化趋势；半导体薄膜沉积需求爆发",
-        "conceptAdded": "2026-06-18",
-        "conceptSource": "电子级硅烷气国产替代+AI芯片3D化趋势",
-        "conceptSourceUrl": "https://www.cls.cn/detail/2403456",
-        "riskNote": "市场规模有限；竞争格局分散",
-        "tags": [
-          "国产替代",
-          "CVD耗材",
-          "AI芯片",
-          "薄膜沉积"
-        ],
-        "score": 6.5,
-        "conceptReinforcements": [],
-        "id": 47,
-        "ageClass": "aged7",
-        "ageWeeks": 7,
         "exitStatus": "ok",
         "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -540,7 +511,7 @@
           "前驱体",
           "台积电链"
         ],
-        "score": 6.5,
+        "score": 7.0,
         "conceptReinforcements": [
           {
             "date": "2026-08-05",
@@ -552,6 +523,35 @@
         "ageWeeks": 12,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-8.5%) | 2026-07-31",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "半导体上游",
+        "subCategory": "电子级硅烷气",
+        "code": "688269",
+        "name": "凯立新材",
+        "market": "科创板",
+        "coreLogic": "国内电子级硅烷气龙头，产品用于半导体薄膜沉积(CVD/ALD)。AI芯片3D化趋势拉动CVD步骤数暴增，硅烷气需求同步增长。",
+        "supplyDemand": "电子级硅烷气认证壁垒极高，全球供给高度集中。国内电子级硅烷气国产化率约35%。",
+        "priceSignal": "Q1营收+42%，净利+58%；电子级硅烷气持续放量",
+        "catalyst": "AI芯片3D化趋势；半导体薄膜沉积需求爆发",
+        "conceptAdded": "2026-06-18",
+        "conceptSource": "电子级硅烷气国产替代+AI芯片3D化趋势",
+        "conceptSourceUrl": "https://www.cls.cn/detail/2403456",
+        "riskNote": "市场规模有限；竞争格局分散",
+        "tags": [
+          "国产替代",
+          "CVD耗材",
+          "AI芯片",
+          "薄膜沉积"
+        ],
+        "score": 6.5,
+        "conceptReinforcements": [],
+        "id": 49,
+        "ageClass": "aged8",
+        "ageWeeks": 8,
+        "exitStatus": "ok",
+        "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
       },
       {
@@ -577,9 +577,9 @@
         ],
         "score": 3.5,
         "conceptReinforcements": [],
-        "id": 49,
+        "id": 50,
         "ageClass": "new",
-        "ageWeeks": 1,
+        "ageWeeks": 2,
         "exitStatus": "ok",
         "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -592,7 +592,7 @@
         "code": "002916",
         "name": "深南电路",
         "market": "主板",
-        "coreLogic": "国内唯一PCB+载板+装联三业务一体化企业。ABF载板22层已量产，24层验证中。mSAP光模块PCB供不应求。ABF载板Q2现货价环比涨30-40%；味之素ABF膜Q3涨价30-50%；高盛7/13报告ABF载板缺口升级：2026H2缺14%→2027年34%→2028年51%。英伟达Kyber NVL144因78层正交背板PCB良率不足延期验证高端PCB瓶颈。央视财经报道高端PCB价格涨超300%头部厂商订单排到2027年；建滔连续九轮涨价确认PCB全产业链景气。鹏鼎控股百亿扩产验证PCB全产业链景气。",
+        "coreLogic": "国内唯一PCB+载板+装联三业务一体化企业。ABF载板22层已量产，24层验证中。mSAP光模块PCB供不应求。ABF载板Q2现货价环比涨30-40%；味之素ABF膜Q3涨价30-50%；高盛7/13报告ABF载板缺口升级：2026H2缺14%→2027年34%→2028年51%。英伟达Kyber NVL144因78层正交背板PCB良率不足延期验证高端PCB瓶颈。央视财经报道高端PCB价格涨超300%头部厂商订单排到2027年；建滔连续九轮涨价确认PCB全产业链景气。鹏鼎控股百亿扩产验证PCB全产业链景气。H1业绩预告中值13.5亿(+55/59%)。",
         "supplyDemand": "ABF载板缺口预计2027年扩大至21-27%。国内ABF载板国产化率不足5%。mSAP产能严重短缺。",
         "priceSignal": "股价2026年累涨92.42%；高盛上调2027目标PE至36.9倍",
         "catalyst": "mSAP供不应求；ABF载板22层量产24层验证；无锡46亿新项目2027年量产",
@@ -609,6 +609,11 @@
         "score": 9.5,
         "conceptReinforcements": [
           {
+            "date": "2026-08-07",
+            "desc": "8月核验确认：ABF载板缺口21-30%、价格一年涨38%；味之素ABF膜垄断95%+扩产至2032年；新浪8月口径ABF Q3涨价30%起步、高端AI品类最高50%；48.82亿募资落地无锡项目",
+            "source": "https://finance.sina.com.cn/"
+          },
+          {
             "date": "2026-08-04",
             "desc": "MoneyDJ 8/4：利机载板材料订单能见度延至2027，ABF载板缺货潮2026H2正式启动；招商5/31：mSAP客户提前锁产能6-12个月；ABF已批量出货AMD/Intel/高通",
             "source": "https://www.moneydj.com/"
@@ -617,15 +622,11 @@
             "date": "2026-07-30",
             "desc": "三星电子表示芯片短缺2027年进一步加剧延续至2028年；ABF载板缺口预测持续上调；高盛维持ABF缺口扩大至2028年51%判断",
             "source": "https://www.cls.cn/detail/2440123"
-          },
-          {
-            "date": "2026-07-29",
-            "desc": "新浪英才ABF紧缺深度：高盛7月口径缺口上调至2028年51%、短缺起点提前至2026Q2；味之素ABF膜Q3涨约30%、交期超6个月；T-glass/LowCTE玻纤布短缺致部分ABF扩产延后6-12个月；中报预告中值13.5亿(+55/59%)"
           }
         ],
         "id": 1,
-        "ageClass": "aged13",
-        "ageWeeks": 13,
+        "ageClass": "aged14",
+        "ageWeeks": 14,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-19.5%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -678,51 +679,6 @@
       },
       {
         "category": "PCB产业链",
-        "subCategory": "PCB微型钻针",
-        "code": "301377",
-        "name": "鼎泰高科",
-        "market": "创业板",
-        "coreLogic": "全球PCB钻针绝对龙头，市占率26.8%。AI服务器高多层板使钻针寿命从1000孔骤降至100-200孔，钻针消耗量飙升5-8倍。Q1营收+92%、净利润+259%。规划50亿CAPEX再造一个鼎泰。日系钻针巨头住友电工/三菱材料全线涨价最高300%；核心矛盾在上游超细硬质合金坯料断供。英伟达Kyber NVL144因78层正交背板PCB良率不足延期→PCB层数提升逻辑强化。",
-        "supplyDemand": "PCB钻针消耗量在AI服务器高多层板上是传统材料的5-8倍。钻针月产能1.3亿支。",
-        "priceSignal": "Q1营收+92.33%，净利润+259%，毛利率53.25%(+15.2pct)",
-        "catalyst": "AI PCB扩产持续拉动钻针需求；分段钻工艺使单孔加工成本快速提高；港股IPO融资",
-        "conceptAdded": "2026-05-17",
-        "conceptSource": "AI PCB钻针消耗量暴增+业绩兑现（财联社5/17深度：AI服务器PCB层数12-16→24-40层、M9材料致钻针寿命1000→200-300孔、消耗量飙升5-8倍；原URL内容错误已替换）",
-        "conceptSourceUrl": "https://finance.sina.com.cn/jjxw/2026-05-17/doc-inhyerim1832921.shtml",
-        "riskNote": "股价2年涨47倍，PE极高；钨/钴原材料涨价。⚠️ 建滔7月6日第六次涨价后大股东套现35.62亿。⚠️ 7/28复查：PCB板块7/23利好出尽式跌停，若构成板块见顶信号需降分。日系钻针涨价逻辑仍在，观察7-15天。⚠️ 8/1复查：港股7/9上市破发、实控人王馨家族套现约28亿；货币资金8.03亿vs短期借款8.06亿偿债承压；总市值1752-1807亿、2年涨47倍，估值与筹码风险显著，降分至8.5。⚠️ 8/4复查：董秘6/15承认'全球并非仅我司与中钨高新能生产M9高多层AI微钻'（金洲等竞争者存在），垄断叙事边际弱化；东吴上调2026-2028净利至13.0/22.8/34.9亿（原9.0/17.2/27.7亿）；股价335元(-4.31%)高位波动加大",
-        "tags": [
-          "AI耗材",
-          "全球第一",
-          "量价齐升",
-          "高壁垒"
-        ],
-        "score": 8.5,
-        "conceptReinforcements": [
-          {
-            "date": "2026-07-23",
-            "desc": "日系钻针涨价最高300%确认；英伟达Kyber NVL144因78层正交背板PCB良率不足延期至2028年；PCB层数提升→钻针消耗量非线性暴增",
-            "source": "https://36kr.com/p/3886635992314120"
-          },
-          {
-            "date": "2026-07-13",
-            "desc": "H1净利润预增301-338%业绩暴增；东吴证券上调2026E净利润至13亿(港股募资再造鼎泰)；日系住友/三菱涨价最高300%全面确认",
-            "source": "https://stock.stockstar.com/RB2026071300001456.shtml"
-          },
-          {
-            "date": "2026-07-09",
-            "desc": "7月9日港股上市募资48亿港元（引入高瓴/易方达/霸菱等16家基石）；英伟达Kyber NVL144延期验证高端PCB瓶颈+日系钨棒全面停产双重催化；PCB层数从20+→78层非线性提升",
-            "source": "https://36kr.com/p/3886635992314120"
-          }
-        ],
-        "id": 3,
-        "ageClass": "aged12",
-        "ageWeeks": 12,
-        "exitStatus": "exit",
-        "exitDesc": "跌破60日线(-16.5%) | 2026-07-31",
-        "viewerUrl": "http://localhost:8899/viewer.html"
-      },
-      {
-        "category": "PCB产业链",
         "subCategory": "覆铜板龙头",
         "code": "600183",
         "name": "生益科技",
@@ -759,11 +715,56 @@
             "source": "https://www.jiepei.com/"
           }
         ],
-        "id": 4,
+        "id": 3,
         "ageClass": "aged21",
         "ageWeeks": 21,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-22.7%) | 2026-07-31",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "PCB产业链",
+        "subCategory": "PCB微型钻针",
+        "code": "301377",
+        "name": "鼎泰高科",
+        "market": "创业板",
+        "coreLogic": "全球PCB钻针绝对龙头，市占率26.8%。AI服务器高多层板使钻针寿命从1000孔骤降至100-200孔，钻针消耗量飙升5-8倍。Q1营收+92%、净利润+259%。规划50亿CAPEX再造一个鼎泰。日系钻针巨头住友电工/三菱材料全线涨价最高300%；核心矛盾在上游超细硬质合金坯料断供。英伟达Kyber NVL144因78层正交背板PCB良率不足延期→PCB层数提升逻辑强化。",
+        "supplyDemand": "PCB钻针消耗量在AI服务器高多层板上是传统材料的5-8倍。钻针月产能1.3亿支。",
+        "priceSignal": "Q1营收+92.33%，净利润+259%，毛利率53.25%(+15.2pct)",
+        "catalyst": "AI PCB扩产持续拉动钻针需求；分段钻工艺使单孔加工成本快速提高；港股IPO融资",
+        "conceptAdded": "2026-05-17",
+        "conceptSource": "AI PCB钻针消耗量暴增+业绩兑现（财联社5/17深度：AI服务器PCB层数12-16→24-40层、M9材料致钻针寿命1000→200-300孔、消耗量飙升5-8倍；原URL内容错误已替换）",
+        "conceptSourceUrl": "https://finance.sina.com.cn/jjxw/2026-05-17/doc-inhyerim1832921.shtml",
+        "riskNote": "股价2年涨47倍，PE极高；钨/钴原材料涨价。⚠️ 建滔7月6日第六次涨价后大股东套现35.62亿。⚠️ 7/28复查：PCB板块7/23利好出尽式跌停，若构成板块见顶信号需降分。日系钻针涨价逻辑仍在，观察7-15天。⚠️ 8/1复查：港股7/9上市破发、实控人王馨家族套现约28亿；货币资金8.03亿vs短期借款8.06亿偿债承压；总市值1752-1807亿、2年涨47倍，估值与筹码风险显著，降分至8.5。⚠️ 8/4复查：董秘6/15承认'全球并非仅我司与中钨高新能生产M9高多层AI微钻'（金洲等竞争者存在），垄断叙事边际弱化；东吴上调2026-2028净利至13.0/22.8/34.9亿（原9.0/17.2/27.7亿）；股价335元(-4.31%)高位波动加大 ⚠️ 8/7复查：8月无新增催化（最近事件7/23）；垄断叙事边际弱化（董秘6/15承认金洲等竞争者存在）、港股破发、实控人套现28亿，评分降至8.0",
+        "tags": [
+          "AI耗材",
+          "全球第一",
+          "量价齐升",
+          "高壁垒"
+        ],
+        "score": 8.0,
+        "conceptReinforcements": [
+          {
+            "date": "2026-07-23",
+            "desc": "日系钻针涨价最高300%确认；英伟达Kyber NVL144因78层正交背板PCB良率不足延期至2028年；PCB层数提升→钻针消耗量非线性暴增",
+            "source": "https://36kr.com/p/3886635992314120"
+          },
+          {
+            "date": "2026-07-13",
+            "desc": "H1净利润预增301-338%业绩暴增；东吴证券上调2026E净利润至13亿(港股募资再造鼎泰)；日系住友/三菱涨价最高300%全面确认",
+            "source": "https://stock.stockstar.com/RB2026071300001456.shtml"
+          },
+          {
+            "date": "2026-07-09",
+            "desc": "7月9日港股上市募资48亿港元（引入高瓴/易方达/霸菱等16家基石）；英伟达Kyber NVL144延期验证高端PCB瓶颈+日系钨棒全面停产双重催化；PCB层数从20+→78层非线性提升",
+            "source": "https://36kr.com/p/3886635992314120"
+          }
+        ],
+        "id": 4,
+        "ageClass": "aged12",
+        "ageWeeks": 12,
+        "exitStatus": "exit",
+        "exitDesc": "跌破60日线(-16.5%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
       },
       {
@@ -842,6 +843,46 @@
       },
       {
         "category": "PCB产业链",
+        "subCategory": "超薄电子布",
+        "code": "603256",
+        "name": "宏和科技",
+        "market": "主板",
+        "coreLogic": "全球超薄电子布龙头，AI服务器PCB必须使用超薄电子布（<28μm）。日系退出中低端产能，公司承接全球份额。产能持续扩张。年内5轮提价、2026Q1均价9.78元/米(+110%)、特种布毛利率61.31%（凤凰财经6/16）。",
+        "supplyDemand": "超薄电子布全球供给高度集中，公司为全球第一。AI PCB推动高端电子布需求爆发。",
+        "priceSignal": "Q1营收+62%，净利+210%；超薄布满产满销",
+        "catalyst": "AI PCB拉动超薄电子布需求；日系退出中低端产能",
+        "conceptAdded": "2026-05-25",
+        "conceptSource": "超薄电子布全球龙一+AI PCB需求爆发+日系退出",
+        "conceptSourceUrl": "https://www.cls.cn/detail/2371112",
+        "riskNote": "电子布价格有周期波动风险；产能扩张节奏 ⚠️ 8/3复查：6/9公告第二、第三大股东（实控人王文洋家族一致行动人）拟减持不超总股本3%，按当日收盘价可套现超56亿（凤凰财经6/16）；80亿扩产+赴港上市募资，资金链压力需跟踪 ⚠️ 8/5复查：实控人一致行动人7/2-3大宗减持875万股约18亿元（30笔209.91元/股，经济参考报7/13）；静态PE超900倍；公司6/18风险提示自认'估值已偏离基本面、存在非理性炒作'；6/24石英纤维电子布(Q布)通过认证为新催化（对冲项）。降分至7.0 ⚠️ 8/7复查：新浪8/4深度确认Q1均价9.78元/米(+116.85%)、H1净利预增280-364%、8月提价预期上修至+1.5~2.0元/米，评分上调至8.0；但7月以来股价持续下跌、PE曾达535倍，估值与筹码风险需持续跟踪",
+        "tags": [
+          "全球龙一",
+          "AI PCB",
+          "日系退出",
+          "核心材料"
+        ],
+        "score": 8.0,
+        "conceptReinforcements": [
+          {
+            "date": "2026-08-04",
+            "desc": "新浪8/4《一米布撬动AI算力狂潮》：Q1均价9.78元/米(+116.85%)、H1净利预增280-364%、8月7628电子布提价预期由+1.2上修至+1.5~2.0元/米（执行后成交价或达10-11元/米）、低介电二代布160元/米年内翻倍；Q布通过认证具备量产，评分上调至8.0",
+            "source": "https://finance.sina.cn/stock/jdts/2026-08-04/detail-inimcpit2206855.d.html"
+          },
+          {
+            "date": "2026-07-14",
+            "desc": "H1净利预增280-364%；年内5轮提价、均价7.4元/米较2025Q3低点+100%；7/27涨停验证AI高端电子布景气",
+            "source": "https://news.qq.com/rain/a/20260714A07P7D00"
+          }
+        ],
+        "id": 7,
+        "ageClass": "aged11",
+        "ageWeeks": 11,
+        "exitStatus": "exit",
+        "exitDesc": "跌破60日线(-33.5%) | 2026-07-31",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "PCB产业链",
         "subCategory": "IC载板+PCB样板",
         "code": "002436",
         "name": "兴森科技",
@@ -867,7 +908,7 @@
             "desc": "H1净利预增246.83-316.19%；广州黄埔ABF载板一期3.6万片/月量产、年底扩至6万片/月"
           }
         ],
-        "id": 7,
+        "id": 8,
         "ageClass": "aged12",
         "ageWeeks": 12,
         "exitStatus": "exit",
@@ -912,55 +953,11 @@
             "source": "http://iew.microbell.com/data/8a4c2167124ebbf47da75b44c6d513dd.html"
           }
         ],
-        "id": 8,
+        "id": 9,
         "ageClass": "aged15",
         "ageWeeks": 15,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-37.4%) | 2026-07-31",
-        "viewerUrl": "http://localhost:8899/viewer.html"
-      },
-      {
-        "category": "PCB产业链",
-        "subCategory": "超薄电子布",
-        "code": "603256",
-        "name": "宏和科技",
-        "market": "主板",
-        "coreLogic": "全球超薄电子布龙头，AI服务器PCB必须使用超薄电子布（<28μm）。日系退出中低端产能，公司承接全球份额。产能持续扩张。年内5轮提价、2026Q1均价9.78元/米(+110%)、特种布毛利率61.31%（凤凰财经6/16）。",
-        "supplyDemand": "超薄电子布全球供给高度集中，公司为全球第一。AI PCB推动高端电子布需求爆发。",
-        "priceSignal": "Q1营收+62%，净利+210%；超薄布满产满销",
-        "catalyst": "AI PCB拉动超薄电子布需求；日系退出中低端产能",
-        "conceptAdded": "2026-05-25",
-        "conceptSource": "超薄电子布全球龙一+AI PCB需求爆发+日系退出",
-        "conceptSourceUrl": "https://www.cls.cn/detail/2371112",
-        "riskNote": "电子布价格有周期波动风险；产能扩张节奏 ⚠️ 8/3复查：6/9公告第二、第三大股东（实控人王文洋家族一致行动人）拟减持不超总股本3%，按当日收盘价可套现超56亿（凤凰财经6/16）；80亿扩产+赴港上市募资，资金链压力需跟踪 ⚠️ 8/5复查：实控人一致行动人7/2-3大宗减持875万股约18亿元（30笔209.91元/股，经济参考报7/13）；静态PE超900倍；公司6/18风险提示自认'估值已偏离基本面、存在非理性炒作'；6/24石英纤维电子布(Q布)通过认证为新催化（对冲项）。降分至7.0",
-        "tags": [
-          "全球龙一",
-          "AI PCB",
-          "日系退出",
-          "核心材料"
-        ],
-        "score": 7.0,
-        "conceptReinforcements": [
-          {
-            "date": "2026-08-04",
-            "desc": "新浪8/4《一米布撬动AI算力狂潮》：8月7628电子布提价预期由+1.2上修至+1.5~2.0元/米（执行后成交价或达10-11元/米）；Q布通过认证具备量产；H1净利+280~364%",
-            "source": "https://finance.sina.com.cn/"
-          },
-          {
-            "date": "2026-07-14",
-            "desc": "H1净利预增280-364%；年内5轮提价、均价7.4元/米较2025Q3低点+100%；7/27涨停验证AI高端电子布景气",
-            "source": "https://news.qq.com/rain/a/20260714A07P7D00"
-          },
-          {
-            "date": "2026-06-24",
-            "desc": "6/24石英纤维电子布(Q布)通过认证，新催化（对冲实控人减持利空）"
-          }
-        ],
-        "id": 9,
-        "ageClass": "aged11",
-        "ageWeeks": 11,
-        "exitStatus": "exit",
-        "exitDesc": "跌破60日线(-33.5%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
       },
       {
@@ -994,6 +991,35 @@
       },
       {
         "category": "PCB产业链",
+        "subCategory": "电子布(全球产能之王)",
+        "code": "600176",
+        "name": "中国巨石",
+        "market": "主板",
+        "coreLogic": "全球玻纤产能之王（电子布产能全球第一）。7628电子布年内六轮提价、8月提价预期由+1.2上修至+1.5~2.0元/米（执行后主流成交10-11元/米）；G75电子纱9000→14525元/吨(+61%)。织布机瓶颈（日本丰田垄断电子级织机）+新产能最早2028年释放，供给约束贯穿2026-2027。H1净利预增65-85%（27.84-31.21亿）。",
+        "supplyDemand": "G75电子纱9000→14525元/吨(+61%)；建滔新增1.8亿米/年产能因织布机限制2026年仅释放不到20%。",
+        "priceSignal": "7628电子布年内六轮提价；8月提价预期+1.5~2.0元/米；H1净利预增65-85%",
+        "catalyst": "8月电子布提价预期上修；织布机产能瓶颈贯穿2026-2027；H1预增落地",
+        "conceptAdded": "2026-08-04",
+        "conceptSource": "8月电子布提价预期上修至+1.5~2.0元/米+织布机瓶颈供给硬约束（新浪财经8/4《一米布撬动AI算力狂潮》，页面正文2026-08-04）",
+        "conceptSourceUrl": "https://finance.sina.cn/stock/jdts/2026-08-04/detail-inimcpit2206855.d.html",
+        "riskNote": "7月以来股价持续下跌（市场担忧2027-2028产能集中释放后供需反转）；玻纤指数自高点回撤约51%",
+        "tags": [
+          "电子布",
+          "全球产能之王",
+          "织布机瓶颈",
+          "供给硬约束"
+        ],
+        "score": 4.0,
+        "conceptReinforcements": [],
+        "id": 11,
+        "ageClass": "hot",
+        "ageWeeks": 1,
+        "exitStatus": "ok",
+        "exitDesc": "",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "PCB产业链",
         "subCategory": "T-glass/LowCTE电子布(国产替代)",
         "code": "002080",
         "name": "中材科技",
@@ -1015,7 +1041,7 @@
         ],
         "score": 3.8,
         "conceptReinforcements": [],
-        "id": 11,
+        "id": 12,
         "ageClass": "aged27",
         "ageWeeks": 27,
         "exitStatus": "exit",
@@ -1044,7 +1070,7 @@
         ],
         "score": 3.8,
         "conceptReinforcements": [],
-        "id": 12,
+        "id": 13,
         "ageClass": "aged8",
         "ageWeeks": 8,
         "exitStatus": "exit",
@@ -1080,7 +1106,7 @@
             "source": "https://finance.sina.com.cn/stock/wbstock/2026-07-01/doc-inifihnn0811608.shtml"
           }
         ],
-        "id": 13,
+        "id": 14,
         "ageClass": "aged7",
         "ageWeeks": 7,
         "exitStatus": "exit",
@@ -1095,7 +1121,7 @@
         "code": "300285",
         "name": "国瓷材料",
         "market": "创业板",
-        "coreLogic": "全球领先MLCC介质粉体企业，钛酸钡粉体是MLCC核心介质材料。高端120nm以下粉体全球供给60%+由日美企业垄断。MLCC超级周期向上游粉体传导；氧化镝涨至144.5万/吨历史新高。7月20日公告自7月27日起氧化锆粉体涨价10-40%：东曹断供+MLCC粉体涨价+氧化锆涨价三重共振。堺化学已被动减产25-30%、村田重稀土库存仅够约30天满产（经济观察网6/27）；村田承认'稀土采购仍完全无法脱离中国'；MLCC介质粉体国内市占超80%、唯一全系列规格厂商。三星电机8/1 MLCC出货价统一+30%（7/29宣布、8/1生效）。",
+        "coreLogic": "全球领先MLCC介质粉体企业，钛酸钡粉体是MLCC核心介质材料。高端120nm以下粉体全球供给60%+由日美企业垄断。MLCC超级周期向上游粉体传导；氧化镝涨至144.5万/吨历史新高。7月20日公告自7月27日起氧化锆粉体涨价10-40%：东曹断供+MLCC粉体涨价+氧化锆涨价三重共振。堺化学已被动减产25-30%、村田重稀土库存仅够约30天满产（经济观察网6/27）；村田承认'稀土采购仍完全无法脱离中国'；MLCC介质粉体国内市占超80%、唯一全系列规格厂商。三星电机8/1 MLCC出货价统一+30%（7/29宣布、8/1生效）。收购澳洲SDI（8.16亿）锁定锆资源；锆英砂年内+17%、氧氯化锆+36%。",
         "supplyDemand": "高端钛酸钡粉体全球供给高度集中(日本堺化学28%+美国Ferro20%+日本化学14%)。稀土出口管制使日系粉体厂商原料受限。",
         "priceSignal": "6月2日涨超14%创历史新高；月内融资净买入11.64亿元",
         "catalyst": "稀土出口管制持续收紧；日系MLCC粉体断供风险；村田7月第三轮涨价10-40%",
@@ -1112,6 +1138,11 @@
         "score": 9.5,
         "conceptReinforcements": [
           {
+            "date": "2026-08-06",
+            "desc": "8/5半年报落地：H1营收25.13亿(+16.64%)、归母净利3.63亿(+9.36%)、Q2环比+54.98%；8/6同花顺《涨价40%的底气》：氧化锆粉体7/27涨价10-40%已生效、高端MLCC缺口2026H2 15-20%→2027年30%、高盛口径AI服务器MLCC年复合增速约80%、国瓷从'跟随涨价'到'自主定价'",
+            "source": "https://www.10jqka.com.cn/"
+          },
+          {
             "date": "2026-08-05",
             "desc": "太阳诱电9/1第二次涨价落地（财联社7/29）；村田Q1营业利润+59.8%；与非网8/5 MLCC全线调涨30%深度，涨价向粉体上游传导强化"
           },
@@ -1119,14 +1150,9 @@
             "date": "2026-08-04",
             "desc": "格隆汇8/4：东曹/DKKK占全球高端氧化锆粉体50%+，国产替代空间确认；氧化锆粉体7/27涨价10-40%落地后产业链联动",
             "source": "https://m.gelonghui.com/p/5675959"
-          },
-          {
-            "date": "2026-08-01",
-            "desc": "华鑫证券研报：氧化锆粉体涨价弹性测算；收购澳洲SDI（8.16亿）锁定锆资源；锆英砂年内+17%、氧氯化锆+36%",
-            "source": "https://pdf.microbell.com/data/2246d88224ebb414c83bac5cad73fb7a.html"
           }
         ],
-        "id": 20,
+        "id": 21,
         "ageClass": "aged10",
         "ageWeeks": 10,
         "exitStatus": "exit",
@@ -1170,7 +1196,7 @@
             "desc": "三星电机8/1 MLCC涨价30%正式生效（含存量订单追溯执行）；太阳诱电9/1跟进且'无法承诺按时交货'；国内三环/风华8月跟进涨价、10月预计还有一轮"
           }
         ],
-        "id": 21,
+        "id": 22,
         "ageClass": "aged15",
         "ageWeeks": 15,
         "exitStatus": "exit",
@@ -1190,7 +1216,7 @@
         "conceptAdded": "2026-04-21",
         "conceptSource": "钽价暴涨确认：钽锭+190%、钽精矿+158%",
         "conceptSourceUrl": "https://caifuhao.eastmoney.com/news/20260421164701348191390",
-        "riskNote": "矿端供给有恢复风险；钽矿价格波动大 ⚠️ 8/3复查：刚果(金)南基伍省采矿禁令5/22起3个月，8/22到期，供给恢复是边际风险点。⚠️ 8/4复查：氧化钽7月下旬4700→4400元/kg回落6%，市场从恐慌抢货转观望；东兴证券8/3测算鲁巴亚停产或致2026全球钽矿供给-16%至2109吨，基美7月第四轮涨价25-40%（年内累计70-90%）交期40-52周，Rubin平台单台钽电容约5000颗（传统100倍），逻辑本身未破但价格弹性收敛",
+        "riskNote": "矿端供给有恢复风险；钽矿价格波动大 ⚠️ 8/3复查：刚果(金)南基伍省采矿禁令5/22起3个月，8/22到期，供给恢复是边际风险点。⚠️ 8/4复查：氧化钽7月下旬4700→4400元/kg回落6%，市场从恐慌抢货转观望；东兴证券8/3测算鲁巴亚停产或致2026全球钽矿供给-16%至2109吨，基美7月第四轮涨价25-40%（年内累计70-90%）交期40-52周，Rubin平台单台钽电容约5000颗（传统100倍），逻辑本身未破但价格弹性收敛 ⚠️ 8/7复查：氧化钽7月下旬4700→4400元/kg回落6%（价格弹性收敛）；刚果(金)南基伍省采矿禁令8/22到期、供给恢复为边际风险点，评分降至8.5",
         "tags": [
           "海外垄断",
           "供给硬约束",
@@ -1198,7 +1224,7 @@
           "刚果矿难",
           "涨价158%"
         ],
-        "score": 9.0,
+        "score": 8.5,
         "conceptReinforcements": [
           {
             "date": "2026-08-03",
@@ -1214,7 +1240,7 @@
             "source": "https://news.qq.com/rain/a/20260701A09T7600"
           }
         ],
-        "id": 22,
+        "id": 23,
         "ageClass": "aged16",
         "ageWeeks": 16,
         "exitStatus": "exit",
@@ -1259,7 +1285,7 @@
             "source": "https://www.cls.cn/detail/2428607"
           }
         ],
-        "id": 23,
+        "id": 24,
         "ageClass": "aged6",
         "ageWeeks": 6,
         "exitStatus": "exit",
@@ -1299,7 +1325,7 @@
             "source": "https://www.cls.cn/detail/2440280"
           }
         ],
-        "id": 24,
+        "id": 25,
         "ageClass": "aged7",
         "ageWeeks": 7,
         "exitStatus": "exit",
@@ -1312,7 +1338,7 @@
         "code": "002859",
         "name": "洁美科技",
         "market": "主板",
-        "coreLogic": "全球纸质载带市占率约70%，MLCC离型膜国内唯一实现BOPET基膜→涂布全链条自主供应企业。离型膜已批量供货村田/三星/国巨/风华/三环五大核心客户，涨价40%+确认。",
+        "coreLogic": "全球纸质载带市占率约70%，MLCC离型膜国内唯一实现BOPET基膜→涂布全链条自主供应企业。离型膜已批量供货村田/三星/国巨/风华/三环五大核心客户，涨价40%+确认。TrendForce预警2H26高端特规MLCC面临结构性短缺、村田BB Ratio 1.30创新高（超2018年缺货峰值1.25），全行业MLCC扩产拉动离型膜需求爆发。",
         "supplyDemand": "全球MLCC离型膜由日本帝人/琳得科/藤森工业垄断。AI服务器MLCC用量暴增→MLCC全行业扩产→离型膜作为流延成型不可替代耗材需求倍增。",
         "priceSignal": "4-5月起向客户发布涨价通知部分产品涨幅超40%；离型膜满产满销月出货超2700万㎡",
         "catalyst": "MLCC全行业涨价扩产；村田BB Ratio 1.30创历史新高；离型膜涨价40%+确认",
@@ -1330,6 +1356,11 @@
         "score": 8.5,
         "conceptReinforcements": [
           {
+            "date": "2026-08-06",
+            "desc": "同花顺8/6：离型膜销量同比+100%、供不应求延续至明年上半年、公司主动聚焦中高端",
+            "source": "https://www.10jqka.com.cn/"
+          },
+          {
             "date": "2026-07-30",
             "desc": "三星8/1 MLCC涨价30%正式生效；高端MLCC交期拉长至4-5个月"
           },
@@ -1337,14 +1368,9 @@
             "date": "2026-07-29",
             "desc": "三星电机8/1 MLCC出货价统一+30%（科创板日报）；离型膜供货三星/村田，MLCC全行业扩产拉动离型膜需求",
             "source": "https://www.cls.cn/detail/2440280"
-          },
-          {
-            "date": "2026-07-06",
-            "desc": "TrendForce预警2H26高端特规MLCC面临结构性短缺；村田BB Ratio 1.30创新高超2018年缺货峰值1.25；全行业MLCC扩产拉动离型膜需求爆发",
-            "source": "https://www.trendforce.cn/presscenter/news/20260706-13137.html"
           }
         ],
-        "id": 25,
+        "id": 26,
         "ageClass": "aged4",
         "ageWeeks": 4,
         "exitStatus": "exit",
@@ -1389,7 +1415,7 @@
             "source": "https://m.36kr.com/p/3845611027728640"
           }
         ],
-        "id": 26,
+        "id": 27,
         "ageClass": "aged22",
         "ageWeeks": 22,
         "exitStatus": "exit",
@@ -1424,7 +1450,7 @@
             "source": "https://qhweb.eastmoney.com/news/202606153771874648.html"
           }
         ],
-        "id": 27,
+        "id": 28,
         "ageClass": "aged36",
         "ageWeeks": 36,
         "exitStatus": "exit",
@@ -1454,7 +1480,7 @@
         ],
         "score": 3.0,
         "conceptReinforcements": [],
-        "id": 28,
+        "id": 29,
         "ageClass": "aged7",
         "ageWeeks": 7,
         "exitStatus": "exit",
@@ -1484,11 +1510,262 @@
         ],
         "score": 3.0,
         "conceptReinforcements": [],
-        "id": 29,
-        "ageClass": "aged7",
-        "ageWeeks": 7,
+        "id": 30,
+        "ageClass": "aged8",
+        "ageWeeks": 8,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-16.9%) | 2026-07-31",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      }
+    ],
+    "先进封装": [
+      {
+        "category": "先进封装",
+        "subCategory": "临时键合/解键合(TBDB)",
+        "code": "688012",
+        "name": "中微公司",
+        "market": "科创板",
+        "coreLogic": "国内半导体刻蚀设备龙头，CCP刻蚀机全球市占率第一梯队。先进封装TBDB设备通过头部客户验证。3D NAND 300+层刻蚀需求爆发。",
+        "supplyDemand": "先进封装TBDB设备是HBM/3D封装关键设备。全球先进封装设备市场2028年预计500亿美元。",
+        "priceSignal": "Q1营收+58%，新签订单创历史新高",
+        "catalyst": "HBM扩产拉动先进封装设备需求；3D NAND层数提升",
+        "conceptAdded": "2026-04-15",
+        "conceptSource": "先进封装设备国产突破+刻蚀设备全球竞争力",
+        "conceptSourceUrl": "https://pdf.dfcfw.com/pdf/H3_AP202604151820327118_1.pdf",
+        "riskNote": "高端刻蚀设备与Lam Research仍有差距",
+        "tags": [
+          "先进封装",
+          "刻蚀龙一",
+          "HBM",
+          "国产替代"
+        ],
+        "score": 9.0,
+        "conceptReinforcements": [
+          {
+            "date": "2026-08-05",
+            "desc": "8/5扫描确认：H1净利预增282-311%（27-29亿）公告落地；其中约19.82亿为公允价值变动/投资收益，主业营收+34.89%，业绩质量需甄别"
+          },
+          {
+            "date": "2026-08-01",
+            "desc": "日本8/1第三轮对华半导体管制正式生效，首次纳入后道先进封装设备（TSV硅通孔/混合键合/微凸点电镀等20大类物项，逐案审批驳回率超79%实质断供）；中微深硅刻蚀设备为TSV核心工艺设备，技术壁垒极高已进台积电/中芯供应链",
+            "source": "https://www.sanhuba.cn/post/dd-e7-32902.html"
+          }
+        ],
+        "id": 54,
+        "ageClass": "aged17",
+        "ageWeeks": 17,
+        "exitStatus": "exit",
+        "exitDesc": "跌破60日线(-10.5%) | 2026-07-31",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "先进封装",
+        "subCategory": "晶圆划切设备(国产唯一)",
+        "code": "300480",
+        "name": "光力科技",
+        "market": "创业板",
+        "coreLogic": "国内唯一量产高端12英寸全自动划片机厂商（全球仅DISCO/东京精密/光力三家），机械划片机国产市占率第一、8230系列获河南省首台套认定；激光隐切机/研磨机客户端验证中，研磨抛光一体机研发中；整机+空气主轴+金刚石刀片全自研闭环。日本8/1第三轮对华半导体管制首次纳入后道先进封装设备（划片机/研磨机/激光隐切/TSV等20大类物项，对华逐案审批、驳回率超79%实质断供），DISCO垄断国内高端划片机75%+份额直接受限。2026年以来国产半导体业务持续满产。",
+        "supplyDemand": "12英寸高端划片机国产化率不足15%，激光隐切几乎0到1突破。DISCO垄断全球70%+减薄机/划片机市场。日本管制生效后国内封测厂/存储厂只能加速导入国产设备。",
+        "priceSignal": "2026年以来国产半导体业务持续满产（7/30互动平台）；订单兑现预计Q4至明年上半年逐步体现",
+        "catalyst": "日本8/1先进封装设备管制正式生效（5/29新规）；DISCO对华实质断供；划片机+研磨机+激光设备全覆盖最纯正替代标的",
+        "conceptAdded": "2026-07-15",
+        "conceptSource": "日本8/1管制先进封装设备→光力科技国内唯一高端划片机厂商最纯正替代标的",
+        "conceptSourceUrl": "https://www.sanhuba.cn/post/dd-e7-32902.html",
+        "riskNote": "划片机市场规模相对有限（全球约60亿人民币）；激光隐切/研磨机尚处验证阶段，订单兑现需Q4起；公司另有物联网安全监控主业拖累估值",
+        "tags": [
+          "日本断供",
+          "国产替代",
+          "DISCO替代",
+          "后道设备",
+          "划片机"
+        ],
+        "score": 8.5,
+        "conceptReinforcements": [
+          {
+            "date": "2026-08-05",
+            "desc": "日本8/1第三轮管制落地：首次纳入激光隐切/划片设备（20大类后道设备、逐案审批驳回率70-80%实质准断供）；出海网8/5点名光力科技进入量产验证/批量供货，国产替代加速，评分上调至8.5",
+            "source": "https://www.chwang.com/news/208484007307"
+          },
+          {
+            "date": "2026-08-01",
+            "desc": "日本8/1第三轮对华半导体管制正式生效（划片/研磨/激光隐切等20大类物项逐案审批、驳回率超79%实质断供）；网易/搜狐8/2自媒体称光力科技'通过大厂验证拿下多家存储龙头批量订单'，与看板'验证中'口径相比有明显进展，需以公司公告核实",
+            "source": "https://www.sanhuba.cn/post/dd-e7-32902.html"
+          },
+          {
+            "date": "2026-07-30",
+            "desc": "互动平台确认：今年以来国产半导体业务持续满产；公司加快二期产能扩建（2027年一季度完工）",
+            "source": "https://finance.jrj.com.cn/2026/07/30152057953889.shtml"
+          }
+        ],
+        "id": 55,
+        "ageClass": "aged4",
+        "ageWeeks": 4,
+        "exitStatus": "ok",
+        "exitDesc": "",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "先进封装",
+        "subCategory": "先进封装设备(混合键合)",
+        "code": "688082",
+        "name": "盛美上海",
+        "market": "科创板",
+        "coreLogic": "国内半导体清洗设备龙头，混合键合(Hybrid Bonding)设备验证中。先进封装清洗+电镀设备已批量出货头部封测厂。AI芯片先进封装扩产直接拉动设备需求。",
+        "supplyDemand": "混合键合是HBM4/3D封装关键设备，全球仅应用材料/EBARA等少数企业掌握。盛美是国内唯一进入验证阶段的企业。",
+        "priceSignal": "Q1营收+48%；先进封装设备订单同比+156%",
+        "catalyst": "AI芯片先进封装扩产；混合键合设备国产突破",
+        "conceptAdded": "2026-06-08",
+        "conceptSource": "先进封装设备国产替代+混合键合突破",
+        "conceptSourceUrl": "https://www.cls.cn/detail/2391123",
+        "riskNote": "混合键合设备仍处验证阶段；与国际巨头差距较大",
+        "tags": [
+          "先进封装",
+          "混合键合",
+          "国产替代",
+          "AI算力"
+        ],
+        "score": 8.0,
+        "conceptReinforcements": [
+          {
+            "date": "2026-08-01",
+            "desc": "日本8/1对华管制首次纳入先进封装设备（混合键合/TSV等）；盛美为国内唯一进入混合键合验证阶段企业，先进封装清洗+电镀设备已批量出货头部封测厂，国产替代窗口扩大",
+            "source": "https://www.sanhuba.cn/post/dd-e7-32902.html"
+          }
+        ],
+        "id": 56,
+        "ageClass": "aged9",
+        "ageWeeks": 9,
+        "exitStatus": "exit",
+        "exitDesc": "跌破60日线(-9.0%) | 2026-07-31",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "先进封装",
+        "subCategory": "激光隐切设备(国产独家)",
+        "code": "688170",
+        "name": "德龙激光",
+        "market": "科创板",
+        "coreLogic": "国内唯一实现硅晶圆激光隐切(SDBG)量产替代的厂商，可加工35-85μm超薄晶圆，已获小批量订单。激光隐切替代机械划片是存储芯片超薄化、3D堆叠趋势下的工艺升级方向。DISCO激光隐切/裂片设备被日本8/1管制纳入清单（DISCO垄断国内高端市场75%+份额），国内存储厂/先进封装厂替代需求直接涌向德龙。",
+        "supplyDemand": "激光隐切国产化率接近0（0到1突破），DISCO垄断国内高端75%+。日本8/1管制生效后唯一国产量产替代厂商直接受益。",
+        "priceSignal": "硅晶圆激光隐切设备已获小批量订单；存储超薄化趋势拉动需求",
+        "catalyst": "日本8/1先进封装设备管制生效；DISCO激光隐切对华实质断供；存储芯片超薄化+3D堆叠工艺升级",
+        "conceptAdded": "2026-07-15",
+        "conceptSource": "日本8/1管制先进封装设备→德龙激光激光隐切国产独家突破",
+        "conceptSourceUrl": "https://www.sanhuba.cn/post/dd-e7-32902.html",
+        "riskNote": "激光隐切设备收入规模小，业绩弹性有限；处于批量验证导入初期，订单兑现节奏不确定",
+        "tags": [
+          "日本断供",
+          "国产替代",
+          "激光隐切",
+          "后道设备",
+          "存储超薄化"
+        ],
+        "score": 8.0,
+        "conceptReinforcements": [
+          {
+            "date": "2026-08-05",
+            "desc": "日本8/1第三轮管制纳入激光隐切/划片设备；出海网8/5点名德龙激光SDBG激光隐切进入量产验证/批量供货，国产替代加速，评分上调至8.0",
+            "source": "https://www.chwang.com/news/208484007307"
+          },
+          {
+            "date": "2026-08-01",
+            "desc": "日本8/1第三轮管制正式生效（逐案审批、实质停供）；网易/搜狐8/2自媒体称德龙激光'已拿下存储大厂批量订单'，与看板'小批量订单'口径相比有明显进展，需以公司公告核实",
+            "source": "https://www.sanhuba.cn/post/dd-e7-32902.html"
+          }
+        ],
+        "id": 57,
+        "ageClass": "aged4",
+        "ageWeeks": 4,
+        "exitStatus": "ok",
+        "exitDesc": "",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "先进封装",
+        "subCategory": "晶圆减薄/研磨设备(国产替代)",
+        "code": "688120",
+        "name": "华海清科",
+        "market": "科创板",
+        "coreLogic": "国内CMP设备龙头，CMP+减薄一体机为国产替代核心标的。日本8/1第三轮管制首次纳入超薄晶圆减薄/研磨机（原由DISCO等主导，对华逐案审批、驳回率70-80%实质准断供）；验证周期由2-3年压缩至6-12个月，国产导入加速。",
+        "supplyDemand": "日本8/1管制约20大类先进封装后道设备、审批周期3-6个月、AI算力配套设备申请驳回率接近八成；超薄晶圆减薄/研磨机原由DISCO等日企主导。",
+        "priceSignal": "验证周期由2-3年压缩至6-12个月",
+        "catalyst": "日本8/1第三轮管制纳入晶圆减薄/研磨机；国产CMP+减薄一体机替代加速",
+        "conceptAdded": "2026-08-03",
+        "conceptSource": "日本8/1第三轮管制纳入超薄晶圆减薄/研磨机→国产CMP+减薄一体机替代加速（闪存市场8/3，页面正文2026-08-03 15:23）",
+        "conceptSourceUrl": "https://m.chinaflashmarket.com/news/industry/184139",
+        "riskNote": "减薄设备业务占比尚小，主业仍为CMP；验证导入仍存时间差",
+        "tags": [
+          "国产替代",
+          "先进封装设备",
+          "日本准断供",
+          "CMP龙一"
+        ],
+        "score": 4.25,
+        "conceptReinforcements": [],
+        "id": 58,
+        "ageClass": "new",
+        "ageWeeks": 1,
+        "exitStatus": "ok",
+        "exitDesc": "",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "先进封装",
+        "subCategory": "TGV玻璃基板(先进封装载板)",
+        "code": "603773",
+        "name": "沃格光电",
+        "market": "主板",
+        "coreLogic": "建成全球首条TGV多层线路板量产线（年产10万㎡、全流程自主可控），CPO玻璃基产品已批量送样，配套长电/通富2.5D/3D、HBM封装。先进封装大尺寸化/高密度化瓶颈推动载板从有机材料转向玻璃基板（TGV）；高端玻璃基板由Corning/AGC/肖特主导，国产TGV渗透率不足5%；玻璃原片自主熔炼配方不受海外基材卡脖子。日本8/1后道设备管制下国产工艺卡位价值抬升。中信证券8/3研报：玻璃基板有望加速成熟/放量。",
+        "supplyDemand": "高端玻璃基板由Corning/AGC/肖特主导，国产TGV渗透率不足5%。玻璃原片自主熔炼配方不受海外基材卡脖子。",
+        "priceSignal": "8/5两连板（财联社）；8/3中信研报为直接催化",
+        "catalyst": "先进封装载板玻璃化趋势（TGV）；CPO玻璃基产品批量送样；全球首条TGV多层线路板量产线",
+        "conceptAdded": "2026-05-26",
+        "conceptSource": "同花顺涨停雷达：全球首条TGV多层线路板量产线（引5/25公司官微、5/26上海证券报）",
+        "conceptSourceUrl": "https://m.10jqka.com.cn/20260526/c676968815.shtml",
+        "riskNote": "处于导入期，业绩弹性尚未兑现；玻璃基板相对有机载板渗透节奏存在不确定性",
+        "tags": [
+          "TGV玻璃基板",
+          "先进封装",
+          "国产替代",
+          "CPO",
+          "导入期"
+        ],
+        "score": 3.8,
+        "conceptReinforcements": [],
+        "id": 59,
+        "ageClass": "aged11",
+        "ageWeeks": 11,
+        "exitStatus": "exit",
+        "exitDesc": "跌破60日线(-39.2%) | 2026-07-31",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "先进封装",
+        "subCategory": "分选检测设备(国产替代)",
+        "code": "300604",
+        "name": "长川科技",
+        "market": "创业板",
+        "coreLogic": "国内分选测试设备龙头（测试机+分选机+探针台平台）。日本8/1管制纳入高精度芯片分选/检测设备（原日系主导）；管制后国产导入加速，出海网8/5明确点名长川等进入量产验证/批量供货。",
+        "supplyDemand": "日本8/1第三轮管制约20大类先进封装后道设备、驳回率70-80%；高精度分选/检测设备原由日系主导。",
+        "priceSignal": "出海网8/5点名进入量产验证/批量供货",
+        "catalyst": "日本8/1管制纳入分选检测设备；国产测试设备导入加速",
+        "conceptAdded": "2026-08-05",
+        "conceptSource": "日本8/1第三轮管制纳入高精度分选/检测设备→长川国产替代加速（出海网8/5，页面正文2026-08-05 11:13）",
+        "conceptSourceUrl": "https://www.chwang.com/news/208484007307",
+        "riskNote": "分选检测设备国产化进程受客户验证节奏影响；日系同类设备仍具技术优势",
+        "tags": [
+          "国产替代",
+          "测试设备",
+          "日本准断供",
+          "分选机龙一"
+        ],
+        "score": 3.75,
+        "conceptReinforcements": [],
+        "id": 60,
+        "ageClass": "hot",
+        "ageWeeks": 1,
+        "exitStatus": "ok",
+        "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
       }
     ],
@@ -1531,7 +1808,7 @@
             "source": "https://cmcc.china-mcc.com/news_show-101-10715.html"
           }
         ],
-        "id": 14,
+        "id": 15,
         "ageClass": "aged18",
         "ageWeeks": 18,
         "exitStatus": "ok",
@@ -1567,7 +1844,7 @@
             "source": "https://stock.10jqka.com.cn/20260729/c678529849.shtml"
           }
         ],
-        "id": 15,
+        "id": 16,
         "ageClass": "aged7",
         "ageWeeks": 7,
         "exitStatus": "ok",
@@ -1602,9 +1879,9 @@
             "source": "https://news.10jqka.com.cn/20260701/c677858946.shtml"
           }
         ],
-        "id": 16,
-        "ageClass": "aged8",
-        "ageWeeks": 8,
+        "id": 17,
+        "ageClass": "aged9",
+        "ageWeeks": 9,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-18.9%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -1632,7 +1909,7 @@
         ],
         "score": 5.0,
         "conceptReinforcements": [],
-        "id": 17,
+        "id": 18,
         "ageClass": "aged8",
         "ageWeeks": 8,
         "exitStatus": "exit",
@@ -1668,7 +1945,7 @@
             "source": "https://www.stcn.com/article/detail/3995845.html"
           }
         ],
-        "id": 18,
+        "id": 19,
         "ageClass": "aged21",
         "ageWeeks": 21,
         "exitStatus": "exit",
@@ -1704,194 +1981,11 @@
             "source": "https://news.chemnet.com/toutiao/detail-68860.html"
           }
         ],
-        "id": 19,
+        "id": 20,
         "ageClass": "aged21",
         "ageWeeks": 21,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-32.2%) | 2026-07-31",
-        "viewerUrl": "http://localhost:8899/viewer.html"
-      }
-    ],
-    "先进封装": [
-      {
-        "category": "先进封装",
-        "subCategory": "临时键合/解键合(TBDB)",
-        "code": "688012",
-        "name": "中微公司",
-        "market": "科创板",
-        "coreLogic": "国内半导体刻蚀设备龙头，CCP刻蚀机全球市占率第一梯队。先进封装TBDB设备通过头部客户验证。3D NAND 300+层刻蚀需求爆发。",
-        "supplyDemand": "先进封装TBDB设备是HBM/3D封装关键设备。全球先进封装设备市场2028年预计500亿美元。",
-        "priceSignal": "Q1营收+58%，新签订单创历史新高",
-        "catalyst": "HBM扩产拉动先进封装设备需求；3D NAND层数提升",
-        "conceptAdded": "2026-04-15",
-        "conceptSource": "先进封装设备国产突破+刻蚀设备全球竞争力",
-        "conceptSourceUrl": "https://pdf.dfcfw.com/pdf/H3_AP202604151820327118_1.pdf",
-        "riskNote": "高端刻蚀设备与Lam Research仍有差距",
-        "tags": [
-          "先进封装",
-          "刻蚀龙一",
-          "HBM",
-          "国产替代"
-        ],
-        "score": 9.0,
-        "conceptReinforcements": [
-          {
-            "date": "2026-08-05",
-            "desc": "8/5扫描确认：H1净利预增282-311%（27-29亿）公告落地；其中约19.82亿为公允价值变动/投资收益，主业营收+34.89%，业绩质量需甄别"
-          },
-          {
-            "date": "2026-08-01",
-            "desc": "日本8/1第三轮对华半导体管制正式生效，首次纳入后道先进封装设备（TSV硅通孔/混合键合/微凸点电镀等20大类物项，逐案审批驳回率超79%实质断供）；中微深硅刻蚀设备为TSV核心工艺设备，技术壁垒极高已进台积电/中芯供应链",
-            "source": "https://www.sanhuba.cn/post/dd-e7-32902.html"
-          }
-        ],
-        "id": 53,
-        "ageClass": "aged17",
-        "ageWeeks": 17,
-        "exitStatus": "exit",
-        "exitDesc": "跌破60日线(-10.5%) | 2026-07-31",
-        "viewerUrl": "http://localhost:8899/viewer.html"
-      },
-      {
-        "category": "先进封装",
-        "subCategory": "先进封装设备(混合键合)",
-        "code": "688082",
-        "name": "盛美上海",
-        "market": "科创板",
-        "coreLogic": "国内半导体清洗设备龙头，混合键合(Hybrid Bonding)设备验证中。先进封装清洗+电镀设备已批量出货头部封测厂。AI芯片先进封装扩产直接拉动设备需求。",
-        "supplyDemand": "混合键合是HBM4/3D封装关键设备，全球仅应用材料/EBARA等少数企业掌握。盛美是国内唯一进入验证阶段的企业。",
-        "priceSignal": "Q1营收+48%；先进封装设备订单同比+156%",
-        "catalyst": "AI芯片先进封装扩产；混合键合设备国产突破",
-        "conceptAdded": "2026-06-08",
-        "conceptSource": "先进封装设备国产替代+混合键合突破",
-        "conceptSourceUrl": "https://www.cls.cn/detail/2391123",
-        "riskNote": "混合键合设备仍处验证阶段；与国际巨头差距较大",
-        "tags": [
-          "先进封装",
-          "混合键合",
-          "国产替代",
-          "AI算力"
-        ],
-        "score": 8.0,
-        "conceptReinforcements": [
-          {
-            "date": "2026-08-01",
-            "desc": "日本8/1对华管制首次纳入先进封装设备（混合键合/TSV等）；盛美为国内唯一进入混合键合验证阶段企业，先进封装清洗+电镀设备已批量出货头部封测厂，国产替代窗口扩大",
-            "source": "https://www.sanhuba.cn/post/dd-e7-32902.html"
-          }
-        ],
-        "id": 54,
-        "ageClass": "aged9",
-        "ageWeeks": 9,
-        "exitStatus": "exit",
-        "exitDesc": "跌破60日线(-9.0%) | 2026-07-31",
-        "viewerUrl": "http://localhost:8899/viewer.html"
-      },
-      {
-        "category": "先进封装",
-        "subCategory": "晶圆划切设备(国产唯一)",
-        "code": "300480",
-        "name": "光力科技",
-        "market": "创业板",
-        "coreLogic": "国内唯一量产高端12英寸全自动划片机厂商（全球仅DISCO/东京精密/光力三家），机械划片机国产市占率第一、8230系列获河南省首台套认定；激光隐切机/研磨机客户端验证中，研磨抛光一体机研发中；整机+空气主轴+金刚石刀片全自研闭环。日本8/1第三轮对华半导体管制首次纳入后道先进封装设备（划片机/研磨机/激光隐切/TSV等20大类物项，对华逐案审批、驳回率超79%实质断供），DISCO垄断国内高端划片机75%+份额直接受限。2026年以来国产半导体业务持续满产。",
-        "supplyDemand": "12英寸高端划片机国产化率不足15%，激光隐切几乎0到1突破。DISCO垄断全球70%+减薄机/划片机市场。日本管制生效后国内封测厂/存储厂只能加速导入国产设备。",
-        "priceSignal": "2026年以来国产半导体业务持续满产（7/30互动平台）；订单兑现预计Q4至明年上半年逐步体现",
-        "catalyst": "日本8/1先进封装设备管制正式生效（5/29新规）；DISCO对华实质断供；划片机+研磨机+激光设备全覆盖最纯正替代标的",
-        "conceptAdded": "2026-07-15",
-        "conceptSource": "日本8/1管制先进封装设备→光力科技国内唯一高端划片机厂商最纯正替代标的",
-        "conceptSourceUrl": "https://www.sanhuba.cn/post/dd-e7-32902.html",
-        "riskNote": "划片机市场规模相对有限（全球约60亿人民币）；激光隐切/研磨机尚处验证阶段，订单兑现需Q4起；公司另有物联网安全监控主业拖累估值",
-        "tags": [
-          "日本断供",
-          "国产替代",
-          "DISCO替代",
-          "后道设备",
-          "划片机"
-        ],
-        "score": 8.0,
-        "conceptReinforcements": [
-          {
-            "date": "2026-08-01",
-            "desc": "日本8/1第三轮对华半导体管制正式生效（划片/研磨/激光隐切等20大类物项逐案审批、驳回率超79%实质断供）；网易/搜狐8/2自媒体称光力科技'通过大厂验证拿下多家存储龙头批量订单'，与看板'验证中'口径相比有明显进展，需以公司公告核实",
-            "source": "https://www.sanhuba.cn/post/dd-e7-32902.html"
-          },
-          {
-            "date": "2026-07-30",
-            "desc": "互动平台确认：今年以来国产半导体业务持续满产；公司加快二期产能扩建（2027年一季度完工）",
-            "source": "https://finance.jrj.com.cn/2026/07/30152057953889.shtml"
-          }
-        ],
-        "id": 55,
-        "ageClass": "aged4",
-        "ageWeeks": 4,
-        "exitStatus": "ok",
-        "exitDesc": "",
-        "viewerUrl": "http://localhost:8899/viewer.html"
-      },
-      {
-        "category": "先进封装",
-        "subCategory": "激光隐切设备(国产独家)",
-        "code": "688170",
-        "name": "德龙激光",
-        "market": "科创板",
-        "coreLogic": "国内唯一实现硅晶圆激光隐切(SDBG)量产替代的厂商，可加工35-85μm超薄晶圆，已获小批量订单。激光隐切替代机械划片是存储芯片超薄化、3D堆叠趋势下的工艺升级方向。DISCO激光隐切/裂片设备被日本8/1管制纳入清单（DISCO垄断国内高端市场75%+份额），国内存储厂/先进封装厂替代需求直接涌向德龙。",
-        "supplyDemand": "激光隐切国产化率接近0（0到1突破），DISCO垄断国内高端75%+。日本8/1管制生效后唯一国产量产替代厂商直接受益。",
-        "priceSignal": "硅晶圆激光隐切设备已获小批量订单；存储超薄化趋势拉动需求",
-        "catalyst": "日本8/1先进封装设备管制生效；DISCO激光隐切对华实质断供；存储芯片超薄化+3D堆叠工艺升级",
-        "conceptAdded": "2026-07-15",
-        "conceptSource": "日本8/1管制先进封装设备→德龙激光激光隐切国产独家突破",
-        "conceptSourceUrl": "https://www.sanhuba.cn/post/dd-e7-32902.html",
-        "riskNote": "激光隐切设备收入规模小，业绩弹性有限；处于批量验证导入初期，订单兑现节奏不确定",
-        "tags": [
-          "日本断供",
-          "国产替代",
-          "激光隐切",
-          "后道设备",
-          "存储超薄化"
-        ],
-        "score": 7.3,
-        "conceptReinforcements": [
-          {
-            "date": "2026-08-01",
-            "desc": "日本8/1第三轮管制正式生效（逐案审批、实质停供）；网易/搜狐8/2自媒体称德龙激光'已拿下存储大厂批量订单'，与看板'小批量订单'口径相比有明显进展，需以公司公告核实",
-            "source": "https://www.sanhuba.cn/post/dd-e7-32902.html"
-          }
-        ],
-        "id": 56,
-        "ageClass": "aged4",
-        "ageWeeks": 4,
-        "exitStatus": "ok",
-        "exitDesc": "",
-        "viewerUrl": "http://localhost:8899/viewer.html"
-      },
-      {
-        "category": "先进封装",
-        "subCategory": "TGV玻璃基板(先进封装载板)",
-        "code": "603773",
-        "name": "沃格光电",
-        "market": "主板",
-        "coreLogic": "建成全球首条TGV多层线路板量产线（年产10万㎡、全流程自主可控），CPO玻璃基产品已批量送样，配套长电/通富2.5D/3D、HBM封装。先进封装大尺寸化/高密度化瓶颈推动载板从有机材料转向玻璃基板（TGV）；高端玻璃基板由Corning/AGC/肖特主导，国产TGV渗透率不足5%；玻璃原片自主熔炼配方不受海外基材卡脖子。日本8/1后道设备管制下国产工艺卡位价值抬升。中信证券8/3研报：玻璃基板有望加速成熟/放量。",
-        "supplyDemand": "高端玻璃基板由Corning/AGC/肖特主导，国产TGV渗透率不足5%。玻璃原片自主熔炼配方不受海外基材卡脖子。",
-        "priceSignal": "8/5两连板（财联社）；8/3中信研报为直接催化",
-        "catalyst": "先进封装载板玻璃化趋势（TGV）；CPO玻璃基产品批量送样；全球首条TGV多层线路板量产线",
-        "conceptAdded": "2026-05-26",
-        "conceptSource": "同花顺涨停雷达：全球首条TGV多层线路板量产线（引5/25公司官微、5/26上海证券报）",
-        "conceptSourceUrl": "https://m.10jqka.com.cn/20260526/c676968815.shtml",
-        "riskNote": "处于导入期，业绩弹性尚未兑现；玻璃基板相对有机载板渗透节奏存在不确定性",
-        "tags": [
-          "TGV玻璃基板",
-          "先进封装",
-          "国产替代",
-          "CPO",
-          "导入期"
-        ],
-        "score": 3.8,
-        "conceptReinforcements": [],
-        "id": 57,
-        "ageClass": "aged11",
-        "ageWeeks": 11,
-        "exitStatus": "exit",
-        "exitDesc": "跌破60日线(-39.2%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
       }
     ],
@@ -1918,7 +2012,7 @@
         ],
         "score": 9.0,
         "conceptReinforcements": [],
-        "id": 58,
+        "id": 61,
         "ageClass": "aged18",
         "ageWeeks": 18,
         "exitStatus": "exit",
@@ -1947,7 +2041,7 @@
         ],
         "score": 8.5,
         "conceptReinforcements": [],
-        "id": 59,
+        "id": 62,
         "ageClass": "aged26",
         "ageWeeks": 26,
         "exitStatus": "exit",
@@ -1974,9 +2068,15 @@
           "长江存储链",
           "业绩暴增"
         ],
-        "score": 7.5,
-        "conceptReinforcements": [],
-        "id": 60,
+        "score": 8.5,
+        "conceptReinforcements": [
+          {
+            "date": "2026-08-05",
+            "desc": "8/5三大DRAM原厂2027年产能售罄（三星/SK海力士/美光仅能满足客户60-70%需求）+存储芯片全线涨停潮；8/5 SK海力士/闪迪发布HBF行业标准，2027年内存短缺逻辑显著强化，评分上调至8.5",
+            "source": "https://finance.sina.com.cn/stock/zqgd/2026-08-05/doc-inimfwqf3591567.shtml"
+          }
+        ],
+        "id": 63,
         "ageClass": "aged12",
         "ageWeeks": 12,
         "exitStatus": "exit",
@@ -2022,9 +2122,38 @@
             "source": "https://caifuhao.eastmoney.com/news/20260731004144668148070"
           }
         ],
-        "id": 61,
-        "ageClass": "new",
-        "ageWeeks": 2,
+        "id": 64,
+        "ageClass": "aged3",
+        "ageWeeks": 3,
+        "exitStatus": "ok",
+        "exitDesc": "",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      },
+      {
+        "category": "制造与存储",
+        "subCategory": "存储模组(DRAM/NAND)",
+        "code": "301308",
+        "name": "江波龙",
+        "market": "创业板",
+        "coreLogic": "全球领先存储模组厂商（Lexar+江波龙双品牌）。2026H1净利预增62204%-74394%（千万级跃至百亿级）为A股'预增王'；8/5存储芯片全线涨停潮中涨8.59%；董秘8/5正面回应2027年订单。2027年全球内存短缺（三大原厂产能售罄、客户配货仅60-70%）直接传导至模组厂，涨价+缺货双受益。",
+        "supplyDemand": "TrendForce口径2026Q1 DRAM合约价+90-95%、NAND+55-60%；2027年短缺最严峻（三大原厂产能分配完毕、客户配货60-70%）。",
+        "priceSignal": "2026H1净利预增62204%-74394%；8/5存储涨停潮涨8.59%",
+        "catalyst": "2027内存短缺+涨价直接传导模组厂；H1预增王业绩兑现",
+        "conceptAdded": "2026-08-05",
+        "conceptSource": "2027年内存短缺确认+存储模组涨价直接受益（新浪财经8/5《存储芯片引爆盘面涨停潮》深度，页面正文2026-08-05）",
+        "conceptSourceUrl": "https://finance.sina.com.cn/stock/zqgd/2026-08-05/doc-inimfwqf3591567.shtml",
+        "riskNote": "股价自高点回撤近50%（8/6报道）；长城证券703元'增持'研报合规存疑被点名；融资余额59.61亿处一年70%分位",
+        "tags": [
+          "存储模组",
+          "2027短缺",
+          "涨价传导",
+          "预增王"
+        ],
+        "score": 4.25,
+        "conceptReinforcements": [],
+        "id": 65,
+        "ageClass": "hot",
+        "ageWeeks": 1,
         "exitStatus": "ok",
         "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -2065,7 +2194,7 @@
             "source": "https://36kr.com/p/3886635992314120"
           }
         ],
-        "id": 30,
+        "id": 31,
         "ageClass": "aged13",
         "ageWeeks": 13,
         "exitStatus": "exit",
@@ -2110,7 +2239,7 @@
             "source": "https://www.stcn.com/article/detail/4042588"
           }
         ],
-        "id": 31,
+        "id": 32,
         "ageClass": "aged9",
         "ageWeeks": 9,
         "exitStatus": "exit",
@@ -2139,9 +2268,9 @@
         ],
         "score": 8.0,
         "conceptReinforcements": [],
-        "id": 32,
-        "ageClass": "aged10",
-        "ageWeeks": 10,
+        "id": 33,
+        "ageClass": "aged11",
+        "ageWeeks": 11,
         "exitStatus": "exit",
         "exitDesc": "跌破60日线(-43.8%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -2168,83 +2297,92 @@
         ],
         "score": 7.5,
         "conceptReinforcements": [],
-        "id": 33,
-        "ageClass": "aged6",
-        "ageWeeks": 6,
+        "id": 34,
+        "ageClass": "aged7",
+        "ageWeeks": 7,
         "exitStatus": "ok",
         "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
       }
     ],
-    "芯片设计(FPGA)": [
+    "功率半导体": [
       {
-        "category": "芯片设计(FPGA)",
-        "subCategory": "FPGA(亿门级国产唯一)",
-        "code": "688385",
-        "name": "复旦微电",
-        "market": "科创板",
-        "coreLogic": "国内唯一亿门级FPGA量产企业。全球FPGA双寡头(赛灵思/Altera占84%)涨价10-20%+对华交期拉长至52周(原8-12周)，现货价格暴涨4-10倍；英伟达Groq 3 LPX首次将FPGA纳入标准配套协处理芯片(3/16 GTC，下半年出货)。7/16发布端侧AI/通信侧/应用侧新品+Agent智能FPGA开发平台。H1净利预增416%。",
-        "supplyDemand": "进口FPGA交货周期8-12周→52周；某XC开头型号现货220元→850元、某EP开头型号120元→1200元(证券时报援引经销人士7/30)；2026国产FPGA市占率预计突破20%(2023年15%)。FPGA全球市场2025年117.3亿美元→2030年193.4亿美元。",
-        "priceSignal": "H1净利预增416%；7/16端侧AI/通信侧/应用侧新品发布；Agent智能FPGA开发平台",
-        "catalyst": "进口FPGA 52周交期+现货暴涨4-10倍；英伟达Groq 3 LPX首纳FPGA协处理；国产替代向中高端渗透",
-        "conceptAdded": "2026-07-30",
-        "conceptSource": "进口FPGA交期升至52周+现货暴涨4-10倍+国产替代加速(证券时报)",
-        "conceptSourceUrl": "https://www.stcn.com/article/detail/4048545.html",
-        "riskNote": "高端FPGA与赛灵思/Altera仍有代差；EDA工具链和生态需长期积累；FPGA收入占公司总营收比例需关注",
+        "category": "功率半导体",
+        "subCategory": "功率半导体全品类",
+        "code": "300373",
+        "name": "扬杰科技",
+        "market": "创业板",
+        "coreLogic": "国内功率半导体全品类龙头。7月1日起年内第二轮全系列涨价10-15%正式执行。AI数据中心800V HVDC供电架构推广拉动功率器件需求。英飞凌/TI/ST同步涨价确认全行业供需紧张。",
+        "supplyDemand": "8英寸晶圆稼动率超110%，扩产需2-3年。全球前五大功率半导体企业资本开支连续两年下降。",
+        "priceSignal": "年内第二轮涨价10-15%7月1日执行；英飞凌第二轮涨价同期生效",
+        "catalyst": "AI数据中心800V HVDC供电架构推广；英飞凌/TI/安森美全线涨价",
+        "conceptAdded": "2026-06-24",
+        "conceptSource": "功率半导体全面涨价+8英寸产能收缩+AI数据中心电源需求爆发",
+        "conceptSourceUrl": "https://www.21jingji.com/article/20260624/herald/cd0d5f2f122abefcda593275093b8e40.html",
+        "riskNote": "供给约束偏软(产能分配问题非物理瓶颈)；中低压MOSFET竞争格局分散。⚠️ 7/29复查：功率半导体涨价属于全行业产能周期而非物理供给瓶颈，涨价可持续性存疑。若AI需求放缓海外大厂可快速回调产能。⚠️ 7/31复查：同上，功率涨价属产能周期非物理瓶颈，若AI需求放缓海外大厂可快速回调产能，逻辑弱化。⚠️ 8/1复查：熊本地震(7/28)致台积电JASM一期/索尼/瑞萨停工检修3-7天、功率交期拉长至30周+，但分析明确若停产时间短难以形成长期涨价趋势，仅脉冲催化，维持7.0",
         "tags": [
-          "FPGA",
-          "52周交期",
-          "国产替代",
-          "亿门级唯一",
-          "AI推理"
+          "功率涨价",
+          "AI供电",
+          "8英寸收缩",
+          "国产替代"
         ],
-        "score": 5.5,
+        "score": 7.0,
         "conceptReinforcements": [
           {
-            "date": "2026-07-30",
-            "desc": "证券时报原文核实：FPGA交期52周、现货XC 220→850元、EP 120→1200元、涨7-10倍；7/16新品+Agent平台"
+            "date": "2026-07-27",
+            "desc": "央视财经/中国商报：功率订单排产4-5个月、交期8-12周→30周+、出现'涨价+缺货+优先分货'；芯联集成Q3涨15-25%、聚辰NOR +25%；需求侧增强但供给约束仍为8英寸产能周期非物理瓶颈"
+          },
+          {
+            "date": "2026-07-01",
+            "desc": "年内第二轮全系列涨价10-15%今日正式执行！英飞凌第二轮涨价同期生效；近20家功率半导体企业7月1日集中涨价",
+            "source": "https://m.21jingji.com/article/20260630/herald/3369428e1fb95d7c762027db1ed91c6a.html"
           }
         ],
-        "id": 50,
-        "ageClass": "new",
-        "ageWeeks": 1,
-        "exitStatus": "ok",
-        "exitDesc": "",
+        "id": 66,
+        "ageClass": "aged7",
+        "ageWeeks": 7,
+        "exitStatus": "exit",
+        "exitDesc": "跌破60日线(-20.7%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
       },
       {
-        "category": "芯片设计(FPGA)",
-        "subCategory": "FPGA(民用龙头)",
-        "code": "688107",
-        "name": "安路科技",
-        "market": "科创板",
-        "coreLogic": "国内民用FPGA龙头，大摩点名国产替代核心。定增12.62亿已于6/23提交注册(先进工艺平台超大规模FPGA研发+平面工艺FPGA&FPSoC升级产业化)。自研EDA编译时间缩短50%，新一代通算/智算服务器FPGA完成研发设计。200+应用IP及参考设计。",
-        "supplyDemand": "进口FPGA交期拉长至52周、现货价格暴涨4-10倍(证券时报7/30)；FPGA双寡头(赛灵思/Altera)占84%份额持续涨价10-20%；国产替代向中高端市场渗透。",
-        "priceSignal": "定增12.62亿6/23提交注册；自研EDA客户反馈编译时间缩短50%；通算/智算服务器FPGA研发完成",
-        "catalyst": "进口FPGA 52周交期+涨价潮；定增扩产超大规模FPGA；大摩点名国产替代核心",
-        "conceptAdded": "2026-07-30",
-        "conceptSource": "进口FPGA交期52周+现货暴涨+国产替代加速(证券时报，安路科技为受访企业)",
-        "conceptSourceUrl": "https://www.stcn.com/article/detail/4048545.html",
-        "riskNote": "高端FPGA工艺与器件能力仍需追赶；EDA生态积累需要长期投入；定增尚在注册阶段存在不确定性",
+        "category": "功率半导体",
+        "subCategory": "IGBT/SiC功率器件",
+        "code": "603290",
+        "name": "斯达半导",
+        "market": "主板",
+        "coreLogic": "国内IGBT/SiC模块龙头。7月1日起近20家国内外功率半导体企业同步第二轮涨价，斯达半导IGBT/SiC涨价15%起。AI服务器电源芯片单机价值量是传统服务器3-5倍。",
+        "supplyDemand": "8英寸晶圆稼动率超110%，扩产需2-3年。全球前五大功率半导体企业资本开支连续两年下降。",
+        "priceSignal": "7月1日起IGBT/SiC涨价15%起；近20家企业同步第二轮涨价",
+        "catalyst": "AI数据中心800V HVDC供电架构推广；8英寸产能硬约束",
+        "conceptAdded": "2026-07-02",
+        "conceptSource": "功率半导体第二轮涨价：近20家企业7月1日起集中涨价+AI服务器电源芯片需求爆发",
+        "conceptSourceUrl": "https://www.stcn.com/article/detail/3993611.html",
+        "riskNote": "功率半导体涨价属于全行业产能周期而非不可替代供给硬约束；若AI需求放缓海外大厂可回调产能。⚠️ 7/31复查：功率半导体涨价属于全行业产能周期而非不可替代供给硬约束，reinforcements仅7/1一条且已过30天，逻辑弱化明显。⚠️ 8/1复查：熊本地震(7/28)短期催化功率交期拉长至30周+，但若停产时间短难以形成长期涨价趋势，仅脉冲催化，维持7.0",
         "tags": [
-          "FPGA",
-          "民用龙头",
+          "功率涨价",
+          "AI供电",
+          "8英寸硬约束",
           "国产替代",
-          "定增扩产",
-          "大摩点名"
+          "SiC"
         ],
-        "score": 5.0,
+        "score": 7.0,
         "conceptReinforcements": [
           {
-            "date": "2026-07-30",
-            "desc": "证券时报受访企业：FPGA交期52周、现货价格涨7-10倍；定增6/23提交注册"
+            "date": "2026-07-27",
+            "desc": "央视财经/中国商报：功率半导体订单排产4-5个月、交期30周+、'涨价+缺货+优先分货'；需求侧增强，但供给约束仍为8英寸产能周期而非物理瓶颈（看板既有判断维持）"
+          },
+          {
+            "date": "2026-07-01",
+            "desc": "近20家功率半导体企业7月1日起第二轮集中涨价正式执行；斯达半导IGBT/SiC涨价15%起",
+            "source": "https://www.stcn.com/article/detail/3993611.html"
           }
         ],
-        "id": 51,
-        "ageClass": "new",
-        "ageWeeks": 1,
-        "exitStatus": "ok",
-        "exitDesc": "",
+        "id": 67,
+        "ageClass": "aged6",
+        "ageWeeks": 6,
+        "exitStatus": "exit",
+        "exitDesc": "跌破60日线(-31.5%) | 2026-07-31",
         "viewerUrl": "http://localhost:8899/viewer.html"
       }
     ],
@@ -2288,7 +2426,7 @@
             "source": "https://www.stcn.com/article/detail/4024430"
           }
         ],
-        "id": 65,
+        "id": 69,
         "ageClass": "aged3",
         "ageWeeks": 3,
         "exitStatus": "ok",
@@ -2328,7 +2466,7 @@
             "source": "https://finance.sina.com.cn/roll/2026-07-11/doc-inihmvnu3267093.shtml"
           }
         ],
-        "id": 66,
+        "id": 70,
         "ageClass": "aged6",
         "ageWeeks": 6,
         "exitStatus": "exit",
@@ -2336,113 +2474,73 @@
         "viewerUrl": "http://localhost:8899/viewer.html"
       }
     ],
-    "功率半导体": [
+    "芯片设计(FPGA)": [
       {
-        "category": "功率半导体",
-        "subCategory": "功率半导体全品类",
-        "code": "300373",
-        "name": "扬杰科技",
-        "market": "创业板",
-        "coreLogic": "国内功率半导体全品类龙头。7月1日起年内第二轮全系列涨价10-15%正式执行。AI数据中心800V HVDC供电架构推广拉动功率器件需求。英飞凌/TI/ST同步涨价确认全行业供需紧张。",
-        "supplyDemand": "8英寸晶圆稼动率超110%，扩产需2-3年。全球前五大功率半导体企业资本开支连续两年下降。",
-        "priceSignal": "年内第二轮涨价10-15%7月1日执行；英飞凌第二轮涨价同期生效",
-        "catalyst": "AI数据中心800V HVDC供电架构推广；英飞凌/TI/安森美全线涨价",
-        "conceptAdded": "2026-06-24",
-        "conceptSource": "功率半导体全面涨价+8英寸产能收缩+AI数据中心电源需求爆发",
-        "conceptSourceUrl": "https://www.21jingji.com/article/20260624/herald/cd0d5f2f122abefcda593275093b8e40.html",
-        "riskNote": "供给约束偏软(产能分配问题非物理瓶颈)；中低压MOSFET竞争格局分散。⚠️ 7/29复查：功率半导体涨价属于全行业产能周期而非物理供给瓶颈，涨价可持续性存疑。若AI需求放缓海外大厂可快速回调产能。⚠️ 7/31复查：同上，功率涨价属产能周期非物理瓶颈，若AI需求放缓海外大厂可快速回调产能，逻辑弱化。⚠️ 8/1复查：熊本地震(7/28)致台积电JASM一期/索尼/瑞萨停工检修3-7天、功率交期拉长至30周+，但分析明确若停产时间短难以形成长期涨价趋势，仅脉冲催化，维持7.0",
+        "category": "芯片设计(FPGA)",
+        "subCategory": "FPGA(亿门级国产唯一)",
+        "code": "688385",
+        "name": "复旦微电",
+        "market": "科创板",
+        "coreLogic": "国内唯一亿门级FPGA量产企业。全球FPGA双寡头(赛灵思/Altera占84%)涨价10-20%+对华交期拉长至52周(原8-12周)，现货价格暴涨4-10倍；英伟达Groq 3 LPX首次将FPGA纳入标准配套协处理芯片(3/16 GTC，下半年出货)。7/16发布端侧AI/通信侧/应用侧新品+Agent智能FPGA开发平台。H1净利预增416%。",
+        "supplyDemand": "进口FPGA交货周期8-12周→52周；某XC开头型号现货220元→850元、某EP开头型号120元→1200元(证券时报援引经销人士7/30)；2026国产FPGA市占率预计突破20%(2023年15%)。FPGA全球市场2025年117.3亿美元→2030年193.4亿美元。",
+        "priceSignal": "H1净利预增416%；7/16端侧AI/通信侧/应用侧新品发布；Agent智能FPGA开发平台",
+        "catalyst": "进口FPGA 52周交期+现货暴涨4-10倍；英伟达Groq 3 LPX首纳FPGA协处理；国产替代向中高端渗透",
+        "conceptAdded": "2026-07-30",
+        "conceptSource": "进口FPGA交期升至52周+现货暴涨4-10倍+国产替代加速(证券时报)",
+        "conceptSourceUrl": "https://www.stcn.com/article/detail/4048545.html",
+        "riskNote": "高端FPGA与赛灵思/Altera仍有代差；EDA工具链和生态需长期积累；FPGA收入占公司总营收比例需关注",
         "tags": [
-          "功率涨价",
-          "AI供电",
-          "8英寸收缩",
-          "国产替代"
+          "FPGA",
+          "52周交期",
+          "国产替代",
+          "亿门级唯一",
+          "AI推理"
         ],
-        "score": 7.0,
+        "score": 5.5,
         "conceptReinforcements": [
           {
-            "date": "2026-07-27",
-            "desc": "央视财经/中国商报：功率订单排产4-5个月、交期8-12周→30周+、出现'涨价+缺货+优先分货'；芯联集成Q3涨15-25%、聚辰NOR +25%；需求侧增强但供给约束仍为8英寸产能周期非物理瓶颈"
-          },
-          {
-            "date": "2026-07-01",
-            "desc": "年内第二轮全系列涨价10-15%今日正式执行！英飞凌第二轮涨价同期生效；近20家功率半导体企业7月1日集中涨价",
-            "source": "https://m.21jingji.com/article/20260630/herald/3369428e1fb95d7c762027db1ed91c6a.html"
+            "date": "2026-07-30",
+            "desc": "证券时报原文核实：FPGA交期52周、现货XC 220→850元、EP 120→1200元、涨7-10倍；7/16新品+Agent平台"
           }
         ],
-        "id": 62,
-        "ageClass": "aged7",
-        "ageWeeks": 7,
-        "exitStatus": "exit",
-        "exitDesc": "跌破60日线(-20.7%) | 2026-07-31",
+        "id": 51,
+        "ageClass": "new",
+        "ageWeeks": 2,
+        "exitStatus": "ok",
+        "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
       },
       {
-        "category": "功率半导体",
-        "subCategory": "IGBT/SiC功率器件",
-        "code": "603290",
-        "name": "斯达半导",
-        "market": "主板",
-        "coreLogic": "国内IGBT/SiC模块龙头。7月1日起近20家国内外功率半导体企业同步第二轮涨价，斯达半导IGBT/SiC涨价15%起。AI服务器电源芯片单机价值量是传统服务器3-5倍。",
-        "supplyDemand": "8英寸晶圆稼动率超110%，扩产需2-3年。全球前五大功率半导体企业资本开支连续两年下降。",
-        "priceSignal": "7月1日起IGBT/SiC涨价15%起；近20家企业同步第二轮涨价",
-        "catalyst": "AI数据中心800V HVDC供电架构推广；8英寸产能硬约束",
-        "conceptAdded": "2026-07-02",
-        "conceptSource": "功率半导体第二轮涨价：近20家企业7月1日起集中涨价+AI服务器电源芯片需求爆发",
-        "conceptSourceUrl": "https://www.stcn.com/article/detail/3993611.html",
-        "riskNote": "功率半导体涨价属于全行业产能周期而非不可替代供给硬约束；若AI需求放缓海外大厂可回调产能。⚠️ 7/31复查：功率半导体涨价属于全行业产能周期而非不可替代供给硬约束，reinforcements仅7/1一条且已过30天，逻辑弱化明显。⚠️ 8/1复查：熊本地震(7/28)短期催化功率交期拉长至30周+，但若停产时间短难以形成长期涨价趋势，仅脉冲催化，维持7.0",
+        "category": "芯片设计(FPGA)",
+        "subCategory": "FPGA(民用龙头)",
+        "code": "688107",
+        "name": "安路科技",
+        "market": "科创板",
+        "coreLogic": "国内民用FPGA龙头，大摩点名国产替代核心。定增12.62亿已于6/23提交注册(先进工艺平台超大规模FPGA研发+平面工艺FPGA&FPSoC升级产业化)。自研EDA编译时间缩短50%，新一代通算/智算服务器FPGA完成研发设计。200+应用IP及参考设计。",
+        "supplyDemand": "进口FPGA交期拉长至52周、现货价格暴涨4-10倍(证券时报7/30)；FPGA双寡头(赛灵思/Altera)占84%份额持续涨价10-20%；国产替代向中高端市场渗透。",
+        "priceSignal": "定增12.62亿6/23提交注册；自研EDA客户反馈编译时间缩短50%；通算/智算服务器FPGA研发完成",
+        "catalyst": "进口FPGA 52周交期+涨价潮；定增扩产超大规模FPGA；大摩点名国产替代核心",
+        "conceptAdded": "2026-07-30",
+        "conceptSource": "进口FPGA交期52周+现货暴涨+国产替代加速(证券时报，安路科技为受访企业)",
+        "conceptSourceUrl": "https://www.stcn.com/article/detail/4048545.html",
+        "riskNote": "高端FPGA工艺与器件能力仍需追赶；EDA生态积累需要长期投入；定增尚在注册阶段存在不确定性",
         "tags": [
-          "功率涨价",
-          "AI供电",
-          "8英寸硬约束",
+          "FPGA",
+          "民用龙头",
           "国产替代",
-          "SiC"
+          "定增扩产",
+          "大摩点名"
         ],
-        "score": 7.0,
+        "score": 5.0,
         "conceptReinforcements": [
           {
-            "date": "2026-07-27",
-            "desc": "央视财经/中国商报：功率半导体订单排产4-5个月、交期30周+、'涨价+缺货+优先分货'；需求侧增强，但供给约束仍为8英寸产能周期而非物理瓶颈（看板既有判断维持）"
-          },
-          {
-            "date": "2026-07-01",
-            "desc": "近20家功率半导体企业7月1日起第二轮集中涨价正式执行；斯达半导IGBT/SiC涨价15%起",
-            "source": "https://www.stcn.com/article/detail/3993611.html"
+            "date": "2026-07-30",
+            "desc": "证券时报受访企业：FPGA交期52周、现货价格涨7-10倍；定增6/23提交注册"
           }
         ],
-        "id": 63,
-        "ageClass": "aged5",
-        "ageWeeks": 5,
-        "exitStatus": "exit",
-        "exitDesc": "跌破60日线(-31.5%) | 2026-07-31",
-        "viewerUrl": "http://localhost:8899/viewer.html"
-      }
-    ],
-    "半导体设备零部件": [
-      {
-        "category": "半导体设备零部件",
-        "subCategory": "晶圆传片EFEM(国内龙一)",
-        "code": "300024",
-        "name": "机器人",
-        "market": "创业板",
-        "coreLogic": "旗下新松半导体国内EFEM市场份额第一，2025年传片业务营收5.2亿元，12寸EFEM成熟落地，已批量导入北方华创/拓荆科技/中微公司等龙头设备厂。日本RORZE全球产能彻底打满，交付周期从3个月拉长至6-9个月，已对国内设备厂正式涨价超20%，Q3存在大范围断供风险。",
-        "supplyDemand": "全球高端EFEM被日本RORZE和美国Brooks两家垄断90%+份额，国内高端国产化率不足10%。RORZE全球产能100%满载。",
-        "priceSignal": "RORZE正式涨价超20%；2025年新松传片营收5.2亿元；批量导入华创/拓荆/中微/Fab",
-        "catalyst": "日本RORZE正式涨价超20%+Q3断供风险+交付周期拉长至6-9个月",
-        "conceptAdded": "2026-07-01",
-        "conceptSource": "日本RORZE涨价+断供风险→EFEM国产替代从可选项变为刚需+新松半导体国内市占率第一",
-        "conceptSourceUrl": "https://caifuhao.eastmoney.com/news/20260701142014237778010",
-        "riskNote": "EFEM业务占机器人整体营收比例较小（约5%），传统工业机器人业务拖累整体估值",
-        "tags": [
-          "隐形卡脖子",
-          "独供风险",
-          "国产替代",
-          "设备零部件"
-        ],
-        "score": 8.5,
-        "conceptReinforcements": [],
         "id": 52,
-        "ageClass": "aged6",
-        "ageWeeks": 6,
+        "ageClass": "new",
+        "ageWeeks": 2,
         "exitStatus": "ok",
         "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -2486,9 +2584,40 @@
             "source": "https://ee.ofweek.com/2026-07/ART-8420-2816-30693192.html"
           }
         ],
-        "id": 64,
+        "id": 68,
         "ageClass": "aged8",
         "ageWeeks": 8,
+        "exitStatus": "ok",
+        "exitDesc": "",
+        "viewerUrl": "http://localhost:8899/viewer.html"
+      }
+    ],
+    "半导体设备零部件": [
+      {
+        "category": "半导体设备零部件",
+        "subCategory": "晶圆传片EFEM(国内龙一)",
+        "code": "300024",
+        "name": "机器人",
+        "market": "创业板",
+        "coreLogic": "旗下新松半导体国内EFEM市场份额第一，2025年传片业务营收5.2亿元，12寸EFEM成熟落地，已批量导入北方华创/拓荆科技/中微公司等龙头设备厂。日本RORZE全球产能彻底打满，交付周期从3个月拉长至6-9个月，已对国内设备厂正式涨价超20%，Q3存在大范围断供风险。",
+        "supplyDemand": "全球高端EFEM被日本RORZE和美国Brooks两家垄断90%+份额，国内高端国产化率不足10%。RORZE全球产能100%满载。",
+        "priceSignal": "RORZE正式涨价超20%；2025年新松传片营收5.2亿元；批量导入华创/拓荆/中微/Fab",
+        "catalyst": "日本RORZE正式涨价超20%+Q3断供风险+交付周期拉长至6-9个月",
+        "conceptAdded": "2026-07-01",
+        "conceptSource": "日本RORZE涨价+断供风险→EFEM国产替代从可选项变为刚需+新松半导体国内市占率第一",
+        "conceptSourceUrl": "https://caifuhao.eastmoney.com/news/20260701142014237778010",
+        "riskNote": "EFEM业务占机器人整体营收比例较小（约5%），传统工业机器人业务拖累整体估值",
+        "tags": [
+          "隐形卡脖子",
+          "独供风险",
+          "国产替代",
+          "设备零部件"
+        ],
+        "score": 8.5,
+        "conceptReinforcements": [],
+        "id": 53,
+        "ageClass": "aged6",
+        "ageWeeks": 6,
         "exitStatus": "ok",
         "exitDesc": "",
         "viewerUrl": "http://localhost:8899/viewer.html"
@@ -2497,11 +2626,14 @@
   },
   "viewerUrl": "http://localhost:8899/viewer.html",
   "recentNames": [
+    "中国巨石",
     "有研新材",
     "复旦微电",
     "安路科技",
-    "长鑫科技"
+    "华海清科",
+    "长川科技",
+    "江波龙"
   ],
   "exitCount": 51,
-  "hotCount": 0
+  "hotCount": 3
 }
