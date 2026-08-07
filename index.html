@@ -14,10 +14,6 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; }
-  .topnav { position:sticky; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; flex-wrap:wrap; gap:0 4px; padding:0 48px; min-height:24px; width:100%; box-sizing:border-box; background:var(--card-bg); border-bottom:1px solid var(--border); -webkit-text-size-adjust:none; text-size-adjust:none; }
-  .topnav .nav-tab { display:inline-flex; align-items:center; height:20px; padding:0 10px; font-size:12px; font-weight:600; color:var(--text-muted); text-decoration:none; border-bottom:2px solid transparent; transition:color 0.15s,border-color 0.15s; white-space:nowrap; }
-  .topnav .nav-tab:hover { color:var(--text); }
-  .topnav .nav-tab.active { color:var(--accent); border-bottom-color:var(--accent); }
   .container { max-width:1800px; margin:0 auto; padding:32px 48px 80px; }
 
   .page-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; padding-bottom:16px; border-bottom:2px solid var(--border); flex-wrap:wrap; gap:12px; }
@@ -77,19 +73,11 @@
   .modal-close:hover { background:var(--slate-bg); }
   .modal-body { padding:16px 24px 24px; overflow-y:auto; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:8px; }
 
-  @media (max-width:800px) { .container { padding:24px 16px 60px; } .stock-list { grid-template-columns:1fr; } .topnav { padding:0 8px; min-height:24px; } .topnav .nav-tab { height:20px; padding:0 6px; font-size:12px; } }
+  @media (max-width:800px) { .container { padding:24px 16px 60px; } .stock-list { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
-<nav class="topnav">
-  <a class="nav-tab active" href="index.html">个股研究</a>
-  <a class="nav-tab" href="tmt_network/tmt_network_full.html" target="_blank">TMT产业链</a>
-  <a class="nav-tab" href="hardlogic/hardlogic.html" target="_blank">硬逻辑</a>
-  <a class="nav-tab" href="fund_top100.html" target="_blank">基金重仓</a>
-  <a class="nav-tab" href="ai_materials_scarcity.html" target="_blank">稀缺材料</a>
-  <a class="nav-tab" href="https://onechart.top/" target="_blank">板块资金雷达</a>
-  <a class="nav-tab" href="https://onechart.top/macro/" target="_blank">宏观择时</a>
-</nav>
+<script src="nav.js" data-root="" data-current="index"></script>
 <div class="container" id="app">
   <div id="filterArea"></div>
   <div id="contentArea">
