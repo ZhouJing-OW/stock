@@ -36,7 +36,7 @@
     .topnav { position:fixed; top:0; left:0; right:0; z-index:1000; display:flex; align-items:center; flex-wrap:wrap; gap:0 4px; padding:0 48px; min-height:24px; width:100%; box-sizing:border-box; background:${navBg || 'rgba(13,17,23,.65)'}; backdrop-filter:blur(6px); border-bottom:1px solid rgba(48,54,61,.5); font-family:system-ui,-apple-system,"PingFang SC",sans-serif; -webkit-text-size-adjust:none; text-size-adjust:none; transition:opacity .3s ease; }
     .topnav .nav-tab { display:inline-flex; align-items:center; height:20px; padding:0 10px; font-size:12px; font-weight:500; color:#8b949e; text-decoration:none; border-bottom:2px solid transparent; white-space:nowrap; transition:color .15s,border-color .15s; }
     .topnav .nav-tab:hover { color:#c9d1d9; }
-    .topnav .nav-tab.active { color:#58a6ff; border-bottom-color:#58a6ff; }
+    .topnav .nav-tab.active { color:#58a6ff; border-bottom-color:#58a6ff; font-weight:700; }
     .topnav.cruise-hidden { opacity:0!important; pointer-events:none!important; }
     @media (max-width:800px) { .topnav { padding:0 8px; } .topnav .nav-tab { padding:0 6px; } }
   `;
@@ -44,7 +44,7 @@
     .topnav { position:sticky; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; flex-wrap:wrap; gap:0 4px; padding:0 48px; min-height:24px; width:100%; box-sizing:border-box; background:var(--card,#fff); border-bottom:1px solid var(--border,rgba(0,0,0,.1)); font-family:system-ui,-apple-system,"PingFang SC",sans-serif; -webkit-text-size-adjust:none; text-size-adjust:none; }
     .topnav .nav-tab { display:inline-flex; align-items:center; height:20px; padding:0 10px; font-size:12px; font-weight:500; color:var(--text-muted,#8e9196); text-decoration:none; border-bottom:2px solid transparent; white-space:nowrap; transition:color .15s,border-color .15s; }
     .topnav .nav-tab:hover { color:var(--text,#1c1917); }
-    .topnav .nav-tab.active { color:var(--accent,#2563eb); border-bottom-color:var(--accent,#2563eb); }
+    .topnav .nav-tab.active { color:var(--accent,#2563eb); border-bottom-color:var(--accent,#2563eb); font-weight:700; }
     @media (max-width:800px) { .topnav { padding:0 8px; } .topnav .nav-tab { padding:0 6px; } }
   `;
   const style = document.createElement('style');

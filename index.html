@@ -40,10 +40,10 @@
   .stock-card.stale { background:#f8f8f7; border-color:#e7e5e4; }
   .stock-card.stale:hover { border-color:var(--amber); }
   .stock-card .code { font-family:"JetBrains Mono","SF Mono","Cascadia Code",monospace; font-size:11px; color:var(--text-muted); }
-  .stock-card .name { font-size:15px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .stock-card .name { font-size:15px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; flex:1 1 auto; }
   .stock-card .tags { display:flex; gap:4px; flex-wrap:wrap; overflow:hidden; }
   .stock-card .tags span { font-size:10px; padding:1px 6px; border-radius:100px; background:var(--slate-bg); color:var(--slate); border:1px solid var(--border); white-space:nowrap; }
-  .stock-card .row { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .stock-card .row { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
 
   .rating { display:inline-block; padding:3px 12px; border-radius:100px; font-size:12px; font-weight:600; flex-shrink:0; min-width:64px; text-align:center; }
   .rating.strong-buy { background:#dcfce7; color:#15803d; }
@@ -58,7 +58,7 @@
   .zz-badge:hover { background:#b91c1c; }
   .jgcz-badge { display:inline-block; padding:3px 10px; border-radius:100px; font-size:11px; font-weight:600; color:#fff; background:#7c3aed; vertical-align:middle; white-space:nowrap; cursor:default; flex-shrink:0; }
   .jgcz-badge:hover { background:#6d28d9; }
-  .badge-group { display:inline-flex; align-items:center; gap:6px; flex-shrink:0; margin-left:auto; }
+  .badge-group { display:inline-flex; align-items:center; gap:6px; flex-shrink:1; margin-left:auto; flex-wrap:wrap; justify-content:flex-end; }
 
   .state-msg { text-align:center; padding:60px 20px; color:var(--text-muted); grid-column:1/-1; }
   .loader { width:32px; height:32px; border:3px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin 0.8s linear infinite; margin:0 auto 16px; }
