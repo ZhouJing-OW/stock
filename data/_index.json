@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-06T23:38:56.345300",
-  "total": 128,
+  "updated": "2026-08-07T08:40:39.085266",
+  "total": 130,
   "stocks": [
     {
       "code": "000338",
@@ -1263,6 +1263,26 @@
       "pinyin": "JHGF"
     },
     {
+      "code": "600176",
+      "name": "中国巨石",
+      "exchange": "SH",
+      "industry": "建筑材料/玻璃玻纤/玻纤制造",
+      "tags": [
+        "玻纤",
+        "电子布",
+        "电子纱",
+        "风电",
+        "复合材料"
+      ],
+      "rating": "中性看好",
+      "pe": 32.2,
+      "marketCap": 1632.5,
+      "confidence": 3,
+      "position": 8.0,
+      "analysis_date": "2026-08-06",
+      "pinyin": "ZGJS"
+    },
+    {
       "code": "600183",
       "name": "生益科技",
       "exchange": "SH",
@@ -2361,6 +2381,26 @@
       "position": 8.0,
       "analysis_date": "2026-07-03",
       "pinyin": "HHGS"
+    },
+    {
+      "code": "688361",
+      "name": "中科飞测",
+      "exchange": "SH",
+      "industry": "机械设备/专用设备/半导体设备",
+      "tags": [
+        "半导体设备",
+        "量检测设备",
+        "国产替代",
+        "先进制程",
+        "晶圆缺陷检测"
+      ],
+      "rating": "中性",
+      "pe": -1642,
+      "marketCap": 1214.6,
+      "confidence": 4,
+      "position": 3.0,
+      "analysis_date": "2026-08-07",
+      "pinyin": "ZKFC"
     },
     {
       "code": "688428",
