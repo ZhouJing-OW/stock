@@ -10,6 +10,8 @@
 body{background:#0d1117;color:#c9d1d9;font-family:'Microsoft YaHei',sans-serif;overflow:hidden}
 #container{width:100vw;height:100vh;height:100dvh;position:relative}
 svg{width:100%;height:100%}
+/* 动态层：飞船/航迹独立覆盖层，静态星图渲染一次后零重绘 */
+#overlay{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:5;will-change:transform;transform:translateZ(0)}
 #info{position:absolute;top:40px;left:16px;z-index:10}
 #info h1{font-size:18px;color:#58a6ff;margin-bottom:4px}
 #info p{font-size:12px;color:#8b949e}
@@ -95,10 +97,11 @@ svg{width:100%;height:100%}
 </div>
 <div id="tooltip"></div>
 <div id="captainVoice"><span class="cv-close" id="cvClose">✕</span><div class="cv-header">📖 舰长日志</div><div class="cv-body"></div><div class="cv-dots">···</div><div class="cv-arrow"></div></div>
-<svg id="svg"></svg></div>
+<svg id="svg"></svg><svg id="overlay"></svg></div>
 <script>
 const W=window.innerWidth,H=window.innerHeight;
 const svg=d3.select("#svg"),g=svg.append("g");
+const overlay=d3.select("#overlay"),g2=overlay.append("g");  // 动态层（飞船/航迹）
 svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -5 10 10").attr("refX",20).attr("refY",0).attr("markerWidth",6).attr("markerHeight",6).attr("orient","auto").append("path").attr("d","M0,-5L10,0L0,5").attr("fill","#d2a861");
 svg.select("defs").append("marker").attr("id","arrowL1").attr("viewBox","0 -5 10 10").attr("refX",20).attr("refY",0).attr("markerWidth",6).attr("markerHeight",6).attr("orient","auto").append("path").attr("d","M0,-5L10,0L0,5").attr("fill","#7ee787");
 const defs=svg.select("defs");
@@ -506,16 +509,18 @@ function idleFly() {
 
 function startOrbit() {
   if (orbitTimer) orbitTimer.stop();
+  var frame = 0;
   orbitTimer = d3.timer(function() {
     if (!shipState.planet || shipState.flying) return;
-    shipState.angle += 0.02;
+    if ((frame++ & 1) !== 0) return;  // 隔帧更新：CPU减半，角度补偿保持视觉角速度不变
+    shipState.angle += 0.04;  // 补偿：每2帧0.04 ≈ 原每帧0.02
     var r = (nodeRadii[shipState.planet.id] || 14) + 15;
     shipState.x = shipState.planet.x + r * Math.cos(shipState.angle);
     shipState.y = shipState.planet.y + r * Math.sin(shipState.angle);
     shipGroup.attr("transform", `translate(${shipState.x},${shipState.y}) rotate(${shipState.angle * 180 / Math.PI + 90})`);
     // 航迹从船尾（局部 -6,0，机头朝 angle+90°）喷出
     shipState.trail.push({x: shipState.x + 6 * Math.sin(shipState.angle), y: shipState.y - 6 * Math.cos(shipState.angle)});
-    if (shipState.trail.length > 40) shipState.trail.shift();
+    if (shipState.trail.length > 24) shipState.trail.shift();
     var dots = trailGroup.selectAll("circle").data(shipState.trail);
     dots.enter().append("circle").attr("fill", "#ff8c42");
     dots.merge(dots)
@@ -1327,8 +1332,8 @@ function updateBubblePosition() {
 }
 
 function createShip() {
-  trailGroup = g.append("g").attr("class", "trail-group");
-  shipGroup = g.append("g").attr("class", "ship-group").style("opacity", 0);
+  trailGroup = g2.append("g").attr("class", "trail-group");
+  shipGroup = g2.append("g").attr("class", "ship-group").style("opacity", 0);
   shipGroup.append("path")
     .attr("d", "M-8,-6 L8,0 L-8,6 L-3,0 Z")
     .attr("fill", "#f0c040")
@@ -1364,7 +1369,7 @@ function flyToPlanet(target, full) {
         // 航迹从船尾（局部 -6,0，机头朝 flightAngle）喷出
         var rad = flightAngle * Math.PI / 180;
         shipState.trail.push({x: px - 6 * Math.cos(rad), y: py - 6 * Math.sin(rad)});
-        if (shipState.trail.length > 40) shipState.trail.shift();
+        if (shipState.trail.length > 24) shipState.trail.shift();
         var dots = trailGroup.selectAll("circle").data(shipState.trail);
         dots.enter().append("circle").attr("fill", "#ff8c42");
         dots.merge(dots)
@@ -1391,7 +1396,7 @@ function flyToPlanet(target, full) {
 
 d3.select("#nodeCount").text(`节点: ${NODES.length} (A股${NODES.filter(d=>d.type==='a').length}+海外${NODES.filter(d=>d.type==='o').length}+非上市${NODES.filter(d=>d.type==='n').length})`);
 d3.select("#edgeCount").text(`边: ${EDGES.length} (L1: ${EDGES.filter(d=>d.type==='L1').length} + L2: ${EDGES.filter(d=>d.type==='L2').length})`);
-const zoom=d3.zoom().extent([[0,0],[W,H]]).scaleExtent([0.3,5]).on("zoom",e=>{g.attr("transform",e.transform);if(e.sourceEvent){setCruiseUI(false);idleFirst=true;resetIdleTimer();}});
+const zoom=d3.zoom().extent([[0,0],[W,H]]).scaleExtent([0.3,5]).on("zoom",e=>{g.attr("transform",e.transform);g2.attr("transform",e.transform);if(e.sourceEvent){setCruiseUI(false);idleFirst=true;resetIdleTimer();}});
 svg.call(zoom);
 
 // 初始全景视野：自动缩放到能容纳全部节点
