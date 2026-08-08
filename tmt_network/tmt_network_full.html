@@ -86,7 +86,7 @@ svg{width:100%;height:100%}
 <span style="color:#58a6ff;font-size:11px">🚢 舰长室</span><br>
 空闲 <input type="range" id="idleSlider" min="1" max="20" value="3"><span id="idleVal">90s</span><br>
 间隔 <input type="range" id="intervalSlider" min="2" max="12" value="3"><span id="intervalVal">30s</span><br>
-自动航行 <input type="checkbox" id="autoNavToggle" checked> 日志 <input type="checkbox" id="captainVoiceToggle"> <span id="captainVoiceLabel">关</span>
+飞船 <input type="checkbox" id="shipToggle" checked> 自动航行 <input type="checkbox" id="autoNavToggle" checked> 日志 <input type="checkbox" id="captainVoiceToggle"> <span id="captainVoiceLabel">关</span>
 </div>
 <div id="stats"><span id="nodeCount"></span><br><span id="edgeCount"></span></div>
 <div id="legend">
@@ -328,7 +328,7 @@ const node=g.append("g").selectAll("circle").data(NODES).join("circle")
       lastFocusedNode=d.id;applyFocus(d.id,maxDepth,focusDirection);
       d3.select("#searchInput").property("value",d.id);
       if(d.code)currentCode=d.code;
-      flyToPlanet(d);
+      if(shipOn) flyToPlanet(d);
       idleFirst = true; resetIdleTimer();
     });
 
@@ -435,6 +435,26 @@ let idleDuration = 90;
 let idleInterval = 30;
 let autoNavOn = true;
 let captainVoiceOn = false;
+let shipOn = true;  // 飞船总开关：关闭后移除飞船/航迹/气泡，页面完全静态
+
+// 停止飞船及所有相关动态：绕行、idle巡航、航迹、飞船元素、气泡
+function stopShip() {
+  shipOn = false;
+  if (orbitTimer) { orbitTimer.stop(); orbitTimer = null; }
+  if (idleTimer) { clearTimeout(idleTimer); idleTimer = null; }
+  if (shipGroup) { shipGroup.interrupt(); shipGroup.remove(); shipGroup = null; }
+  if (trailGroup) { trailGroup.remove(); trailGroup = null; }
+  shipState = { planet: null, angle: 0, flying: false, x: 0, y: 0, trail: [] };
+  document.getElementById("captainVoice").classList.remove("visible");
+}
+
+// 恢复飞船：清状态，飞船下次飞行时重建（flyToPlanet 内 createShip）
+function startShip() {
+  shipOn = true;
+  shipState = { planet: null, angle: 0, flying: false, x: 0, y: 0, trail: [] };
+  idleFirst = true;
+  resetIdleTimer();
+}
 
 function resetIdleTimer() {
   if (idleTimer) clearTimeout(idleTimer);
@@ -466,6 +486,7 @@ function clearFocusState() {
 }
 
 function idleFly() {
+  if (!shipOn) return;
   clearFocusState();
   setCruiseUI(true);  // 隐藏除日志外的所有 UI，进入沉浸巡航
   // 随机选下一颗星球：排除当前所在星球，避免原地打转
@@ -1316,7 +1337,7 @@ function createShip() {
 }
 
 function flyToPlanet(target, full) {
-  if (!target) return;
+  if (!target || !shipOn) return;
   if (!shipGroup) createShip();
   shipGroup.interrupt();
   if (orbitTimer) { orbitTimer.stop(); orbitTimer = null; }
@@ -1405,6 +1426,8 @@ const savedCV=localStorage.getItem('tmt_cv');
 if(savedCV!==null){captainVoiceOn=savedCV==='1';d3.select("#captainVoiceToggle").property("checked",captainVoiceOn);d3.select("#captainVoiceLabel").text(captainVoiceOn?"开":"关");}
 const savedAutoNav=localStorage.getItem('tmt_autonav');
 if(savedAutoNav!==null){autoNavOn=savedAutoNav==='1';d3.select("#autoNavToggle").property("checked",autoNavOn);}
+const savedShip=localStorage.getItem('tmt_ship');
+if(savedShip==='0'){stopShip();d3.select("#shipToggle").property("checked",false);}
 const sliderPanel=d3.select("#sliders"),sliderBtn=d3.select("#sliderToggle");
 let sliderOpen=localStorage.getItem('tmt_sliders')==='open';
 function applySliderState(open){
@@ -1456,6 +1479,10 @@ d3.select("#captainVoiceToggle").on("change",function(){
   d3.select("#captainVoiceLabel").text(captainVoiceOn ? "开" : "关");
   if (!captainVoiceOn) document.getElementById("captainVoice").classList.remove("visible");
 });
+d3.select("#shipToggle").on("change",function(){
+  if (this.checked) startShip(); else stopShip();
+  localStorage.setItem('tmt_ship', this.checked ? '1' : '0');
+});
 document.getElementById("cvClose").addEventListener("click",function(e){
   e.stopPropagation();
   var cv = document.getElementById("captainVoice");
@@ -1482,6 +1509,7 @@ setTimeout(function() {
 
 // 初始随机飞向一个星球（折叠展示）
 setTimeout(function() {
+  if (!shipOn) return;
   var candidates = NODES.filter(function(d) { return d.type === 'a'; });
   if (candidates.length === 0) candidates = NODES;
   var pick = candidates[Math.floor(Math.random() * candidates.length)];
