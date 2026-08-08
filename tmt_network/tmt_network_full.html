@@ -530,7 +530,6 @@ function startOrbit() {
       .attr("r", function(d, i) { return (i / shipState.trail.length) * 3; })
       .attr("opacity", function(d, i) { return (i / shipState.trail.length) * 0.5; });
     dots.exit().remove();
-    updateBubblePosition();
   });
 }
 
@@ -1299,7 +1298,7 @@ function typewriteBody(el, html) {
   var i = 0;
   el.innerHTML = '<span class="tw-cursor">|</span>';
   var timer = setInterval(function() {
-    if (i >= html.length) { clearInterval(timer); el.innerHTML = html; return; }
+    if (i >= html.length) { clearInterval(timer); el.innerHTML = html; updateBubblePosition(); return; }
     if (html[i] === '<') {
       var end = html.indexOf('>', i);
       if (end === -1) end = html.length;
@@ -1310,6 +1309,7 @@ function typewriteBody(el, html) {
       i++;
     }
     el.innerHTML = visible + '<span class="tw-cursor">|</span>';
+    updateBubblePosition();  // 打字中高度增长，逐字重新居中定位
   }, 30);
   el._twTimer = timer;
 }
@@ -1326,7 +1326,7 @@ function updateBubblePosition() {
   var orbitR = ((nodeRadii[shipState.planet.id] || 14) + 15) * tf.k;
   cv.style.left = "auto";
   cv.style.right = (W - px + orbitR + 14) + "px";
-  cv.style.top = Math.max(28, py - cv.offsetHeight / 2) + "px";  // 不低于顶部导航栏(24px)以下
+  cv.style.top = (py - cv.offsetHeight / 2) + "px";  // 始终以星球为中心居中
   cv.style.bottom = "auto";
   cv.style.transform = "none";
 }
@@ -1396,7 +1396,7 @@ function flyToPlanet(target, full) {
 
 d3.select("#nodeCount").text(`节点: ${NODES.length} (A股${NODES.filter(d=>d.type==='a').length}+海外${NODES.filter(d=>d.type==='o').length}+非上市${NODES.filter(d=>d.type==='n').length})`);
 d3.select("#edgeCount").text(`边: ${EDGES.length} (L1: ${EDGES.filter(d=>d.type==='L1').length} + L2: ${EDGES.filter(d=>d.type==='L2').length})`);
-const zoom=d3.zoom().extent([[0,0],[W,H]]).scaleExtent([0.3,5]).on("zoom",e=>{g.attr("transform",e.transform);g2.attr("transform",e.transform);if(e.sourceEvent){setCruiseUI(false);idleFirst=true;resetIdleTimer();}});
+const zoom=d3.zoom().extent([[0,0],[W,H]]).scaleExtent([0.3,5]).on("zoom",e=>{g.attr("transform",e.transform);g2.attr("transform",e.transform);updateBubblePosition();if(e.sourceEvent){setCruiseUI(false);idleFirst=true;resetIdleTimer();}});
 svg.call(zoom);
 
 // 初始全景视野：自动缩放到能容纳全部节点
